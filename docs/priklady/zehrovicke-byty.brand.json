@@ -1,0 +1,318 @@
+{
+  "format": "brand-hub",
+  "version": 1,
+  "brand": {
+    "name": "Žehrovické byty",
+    "slug": "zehrovicke-byty",
+    "intro": "Kompaktní bytový dům s 22 jednotkami v Kamenných Žehrovicích, 8 minut od Kladna. Developer KOSTKA Holding.\nVšechna loga, barvy, písma a pravidla jsou tu vždy v aktuální verzi.",
+    "hero_bg": "#F4F4EF",
+    "contact_name": "Martin Malý · MarMal.cz",
+    "contact_note": "Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.",
+    "public_links": true
+  },
+  "texts": {
+    "logo": "Žehrovické byty jsou kompaktní bytový dům s 22 jednotkami v klidné obci 8 minut od Kladna. Vizuální identita má působit **klidně, solidně a přírodně**. Žádná okázalost, žádné „luxusní“ zlato. Pevný tvar, střídmé barvy a dost vzduchu.\n\n## Co symbol vyjadřuje\nŠestiúhelník je pevný, kamenný rámec. Odkazuje na název obce Kamenné Žehrovice a na stabilitu stavby. Uvnitř stojí dům se třemi řadami oken, tedy tři podlaží projektu. Dva stromy připomínají okolní lesy a zeleň, dvojitá modrá linka vodu a cestu. Rámec je v pravém dolním rohu otevřený a linky z něj vybíhají ven: dům není uzavřený, navazuje na okolí.\n\n## Části loga\n- **Symbol:** šestiúhelník s domem. Samostatně jen tam, kde je značka už představená nebo kde není místo (ikona, profilová fotka).\n- **Slovní označení:** ŽEHROVICKÉ verzálkami v písmu Candara Bold. Candara patří jen do loga, nikdy se nepřepisuje znovu písmem. Vždy se vkládá jako hotový soubor loga.\n- **Doplněk BYTY:** tenký řez, prostrkaný, mezi dvěma linkami v barvě Akvamarín. Stejný motiv lze použít jako oddělovač (viz Pravidla použití → Grafické prvky).\n\n## Varianty\nLogo existuje ve dvou kompozicích (vodorovné a čtvercové) a ve dvou barevných provedeních (pro světlý a pro tmavý podklad). Přednostně používejte **vodorovné logo pro světlý podklad**.\n\n## Ochranná zóna\nJednotkou je **X = výška verzálky „E“** ve slově ŽEHROVICKÉ (bez háčku a čárky). Kolem loga musí zůstat volný prostor alespoň **1 X** ze všech stran. Do zóny nezasahuje text, okraj formátu, jiné logo ani výrazný detail fotografie. U čtvercové varianty a samostatného symbolu platí stejné pravidlo.\n\n## Minimální velikost\nPod tyto rozměry už nejsou čitelná okna domu ani doplněk BYTY. Pokud je místo menší, použijte samostatný symbol.\n\n| Varianta | Tisk | Digitál |\n|---|---|---|\n| Vodorovné logo | šířka 35 mm | šířka 160 px |\n| Čtvercové logo | šířka 20 mm | šířka 100 px |\n| Samostatný symbol | šířka 8 mm | šířka 24 px (favicon 32 px) |\n\n## Logo na podkladech\nNa bílé a světlé plochy patří logo v Břidlici, na tmavé plochy logo v Opuce. Akvamarín a Serpentin nejsou podkladové barvy pro logo: logo obsahuje stejné odstíny a splynuly by.\n\n| Podklad | Použití |\n|---|---|\n| {#FFFFFF} Bílá | ✓ ano |\n| {#F4F4EF} Vápenec | ✓ ano |\n| {#373F48} Břidlice | ✓ ano |\n| {#262C32} Čedič | ✓ ano |\n| Vizualizace s přechodem z Čediče, bílá verze | ✓ ano |\n| {#B5B6A8} Opuka | ✓ výjimečně |\n| {#82B9D6} Akvamarín | ✗ ne |\n| {#91B993} Serpentin | ✗ ne |\n| Logo přes rušnou vizualizaci | ✗ ne |\n\n## Nesprávné použití\nLogo se používá jen z dodaných souborů a v nezměněné podobě. Tyto úpravy nejsou přípustné:\n- deformace, roztažení nebo zúžení,\n- otáčení a natáčení,\n- změna barev mimo paletu,\n- stíny, záře, obrysy a 3D efekty,\n- přepisování názvu jiným písmem, vlastní skládání symbolu a textu,\n- tmavá kresba na tmavém podkladu.\n\n> SVG soubory mají průhledné pozadí. Slovo ŽEHROVICKÉ je v nich zatím uložené jako text v písmu Candara Bold, ne jako křivky. Na počítači bez Candary se zobrazí jiným písmem. Před předáním třetí straně je potřeba text převést na křivky, do té doby používejte PNG.",
+    "barvy": "Základ tvoří čtyři barvy z loga: **Břidlice, Opuka, Akvamarín a Serpentin**. Jsou pojmenované podle kamenů, které patří ke krajině Kladenska a k názvu obce. Odvozené barvy pokračují ve stejné logice (Vápenec, Čedič, Azurit, Jadeit). V komunikaci s grafikem i tiskárnou používejte tyto názvy.\n\nHodnoty CMYK jsou převedené přes profil **Coated FOGRA39** (natíraný papír, ofset). Pro nenatíraný papír nechte převod udělat tiskárnu.\n\n> Čedič má celkové krytí 276 %. Pro velké plochy v ofsetu je to v pořádku (limit FOGRA39 je 300 %), u digitálního tisku ověřte na nátisku.\n\n## Poměr barev v komunikaci\nOrientační rozložení ploch na typické stránce, letáku nebo inzerátu. Většinu tvoří světlé plochy a vzduch, Břidlice nese text a strukturu, akcenty jsou opravdu jen akcenty.\n\n| Barva | Podíl |\n|---|---|\n| {#FFFFFF} Bílá + {#F4F4EF} Vápenec | 55 % |\n| {#373F48} Břidlice + {#262C32} Čedič | 25 % |\n| {#B5B6A8} Opuka | 10 % |\n| {#82B9D6} Akvamarín | 6 % |\n| {#91B993} Serpentin | 4 % |\n\n## Kombinace a kontrast\nOvěřené kombinace textu a podkladu. Hodnota je kontrastní poměr podle WCAG 2.1: pro běžný text je potřeba alespoň 4,5 : 1, pro velké nadpisy (od 24 px, tučně od 19 px) 3 : 1.\n\n| Text na podkladu | Kontrast | Hodnocení |\n|---|---|---|\n| Břidlice na bílé | 10,7 : 1 | AAA |\n| Břidlice na Vápenci | 9,7 : 1 | AAA |\n| Bílá na Břidlici | 10,7 : 1 | AAA |\n| Opuka na Břidlici | 5,2 : 1 | AA |\n| Akvamarín na Břidlici | 5,0 : 1 | AA |\n| Serpentin na Břidlici | 4,9 : 1 | AA |\n| Azurit na bílé | 5,2 : 1 | AA |\n| Jadeit na bílé | 5,2 : 1 | AA |\n| Břidlice na Akvamarínu | 5,0 : 1 | AA |\n\n### Nevhodné kombinace pro text\n- Akvamarín na bílé (2,1 : 1)\n- Opuka na bílé (2,1 : 1)\n- Serpentin na bílé (2,2 : 1)",
+    "typografie": "Dvě rodiny písma: **Carlito** pro nadpisy a **Open Sans** pro text. Obě jsou zdarma, volně šiřitelné a obsahují kompletní českou diakritiku. Písma jsou ke stažení níže, najdete je také na Google Fonts.\n\nPro kancelářské dokumenty bez nainstalovaných písem: **Calibri** místo Carlito, **Arial** místo Open Sans. Písmo **Candara Bold** je jen uvnitř loga (slovo ŽEHROVICKÉ) a pro texty se nepoužívá. Je to písmo Microsoftu a není volně šiřitelné.\n\n## Typografická škála\n| Úroveň | Písmo | Web | Tisk A4 |\n|---|---|---|---|\n| H1 | Carlito Bold | 48 / 52 px | 36 / 40 pt |\n| H2 | Carlito Bold | 34 / 40 px | 24 / 28 pt |\n| H3 | Carlito Bold | 24 / 30 px | 16 / 20 pt |\n| Nadtitulek | Open Sans SemiBold, verzálky, prostrkání 14 % | 13 px | 8 pt |\n| Perex | Open Sans Light | 20 / 32 px | 13 / 19 pt |\n| Text | Open Sans Regular | 16 / 26 px | 10 / 15 pt |\n| Popisek | Open Sans Regular | 13 / 20 px | 7,5 / 11 pt |\n\n## Zásady\n- Text zarovnávejte vlevo, na střed jen krátké titulky a citace.\n- Délka řádku 55–75 znaků, řádkování textu 1,5–1,6.\n- Verzálky jen pro krátké nadtitulky, vždy prostrkané.\n- Čísla a výměry s pevnou mezerou: 56,3 m², 2+kk, Q4 2027.\n\n## Nepoužívat\n- Další písmové rodiny, patková písma, ozdobná písma.\n- Kurzívu pro nadpisy a celé odstavce.\n- Podtržení jinde než u odkazů.\n- Carlito pro dlouhé texty, Open Sans pro hlavní nadpisy.",
+    "tisk": "## Společná pravidla pro všechny formáty\n- Vždy vizualizace, logo a web zehrovickebyty.cz.\n- Logo v ochranné zóně, nejčastěji vlevo nahoře nebo v panelu Břidlice.\n- Jedno hlavní sdělení a nejvýš tři fakta (počet bytů, lokalita, dokončení).\n- Akvamarín jen pro pásy, štítky a linky. Plochy jsou bílé, Vápenec nebo Břidlice.\n- Spadávka 3 mm u tisku, u velkoformátu podle tiskárny.\n\n## Vizitka\n90 × 50 mm. Líc bílý s hlavním logem, rub v Břidlici s diagonálními pásy. Jméno Carlito Bold 10 pt, kontakty Open Sans 7 pt.\n\n## Stavební plachta / billboard\nPoměr 3 : 1 (např. 510 × 170 cm). Panel v Břidlici s tmavou variantou loga, vpravo denní vizualizace. Pásy vybíhají z pravého dolního rohu panelu jako v logu. Rozlišení podkladu min. 100 dpi v měřítku 1 : 1.\n\n## Inzerát / leták A5 na výšku\nVečerní vizualizace s bílou jednobarevnou verzí loga na klidném místě oblohy, fakta v Carlito Bold.\n\n## Karta bytu\nKaždý z 22 bytů má vlastní kartu. Karty jsou součástí brožury pro registrované zájemce a stahují se z detailu bytu na webu. Všechny karty mají stejnou šablonu.\n\n| Část | Obsah |\n|---|---|\n| Formát | A4 na šířku (297 × 210 mm), PDF |\n| Levá část | Bílá. Nadpis „Karta bytu X.XX“, pod ním dispozice, plocha a podlaží. Pod linkou půdorys s plochami místností, dole právní poznámka 7 pt. |\n| Pravý panel | Břidlice, cca 25 % šířky. Čtvercové logo pro tmavý podklad, číslo bytu v Opuce, tabulka místností, orientační plánek podlaží s vyznačeným bytem v Akvamarínu, kontakty v Akvamarínu. |\n| Půdorys | Stěny v Břidlici, popisky místností Open Sans 9 pt, plochy v m² s horním indexem. |\n\n### Sjednocení s manuálem\n- Nadpisy „Karta bytu“ a „Byt X.XX“ přejdou z písma Raleway na **Carlito Bold**.\n- Texty a tabulka přejdou z Raleway na **Open Sans**.\n- Zápis dispozice a podlaží podle manuálu: „2+kk · 48,1 m² · 2 NP“.\n- Plochy v nadpisu, tabulce a půdorysu musí pocházet ze stejného podkladu a souhlasit s webem.",
+    "digital": "## Příspěvek na sociální sítě\n1080 × 1080 px. Vizualizace v horní části, text na Vápenci, štítek v Akvamarínu (např. PŘEDPRODEJ). Logo a web zehrovickebyty.cz dole.\n\n## Web: tlačítka a štítky stavu bytů\n- Hlavní tlačítko Břidlice s bílým textem, vedlejší obrysové, odkaz v Azuritu.\n- Zaoblení max. 2 px, logo je ostré a geometrické.\n- Stavy bytů: **Volný** = Jadeit na Serpentinu 20 %, **Rezervovaný** = Opuka 20 %, **Prodaný** = Břidlice.\n\n## Ikony\nLineární, tloušťka tahu 2 px při 40 px, ostré rohy (hranaté zakončení), barva Břidlice nebo Azurit. Doporučená sada: [Phosphor Icons](https://phosphoricons.com) (Regular) nebo [Tabler Icons](https://tabler.io/icons).\n\n## Formáty vizualizací\n16 : 9 (2500 × 1406 px) pro web, plachty a prezentace, 7 : 9 (1094 × 1406 px) pro sociální sítě a inzeráty na výšku. Pro velkoformát si vyžádejte zdrojová data od vizualizéra ve vyšším rozlišení.",
+    "pravidla": "## Grafické prvky\nDoplňkové prvky vycházejí přímo z geometrie loga: šestiúhelník, úhel 30° a dvojitá modrá linka. Používejte vždy jen jeden nebo dva najednou.\n\n- **Šestiúhelník:** svislá orientace (špička nahoře), stejně jako v logu. Jako obrysový rámeček pro fotografie a ikony, plný jako odrážka nebo ořez portrétu. Tloušťka obrysu ≈ 1/10 šířky tvaru.\n- **Diagonální pásy 30°:** dva rovnoběžné pásy v Akvamarínu stoupající pod úhlem 30°, mezera mezi nimi ≈ 1,5× tloušťka pásu. Vybíhají vždy ze spodního nebo pravého okraje formátu. Na obálky, plachty, vizitky, záhlaví webu.\n- **Linka s popiskem:** převzato z doplňku BYTY: krátký popisek v Open Sans Light, verzálky s prostrkáním 20 %, dvě linky v Akvamarínu. Pro oddělení kapitol v brožuře a na webu.\n- **Klíčová čísla:** číslo v Carlito Bold, popisek v Open Sans 12–13 px v barvě Břidlice 80 %. Vlevo svislá linka v Akvamarínu, 3 px. Např. 22 bytových jednotek · 3 nadzemní podlaží · 8 min do centra Kladna · Q4 2027 dokončení.\n\n## Fotografie a vizualizace\nObrazovou složku tvoří architektonické vizualizace domu a interiérů. Na všech bannerech, plachtách, inzerátech a příspěvcích se používá vždy vizualizace, nikdy ilustrace nebo fotobanka.\n\n| Motiv | Použití |\n|---|---|\n| Exteriér · den | Hlavní obraz projektu. Web, plachta, titul brožury. |\n| Detail · zeleň | Sociální sítě, výřezy 4 : 5. |\n| Exteriér · život | Rodiny, parkování, terasy. |\n| Exteriér · večer | Atmosféra, rozsvícená okna. |\n| Interiér · obývák | Dřevo, světlé textilie. |\n| Interiér · koupelna | Standardy provedení. |\n\n### Ano\n- Denní vizualizace jako hlavní obraz: modrá obloha a zeleň ladí s Akvamarínem a Serpentinem.\n- Večerní vizualizace s rozsvícenými okny pro atmosféru a jako doplněk, ne jako hlavní obraz kampaně.\n- Interiéry pro témata standardů, dispozic a karet bytů.\n- Text a logo přes vizualizaci jen na klidném místě (obloha) nebo na přechodu z Čediče (85 % → 0 %).\n- U každého použití drobný popisek „Vizualizace je ilustrativní.“\n\n### Ne\n- Filtry, přesycení, HDR, změna barevnosti vizualizace.\n- Plošné barevné překryvy v Akvamarínu nebo Serpentinu.\n- Logo přes rušnou část obrazu (fasáda, auta, lidé).\n- Ořez, který useká horní patro s vikýři. Dům má být vidět celý.\n\n> Zdrojové soubory vizualizací ve vysokém rozlišení drží developer KOSTKA Holding a vizualizér projektu."
+  },
+  "colors": [
+    {
+      "name": "Břidlice",
+      "hex": "#373F48",
+      "cmyk": "79 · 60 · 46 · 58",
+      "role": "Hlavní barva značky",
+      "usage": "Kresba loga, nadpisy, běžný text, tmavé plochy, hlavní tlačítka.",
+      "tints": true
+    },
+    {
+      "name": "Opuka",
+      "hex": "#B5B6A8",
+      "cmyk": "34 · 24 · 35 · 2",
+      "role": "Neutrální barva značky",
+      "usage": "Logo na tmavém podkladu, text a linky na Břidlici, jemné oddělovače, popisky.",
+      "tints": true
+    },
+    {
+      "name": "Akvamarín",
+      "hex": "#82B9D6",
+      "cmyk": "52 · 14 · 10 · 2",
+      "role": "Akcent · voda",
+      "usage": "Diagonální pásy, linky, štítky, zvýraznění na tmavých plochách. Ne pro text na bílé.",
+      "tints": true
+    },
+    {
+      "name": "Serpentin",
+      "hex": "#91B993",
+      "cmyk": "47 · 8 · 49 · 7",
+      "role": "Akcent · zeleň",
+      "usage": "Stromy v logu, příroda a lokalita, stav „volný byt“, drobné grafické akcenty. Střídmě.",
+      "tints": true
+    },
+    {
+      "name": "Vápenec",
+      "hex": "#F4F4EF",
+      "cmyk": "5 · 4 · 7 · 0",
+      "role": "Světlé pozadí",
+      "usage": "Světlé plochy a pozadí sekcí."
+    },
+    {
+      "name": "Čedič",
+      "hex": "#262C32",
+      "cmyk": "84 · 64 · 46 · 82",
+      "role": "Nejtmavší plocha",
+      "usage": "Nejtmavší plochy a přechod přes vizualizace. Celkové krytí 276 %, u digitálního tisku ověřte na nátisku."
+    },
+    {
+      "name": "Azurit",
+      "hex": "#3A7393",
+      "cmyk": "76 · 35 · 17 · 28",
+      "role": "Odkazy, ikony",
+      "usage": "Tmavší verze Akvamarínu pro text, odkazy a ikony na světlém podkladu."
+    },
+    {
+      "name": "Jadeit",
+      "hex": "#4C7650",
+      "cmyk": "72 · 29 · 77 · 29",
+      "role": "Text „volné“, úspěch",
+      "usage": "Tmavší verze Serpentinu pro text stavu „volný“ a potvrzení na světlém podkladu."
+    }
+  ],
+  "items": [
+    {
+      "section": "logo",
+      "slug": "logo-primarni",
+      "title": "Vodorovné · světlý podklad",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "description": "Hlavní varianta. Web (hlavička), dopisy, inzerce, plachty, vizitky. Kresba v Břidlici.",
+      "specs": "PNG 3200 × 1600 px",
+      "files": [
+        {
+          "path": "loga/logo-zehrovicke-byty-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-zehrovicke-byty-na-svetly-podklad.png",
+          "label": "PNG",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-negativ",
+      "title": "Vodorovné · tmavý podklad",
+      "required": true,
+      "preview_bg": "#373F48",
+      "description": "Inverzní varianta. Patička webu, tmavé plochy, fotografie se ztmaveným přechodem. Kresba v Opuce.",
+      "specs": "PNG 3200 × 1600 px",
+      "files": [
+        {
+          "path": "loga/logo-zehrovicke-byty-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-zehrovicke-byty-na-tmavy-podklad.png",
+          "label": "PNG",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-ctvercove",
+      "title": "Čtvercové · světlý podklad",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "description": "Sociální sítě, titulní strana brožury, roll-up, razítko, úzké a vysoké formáty.",
+      "specs": "PNG 3200 × 3200 px",
+      "files": [
+        {
+          "path": "loga/logo-zehrovicke-byty-ctvercove-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-zehrovicke-byty-ctvercove-na-svetly-podklad.png",
+          "label": "PNG",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-ctvercove-negativ",
+      "title": "Čtvercové · tmavý podklad",
+      "required": false,
+      "preview_bg": "#373F48",
+      "description": "Obálka brožury v Břidlici, profilové obrázky na tmavém pozadí, stavební plachta.",
+      "specs": "PNG 3200 × 3200 px",
+      "files": [
+        {
+          "path": "loga/logo-zehrovicke-byty-ctvercove-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-zehrovicke-byty-ctvercove-na-tmavy-podklad.png",
+          "label": "PNG",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol",
+      "title": "Symbol",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "description": "Šestiúhelník s domem. Samostatně jen tam, kde je značka už představená nebo kde není místo (ikona, favicon, profilová fotka).",
+      "specs": "PNG 1087 × 1215 px",
+      "files": [
+        {
+          "path": "loga/symbol-zehrovicke-byty.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-zehrovicke-byty.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne",
+      "title": "Jednobarevné · Břidlice",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "description": "Ražba, potisk textilu, fólie, jednobarevný inzerát.",
+      "specs": "Vodorovné, PNG 2285 × 782 px",
+      "files": [
+        {
+          "path": "loga/logo-zehrovicke-byty-jednobarevne-bridlice.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne-bile",
+      "title": "Jednobarevné · bílá",
+      "required": false,
+      "preview_bg": "#262C32",
+      "description": "Na tmavé podklady a přes vizualizace (na klidném místě nebo přechodu z Čediče).",
+      "specs": "PNG vodorovné 2285 × 782 px, SVG čtvercové",
+      "files": [
+        {
+          "path": "loga/logo-zehrovicke-byty-jednobarevne-bila.png",
+          "label": "PNG",
+          "preview": true
+        },
+        {
+          "path": "loga/logo-zehrovicke-byty-ctvercove-jednobarevne-bile.svg",
+          "label": "SVG čtvercové"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne-cerne",
+      "title": "Jednobarevné · černá",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "description": "Razítka, gravura, černobílý tisk, faxové a kopírované dokumenty.",
+      "specs": "PNG vodorovné 2285 × 782 px, SVG čtvercové",
+      "files": [
+        {
+          "path": "loga/logo-zehrovicke-byty-jednobarevne-cerna.png",
+          "label": "PNG",
+          "preview": true
+        },
+        {
+          "path": "loga/logo-zehrovicke-byty-ctvercove-jednobarevne-cerne.svg",
+          "label": "SVG čtvercové"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-nadpisy",
+      "title": "Písmo pro nadpisy",
+      "required": true,
+      "kind": "font",
+      "description": "Humanistické bezpatkové písmo, metricky shodné s Calibri. Používá se v řezu Bold pro nadpisy, mezititulky, čísla a výrazné údaje. Regular jen výjimečně pro podtitulky.",
+      "meta": {
+        "family": "Carlito",
+        "weights": "Bold 700, Regular 400",
+        "sample": "Žehrovické byty · 22 bytů · Q4 2027",
+        "google_url": "https://fonts.google.com/specimen/Carlito",
+        "license": "SIL Open Font License 1.1"
+      },
+      "files": [
+        {
+          "path": "pisma/Carlito-Bold.ttf",
+          "label": "TTF Bold"
+        },
+        {
+          "path": "pisma/Carlito-Regular.ttf",
+          "label": "TTF Regular"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-text",
+      "title": "Písmo pro text",
+      "required": true,
+      "kind": "font",
+      "description": "Dobře čitelné písmo na obrazovce i v tisku. Pro běžný text Regular, pro zvýraznění a tlačítka SemiBold nebo Bold, pro doplněk BYTY a velké perexy Light.",
+      "meta": {
+        "family": "Open Sans",
+        "weights": "Light 300, Regular 400, SemiBold 600, Bold 700",
+        "sample": "Klidné bydlení 8 minut od Kladna",
+        "google_url": "https://fonts.google.com/specimen/Open+Sans",
+        "license": "Volně šiřitelné (Apache 2.0, na Google Fonts SIL OFL 1.1)"
+      },
+      "files": [
+        {
+          "path": "pisma/OpenSans-Regular.ttf",
+          "label": "TTF Regular"
+        },
+        {
+          "path": "pisma/OpenSans-Light.ttf",
+          "label": "TTF Light"
+        },
+        {
+          "path": "pisma/OpenSans-SemiBold.ttf",
+          "label": "TTF SemiBold"
+        },
+        {
+          "path": "pisma/OpenSans-Bold.ttf",
+          "label": "TTF Bold"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "pravidla-pouziti",
+      "title": "Brand manuál (PDF)",
+      "required": false,
+      "preview_bg": "#F2EFE9",
+      "description": "Kompletní pravidla vizuální identity, verze 1.0 (říjen 2026). Určeno pro grafiky, tiskárny, správce webu a sociálních sítí.",
+      "specs": "A4 na šířku · 26 stran",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "manual/zehrovicke-byty-brand-manual.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "manual/nahled-01.png",
+          "role": "preview"
+        }
+      ]
+    }
+  ],
+  "prune_empty": true
+}
