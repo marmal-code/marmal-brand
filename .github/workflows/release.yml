@@ -1,0 +1,57 @@
+# Automatické vydání: když se na main změní public/VERSION, vznikne GitHub Release vX.Y.Z
+# s poznámkami z CHANGELOG.md a přiloženým balíčkem pro FTP. Aplikace si ho pak najde v Nastavení → Aktualizace.
+name: Vydání verze
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/VERSION'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Zjistit verzi
+        id: v
+        run: echo "version=$(tr -d '[:space:]' < public/VERSION)" >> "$GITHUB_OUTPUT"
+
+      - name: Kontrola PHP syntaxe
+        run: find public -name '*.php' -print0 | xargs -0 -n1 php -l > /dev/null
+
+      - name: Existuje už vydání?
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.v.outputs.version }}" > /dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Poznámky z CHANGELOG.md
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          awk -v v="${{ steps.v.outputs.version }}" 'index($0, "## " v " ") == 1 || $0 == "## " v { f = 1; next } /^## / && f { exit } f' CHANGELOG.md > notes.md
+          [ -s notes.md ] || echo "Verze ${{ steps.v.outputs.version }}" > notes.md
+          cat notes.md
+
+      - name: Balíček pro FTP
+        if: steps.check.outputs.exists == 'false'
+        run: ./scripts/build-package.sh
+
+      - name: Vytvořit vydání
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V="${{ steps.v.outputs.version }}"
+          gh release create "v$V" "dist/marmal-brand-$V.zip" --target "$GITHUB_SHA" --title "$V" --notes-file notes.md

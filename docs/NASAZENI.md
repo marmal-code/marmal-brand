@@ -67,9 +67,8 @@ a vaše vlastní soubory mimo spravované složky (např. ověřovací soubor pr
    Migrace se nikdy neupravují zpětně, vždy se přidává nová.
 2. Zvýšit číslo v `public/VERSION` a zapsat změny do `CHANGELOG.md`.
 3. Commit, push do `main`.
-4. Vytvořit GitHub Release s tagem `vX.Y.Z` (stejné číslo jako ve `VERSION`) a popisem změn.
-   Popis se zobrazí v aplikaci před aktualizací.
-5. Volitelně přiložit balíček z `scripts/build-package.sh` pro ruční instalaci.
+4. GitHub Action **Vydání verze** sám vytvoří Release `vX.Y.Z` s popisem z `CHANGELOG.md`
+   a přiloží balíček pro ruční instalaci. Popis se zobrazí v aplikaci před aktualizací.
 
 ## Vlastní doména klienta
 
