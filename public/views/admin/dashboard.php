@@ -11,6 +11,7 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
         <input type="search" name="q" value="<?= e($q) ?>" placeholder="Hledat klienta" style="border:0; outline:0; font: inherit; width: 180px; background: transparent">
       </label>
     </form>
+    <a class="btn btn-ghost" href="/admin/import"><?= icon('upload', 18) ?>Importovat</a>
     <a class="btn btn-primary" href="/admin/brands/new"><?= icon('plus', 18) ?>Nový klient</a>
   </div>
 </div>

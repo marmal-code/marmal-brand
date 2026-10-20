@@ -7,6 +7,7 @@ pro tisk a digitál, vždy v aktuální verzi. Administrátor nahrává soubory 
 - Nahrávání velkých souborů po částech (funguje i s limitem 16 MB)
 - Trvalé odkazy na soubory: `/b/{klient}/f/{pozice}.{přípona}` vrací vždy aktuální verzi
 - Historie verzí, ZIP ke stažení, sdílený odkaz bez hesla, vlastní doména klienta (CNAME)
+- Import a export klienta jako ZIP (`docs/IMPORT.md`), texty sekcí, tisková verze manuálu do PDF
 - **Aktualizace z aplikace**: Nastavení → Aktualizace a zálohy. Stáhne nejnovější GitHub Release, zálohuje, vymění kód, spustí migrace a při chybě vše vrátí.
 
 ## Struktura

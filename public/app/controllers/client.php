@@ -62,10 +62,23 @@ function client_vars(array $brand, string $access): array
         'SELECT COUNT(*) AS n, COALESCE(SUM(f.size), 0) AS size FROM item_files f JOIN items i ON i.current_version_id = f.version_id WHERE i.brand_id = ? AND f.role = ?',
         [$brand['id'], 'download']
     );
+    $texts = section_texts((int) $brand['id']);
+    // Nahraný PDF manuál: první PDF v sekci Pravidla použití
+    $manualPdf = null;
+    foreach (brand_items((int) $brand['id'], 'pravidla', true) as $it) {
+        foreach ($it['files'] as $f) {
+            if (file_ext($f['stored_name']) === 'pdf') {
+                $manualPdf = $f;
+                break 2;
+            }
+        }
+    }
     return [
+        'manualPdf' => $manualPdf,
         'brand' => $brand,
         'access' => $access,
         'counts' => $counts,
+        'texts' => $texts,
         'totals' => $totals,
         'symbol' => brand_symbol((int) $brand['id']),
         'admin' => current_admin(),
@@ -179,4 +192,25 @@ function client_zip(string $slug, ?string $section = null): void
         log_activity((int) $brand['id'], $access, 'zip', $section ? 'ZIP sekce ' . SECTIONS[$section]['title'] : 'Celý brand manuál (ZIP)');
     }
     send_brand_zip($brand, $section);
+}
+
+/** Tisková verze celého manuálu – prohlížeč ji uloží jako PDF. */
+function client_print(string $slug): void
+{
+    $brand = load_client_brand($slug);
+    $access = client_guard($brand);
+    if ($access !== 'admin') {
+        log_activity((int) $brand['id'], $access, 'print', 'Tisková verze manuálu (PDF)');
+    }
+    $items = brand_items((int) $brand['id'], null, true);
+    $bySection = [];
+    foreach ($items as $it) {
+        $bySection[$it['section']][] = $it;
+    }
+    echo view('client/print', client_vars($brand, $access) + [
+        'title' => $brand['name'] . ' – brand manuál',
+        'bySection' => $bySection,
+        'colors' => brand_colors((int) $brand['id']),
+    ]);
+    exit;
 }

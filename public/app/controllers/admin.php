@@ -213,6 +213,7 @@ function admin_brand_section(string $id, string $section): void
         'brand' => $brand,
         'section' => $section,
         'stats' => brand_section_stats((int) $brand['id']),
+        'sectionText' => section_texts((int) $brand['id'])[$section] ?? '',
     ];
     if ($section === 'barvy') {
         $vars['colors'] = brand_colors((int) $brand['id']);
@@ -326,6 +327,8 @@ function admin_colors_save(string $id): void
             'cmyk' => trim((string) ($r['cmyk'] ?? '')),
             'pantone' => trim((string) ($r['pantone'] ?? '')),
             'role' => trim((string) ($r['role'] ?? '')),
+            'usage' => trim((string) ($r['usage'] ?? '')),
+            'tints' => !empty($r['tints']) ? 1 : 0,
             'sort' => (int) ($r['sort'] ?? ($i * 10)),
         ];
     }
@@ -340,8 +343,8 @@ function admin_colors_save(string $id): void
     db_exec('DELETE FROM colors WHERE brand_id = ?', [$brand['id']]);
     foreach ($clean as $n => $c) {
         db_exec(
-            'INSERT INTO colors (brand_id, name, hex, cmyk, pantone, role, sort) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            [$brand['id'], mb_substr($c['name'], 0, 80), $c['hex'], mb_substr($c['cmyk'], 0, 40) ?: null, mb_substr($c['pantone'], 0, 40) ?: null, mb_substr($c['role'], 0, 60) ?: null, ($n + 1) * 10]
+            'INSERT INTO colors (brand_id, name, hex, cmyk, pantone, role, usage_note, tints, sort) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            [$brand['id'], mb_substr($c['name'], 0, 80), $c['hex'], mb_substr($c['cmyk'], 0, 40) ?: null, mb_substr($c['pantone'], 0, 40) ?: null, mb_substr($c['role'], 0, 60) ?: null, mb_substr($c['usage'], 0, 255) ?: null, $c['tints'], ($n + 1) * 10]
         );
     }
     db()->commit();
@@ -548,4 +551,75 @@ function admin_file_get(string $id): void
     require_admin();
     $f = db_one('SELECT * FROM item_files WHERE id = ?', [(int) $id]) ?? abort(404);
     stream_file(stored_file_path($f), $f['original_name'], !empty($_GET['inline']), (string) $f['mime']);
+}
+
+/* ================= Texty sekcí ================= */
+
+function admin_section_text_save(string $id, string $section): void
+{
+    require_admin();
+    $brand = load_brand_or_404($id);
+    if (!isset(SECTIONS[$section])) {
+        abort(404);
+    }
+    save_section_text((int) $brand['id'], $section, (string) ($_POST['body'] ?? ''));
+    touch_brand((int) $brand['id']);
+    flash('success', 'Text sekce ' . SECTIONS[$section]['title'] . ' je uložený.');
+    redirect('/admin/brands/' . $brand['id'] . '/s/' . $section);
+}
+
+/** Označí soubor ke stažení jako náhled položky (např. PNG místo SVG s nepřevedeným písmem). */
+function admin_file_preview(string $id): void
+{
+    require_admin();
+    $f = db_one('SELECT * FROM item_files WHERE id = ?', [(int) $id]) ?? abort(404);
+    $v = db_one('SELECT * FROM item_versions WHERE id = ?', [$f['version_id']]);
+    $on = empty($f['is_preview']);
+    db_exec('UPDATE item_files SET is_preview = 0 WHERE version_id = ?', [$f['version_id']]);
+    if ($on) {
+        db_exec('UPDATE item_files SET is_preview = 1 WHERE id = ?', [$f['id']]);
+    }
+    flash('success', $on ? 'Soubor ' . $f['original_name'] . ' se teď používá jako náhled.' : 'Náhled se zase vybírá automaticky.');
+    redirect('/admin/items/' . $v['item_id']);
+}
+
+/* ================= Import a export ================= */
+
+function admin_import_form(): void
+{
+    require_admin();
+    render('admin/import', ['title' => 'Import klienta', 'nav' => 'clients']);
+}
+
+function admin_import_run(): void
+{
+    require_admin();
+    $data = json_decode((string) file_get_contents('php://input'), true);
+    $file = $data['files'][0] ?? null;
+    try {
+        if (!$file || file_ext((string) ($file['name'] ?? '')) !== 'zip') {
+            throw new RuntimeException('Vyberte importní balíček ve formátu ZIP.');
+        }
+        $path = chunk_path((string) ($file['upload_id'] ?? ''));
+        if (!is_file($path)) {
+            throw new RuntimeException('Soubor se nenahrál celý, zkuste to znovu.');
+        }
+        try {
+            $r = import_brand_package($path);
+        } finally {
+            @unlink($path);
+        }
+        $s = $r['stats'];
+        flash('success', sprintf('Klient je naimportovaný: %d pozic, %d souborů, %d barev, %d textů. Heslo pro klienta: %s', $s['items'], $s['files'], $s['colors'], $s['texts'], $r['password']));
+        json_response(['ok' => true, 'redirect' => '/admin/brands/' . $r['brand_id'] . '/s/logo']);
+    } catch (Throwable $e) {
+        json_response(['ok' => false, 'error' => $e->getMessage()], 400);
+    }
+}
+
+function admin_brand_export(string $id): void
+{
+    require_admin();
+    $brand = load_brand_or_404($id);
+    send_brand_export($brand);
 }

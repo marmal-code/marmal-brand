@@ -54,6 +54,7 @@ function client_color_card(array $c): string
           <dt>CMYK</dt><dd><?= e($cmyk) ?><?= $c['cmyk'] ? '' : ' <span class="tiny muted">(orientačně)</span>' ?></dd>
           <?php if ($c['pantone']): ?><dt>Pantone</dt><dd><?= e($c['pantone']) ?></dd><?php endif; ?>
         </dl>
+        <?php if (!empty($c['usage_note'])): ?><p class="small" style="border-top: 1px solid var(--border); padding-top: 8px"><?= e($c['usage_note']) ?></p><?php endif; ?>
         <div class="row" style="gap: 8px">
           <button type="button" class="btn btn-ghost btn-sm" data-copy="<?= e($c['hex']) ?>">Kopírovat HEX</button>
           <button type="button" class="btn btn-ghost btn-sm" data-copy="<?= e($rgb) ?>">RGB</button>

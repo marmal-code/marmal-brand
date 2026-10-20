@@ -1,0 +1,65 @@
+/* Tisková verze brand manuálu (A4 na výšku) */
+@page { size: A4 portrait; margin: 14mm 14mm 16mm; }
+
+.print-body { background: var(--bg-muted); }
+.print-body * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.print-toolbar { position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 24px; background: var(--bg-surface); border-bottom: 1px solid var(--border); }
+
+.sheet { width: 210mm; min-height: 297mm; margin: 24px auto; padding: 18mm 16mm; background: #fff; box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 18px; break-before: page; page-break-before: always; }
+.sheet:first-of-type { break-before: auto; page-break-before: auto; }
+.sheet-head { display: flex; align-items: baseline; gap: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--ink); }
+.sheet-num { font-family: var(--font-display); font-weight: 700; font-size: 28px; color: var(--ink-muted); }
+.sheet-head h2 { font-size: 30px; }
+
+.cover { justify-content: space-between; padding: 26mm 20mm; }
+.cover-logo { min-height: 70mm; display: flex; align-items: center; }
+.cover-logo img { max-width: 120mm; max-height: 70mm; object-fit: contain; }
+.cover-name { font-family: var(--font-display); font-weight: 700; font-size: 44px; }
+.cover h1 { font-size: 52px; }
+.cover-sub { font-size: 22px; font-weight: 300; }
+.toc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; font-size: 15px; }
+.toc span { font-weight: 500; margin-right: 6px; }
+
+.p-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.p-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; break-inside: avoid; }
+.p-preview { height: 42mm; display: flex; align-items: center; justify-content: center; padding: 6mm; border-bottom: 1px solid var(--border); }
+.p-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.p-body { padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+
+.p-colors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.p-color { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; break-inside: avoid; display: flex; flex-direction: column; gap: 8px; padding-bottom: 10px; }
+.p-color .color-meta, .p-color p { padding: 0 12px; }
+.p-swatch { height: 26mm; padding: 10px 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; font-size: 16px; }
+.p-swatch span { font-size: 12px; opacity: .85; }
+.p-h3 { font-size: 18px; margin-top: 6px; }
+
+.p-fonts { display: flex; flex-direction: column; gap: 14px; }
+.p-font { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; break-inside: avoid; }
+.p-font-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+
+.p-list { display: flex; flex-direction: column; gap: 10px; }
+.p-row { display: grid; grid-template-columns: 46mm 1fr; gap: 14px; align-items: center; border: 1px solid var(--border); border-radius: 10px; padding: 10px; break-inside: avoid; }
+.p-thumb { height: 32mm; border-radius: 6px; background: var(--bg-muted); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.p-thumb img { max-width: 92%; max-height: 92%; object-fit: contain; }
+
+.p-prose { font-size: 13px; line-height: 1.55; gap: 10px; }
+.p-prose h3 { font-size: 17px; margin-top: 6px; }
+.p-prose h4 { font-size: 14px; }
+.p-prose .md-table .table { font-size: 12px; }
+.p-prose .md-table .table td, .p-prose .md-table .table th { padding: 6px 10px; }
+.p-prose ul, .p-prose ol, .p-prose p { max-width: none; }
+.p-prose h3, .p-prose h4 { break-after: avoid; }
+.p-prose .md-table, .p-prose .md-note { break-inside: avoid; }
+.p-end { justify-content: center; align-items: flex-start; }
+.p-url { font-family: var(--font-display); font-weight: 700; font-size: 22px; }
+
+@media print {
+  .no-print { display: none !important; }
+  .print-body { background: #fff; }
+  .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+  .cover { min-height: 265mm; padding: 16mm; border-radius: 0; }
+}
+@media screen and (max-width: 860px) {
+  .sheet { width: auto; margin: 12px; padding: 24px 18px; min-height: 0; }
+  .p-grid, .p-colors { grid-template-columns: 1fr; }
+}

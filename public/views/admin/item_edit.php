@@ -56,7 +56,10 @@ $m = $item['meta'];
             <?php foreach ($v['files'] as $f): ?>
               <li class="row" style="gap: 8px">
                 <a href="/admin/files/<?= (int) $f['id'] ?>" class="break"><?= e($f['original_name']) ?></a>
-                <span class="tiny muted"><?= e($f['label']) ?><?= $f['role'] === 'preview' ? ' · náhled' : '' ?> · <?= human_size((int) $f['size']) ?></span>
+                <span class="tiny muted"><?= e($f['label']) ?><?= $f['role'] === 'preview' ? ' · jen náhled' : '' ?><?= !empty($f['is_preview']) ? ' · <b>náhled</b>' : '' ?> · <?= human_size((int) $f['size']) ?></span>
+                <?php if ($f['role'] === 'download' && in_array(file_ext($f['stored_name']), IMAGE_EXT, true)): ?>
+                  <form method="post" action="/admin/files/<?= (int) $f['id'] ?>/preview" class="inline"><?= csrf_field() ?><button class="link-btn tiny"><?= !empty($f['is_preview']) ? 'zrušit náhled' : 'použít jako náhled' ?></button></form>
+                <?php endif; ?>
                 <form method="post" action="/admin/files/<?= (int) $f['id'] ?>/delete" class="inline" data-confirm="Smazat soubor <?= e($f['original_name']) ?>?"><?= csrf_field() ?><button class="link-btn danger tiny">smazat</button></form>
               </li>
             <?php endforeach; ?>

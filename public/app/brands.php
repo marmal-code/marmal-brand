@@ -107,8 +107,14 @@ function file_ext(string $name): string
 
 function pick_preview(array $files): ?array
 {
+    // 1) soubor nahraný jen jako náhled, 2) soubor ke stažení označený jako náhled, 3) první obrázek
     foreach ($files as $f) {
         if ($f['role'] === 'preview' && in_array(file_ext($f['stored_name']), IMAGE_EXT, true)) {
+            return $f;
+        }
+    }
+    foreach ($files as $f) {
+        if (!empty($f['is_preview']) && in_array(file_ext($f['stored_name']), IMAGE_EXT, true)) {
             return $f;
         }
     }
@@ -231,4 +237,49 @@ function touch_brand(int $brandId): void
 function new_share_token(): string
 {
     return bin2hex(random_bytes(12));
+}
+
+/* ---------- Texty sekcí ---------- */
+
+function section_texts(int $brandId): array
+{
+    $out = [];
+    foreach (db_all('SELECT section, body FROM section_texts WHERE brand_id = ?', [$brandId]) as $r) {
+        if (trim((string) $r['body']) !== '') {
+            $out[$r['section']] = (string) $r['body'];
+        }
+    }
+    return $out;
+}
+
+function save_section_text(int $brandId, string $section, string $body): void
+{
+    $body = trim(str_replace(["\r\n", "\r"], "\n", $body));
+    if ($body === '') {
+        db_exec('DELETE FROM section_texts WHERE brand_id = ? AND section = ?', [$brandId, $section]);
+        return;
+    }
+    db_exec(
+        'INSERT INTO section_texts (brand_id, section, body, updated_at) VALUES (?, ?, ?, NOW())
+         ON DUPLICATE KEY UPDATE body = VALUES(body), updated_at = NOW()',
+        [$brandId, $section, $body]
+    );
+}
+
+/* ---------- Odstíny barev (tóny s bílou) ---------- */
+
+/** Vrací [[procento, HEX], …] pro 100, 80, 60, 40, 20 a 10 % plné barvy. */
+function color_tints(string $hex): array
+{
+    $rgb = hex_to_rgb($hex);
+    if ($rgb === '') {
+        return [];
+    }
+    [$r, $g, $b] = array_map('intval', explode(' ', $rgb));
+    $out = [];
+    foreach ([100, 80, 60, 40, 20, 10] as $p) {
+        $mix = fn (int $c) => (int) round($c * $p / 100 + 255 * (100 - $p) / 100);
+        $out[] = [$p, sprintf('#%02X%02X%02X', $mix($r), $mix($g), $mix($b))];
+    }
+    return $out;
 }

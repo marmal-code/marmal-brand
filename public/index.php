@@ -76,6 +76,11 @@ $routes = [
     ['POST', '#^/admin/versions/(\d+)/delete$#', 'admin_version_delete'],
     ['POST', '#^/admin/files/(\d+)/delete$#', 'admin_file_delete'],
     ['GET',  '#^/admin/files/(\d+)$#', 'admin_file_get'],
+    ['POST', '#^/admin/files/(\d+)/preview$#', 'admin_file_preview'],
+    ['POST', '#^/admin/brands/(\d+)/s/([a-z]+)/text$#', 'admin_section_text_save'],
+    ['GET',  '#^/admin/brands/(\d+)/export$#', 'admin_brand_export'],
+    ['GET',  '#^/admin/import$#', 'admin_import_form'],
+    ['POST', '#^/admin/import$#', 'admin_import_run'],
     ['POST', '#^/admin/upload-chunk$#', 'admin_upload_chunk'],
 
     // nastavení
@@ -99,6 +104,7 @@ $routes = [
     ['GET',  '#^/b/([a-z0-9-]+)/s/([a-z]+)$#', 'client_section'],
     ['GET',  '#^/b/([a-z0-9-]+)/file/(\d+)$#', 'client_file'],
     ['GET',  '#^/b/([a-z0-9-]+)/f/([a-z0-9-]+)\.([a-z0-9]+)$#', 'client_permalink'],
+    ['GET',  '#^/b/([a-z0-9-]+)/manual$#', 'client_print'],
     ['GET',  '#^/b/([a-z0-9-]+)/zip$#', 'client_zip'],
     ['GET',  '#^/b/([a-z0-9-]+)/zip/([a-z]+)$#', 'client_zip'],
 ];

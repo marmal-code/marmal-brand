@@ -27,6 +27,8 @@ require __DIR__ . '/helpers.php';
 require __DIR__ . '/db.php';
 require __DIR__ . '/auth.php';
 require __DIR__ . '/brands.php';
+require __DIR__ . '/markdown.php';
+require __DIR__ . '/importer.php';
 require __DIR__ . '/files.php';
 require __DIR__ . '/migrator.php';
 require __DIR__ . '/backup.php';

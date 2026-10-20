@@ -155,8 +155,8 @@ function commit_uploads(array $item, array $uploads, string $mode, string $note)
         $role = ($u['role'] ?? '') === 'preview' ? 'preview' : 'download';
         $label = trim((string) ($u['label'] ?? '')) ?: strtoupper($ext === 'jpeg' ? 'jpg' : $ext);
         db_exec(
-            'INSERT INTO item_files (version_id, label, original_name, stored_name, size, mime, role, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())',
-            [$versionId, mb_substr($label, 0, 40), mb_substr(basename((string) $u['name']), 0, 255), $stored, (int) filesize($dir . '/' . $stored), (string) $finfo->file($dir . '/' . $stored), $role]
+            'INSERT INTO item_files (version_id, label, original_name, stored_name, size, mime, role, is_preview, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())',
+            [$versionId, mb_substr($label, 0, 40), mb_substr(basename((string) $u['name']), 0, 255), $stored, (int) filesize($dir . '/' . $stored), (string) $finfo->file($dir . '/' . $stored), $role, !empty($u['is_preview']) ? 1 : 0]
         );
     }
 

@@ -111,6 +111,7 @@ $shareUrl = !$isNew && $b['share_token'] ? brand_public_url($b, '?s=' . $b['shar
     <div class="row">
       <form method="post" action="/admin/brands/<?= (int) $b['id'] ?>/share" class="inline" data-confirm="Starý sdílený odkaz přestane fungovat. Pokračovat?"><?= csrf_field() ?><button class="btn btn-ghost"><?= icon('refresh', 18) ?>Vytvořit nový sdílený odkaz</button></form>
       <form method="post" action="/admin/brands/<?= (int) $b['id'] ?>/sync" class="inline"><?= csrf_field() ?><input type="hidden" name="back" value="/admin/brands/<?= (int) $b['id'] ?>/settings"><button class="btn btn-ghost"><?= icon('grid', 18) ?>Doplnit chybějící pozice ze šablony</button></form>
+      <a class="btn btn-ghost" href="/admin/brands/<?= (int) $b['id'] ?>/export"><?= icon('download', 18) ?>Exportovat brand (ZIP)</a>
     </div>
   </section>
   <section class="card card-pad stack" style="border-color: var(--error-soft)">

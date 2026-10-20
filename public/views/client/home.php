@@ -38,7 +38,10 @@ $hasAny = $bySection || $colors;
   <section class="stack-lg" id="logo">
     <div class="row-between">
       <h2>Logo</h2>
-      <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/zip/logo')) ?>">Stáhnout všechna loga (ZIP)</a>
+      <span class="row" style="gap: 16px">
+        <?php if (isset($texts['logo'])): ?><a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/s/logo')) ?>">Pravidla pro logo</a><?php endif; ?>
+        <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/zip/logo')) ?>">Stáhnout všechna loga (ZIP)</a>
+      </span>
     </div>
     <div class="grid-cards">
       <?php foreach ($bySection['logo'] as $it): ?><?= client_asset_card($brand, $it) ?><?php endforeach; ?>
@@ -50,7 +53,10 @@ $hasAny = $bySection || $colors;
   <section class="stack-lg" id="barvy">
     <div class="row-between">
       <h2>Barvy</h2>
-      <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/zip/barvy')) ?>">Stáhnout hodnoty (TXT, CSS)</a>
+      <span class="row" style="gap: 16px">
+        <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/s/barvy')) ?>">Odstíny a pravidla</a>
+        <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/zip/barvy')) ?>">Stáhnout hodnoty (TXT, CSS)</a>
+      </span>
     </div>
     <div class="grid-colors">
       <?php foreach ($colors as $c): ?><?= client_color_card($c) ?><?php endforeach; ?>
@@ -60,7 +66,10 @@ $hasAny = $bySection || $colors;
 
 <?php if (!empty($bySection['typografie'])): ?>
   <section class="stack-lg" id="typografie">
-    <h2>Typografie</h2>
+    <div class="row-between">
+      <h2>Typografie</h2>
+      <?php if (isset($texts['typografie'])): ?><a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/s/typografie')) ?>">Typografická škála a zásady</a><?php endif; ?>
+    </div>
     <div class="grid-fonts">
       <?php foreach ($bySection['typografie'] as $it): ?><?= client_font_card($brand, $it) ?><?php endforeach; ?>
     </div>
@@ -68,19 +77,19 @@ $hasAny = $bySection || $colors;
 <?php endif; ?>
 
 <?php
-$tileItems = array_filter($tiles, fn ($k) => !empty($bySection[$k]));
+$tileItems = array_filter($tiles, fn ($k) => !empty($bySection[$k]) || isset($texts[$k]));
 if ($tileItems): ?>
   <section class="stack-lg">
     <h2>Podklady podle použití</h2>
     <div class="grid-cards">
       <?php foreach ($tileItems as $k):
-          $names = array_map(fn ($i) => $i['title'], array_slice($bySection[$k], 0, 5));
-          $n = count($bySection[$k]);
+          $names = array_map(fn ($i) => $i['title'], array_slice($bySection[$k] ?? [], 0, 5));
+          $n = count($bySection[$k] ?? []);
       ?>
         <a class="tile" href="<?= e(brand_url($brand, '/s/' . $k)) ?>">
           <?= icon(SECTIONS[$k]['icon'], 28) ?>
           <span class="tile-title"><?= e(SECTIONS[$k]['title']) ?></span>
-          <span class="small muted"><?= e(implode(', ', $names)) ?><?= $n > 5 ? '…' : '' ?> · <?= $n ?> <?= $n === 1 ? 'položka' : ($n < 5 ? 'položky' : 'položek') ?></span>
+          <span class="small muted"><?php if ($n): ?><?= e(implode(', ', $names)) ?><?= $n > 5 ? '…' : '' ?> · <?= $n ?> <?= $n === 1 ? 'položka' : ($n < 5 ? 'položky' : 'položek') ?><?php else: ?><?= e(SECTIONS[$k]['lead']) ?><?php endif; ?></span>
         </a>
       <?php endforeach; ?>
     </div>

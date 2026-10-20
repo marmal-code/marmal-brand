@@ -2,7 +2,7 @@
 $current = $current ?? 'home';
 $navItems = [];
 foreach (SECTIONS as $key => $s) {
-    if (($counts[$key] ?? 0) > 0) {
+    if (($counts[$key] ?? 0) > 0 || isset($texts[$key])) {
         $navItems[$key] = $s;
     }
 }
@@ -42,6 +42,10 @@ $updated = cz_date($brand['updated_at']);
       </span>
     </a>
     <div class="row">
+      <?php if ($manualPdf): ?>
+        <a class="btn btn-ghost" href="<?= e(brand_url($brand, '/file/' . (int) $manualPdf['id'])) ?>"><?= icon('file', 18) ?>Manuál PDF</a>
+      <?php endif; ?>
+      <a class="btn btn-ghost" href="<?= e(brand_url($brand, '/manual')) ?>" target="_blank" rel="noopener"><?= icon('printer', 18) ?><?= $manualPdf ? 'Tisková verze' : 'Stáhnout jako PDF' ?></a>
       <?php if ((int) $totals['n'] > 0): ?>
         <span class="small muted"><?= (int) $totals['n'] ?> <?= (int) $totals['n'] === 1 ? 'soubor' : ((int) $totals['n'] < 5 ? 'soubory' : 'souborů') ?> · <?= human_size((int) $totals['size']) ?></span>
         <a class="btn btn-primary" href="<?= e(brand_url($brand, '/zip')) ?>"><?= icon('download', 18) ?>Stáhnout vše (ZIP)</a>
@@ -54,7 +58,7 @@ $updated = cz_date($brand['updated_at']);
     <a class="nav-link<?= $current === 'home' ? ' active' : '' ?>" href="<?= e(brand_url($brand)) ?>"<?= $current === 'home' ? ' aria-current="page"' : '' ?>><span>Přehled</span></a>
     <?php foreach ($navItems as $key => $s): ?>
       <a class="nav-link<?= $current === $key ? ' active' : '' ?>" href="<?= e(brand_url($brand, '/s/' . $key)) ?>"<?= $current === $key ? ' aria-current="page"' : '' ?>>
-        <span><?= e($s['title']) ?></span><span class="badge-count"><?= (int) $counts[$key] ?></span>
+        <span><?= e($s['title']) ?></span><?php if (($counts[$key] ?? 0) > 0): ?><span class="badge-count"><?= (int) $counts[$key] ?></span><?php endif; ?>
       </a>
     <?php endforeach; ?>
     <?php if ($brand['contact_name'] || $brand['contact_note']): ?>

@@ -4,20 +4,35 @@ require APP_ROOT . '/views/admin/_brand_header.php';
 $bid = (int) $brand['id'];
 ?>
 
+<details class="card card-pad stack" id="text">
+  <summary class="row-between" style="cursor: pointer; list-style: none">
+    <span class="row" style="gap: 10px"><?= icon('file', 20, ' style="color: var(--blue-700)"') ?><b>Text sekce pro klienta</b>
+      <span class="tag <?= $sectionText !== '' ? 'tag-ok' : 'tag-plain' ?>"><?= $sectionText !== '' ? 'vyplněno' : 'prázdné' ?></span></span>
+    <span class="small muted">Pravidla a vysvětlení, která klient uvidí nad soubory · rozbalit</span>
+  </summary>
+  <form method="post" action="/admin/brands/<?= $bid ?>/s/<?= e($section) ?>/text" class="stack" style="margin-top: 16px">
+    <?= csrf_field() ?>
+    <label class="sr-only" for="section-text">Text sekce</label>
+    <textarea class="textarea mono" id="section-text" name="body" rows="14" style="font-size: 14px"><?= e($sectionText) ?></textarea>
+    <p class="hint">Formátování: <code>## Nadpis</code>, <code>- odrážka</code>, <code>**tučně**</code>, <code>&gt; zvýrazněná poznámka</code>, tabulka <code>| a | b |</code>, barevný čtvereček <code>{#373F48}</code>, odkaz <code>[text](https://…)</code>.</p>
+    <div class="row"><button class="btn btn-secondary">Uložit text</button></div>
+  </form>
+</details>
+
 <?php if ($section === 'barvy'): ?>
   <section class="stack">
     <div class="row-between">
       <h2 style="font-size: 24px">Barvy</h2>
-      <span class="small muted">RGB se dopočítá z HEX. CMYK a Pantone doplňte z podkladů pro tisk.</span>
+      <span class="small muted">RGB se dopočítá z HEX. CMYK a Pantone doplňte z podkladů pro tisk. „Odstíny“ zobrazí klientovi tóny 80–10 %.</span>
     </div>
     <form method="post" action="/admin/brands/<?= $bid ?>/colors" class="stack">
       <?= csrf_field() ?>
       <div class="card table-wrap">
-        <table class="table" style="min-width: 820px">
-          <thead><tr><th scope="col">Barva</th><th scope="col">Název</th><th scope="col">HEX</th><th scope="col">CMYK</th><th scope="col">Pantone</th><th scope="col">Role</th><th scope="col">Pořadí</th><th scope="col">Smazat</th></tr></thead>
+        <table class="table" style="min-width: 1100px">
+          <thead><tr><th scope="col">Barva</th><th scope="col">Název</th><th scope="col">HEX</th><th scope="col">CMYK</th><th scope="col">Pantone</th><th scope="col">Role</th><th scope="col">Použití</th><th scope="col">Odstíny</th><th scope="col">Pořadí</th><th scope="col">Smazat</th></tr></thead>
           <tbody data-colors-body>
           <?php
-          $rows = $colors ?: [['id' => 'n0', 'name' => '', 'hex' => '', 'cmyk' => '', 'pantone' => '', 'role' => 'Hlavní', 'sort' => 10]];
+          $rows = $colors ?: [['id' => 'n0', 'name' => '', 'hex' => '', 'cmyk' => '', 'pantone' => '', 'role' => 'Hlavní', 'usage_note' => '', 'tints' => 0, 'sort' => 10]];
           foreach ($rows as $n => $c):
               $k = 'c' . $n;
           ?>
@@ -33,6 +48,8 @@ $bid = (int) $brand['id'];
               <td><label class="sr-only" for="<?= $k ?>-cmyk">CMYK</label><input class="input input-sm" id="<?= $k ?>-cmyk" name="colors[<?= $k ?>][cmyk]" value="<?= e($c['cmyk']) ?>" style="width: 120px" placeholder="0 42 64 58"></td>
               <td><label class="sr-only" for="<?= $k ?>-pms">Pantone</label><input class="input input-sm" id="<?= $k ?>-pms" name="colors[<?= $k ?>][pantone]" value="<?= e($c['pantone']) ?>" style="width: 110px"></td>
               <td><label class="sr-only" for="<?= $k ?>-role">Role</label><input class="input input-sm" id="<?= $k ?>-role" name="colors[<?= $k ?>][role]" value="<?= e($c['role']) ?>" style="width: 110px" list="color-roles"></td>
+              <td><label class="sr-only" for="<?= $k ?>-usage">Použití</label><input class="input input-sm" id="<?= $k ?>-usage" name="colors[<?= $k ?>][usage]" value="<?= e($c['usage_note']) ?>" style="width: 220px" placeholder="např. nadpisy, tmavé plochy"></td>
+              <td><label class="check" style="padding-top: 0; min-height: 0"><input type="checkbox" name="colors[<?= $k ?>][tints]" value="1"<?= !empty($c['tints']) ? ' checked' : '' ?>><span class="sr-only">Zobrazit odstíny</span></label></td>
               <td><label class="sr-only" for="<?= $k ?>-sort">Pořadí</label><input class="input input-sm" id="<?= $k ?>-sort" name="colors[<?= $k ?>][sort]" value="<?= (int) $c['sort'] ?>" style="width: 70px" inputmode="numeric"></td>
               <td><label class="check" style="padding-top: 0; min-height: 0"><input type="checkbox" name="colors[<?= $k ?>][delete]" value="1"><span class="sr-only">Smazat</span></label></td>
             </tr>
@@ -49,6 +66,8 @@ $bid = (int) $brand['id'];
           <td><input class="input input-sm" name="colors[__i__][cmyk]" aria-label="CMYK" style="width: 120px"></td>
           <td><input class="input input-sm" name="colors[__i__][pantone]" aria-label="Pantone" style="width: 110px"></td>
           <td><input class="input input-sm" name="colors[__i__][role]" aria-label="Role" style="width: 110px" list="color-roles"></td>
+          <td><input class="input input-sm" name="colors[__i__][usage]" aria-label="Použití" style="width: 220px"></td>
+          <td><label class="check" style="padding-top: 0; min-height: 0"><input type="checkbox" name="colors[__i__][tints]" value="1"><span class="sr-only">Zobrazit odstíny</span></label></td>
           <td><input class="input input-sm" name="colors[__i__][sort]" aria-label="Pořadí" value="999" style="width: 70px"></td>
           <td></td>
         </tr>

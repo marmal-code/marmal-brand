@@ -146,6 +146,8 @@
 
   document.querySelectorAll('[data-uploader]').forEach(function (box) {
     var itemId = box.getAttribute('data-item');
+    var commitUrl = box.getAttribute('data-commit') || ('/admin/items/' + itemId + '/upload');
+    var simple = !!box.getAttribute('data-commit'); // import: jeden soubor, bez volby použití
     var input = box.querySelector('input[type=file]');
     var drop = box.querySelector('[data-drop]');
     var queueEl = box.querySelector('[data-queue]');
@@ -160,16 +162,19 @@
         row.className = 'queue-row';
         row.innerHTML =
           '<span class="qname"></span><span class="muted tiny"></span>' +
+          (simple ? '' :
           '<label class="sr-only" for="role-' + itemId + '-' + i + '">Použití souboru</label>' +
           '<select class="select input-sm" style="width:auto" id="role-' + itemId + '-' + i + '">' +
-          '<option value="download">Ke stažení</option><option value="preview">Jen náhled</option></select>' +
+          '<option value="download">Ke stažení</option><option value="preview">Jen náhled</option></select>') +
           '<button type="button" class="btn btn-ghost btn-sm" aria-label="Odebrat soubor">Odebrat</button>' +
           '<div class="qbar"><span></span></div>';
         row.querySelector('.qname').textContent = q.file.name;
         row.querySelector('.muted').textContent = humanSize(q.file.size);
         var sel = row.querySelector('select');
-        sel.value = q.role;
-        sel.addEventListener('change', function () { q.role = sel.value; });
+        if (sel) {
+          sel.value = q.role;
+          sel.addEventListener('change', function () { q.role = sel.value; });
+        }
         row.querySelector('button').addEventListener('click', function () { queue.splice(i, 1); render(); });
         q.bar = row.querySelector('.qbar span');
         queueEl.appendChild(row);
@@ -177,7 +182,8 @@
       startBtn.disabled = queue.length === 0;
     }
     function add(files) {
-      Array.prototype.forEach.call(files, function (f) {
+      if (simple) queue = [];
+      Array.prototype.forEach.call(simple ? Array.prototype.slice.call(files, 0, 1) : files, function (f) {
         queue.push({ file: f, role: 'download' });
       });
       render();
@@ -214,8 +220,8 @@
         });
       });
       chain.then(function () {
-        statusEl.textContent = 'Ukládám…';
-        return fetch('/admin/items/' + itemId + '/upload', {
+        statusEl.textContent = simple ? 'Importuji… může to chvíli trvat.' : 'Ukládám…';
+        return fetch(commitUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrf },
           credentials: 'same-origin',
@@ -224,7 +230,7 @@
       }).then(function (j) {
         if (!j.ok) throw new Error(j.error || 'Uložení selhalo.');
         window.onbeforeunload = null;
-        window.location.reload();
+        if (j.redirect) { window.location.href = j.redirect; } else { window.location.reload(); }
       }).catch(function (err) {
         window.onbeforeunload = null;
         statusEl.className = 'small alert alert-error';
