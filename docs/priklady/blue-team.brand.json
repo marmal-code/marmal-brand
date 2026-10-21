@@ -1,0 +1,737 @@
+{
+  "format": "brand-hub",
+  "version": 1,
+  "brand": {
+    "name": "Blue Team",
+    "slug": "blue-team",
+    "intro": "Blue Team dodává průmyslové chlazení, klimatizace a tepelná čerpadla firmám. Manuál firemní identity 2.0 z října 2026.\nVše je tu vždy v aktuální verzi.",
+    "hero_bg": "#F3F8FB",
+    "contact_name": "Martin Malý · MarMal.cz",
+    "contact_note": "Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.",
+    "public_links": true
+  },
+  "texts": {
+    "logo": "Blue Team dodává průmyslové chlazení, klimatizace a tepelná čerpadla firmám. Logo se používá jen z dodaných souborů, aby značka vypadala stejně na dokumentech, autech i webu.\n\n## Symbol\nDeset teček v řadách 4 + 3 + 3. **Pět modrých odpovídá slovu Blue, pět grafitových slovu Team.** Tečky mají stejný průměr i rozteč a z jejich mřížky vychází konstrukce loga i grafický prvek manuálu (tečkové pole).\n\n## Sestavy loga\nLogo existuje ve čtyřech sestavách a jako samostatný symbol. Všechny vycházejí ze stejné mřížky a v souborech jsou převedené na křivky.\n\n| Sestava | Kdy použít |\n|---|---|\n| **Vertikální logo** (základní verze) | Výchozí volba všude, kde je místo na výšku: desky, zadní strana vizitky, polep, sociální sítě. |\n| Horizontální logo | Nízké a široké plochy: hlavička webu, obálky, auta, USB disky, malé velikosti. |\n| Horizontální s doplňkovým textem | Dokumenty: hlavičkový papír, vizitky, nabídky, referenční listy. |\n| Vertikální s doplňkovým textem | Reprezentační plochy: přední strana desek, obálka nabídky, plachta, roll-up. |\n| Samostatný symbol | Jen tam, kde je značka zřejmá z okolí: favicon, profilový obrázek, rukáv trička. |\n\nDoplňkový text „klimatizace a tepelná čerpadla“ má šířku slova BlueTeam a je sázený písmem Lexend Light.\n\n## Konstrukce\nMěrnou jednotkou **x je rozteč teček symbolu**. Tečka má průměr 0,8x. Z této jednotky jsou odvozené všechny vzdálenosti v logu.\n\n- **Horizontální logo:** symbol 3,8x × 2,8x, mezera ke slovu 1x, slovo BlueTeam 8,8x × 1,6x, svisle na střed symbolu. Celková šířka 13,6x.\n- **Vertikální logo:** symbol na střed nad slovem, mezera 0,8x (průměr tečky). Celkem 8,8x × 5,2x.\n\n## Ochranná zóna\nKolem loga zůstává volný prostor o **šířce písmene „m“** ze slova BlueTeam (1,6x). Do zóny nezasahuje text, okraj stránky ani jiná grafika včetně tečkového pole.\n\nZóna se měří od vnějšího okraje symbolu, slova i doplňkového textu. Pro tisk ji lze zaokrouhlit nahoru na celé milimetry.\n\n## Minimální velikost\nPod tyto rozměry se logo nezmenšuje. Když je potřeba co nejmenší rozměr, použije se logo bez doplňkového textu.\n\n| Sestava | Tisk | Obrazovka |\n|---|---|---|\n| Vertikální | šířka 25,5 mm (výška 15 mm) | šířka 96 px |\n| Horizontální | šířka 39 mm (výška 8 mm) | šířka 140 px |\n| Vertikální s textem | šířka 32,5 mm (výška 22 mm) | šířka 160 px |\n| Horizontální s textem | šířka 48,5 mm (výška 10 mm) | šířka 220 px |\n| Symbol | šířka 6 mm | 16 px (favicon) |\n\nTiskové rozměry přebírají hodnoty ze stávajícího logomanuálu a odpovídají proporcím loga.\n\n## Barevné verze\nKaždá sestava loga má šest barevných verzí. Volí se podle podkladu tak, aby obě slova i všechny tečky zůstaly dobře čitelné.\n\n| Verze (název souboru) | Provedení |\n|---|---|\n| …-na-svetly-podklad | barevné logo na bílou a světlé podklady |\n| …-na-modry-podklad | Blue bílé, Team grafitové |\n| …-na-tmavy-podklad | Blue modré, Team bílé |\n| …-jednobarevne-cerne / bile / grafit | jednobarevné verze |\n\nJednobarevné verze (černá, bílá, Grafit) se používají pro razítko, gravírování, výšivku a černobílý tisk.\n\n## Logo na podkladech\n| Podklad | Verze loga | Použití |\n|---|---|---|\n| {#FFFFFF} Bílá | barevné logo | ✓ ano |\n| {#009EE0} Modrá | Blue bílé, Team grafitové | ✓ ano |\n| {#3B3B3B} Grafit | Blue modré, Team bílé | ✓ ano |\n| {#F3F8FB} Námraza | barevné logo | ✓ ano |\n| Klidná tmavá část fotky | bílé | ✓ ano |\n| Jednobarevný tisk | černé | ✓ ano |\n| {#D1D3D4} Hliník a světle šedé podklady | jednobarevné grafitové | ✓ ano |\n| {#009EE0} Modrá | barevné logo | ✗ ne |\n| Šedý podklad | barevné logo | ✗ ne |\n| Rušná fotka | barevné logo | ✗ ne |\n\n## Nesprávné použití\nLogo se používá jen z dodaných souborů. Neupravuje se, nepřekresluje a nesází se znovu písmem. Nepřípustné je:\n- deformace a roztažení,\n- otáčení a natáčení,\n- barvy mimo paletu,\n- prohozené nebo přebarvené tečky,\n- stíny, obrysy a 3D efekty,\n- slovo přepsané jiným písmem,\n- změna poměru symbolu a slova,\n- barevné logo na šedé.",
+    "barvy": "Modrá a Grafit pocházejí přímo z loga. Ostatní odstíny je doplňují pro texty, plochy a tečkové pole.\n\n## Poměr ploch\n| Barva | Podíl |\n|---|---|\n| {#FFFFFF} Bílá a {#F3F8FB} Námraza | 60 % |\n| {#3B3B3B} Grafit | 30 % |\n| {#009EE0} Modrá | 10 % |\n\nPlatí pro dokumenty a web. Desky, plachty a polep mohou být celé v Modré nebo Grafitu, protože tam značku nese sama plocha.\n\n## Odstíny\nOdstíny Modré, Grafitu a Hlubinné modré (100, 80, 60, 40, 20 a 10 %) se používají pro pozadí tabulek, grafy a tečkové pole.\n\n## Poznámka k CMYK\nCMYK Modré, Grafitu, Oceli a Hliníku je převzaté ze stávajícího manuálu. Převod Grafitu přes profil **Coated FOGRA39** dává 76 · 67 · 62 · 60. Hlubinná modrá, Šedá text a Námraza jsou spočítané přes FOGRA39. Pro přímé barvy (Pantone) nechte tiskárnu určit nejbližší odstín a ověřte ho nátiskem.\n\n## Kombinace a kontrast\nBěžný text potřebuje kontrast aspoň 4,5 : 1 (WCAG AA). **Modrá na bílé tuto hranici nesplňuje**, proto se pro modrý text používá Hlubinná modrá.\n\n| Kombinace | Kontrast | Použití |\n|---|---|---|\n| {#3B3B3B} Grafit na bílé | 11,2 : 1 | Text i nadpisy. Běžný text, nadpisy, tabulky. |\n| Bílá na {#3B3B3B} Grafitu | 11,2 : 1 | Text i nadpisy. Vizitka, tmavé plochy, auta. |\n| {#0077AA} Hlubinná modrá na bílé | 5,0 : 1 | Text i nadpisy. Odkazy, tlačítka, jména v podpisu. |\n| {#676E78} Šedá text na bílé | 5,2 : 1 | Text i nadpisy. Doplňující text, patičky. |\n| Bílá na {#009EE0} Modré | 3,0 : 1 | Jen krátké velké texty, nadpisy od 24 px / 18 pt. |\n| {#009EE0} Modrá na bílé | 3,0 : 1 | Jen nadpisy a grafika, na malý text nestačí. |\n\nOcel (2,4 : 1) a Hliník (1,5 : 1) jsou barvy ploch a linek, ne textu.",
+    "typografie": "Dvě rodiny, obě zdarma z Google Fonts. **Ubuntu** pro nadpisy a podnadpisy, **Lexend** pro veškerý ostatní text. Písma jsou ke stažení v této sekci.\n\n| Písmo | Řez | Použití |\n|---|---|---|\n| Ubuntu | Bold | hlavní nadpisy |\n| Ubuntu | Medium | podnadpisy, jména |\n| Lexend | Regular | základní text |\n| Lexend | Medium | zvýraznění |\n| Lexend | Light | poznámky, patičky, podpis |\n\n## Hierarchie\n| Úroveň | Písmo | Tisk | Web desktop / mobil |\n|---|---|---|---|\n| Nadpis 1 | Ubuntu Bold | 28 pt | 48 / 34 px |\n| Nadpis 2 | Ubuntu Bold | 18 pt | 34 / 26 px |\n| Podnadpis | Ubuntu Medium | 12 pt | 22 / 20 px |\n| Text | Lexend Regular | 10 pt, řádkování 14 pt | 17 / 16 px, řádkování 1,6 |\n| Zvýraznění | Lexend Medium | 10 pt | 17 / 16 px |\n| Poznámka, patička | Lexend Light | 7,5–8 pt | 14 px |\n\n## Zásady\n- Základním písmem je Lexend pro veškerý prostý text. Řez Regular je základní, pro zvýraznění se použije Medium, poznámky a text pod čarou jsou v řezu Light.\n- Všechny nadpisy a podnadpisy jsou v Ubuntu: hlavní nadpisy Bold, podnadpisy Medium.\n- Text zarovnávejte vlevo, řádek má nejvýš 75 znaků.\n- Verzálky jen pro krátké štítky s prostrkáním asi 10 %.\n- Kde písma nejsou nainstalovaná (cizí počítač, e-mail), použijte **Arial**.\n\n> Logo na písmech nezávisí: slovo BlueTeam i doplňkový text jsou v souborech loga převedené na křivky.\n\n## Licence\n| Písmo | Licence | Zdroj |\n|---|---|---|\n| Ubuntu | Ubuntu Font Licence 1.0, zdarma i pro komerční použití | [fonts.google.com/specimen/Ubuntu](https://fonts.google.com/specimen/Ubuntu) |\n| Lexend | SIL Open Font License 1.1 | [fonts.google.com/specimen/Lexend](https://fonts.google.com/specimen/Lexend) |",
+    "tisk": "Tiskoviny vycházejí ze stávajících podkladů Blue Teamu. Společné prvky: logo s ochrannou zónou, kontakty v Lexendu a tečkové pole v rozích nebo u hrany plochy.\n\n## Vizitky\nFormát 90 × 50 mm, oboustranná. Přední strana bílá s kontakty, zadní strana v Grafitu s vertikálním logem.\n\n| Parametr | Hodnota |\n|---|---|\n| Formát | 90 × 50 mm, spadávka 2 mm, papír 350 g/m² matný |\n| Okraje | 6 mm |\n| Logo | přední strana horizontální s textem, šířka 38 mm · zadní strana vertikální na tmavý podklad, šířka 34 mm |\n| Jméno | Ubuntu Medium 10 pt, Grafit |\n| Pozice | Lexend Light 7 pt, Šedá text |\n| Kontakty | Lexend Regular 7,5 pt, web v Hlubinné modré, adresa Light |\n| Tečkové pole | pravý dolní roh přední strany, nezasahuje do textu |\n\n## Obálky\nTři formáty se stejnou sestavou: logo a zpáteční adresa vlevo nahoře, tečkové pole u levé hrany.\n\n| Parametr | Hodnota |\n|---|---|\n| Formáty | C4 · 324 × 229 mm, C5 · 229 × 162 mm, DL · 220 × 110 mm s okénkem vpravo |\n| Logo | horizontální s doplňkovým textem, šířka 24 % šířky obálky (DL 53 mm), odsazení 6 % zleva a shora |\n| Adresa | Lexend Regular 7 pt, Šedá text, pod logem |\n| Tečkové pole | pruh u levé hrany, nejvýš do 60 % výšky obálky |\n\nNa stávajících obálkách bylo „Cernosice“ bez diakritiky, opraveno na „Černošice“. Polohu okénka DL ověřte u dodavatele obálek. Běžné je 90 × 45 mm, 20 mm od pravého a 15 mm od spodního okraje.\n\n## Firemní desky\nDesky A4 s chlopní pro nabídky a smlouvy. Zadní strana v Modré s kontakty, přední strana bílá s vertikálním logem.\n\n| Parametr | Hodnota |\n|---|---|\n| Formát | zavřené desky 220 × 305 mm, chlopeň 100 mm, kapsa na vizitku |\n| Přední strana | bílá, vertikální logo s doplňkovým textem, šířka 130 mm, na střed · tečkové pole v levém horním (Hliník) a pravém dolním rohu |\n| Zadní strana | plná Modrá, kontakty Lexend Light 9 pt bílou, název Ubuntu Medium · tečkové pole v bílé s průhledností |\n| Povrch | matné lamino |\n\nOpraven překlep v adrese ze stávající verze („U Vodárnny“).\n\n## Firemní auta\nStávající polep servisních vozů: tmavé auto, logo ve verzi na tmavý podklad na bocích a kapotě, web na zádi.\n\n| Parametr | Hodnota |\n|---|---|\n| Barva vozu | tmavě šedá nebo černá metalíza |\n| Logo | horizontální s doplňkovým textem, verze na tmavý podklad (Blue modré, Team bílé), boky a kapota |\n| Záď | www.blueteam.cz, Ubuntu Medium, bílá |\n| Fólie | modrou fólii vyberte podle vzorníku dodavatele co nejblíž {#009EE0} #009EE0 a ověřte na vzorku |\n| Zóna | na autě nejméně 2× šířka „m“, logo nesmí ležet přes lišty a kliky |\n\nPro novou výrobu dodá polepová firma výkres podle konkrétního modelu vozu.\n\n## Oblečení a USB disky\nFunkční trička ve dvou barvách a USB disky. Barevná verze loga se řídí barvou látky.\n\n| Parametr | Hodnota |\n|---|---|\n| Trička | funkční, královská modrá a tyrkysová |\n| Hruď | vertikální logo vlevo, šířka 70 mm · na královské modré verze na tmavý podklad, na tyrkysové jednobarevná bílá |\n| Rukáv | samostatný symbol, šířka 30 mm. Slovo se na rukáv nedává, nevešlo by se. |\n| Technika | sítotisk nebo transfer, výšivka jen jednobarevně |\n\nUSB disk: na jedné straně horizontální logo, na druhé www.blueteam.cz. Na kovovém krytu barevná verze, při gravírování jednobarevná.",
+    "digital": "## Profilový obrázek\nČtverec 800 × 800 px, sítě ho ořezávají do kruhu. Výchozí je samotný symbol, logo se jménem jen tam, kde není název účtu vidět.\n\n## Ikona webu\nSite Icon 512 × 512 px, symbol na bílé. Čitelný i v 16 px.\n\n## Titulní fotka\nLinkedIn 1584 × 396 px, stejný motiv jako obálka manuálu (Grafit, tečkové pole, logo na tmavý podklad). Pro Facebook 820 × 312 px. Profilový obrázek překrývá levý dolní roh, proto je logo nahoře.\n\n## Náhled pro sdílení\nOG obrázek 1200 × 628 px. Nadpis Ubuntu Bold v bílé, nejvýš dva řádky (např. „Průmyslové chlazení a tepelná čerpadla“).\n\n## Tlačítka a odkazy\n- Hlavní tlačítko v {#0077AA} Hlubinné modré s bílým textem Ubuntu Medium 16 px (kontrast 5,0 : 1), zaoblení 4 px, výška nejméně 44 px, při najetí myší {#005F88} #005F88.\n- Na stránce je jedno hlavní tlačítko, ostatní jsou obrysová nebo odkazy.\n\n> Současná tlačítka webu v Modré s bílým textem mají kontrast jen 3 : 1.",
+    "kancelar": "## E-mailový podpis\nNavazuje na podpis 2024: text vlevo, svislá linka, logo vpravo. Funkční HTML podpis a verze pro Word jsou ke stažení v této sekci.\n\n| Parametr | Hodnota |\n|---|---|\n| Šířka | do 600 px |\n| Logo | horizontální s doplňkovým textem, šířka 160 px, PNG z veřejné adresy webu (logo-s-textem.png na blueteam.cz) |\n| Písmo | Arial. Lexend v e-mailových klientech není spolehlivě dostupný. |\n| Jméno | tučně 16 px, Hlubinná modrá {#0077AA} #0077AA |\n| Text | 13 px, Šedá text {#676E78} #676E78, popisky Grafit |\n| Linka | 1 px, Hliník {#D1D3D4} #D1D3D4 |\n| Web | jen www.blueteam.cz |\n\nJméno bylo dosud v Modré #009EE0, kvůli čitelnosti je nově v Hlubinné modré. Místo vertikálního loga je horizontální, které je už nahrané na webu, takže se v e-mailu spolehlivě načte.\n\n**Vložení:** otevřete HTML soubor v prohlížeči, označte celý podpis (Ctrl+A), zkopírujte (Ctrl+C) a vložte do nastavení podpisu v poštovním programu. Pro jiného člověka změňte jméno, pozici, telefon a e-mail.\n\n## Hlavičkový papír\nFormát A4. Šablona pro Word je ke stažení v této sekci.\n\n| Parametr | Hodnota |\n|---|---|\n| Formát | A4, 210 × 297 mm |\n| Logo | horizontální s doplňkovým textem, šířka 60 mm, 20 mm zleva, 15 mm shora |\n| Okraje textu | 20 mm vlevo i vpravo, text od 90 mm shora |\n| Adresát | Lexend Regular 10 pt, 55 mm shora, pro obálku DL s okénkem |\n| Text | Lexend Regular 10 pt / 14 pt, nadpis Ubuntu Bold 12 pt |\n| Patička | linka 0,5 pt Ocel, Lexend Light 7,5 pt v Šedé text, název firmy Medium v Grafitu, 12 mm od spodního okraje |\n\nOproti šabloně 2024 je v patičce jen telefon +420 601 699 660, bez faxu. Logo je ve Wordu vložené jako obrázek v hlavičce. Nepřesouvejte ho a neměňte jeho velikost.\n\n## Pracovní výkaz a referenční list\nVzorové dokumenty A4. Logo vlevo nahoře, název dokumentu vpravo, sekce oddělené grafitovou linkou, tečkové pole v rozích.\n\n- **Pracovní výkaz:** adresa opravena z „U Vodojemu“ na „U Vodárny“, doplněna diakritika.\n- **Referenční list zařízení:** u každé realizace typ jednotky, termín, výkon a popis objektu, jedna až dvě fotografie.\n\n## Razítko\nJednobarevné, se symbolem a právními údaji. Proti stávajícímu razítku je doplněné PSČ.\n\n| Parametr | Hodnota |\n|---|---|\n| Otisk | 69 × 30 mm (např. COLOP Printer 50) |\n| Značka | symbol, jednobarevný černý, výška 12 mm |\n| Text | název Ubuntu Bold 9 pt, údaje Lexend Regular 7,5 pt |\n| Barva | černá nebo modrá polštářková barva |\n\nCelé logo by se do otisku 69 × 30 mm vešlo jen pod minimální velikostí, proto je v razítku samostatný symbol a název firmy je v textu. Pokud chcete celé logo, použijte čtvercové razítko 40 × 40 mm s vertikálním logem jako dosud.\n\n## Firemní údaje\nBlue team, s.r.o., U Vodárny 1450, 252 28 Černošice, IČ 25065386, DIČ CZ25065386\nSpisová značka C 46596 vedená u Městského soudu v Praze, KB Praha 5, č. ú. 35-9701760257/0100\nTel. +420 601 699 660, e-mail info@blueteam.cz, www.blueteam.cz",
+    "pravidla": "## O firmě\nBlue team je firma s ryze českým kapitálem bez podílu zahraniční firmy. Na českém trhu působí od roku 1996 a sídlí v Černošicích u Prahy. Od svého vzniku je úzce spjata s italským výrobcem Blue Box a je jeho výhradním dodavatelem pro Českou republiku. Klientům nabízí komplexní služby: poradenství, návrh řešení, realizaci a pravidelný servis. Zaměřuje se na firemní zákazníky (B2B).\n\n| Parametr | Hodnota |\n|---|---|\n| Na trhu | od roku 1996 |\n| Sídlo | U Vodárny 1450, 252 28 Černošice |\n| Blue Box | výhradní dodavatel pro ČR · jednotky od 5 kW do 1,7 MW chladicího výkonu |\n| Tepelná čerpadla | Blue Box a Sinclair · komerční výkony v řádu desítek až stovek kW |\n| Další sortiment | suché chladiče a kondenzátory Thermokey a Güntner · fan-coily Aertesi a Eurapo · přesná klimatizace Coolblade |\n\n## Jak píšeme\n- Konkrétně: výkon v kW, typ jednotky, výrobce. Například „Zeta Rev HP XT LN 12.4, topný výkon 108 kW“.\n- Odborné názvy správně a jednotně: tepelné čerpadlo, suchý chladič, fan-coil.\n- Název firmy v textu: **Blue Team**. V právních údajích: **Blue team, s.r.o.**\n\n## Tečkové pole\nJediný doplňkový grafický prvek značky. Tečky vycházejí ze symbolu a v rozích ploch se rozpadají, jako na stávajících vizitkách, obálkách a deskách.\n\n| Podklad | Provedení | Použití |\n|---|---|---|\n| Na bílé | Kotva v rohu. U kotvy Modrá a Grafit, dál Ocel a Hliník, nakonec volné místo. | Vizitka, obálky, výkaz. |\n| Na Modré | Bílá s postupnou průhledností 70, 40 a 20 %. | Zadní strana desek, plachty. |\n| Na Grafitu | Symbol pokračuje ve svém schodovitém rytmu a barva chladne do grafitu. | Obálka manuálu, náhled webu, banner. |\n\n### Pravidla\n- Rozteč teček je v celém poli stejná. Průměr tečky je 0,8 rozteče, stejně jako v symbolu.\n- Pole začíná v rohu nebo u hrany plochy a směrem do plochy řídne. Zabírá nejvýš třetinu plochy.\n- Tečky pole jsou nejvýš poloviční proti tečkám loga na stejné ploše, aby pole nekonkurovalo symbolu. Výjimkou je schodovitý motiv, který symbol přímo prodlužuje.\n\n### Nepoužívat\n- Pod textem ani v ochranné zóně loga.\n- Jako souvislý vzor přes celou plochu nebo s jinými tvary než kruhem.\n- V barvách mimo paletu, s přechody nebo stíny.\n\n## Fotografie\nFotografie ukazují skutečné instalace Blue Teamu: jednotky na střechách, u hal a při montáži. Jsou dokladem práce, ne ilustrací.\n\n### Ano\n- Vlastní realizace a servis: jednotka v kontextu budovy, rozvody, montáž.\n- Denní světlo, přirozené barvy, rovný horizont.\n- K fotce vždy objekt, místo a typ jednotky.\n\n### Ne\n- Fotobanky s domácnostmi a klimatizací v obýváku. Blue Team je dodavatel pro firmy.\n- Barevné filtry, silné vinětace, montáže z více fotek.\n- Logo přes rušnou část fotky.\n\n> Fotky v manuálu pocházejí z webu blueteam.cz a stávajícího referenčního listu a mají nízké rozlišení. Pro tisk použijte originály z fotoaparátu.\n\n## Soubory a pojmenování\nNázvy souborů popisují sestavu a podklad.\n\n| Část názvu | Význam |\n|---|---|\n| logo-blueteam-vertikalni / horizontalni / vertikalni-claim / horizontalni-claim | sestava (claim = s doplňkovým textem) |\n| …-na-svetly-podklad | barevné logo na bílou a světlé podklady |\n| …-na-modry-podklad | Blue bílé, Team grafitové |\n| …-na-tmavy-podklad | Blue modré, Team bílé |\n| …-jednobarevne-cerne / bile / grafit | jednobarevné verze |\n| symbol-blueteam-… | samostatný symbol ve stejných verzích |\n\nLoga jsou ve formátu SVG (písmo převedené na křivky) a PNG s průhledností: logo 2000 px, symbol 1000 px na šířku.\n\nManuál firemní identity Blue Team, verze 2.0, říjen 2026. Navazuje na manuál firemní identity 2023."
+  },
+  "colors": [
+    {
+      "name": "Modrá",
+      "hex": "#009EE0",
+      "cmyk": "74 · 23 · 0 · 0",
+      "role": "Hlavní barva značky",
+      "usage": "Slovo Blue, tečky symbolu, velké plochy desek, akcenty. Na malý text nestačí.",
+      "tints": true,
+      "pantone": ""
+    },
+    {
+      "name": "Grafit",
+      "hex": "#3B3B3B",
+      "cmyk": "67 · 62 · 62 · 51",
+      "role": "Hlavní barva značky",
+      "usage": "Slovo Team, nadpisy a text, tmavé plochy (vizitka, obálka manuálu).",
+      "tints": true,
+      "pantone": ""
+    },
+    {
+      "name": "Hlubinná modrá",
+      "hex": "#0077AA",
+      "cmyk": "84 · 33 · 3 · 21",
+      "role": "Modrý text",
+      "usage": "Modrý text, odkazy a tlačítka na bílé.",
+      "tints": true,
+      "pantone": ""
+    },
+    {
+      "name": "Šedá text",
+      "hex": "#676E78",
+      "cmyk": "60 · 46 · 38 · 26",
+      "role": "Doplňující text",
+      "usage": "Doplňující text, patičky, podpis.",
+      "pantone": ""
+    },
+    {
+      "name": "Ocel",
+      "hex": "#A7A9AC",
+      "cmyk": "0 · 0 · 0 · 40",
+      "role": "Linky",
+      "usage": "Linky, tečkové pole. Barva ploch a linek, ne textu.",
+      "pantone": ""
+    },
+    {
+      "name": "Hliník",
+      "hex": "#D1D3D4",
+      "cmyk": "0 · 0 · 0 · 20",
+      "role": "Oddělovače",
+      "usage": "Tečkové pole, oddělovače. Barva ploch a linek, ne textu.",
+      "pantone": ""
+    },
+    {
+      "name": "Námraza",
+      "hex": "#F3F8FB",
+      "cmyk": "5 · 3 · 3 · 0",
+      "role": "Světlé pozadí",
+      "usage": "Světlé pozadí sekcí a tabulek.",
+      "pantone": ""
+    }
+  ],
+  "items": [
+    {
+      "section": "logo",
+      "slug": "logo-primarni",
+      "title": "Vertikální · světlý podklad",
+      "description": "Základní verze. Desky, zadní strana vizitky, polep, sociální sítě. Barevné logo na bílou, Námrazu a světlé podklady.",
+      "specs": "SVG na křivkách, PNG 2000 × 1181 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-na-svetly-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-modry-podklad",
+      "title": "Vertikální · Modrá",
+      "description": "Na plochy v Modré: Blue bílé, Team grafitové.",
+      "specs": "SVG na křivkách, PNG 2000 × 1181 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#009EE0",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-na-modry-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-na-modry-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-negativ",
+      "title": "Vertikální · Grafit",
+      "description": "Na Grafit a tmavé plochy: Blue modré, Team bílé.",
+      "specs": "SVG na křivkách, PNG 2000 × 1181 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#3B3B3B",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne",
+      "title": "Vertikální · jednobarevné",
+      "description": "Černá, bílá a Grafit. Razítko, gravírování, výšivka, černobílý tisk. Na Hliníku a světle šedých podkladech grafitová.",
+      "specs": "SVG na křivkách, PNG 2000 × 1181 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-jednobarevne-cerne.svg",
+          "label": "SVG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-jednobarevne-cerne.png",
+          "label": "PNG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-jednobarevne-bile.svg",
+          "label": "SVG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-jednobarevne-bile.png",
+          "label": "PNG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-jednobarevne-grafit.svg",
+          "label": "SVG grafit",
+          "preview": true
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-jednobarevne-grafit.png",
+          "label": "PNG grafit"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni",
+      "title": "Horizontální · světlý podklad",
+      "description": "Nízké a široké plochy: hlavička webu, obálky, auta, USB disky, malé velikosti. Barevné logo na bílou, Námrazu a světlé podklady.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-na-svetly-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni-modry-podklad",
+      "title": "Horizontální · Modrá",
+      "description": "Na plochy v Modré: Blue bílé, Team grafitové.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#009EE0",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-na-modry-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-na-modry-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni-tmavy-podklad",
+      "title": "Horizontální · Grafit",
+      "description": "Na Grafit a tmavé plochy: Blue modré, Team bílé.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#3B3B3B",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni-jednobarevne",
+      "title": "Horizontální · jednobarevné",
+      "description": "Černá, bílá a Grafit. Razítko, gravírování, výšivka, černobílý tisk. Na Hliníku a světle šedých podkladech grafitová.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-jednobarevne-cerne.svg",
+          "label": "SVG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-jednobarevne-cerne.png",
+          "label": "PNG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-jednobarevne-bile.svg",
+          "label": "SVG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-jednobarevne-bile.png",
+          "label": "PNG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-jednobarevne-grafit.svg",
+          "label": "SVG grafit",
+          "preview": true
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-jednobarevne-grafit.png",
+          "label": "PNG grafit"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni-text",
+      "title": "Horizontální s textem · světlý podklad",
+      "description": "Dokumenty: hlavičkový papír, vizitky, nabídky, referenční listy, e-mailový podpis. Barevné logo na bílou, Námrazu a světlé podklady.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-na-svetly-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni-text-modry-podklad",
+      "title": "Horizontální s textem · Modrá",
+      "description": "Na plochy v Modré: Blue bílé, Team grafitové.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#009EE0",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-na-modry-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-na-modry-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni-text-tmavy-podklad",
+      "title": "Horizontální s textem · Grafit",
+      "description": "Na Grafit a tmavé plochy: Blue modré, Team bílé.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#3B3B3B",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-horizontalni-text-jednobarevne",
+      "title": "Horizontální s textem · jednobarevné",
+      "description": "Černá, bílá a Grafit. Razítko, gravírování, výšivka, černobílý tisk. Na Hliníku a světle šedých podkladech grafitová.",
+      "specs": "SVG na křivkách, PNG 2000 × 411 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-jednobarevne-cerne.svg",
+          "label": "SVG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-jednobarevne-cerne.png",
+          "label": "PNG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-jednobarevne-bile.svg",
+          "label": "SVG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-jednobarevne-bile.png",
+          "label": "PNG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-jednobarevne-grafit.svg",
+          "label": "SVG grafit",
+          "preview": true
+        },
+        {
+          "path": "loga/logo-blueteam-horizontalni-claim-jednobarevne-grafit.png",
+          "label": "PNG grafit"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-text",
+      "title": "Vertikální s textem · světlý podklad",
+      "description": "Reprezentační plochy: přední strana desek, obálka nabídky, plachta, roll-up. Barevné logo na bílou, Námrazu a světlé podklady.",
+      "specs": "SVG na křivkách, PNG 2000 × 1367 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-na-svetly-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-text-modry-podklad",
+      "title": "Vertikální s textem · Modrá",
+      "description": "Na plochy v Modré: Blue bílé, Team grafitové.",
+      "specs": "SVG na křivkách, PNG 2000 × 1367 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#009EE0",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-na-modry-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-na-modry-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-text-tmavy-podklad",
+      "title": "Vertikální s textem · Grafit",
+      "description": "Na Grafit a tmavé plochy: Blue modré, Team bílé.",
+      "specs": "SVG na křivkách, PNG 2000 × 1367 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#3B3B3B",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-text-jednobarevne",
+      "title": "Vertikální s textem · jednobarevné",
+      "description": "Černá, bílá a Grafit. Razítko, gravírování, výšivka, černobílý tisk. Na Hliníku a světle šedých podkladech grafitová.",
+      "specs": "SVG na křivkách, PNG 2000 × 1367 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-jednobarevne-cerne.svg",
+          "label": "SVG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-jednobarevne-cerne.png",
+          "label": "PNG černé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-jednobarevne-bile.svg",
+          "label": "SVG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-jednobarevne-bile.png",
+          "label": "PNG bílé"
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-jednobarevne-grafit.svg",
+          "label": "SVG grafit",
+          "preview": true
+        },
+        {
+          "path": "loga/logo-blueteam-vertikalni-claim-jednobarevne-grafit.png",
+          "label": "PNG grafit"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol",
+      "title": "Symbol · světlý podklad",
+      "description": "Jen tam, kde je značka zřejmá z okolí: favicon, profilový obrázek, rukáv trička, razítko. Barevné logo na bílou, Námrazu a světlé podklady.",
+      "specs": "SVG na křivkách, PNG 1000 × 737 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/symbol-blueteam-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-blueteam-na-svetly-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-modry-podklad",
+      "title": "Symbol · Modrá",
+      "description": "Na plochy v Modré: Blue bílé, Team grafitové.",
+      "specs": "SVG na křivkách, PNG 1000 × 737 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#009EE0",
+      "files": [
+        {
+          "path": "loga/symbol-blueteam-na-modry-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-blueteam-na-modry-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-tmavy-podklad",
+      "title": "Symbol · Grafit",
+      "description": "Na Grafit a tmavé plochy: Blue modré, Team bílé.",
+      "specs": "SVG na křivkách, PNG 1000 × 737 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#3B3B3B",
+      "files": [
+        {
+          "path": "loga/symbol-blueteam-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-blueteam-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-jednobarevne",
+      "title": "Symbol · jednobarevné",
+      "description": "Černá, bílá a Grafit. Razítko, gravírování, výšivka, černobílý tisk. Na Hliníku a světle šedých podkladech grafitová.",
+      "specs": "SVG na křivkách, PNG 1000 × 737 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/symbol-blueteam-jednobarevne-cerne.svg",
+          "label": "SVG černé"
+        },
+        {
+          "path": "loga/symbol-blueteam-jednobarevne-cerne.png",
+          "label": "PNG černé"
+        },
+        {
+          "path": "loga/symbol-blueteam-jednobarevne-bile.svg",
+          "label": "SVG bílé"
+        },
+        {
+          "path": "loga/symbol-blueteam-jednobarevne-bile.png",
+          "label": "PNG bílé"
+        },
+        {
+          "path": "loga/symbol-blueteam-jednobarevne-grafit.svg",
+          "label": "SVG grafit",
+          "preview": true
+        },
+        {
+          "path": "loga/symbol-blueteam-jednobarevne-grafit.png",
+          "label": "PNG grafit"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-nadpisy",
+      "title": "Písmo pro nadpisy",
+      "kind": "font",
+      "required": true,
+      "description": "Všechny nadpisy a podnadpisy. Hlavní nadpisy Bold, podnadpisy a jména Medium.",
+      "meta": {
+        "family": "Ubuntu",
+        "weights": "Bold 700, Medium 500, Regular 400, Light 300",
+        "sample": "Aa Čč 1996 · Průmyslové chlazení a tepelná čerpadla",
+        "google_url": "https://fonts.google.com/specimen/Ubuntu",
+        "license": "Ubuntu Font Licence 1.0, zdarma i pro komerční použití"
+      },
+      "files": [
+        {
+          "path": "pisma/Ubuntu-Bold.ttf",
+          "label": "TTF Bold"
+        },
+        {
+          "path": "pisma/Ubuntu-Medium.ttf",
+          "label": "TTF Medium"
+        },
+        {
+          "path": "pisma/Ubuntu-Regular.ttf",
+          "label": "TTF Regular"
+        },
+        {
+          "path": "pisma/Ubuntu-Light.ttf",
+          "label": "TTF Light"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-text",
+      "title": "Písmo pro text",
+      "kind": "font",
+      "required": true,
+      "description": "Veškerý ostatní text. Základní text Regular, zvýraznění Medium, poznámky, patičky a podpis Light. Také doplňkový text v logu.",
+      "meta": {
+        "family": "Lexend",
+        "weights": "Light 300, Regular 400, Medium 500, SemiBold 600",
+        "sample": "Aa Čč 1,7 MW · Příliš žluťoučký kůň úpěl ďábelské ódy.",
+        "google_url": "https://fonts.google.com/specimen/Lexend",
+        "license": "SIL Open Font License 1.1"
+      },
+      "files": [
+        {
+          "path": "pisma/Lexend-Regular.ttf",
+          "label": "TTF Regular"
+        },
+        {
+          "path": "pisma/Lexend-Light.ttf",
+          "label": "TTF Light"
+        },
+        {
+          "path": "pisma/Lexend-Medium.ttf",
+          "label": "TTF Medium"
+        },
+        {
+          "path": "pisma/Lexend-SemiBold.ttf",
+          "label": "TTF SemiBold"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "profilovy-obrazek",
+      "title": "Profilový obrázek",
+      "required": false,
+      "preview_bg": "#F3F8FB",
+      "description": "Samotný symbol na čtverci. Sítě ho ořezávají do kruhu.",
+      "specs": "PNG 800 × 800 px",
+      "tags": "PNG",
+      "files": [
+        {
+          "path": "digital/profil-blueteam-800.png",
+          "label": "PNG 800 px"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "favicon",
+      "title": "Ikona webu (favicon)",
+      "required": false,
+      "preview_bg": "#F3F8FB",
+      "description": "Site Icon, symbol na bílé. Čitelný i v 16 px.",
+      "specs": "PNG 512 × 512 px a 32 × 32 px",
+      "tags": "PNG",
+      "files": [
+        {
+          "path": "digital/favicon-blueteam-512.png",
+          "label": "PNG 512 px"
+        },
+        {
+          "path": "digital/favicon-blueteam-32.png",
+          "label": "PNG 32 px"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "emailovy-podpis",
+      "title": "E-mailový podpis",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "description": "HTML podpis pro Gmail, Outlook, Apple Mail a Thunderbird (písmo Arial, logo z webu blueteam.cz). Otevřete v prohlížeči, zkopírujte a vložte do nastavení podpisu.",
+      "specs": "šířka do 600 px",
+      "tags": "HTML, DOCX",
+      "files": [
+        {
+          "path": "kancelar/blueteam-emailovy-podpis.html",
+          "label": "HTML"
+        },
+        {
+          "path": "kancelar/blueteam-emailovy-podpis.docx",
+          "label": "Word"
+        },
+        {
+          "path": "nahledy/nahled-emailovy-podpis.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "sablona-dopisu",
+      "title": "Hlavičkový papír (Word)",
+      "required": false,
+      "preview_bg": "#F3F8FB",
+      "description": "Šablona dopisu s logem v hlavičce a aktualizovanou patičkou. Logo v hlavičce nepřesouvejte a neměňte jeho velikost.",
+      "specs": "A4, 210 × 297 mm",
+      "tags": "DOCX",
+      "files": [
+        {
+          "path": "kancelar/blueteam-hlavickovy-papir.docx",
+          "label": "Word"
+        },
+        {
+          "path": "nahledy/nahled-hlavickovy-papir.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "pravidla-pouziti",
+      "title": "Brand manuál (PDF)",
+      "required": false,
+      "preview_bg": "#F3F8FB",
+      "description": "Manuál firemní identity, verze 2.0 (říjen 2026). Logo, barvy, písmo, tiskoviny. Navazuje na manuál 2023.",
+      "specs": "A4 na šířku · 26 stran",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "manual/blueteam-manual-firemni-identity-2-0.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "nahledy/nahled-manual.png",
+          "role": "preview"
+        }
+      ]
+    }
+  ],
+  "prune_empty": true
+}

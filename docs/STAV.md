@@ -121,9 +121,10 @@ Mockup obrazovek: artefakt „Brand Hub – mockup“ (claude.ai).
 | Klient | Stav | Poznámka |
 |---|---|---|
 | Žehrovické byty (KOSTKA Holding) | importní balíček připraven 20. 10. 2026 (`zehrovicke-byty-import.zip`) | SVG loga mají slovo ŽEHROVICKÉ jako text v Candara Bold (nepřevedeno na křivky) → náhledy z PNG. Chybí jednobarevné SVG vodorovné a PNG čtvercové, vizualizace, tiskové soubory (vizitka, plachta, karta bytu). Písma Carlito + Open Sans doplněna. |
+| Blue Team (Blue team, s.r.o.) | importní balíček připraven 21. 10. 2026 (`blue-team-import.zip`), otestovaný v 1.1.0 | Manuál 2.0 (26 stran). Primární = vertikální logo (manuál ho označuje jako základní verzi). 30 variant loga = 20 pozic: 4 sestavy + symbol × (světlý, Modrá, Grafit) + karta jednobarevných (černá/bílá/grafit). SVG na křivkách. Písma Ubuntu + Lexend z podkladů. Chybí: titulní fotka LinkedIn/Facebook a OG obrázek (manuál je uvádí v balíčku), tiskové PDF (vizitka, obálky, desky, razítko, výkaz, referenční list). Šablony Word neodpovídají manuálu (viz souhrn importu). |
 
 Postup přípravy importů: `docs/IMPORT-PRAVIDLA.md`. Formát balíčku: `docs/IMPORT.md`.
-Vzorový manifest: `docs/priklady/zehrovicke-byty.brand.json`.
+Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/blue-team.brand.json`.
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
