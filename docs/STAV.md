@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.2.0** (26. 10. 2026)
+**Aktuální verze: 1.3.0** (26. 10. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,7 +34,7 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.2.0)
+## Co aplikace umí (1.3.0)
 
 ### Administrace (`/admin`)
 - Přehled klientů: vyplněnost sekcí, poslední změna, typ přístupu, statistiky (stažení za 30 dní, neúplné brandy), aktivita.
@@ -53,7 +53,13 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   vlastní doména (CNAME), aktivní/neaktivní, doplnit pozice ze šablony, export, smazání.
 - Šablona sekcí: úprava výchozích pozic pro nové klienty.
 - Aktivita: log přihlášení, stažení, ZIPů, tiskových verzí, nahrání, importů.
-- Nastavení: profil a heslo, aktualizace a zálohy (ruční záloha, obnova), kontrola serveru a limitů PHP.
+- Nastavení: profil a heslo, **dvoufázové ověření** (TOTP s QR kódem, 10 záložních kódů, nové kódy, vypnutí s heslem + kódem),
+  odhlášení ostatních zařízení, aktualizace a zálohy (ruční záloha, obnova), kontrola serveru a limitů PHP.
+- **Přihlášení administrátora:** e-mail + heslo → `/login/2fa` (kód z aplikace nebo záložní kód, 5 minut). Dokud 2FA není
+  zapnuté, ukazuje administrace upozornění. Odhlášení po 12 h nečinnosti nebo při změně `users.auth_epoch`
+  (změna hesla, zapnutí/vypnutí 2FA, „Odhlásit ostatní zařízení“). Nouzové vypnutí 2FA: `docs/NASAZENI.md`.
+- **Bezpečnost:** audit a seznam opatření v `docs/BEZPECNOST.md` (CSP bez inline skriptů – nové skripty jen do `app.js`,
+  limity pokusů na IP i celkově, relace v `brand-data/sessions`).
 
 ### Klientský pohled (`/b/{slug}` nebo vlastní doména)
 - Přihlášení heslem, nebo sdíleným odkazem `?s=TOKEN`. Administrátor vidí vše jako náhled.
@@ -79,9 +85,10 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
 ```
 public/index.php              směrovač (seznam rout), CSRF u všech POST, údržba, vlastní domény
 public/app/bootstrap.php      konstanty APP_ROOT, DATA_DIR, APP_VERSION, config(), session
-public/app/helpers.php        SECTIONS, ALLOWED_EXT, e(), view/render, csrf, flash, slugify, barvy (hex→rgb/cmyk), ikony
+public/app/helpers.php        SECTIONS, ALLOWED_EXT, e(), safe_url(), send_security_headers() (CSP…), view/render, csrf, flash, slugify, barvy, ikony
 public/app/db.php             PDO helpery db_all/db_one/db_val/db_exec/db_insert
-public/app/auth.php           admin login, rate limit, přístup klienta (heslo / sdílený odkaz)
+public/app/auth.php           admin login + 2FA, auth_epoch, nečinnost, limity pokusů (IP i celkově), přístup klienta (heslo / sdílený odkaz)
+public/app/totp.php           TOTP (RFC 6238), base32, záložní kódy – převzato z jádra app-core
 public/app/brands.php         brandy, položky + soubory aktuální verze, náhledy, statistiky, šablona, texty sekcí, odstíny
 public/app/files.php          nahrávání po částech, commit_uploads, stream_file (CSP sandbox), ZIP, názvy souborů
 public/app/markdown.php       bezpečný Markdown pro texty sekcí
@@ -91,8 +98,9 @@ public/app/backup.php         zálohy DB+kódu, obnova, install_code_tree, údr�
 public/app/updater.php        GitHub API, run_update → apply_update_package, kontrola serveru
 public/app/controllers/       install.php, admin.php, client.php, settings.php
 public/views/                 layout_admin, layout_client, layout_plain, admin/*, client/* (home, section, print, _parts)
-public/assets/                css/app.css (tokeny MarMal DS), css/print.css, js/app.js (upload, kopírování), fonts/MarMal-Bold.woff2
-public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu
+public/assets/                css/app.css (tokeny MarMal DS), css/print.css, js/app.js (upload, kopírování, QR, potvrzení), fonts/MarMal-Bold.woff2,
+                              vendor/qrcode.js (QR kód pro 2FA, MIT, generuje se v prohlížeči)
+public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu, 005_bezpecnost_2fa
 .github/workflows/release.yml automatické vydání po změně public/VERSION
 scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 ```
@@ -101,7 +109,8 @@ scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 `users`, `settings` (github_repo, github_token šifrovaně, update_last_check, update_last_log), `brands` (… brand_fonts, contact_phone, contact_email),
 `template_items`, `items` (brand, sekce, kind file|font, slug, popisy, meta JSON, current_version_id),
 `item_versions`, `item_files` (role download|preview, is_preview), `colors` (usage_note, tints), `section_texts`,
-`activity`, `login_attempts`, `migrations`.
+`activity`, `login_attempts`, `migrations`, `recovery_codes` (záložní kódy 2FA, hash). `users` má navíc
+totp_secret (šifrovaně), totp_enabled_at, totp_last_step, auth_epoch.
 
 ### Sekce a pozice šablony (slugy)
 - `logo`: logo-primarni*, logo-negativ*, symbol*, logo-jednobarevne, logo-horizontalni
@@ -116,7 +125,8 @@ scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 
 ### Důležité routy
 Admin: `/admin`, `/admin/import`, `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
-`/admin/items/{id}`, `/admin/settings/update`, `/admin/template`, `/admin/activity`.
+`/admin/items/{id}`, `/admin/settings` (profil, 2FA), `/admin/settings/2fa`, `/admin/settings/update`, `/admin/template`, `/admin/activity`.
+Přihlášení: `/login`, `/login/2fa`.
 Klient: `/b/{slug}`, `/b/{slug}/s/{sekce}`, `/b/{slug}/file/{id}`, `/b/{slug}/f/{pozice}.{ext}`, `/b/{slug}/zip[/{sekce}]`, `/b/{slug}/manual`.
 
 ## Vzhled
@@ -138,6 +148,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.3.0** (26. 10. 2026): 2FA administrátora, odhlášení ostatních zařízení, limity pokusů ze všech IP, silnější hesla klientů, CSP a další bezpečnostní hlavičky, relace ve vlastní složce. Audit v `docs/BEZPECNOST.md`.
 - **1.2.0** (26. 10. 2026): klientský pohled a tisková verze v písmech brandu (přepínač), všechny řezy písma, WOFF2, dlouhá cache + 304, telefon a e-mail v kartě kontaktu.
 - **1.1.0** (20. 10. 2026): import/export ZIP, texty sekcí (Markdown), použití barev + odstíny, PDF (nahraný manuál + tisková verze), vlastní náhled souboru.
 - **1.0.0** (20. 10. 2026): první verze.

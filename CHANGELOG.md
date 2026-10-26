@@ -1,5 +1,14 @@
 # Změny
 
+## 1.3.0 – 26. 10. 2026
+Zabezpečení aplikace (podrobně v `docs/BEZPECNOST.md`).
+- Dvoufázové ověření administrátora: kód z aplikace Authenticator (QR kód), 10 záložních kódů, nové kódy na požádání, vypnutí jen s heslem a kódem
+- Změna hesla nebo 2FA odhlásí ostatní zařízení, tlačítko „Odhlásit ostatní zařízení“, odhlášení po 12 hodinách nečinnosti
+- Omezení pokusů o přihlášení i ze všech IP adres dohromady (administrace i hesla klientů), neúspěšná přihlášení v Aktivitě
+- Silnější generovaná hesla klientů (3 slova + číslo), minimální délka hesla klienta 8 znaků
+- Bezpečnostní hlavičky (Content-Security-Policy, X-Frame-Options, HSTS na HTTPS), relace ve vlastní složce `brand-data/sessions`
+- Drobné opravy: stejná doba odpovědi u neexistujícího účtu, odkazy jen http(s), nové ID relace u sdíleného odkazu, aktualizace jen přes HTTPS
+
 ## 1.2.0 – 26. 10. 2026
 - Klientský pohled i tisková verze se zobrazují v písmech brandu: nadpisy v „Písmu pro nadpisy“, texty, tlačítka a navigace v „Písmu pro text“
 - Přepínač „Zobrazovat manuál v písmech brandu“ v nastavení klienta (i v importu a exportu jako `brand_fonts`)

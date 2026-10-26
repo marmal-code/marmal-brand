@@ -89,7 +89,7 @@ function client_font_card(array $brand, array $item): string
       <?php if (!empty($m['license'])): ?><p class="tiny muted">Licence: <?= e($m['license']) ?></p><?php endif; ?>
       <div class="formats">
         <?= client_format_buttons($brand, $item) ?>
-        <?php if (!empty($m['google_url'])): ?><a class="btn btn-ghost btn-sm" href="<?= e($m['google_url']) ?>" target="_blank" rel="noopener"><?= icon('external', 16) ?>Google Fonts</a><?php endif; ?>
+        <?php if (safe_url($m['google_url'] ?? '') !== ''): ?><a class="btn btn-ghost btn-sm" href="<?= e(safe_url($m['google_url'])) ?>" target="_blank" rel="noopener"><?= icon('external', 16) ?>Google Fonts</a><?php endif; ?>
       </div>
     </article>
     <?php return (string) ob_get_clean();

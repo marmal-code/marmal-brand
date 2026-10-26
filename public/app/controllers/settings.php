@@ -6,7 +6,106 @@ declare(strict_types=1);
 function settings_profile(): void
 {
     $admin = require_admin();
-    render('admin/settings_profile', ['title' => 'Nastavení', 'nav' => 'settings', 'tab' => 'profile', 'me' => $admin]);
+    $codes = $_SESSION['new_recovery_codes'] ?? null;
+    unset($_SESSION['new_recovery_codes']);
+    render('admin/settings_profile', [
+        'title' => 'Nastavení', 'nav' => 'settings', 'tab' => 'profile', 'me' => $admin,
+        'codesLeft' => $admin['totp_enabled_at'] ? recovery_codes_left((int) $admin['id']) : 0,
+        'newCodes' => is_array($codes) ? $codes : null,
+    ]);
+}
+
+/* ---------- Dvoufázové ověření ---------- */
+
+function settings_2fa_setup(): void
+{
+    $admin = require_admin();
+    if ($admin['totp_enabled_at']) {
+        redirect('/admin/settings');
+    }
+    // Klíč se uloží k účtu až po ověření prvního kódu.
+    $_SESSION['totp_setup'] ??= totp_generate_secret();
+    $secret = (string) $_SESSION['totp_setup'];
+    render('admin/settings_2fa', [
+        'title' => 'Dvoufázové ověření', 'nav' => 'settings', 'tab' => 'profile', 'me' => $admin,
+        'secret' => $secret,
+        'uri' => totp_uri($secret, $admin['email'], 'Brand Hub ' . (string) config('app_host', 'MarMal')),
+        'error' => null,
+    ]);
+}
+
+function settings_2fa_enable(): void
+{
+    $admin = require_admin();
+    $secret = (string) ($_SESSION['totp_setup'] ?? '');
+    if ($admin['totp_enabled_at'] || $secret === '') {
+        redirect('/admin/settings');
+    }
+    $step = totp_verify($secret, (string) ($_POST['code'] ?? ''));
+    if ($step === null) {
+        render('admin/settings_2fa', [
+            'title' => 'Dvoufázové ověření', 'nav' => 'settings', 'tab' => 'profile', 'me' => $admin,
+            'secret' => $secret,
+            'uri' => totp_uri($secret, $admin['email'], 'Brand Hub ' . (string) config('app_host', 'MarMal')),
+            'error' => 'Kód nesouhlasí. Zadejte aktuální kód z aplikace (mění se každých 30 sekund) a zkontrolujte, že má telefon správný čas.',
+        ]);
+    }
+    db_exec('UPDATE users SET totp_secret = ?, totp_enabled_at = NOW(), totp_last_step = ? WHERE id = ?', [encrypt_secret($secret), $step, $admin['id']]);
+    unset($_SESSION['totp_setup']);
+    $_SESSION['new_recovery_codes'] = replace_recovery_codes((int) $admin['id']);
+    bump_auth_epoch((int) $admin['id']);
+    log_activity(null, 'admin', '2fa', 'Zapnuto dvoufázové ověření');
+    flash('success', 'Dvoufázové ověření je zapnuté. Ostatní zařízení jsem odhlásil, při dalším přihlášení zadáte i kód z telefonu.');
+    redirect('/admin/settings#2fa');
+}
+
+function settings_2fa_disable(): void
+{
+    $admin = require_admin();
+    if (too_many_attempts('admin2fa', TWOFA_MAX_ATTEMPTS)) {
+        flash('error', 'Příliš mnoho špatných kódů. Zkuste to znovu za ' . LOGIN_WINDOW_MIN . ' minut.');
+        redirect('/admin/settings#2fa');
+    }
+    $user = db_one('SELECT * FROM users WHERE id = ?', [$admin['id']]);
+    if (!password_verify((string) ($_POST['password'] ?? ''), $user['password_hash']) || admin_check_second_factor($user, (string) ($_POST['code'] ?? '')) === null) {
+        record_failed_attempt('admin2fa');
+        flash('error', 'Heslo nebo kód nesouhlasí, dvoufázové ověření zůstává zapnuté.');
+        redirect('/admin/settings#2fa');
+    }
+    db_exec('UPDATE users SET totp_secret = NULL, totp_enabled_at = NULL, totp_last_step = NULL WHERE id = ?', [$admin['id']]);
+    db_exec('DELETE FROM recovery_codes WHERE user_id = ?', [$admin['id']]);
+    bump_auth_epoch((int) $admin['id']);
+    log_activity(null, 'admin', '2fa', 'Vypnuto dvoufázové ověření');
+    flash('success', 'Dvoufázové ověření je vypnuté. Doporučuji ho co nejdřív zapnout znovu.');
+    redirect('/admin/settings#2fa');
+}
+
+function settings_2fa_codes(): void
+{
+    $admin = require_admin();
+    if (too_many_attempts('admin2fa', TWOFA_MAX_ATTEMPTS)) {
+        flash('error', 'Příliš mnoho špatných kódů. Zkuste to znovu za ' . LOGIN_WINDOW_MIN . ' minut.');
+        redirect('/admin/settings#2fa');
+    }
+    $user = db_one('SELECT * FROM users WHERE id = ?', [$admin['id']]);
+    if (!$user['totp_enabled_at'] || admin_check_second_factor($user, (string) ($_POST['code'] ?? '')) !== 'aplikace') {
+        record_failed_attempt('admin2fa');
+        flash('error', 'Pro nové záložní kódy zadejte aktuální kód z aplikace Authenticator.');
+        redirect('/admin/settings#2fa');
+    }
+    $_SESSION['new_recovery_codes'] = replace_recovery_codes((int) $admin['id']);
+    log_activity(null, 'admin', '2fa', 'Vytvořeny nové záložní kódy');
+    flash('success', 'Nové záložní kódy jsou vytvořené, staré už neplatí.');
+    redirect('/admin/settings#2fa');
+}
+
+function settings_logout_others(): void
+{
+    $admin = require_admin();
+    bump_auth_epoch((int) $admin['id']);
+    log_activity(null, 'admin', 'logout', 'Odhlášení ostatních zařízení');
+    flash('success', 'Ostatní zařízení jsou odhlášená.');
+    redirect('/admin/settings');
 }
 
 function settings_profile_save(): void
@@ -27,7 +126,12 @@ function settings_profile_save(): void
         redirect('/admin/settings');
     }
     if ($new !== '') {
+        if (too_many_attempts('admin')) {
+            flash('error', 'Příliš mnoho pokusů. Zkuste to znovu za ' . LOGIN_WINDOW_MIN . ' minut.');
+            redirect('/admin/settings');
+        }
         if (!password_verify($current, $user['password_hash'])) {
+            record_failed_attempt('admin');
             flash('error', 'Současné heslo nesouhlasí, nové heslo se neuložilo.');
             redirect('/admin/settings');
         }
@@ -36,9 +140,11 @@ function settings_profile_save(): void
             redirect('/admin/settings');
         }
         db_exec('UPDATE users SET password_hash = ? WHERE id = ?', [password_hash($new, PASSWORD_DEFAULT), $admin['id']]);
+        bump_auth_epoch((int) $admin['id']);
+        log_activity(null, 'admin', 'password', 'Změna hesla administrátora');
     }
     db_exec('UPDATE users SET name = ?, email = ? WHERE id = ?', [$name, $email, $admin['id']]);
-    flash('success', $new !== '' ? 'Profil i nové heslo jsou uložené.' : 'Profil je uložený.');
+    flash('success', $new !== '' ? 'Profil i nové heslo jsou uložené. Ostatní zařízení jsem odhlásil.' : 'Profil je uložený.');
     redirect('/admin/settings');
 }
 

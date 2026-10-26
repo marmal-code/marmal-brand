@@ -44,6 +44,11 @@ function github_get(string $url, ?string $saveTo = null, string $accept = 'appli
         CURLOPT_CONNECTTIMEOUT => 15,
         CURLOPT_TIMEOUT => 240,
         CURLOPT_FAILONERROR => false,
+        // Jen HTTPS, i při přesměrování (GitHub posílá ZIP z codeload.github.com).
+        CURLOPT_PROTOCOLS => CURLPROTO_HTTPS,
+        CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTPS,
+        CURLOPT_SSL_VERIFYPEER => true,
+        CURLOPT_SSL_VERIFYHOST => 2,
     ]);
     if ($saveTo !== null) {
         $fh = fopen($saveTo, 'wb');

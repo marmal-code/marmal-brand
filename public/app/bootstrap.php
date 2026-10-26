@@ -25,6 +25,7 @@ mb_internal_encoding('UTF-8');
 
 require __DIR__ . '/helpers.php';
 require __DIR__ . '/db.php';
+require __DIR__ . '/totp.php';
 require __DIR__ . '/auth.php';
 require __DIR__ . '/brands.php';
 require __DIR__ . '/markdown.php';
@@ -60,6 +61,20 @@ function start_session(): void
     if (session_status() === PHP_SESSION_ACTIVE) {
         return;
     }
+    // Relace v datové složce (mimo web a mimo sdílený /tmp hostingu), jen přes cookie, bez cizích ID.
+    $dir = DATA_DIR . '/sessions';
+    if (!is_dir($dir)) {
+        @mkdir($dir, 0700, true);
+    }
+    if (is_dir($dir) && is_writable($dir)) {
+        session_save_path($dir);
+        ini_set('session.gc_probability', '1');
+        ini_set('session.gc_divisor', '100');
+    }
+    ini_set('session.gc_maxlifetime', (string) ADMIN_IDLE_SECONDS);
+    ini_set('session.use_strict_mode', '1');
+    ini_set('session.use_only_cookies', '1');
+    ini_set('session.use_trans_sid', '0');
     session_name('brandhub');
     session_set_cookie_params([
         'lifetime' => 0,

@@ -21,7 +21,7 @@
                 <td><input class="input input-sm" name="<?= $p ?>[tags]" value="<?= e($t['tags']) ?>" aria-label="Štítky" style="width: 160px"></td>
                 <td><label class="check" style="padding-top: 0; min-height: 0"><input type="checkbox" name="<?= $p ?>[required]" value="1"<?= $t['required'] ? ' checked' : '' ?>><span class="sr-only">Povinná</span></label></td>
                 <td><input class="input input-sm" name="<?= $p ?>[sort]" value="<?= (int) $t['sort'] ?>" aria-label="Pořadí" style="width: 70px"></td>
-                <td><button class="link-btn danger small" formaction="/admin/template/<?= (int) $t['id'] ?>/delete" formmethod="post" onclick="return confirm('Odebrat pozici ze šablony?')">odebrat</button></td>
+                <td><button class="link-btn danger small" formaction="/admin/template/<?= (int) $t['id'] ?>/delete" formmethod="post" data-confirm-click="Odebrat pozici ze šablony?">odebrat</button></td>
               </tr>
             <?php endforeach; ?>
             </tbody>

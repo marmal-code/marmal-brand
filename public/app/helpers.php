@@ -30,6 +30,29 @@ function e(mixed $v): string
     return htmlspecialchars((string) $v, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+/** Jen odkazy http(s) – jinak prázdný řetězec (ochrana proti odkazům javascript: a data:). */
+function safe_url(?string $url): string
+{
+    $url = trim((string) $url);
+    return preg_match('#^https?://[^\s<>"]+$#i', $url) ? $url : '';
+}
+
+/** Bezpečnostní hlavičky pro stránky aplikace (soubory klientů mají vlastní, přísnější CSP ve stream_file). */
+function send_security_headers(): void
+{
+    header_remove('X-Powered-By');
+    header('X-Content-Type-Options: nosniff');
+    header('Referrer-Policy: strict-origin-when-cross-origin');
+    header('X-Frame-Options: SAMEORIGIN');
+    header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()');
+    header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+        . "font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; "
+        . "base-uri 'self'; form-action 'self'; frame-ancestors 'self'");
+    if (is_https()) {
+        header('Strict-Transport-Security: max-age=15552000');
+    }
+}
+
 function is_https(): bool
 {
     return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')

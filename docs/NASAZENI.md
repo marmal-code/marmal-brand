@@ -75,3 +75,20 @@ a vaše vlastní soubory mimo spravované složky (např. ověřovací soubor pr
 1. U klienta v DNS: `brand.klient.cz CNAME brand.marmal.cz.`
 2. Na hostingu přidat `brand.klient.cz` jako alias webu brand.marmal.cz a zapnout pro ni HTTPS.
 3. V aplikaci u klienta vyplnit **Vlastní doména**.
+
+## Zabezpečení (od verze 1.3.0)
+
+- **Dvoufázové ověření** si zapnete v Nastavení → Můj profil. Záložní kódy si uložte do správce hesel.
+- **Ztracený telefon i záložní kódy:** v phpMyAdmin (databáze `marmal_brand`) spusťte
+  ```sql
+  UPDATE users SET totp_secret = NULL, totp_enabled_at = NULL, totp_last_step = NULL, auth_epoch = auth_epoch + 1;
+  DELETE FROM recovery_codes;
+  ```
+  Pak se přihlásíte jen heslem a 2FA si znovu zapnete.
+- **Zapomenuté heslo administrátora:** v phpMyAdmin vygenerujte hash (např. `php -r 'echo password_hash("nove-heslo", PASSWORD_DEFAULT);'`
+  na vlastním počítači) a vložte ho do `users.password_hash`.
+- Relace (přihlášení) se ukládají do `brand-data/sessions/`, ne do sdíleného `/tmp` hostingu.
+- **HTTPS:** pokud hosting sám nepřesměrovává `http://` na `https://`, odkomentujte v `.htaccess` dva řádky pod
+  „Přesměrování na HTTPS“. Po přechodu na HTTPS posílá aplikace hlavičku HSTS (prohlížeč pak už `http://` nepoužije).
+- **Instalace:** dokud neproběhne instalační průvodce, může ho dokončit kdokoli, kdo adresu zná. Po nahrání nové instalace
+  přes FTP proto průvodce hned dokončete.

@@ -37,7 +37,7 @@ $num = 0;
   </div>
   <div class="row">
     <a class="btn btn-ghost" href="<?= e(brand_url($brand)) ?>">Zpět</a>
-    <button type="button" class="btn btn-primary" onclick="window.print()"><?= icon('download', 18) ?>Uložit jako PDF</button>
+    <button type="button" class="btn btn-primary" data-print><?= icon('download', 18) ?>Uložit jako PDF</button>
   </div>
 </div>
 
@@ -156,5 +156,6 @@ $num = 0;
   <?php if ($brand['contact_name']): ?><p class="small muted">Brand spravuje <?= e($brand['contact_name']) ?><?= $brand['contact_note'] ? ' · ' . e($brand['contact_note']) : '' ?><?= !empty($brand['contact_phone']) ? '<br>' . e($brand['contact_phone']) : '' ?><?= !empty($brand['contact_email']) ? (empty($brand['contact_phone']) ? '<br>' : ' · ') . e($brand['contact_email']) : '' ?></p><?php endif; ?>
 </section>
 
+<script src="/assets/js/app.js?v=<?= e(APP_VERSION) ?>"></script>
 </body>
 </html>

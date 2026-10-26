@@ -30,6 +30,7 @@ function client_home(string $slug): void
     if (isset($_GET['s'])) {
         $token = (string) $_GET['s'];
         if (share_link_valid($brand) && hash_equals((string) $brand['share_token'], $token)) {
+            session_regenerate_id(true);
             $_SESSION['share'][(int) $brand['id']] = $token;
             log_activity((int) $brand['id'], 'share', 'share', 'Otevřen sdílený odkaz');
             redirect(brand_url($brand));

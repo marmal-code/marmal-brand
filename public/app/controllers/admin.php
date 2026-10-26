@@ -23,9 +23,46 @@ function login_submit(): void
     if ($error) {
         render('login', ['error' => $error, 'email' => $email], 'plain');
     }
+    if (admin_2fa_pending()) {
+        redirect('/login/2fa');
+    }
+    redirect_after_login();
+}
+
+function redirect_after_login(): never
+{
     $to = (string) ($_SESSION['after_login'] ?? '/admin');
     unset($_SESSION['after_login']);
-    redirect(str_starts_with($to, '/') && !str_starts_with($to, '//') ? $to : '/admin');
+    $safe = preg_match('#^/(admin|b/)#', $to) && !str_contains($to, '\\') && !preg_match('/[\r\n]/', $to);
+    redirect($safe ? $to : '/admin');
+}
+
+function login_2fa_form(): void
+{
+    if (current_admin()) {
+        redirect('/admin');
+    }
+    if (!admin_2fa_pending()) {
+        redirect('/login');
+    }
+    render('login_2fa', ['error' => null], 'plain');
+}
+
+function login_2fa_submit(): void
+{
+    if (!admin_2fa_pending()) {
+        flash('error', 'Na zadání kódu uplynulo moc času. Přihlaste se prosím znovu.');
+        redirect('/login');
+    }
+    $error = admin_login_2fa((string) ($_POST['code'] ?? ''));
+    if ($error) {
+        if (!admin_2fa_pending()) {
+            flash('error', $error);
+            redirect('/login');
+        }
+        render('login_2fa', ['error' => $error], 'plain');
+    }
+    redirect_after_login();
 }
 
 function logout(): void
@@ -123,8 +160,16 @@ function admin_brand_new(): void
 
 function suggest_password(): string
 {
-    $words = ['kvas', 'mlyn', 'klas', 'most', 'list', 'dub', 'lipa', 'vlna', 'skala', 'luka', 'brod', 'les', 'rosa', 'zrno'];
-    return $words[random_int(0, count($words) - 1)] . '-' . $words[random_int(0, count($words) - 1)] . '-' . random_int(10, 99);
+    // 3 slova z 64 + číslo 100–999 ≈ 236 milionů kombinací (dřív 2 slova ze 14 + číslo ≈ 18 tisíc).
+    $words = [
+        'kvas', 'mlyn', 'klas', 'most', 'list', 'dub', 'lipa', 'vlna', 'skala', 'luka', 'brod', 'les', 'rosa', 'zrno',
+        'buk', 'jilm', 'javor', 'smrk', 'jedle', 'modrin', 'olse', 'vrba', 'tis', 'habr', 'jasan', 'briza',
+        'potok', 'reka', 'tun', 'jezero', 'rybnik', 'pramen', 'vodopad', 'oblak', 'mlha', 'kroupa', 'snih', 'vitr',
+        'kamen', 'opuka', 'cedic', 'zula', 'pisek', 'jil', 'hlina', 'stezka', 'cesta', 'vrch', 'udoli', 'pole',
+        'zahrada', 'sad', 'kopec', 'hora', 'louka', 'paseka', 'mez', 'ostrov', 'zatoka', 'mys', 'hvozd', 'haj', 'bor', 'luh',
+    ];
+    $w = fn () => $words[random_int(0, count($words) - 1)];
+    return $w() . '-' . $w() . '-' . $w() . '-' . random_int(100, 999);
 }
 
 function brand_form_input(?array $brand): array
@@ -170,8 +215,8 @@ function validate_brand_input(array $in, int $brandId = 0): array
     if ($in['contact_phone'] !== '' && !preg_match('/^\+?[0-9 ()\/-]{6,40}$/', $in['contact_phone'])) {
         $errors[] = 'Kontaktní telefon může obsahovat jen číslice, mezery a znak +.';
     }
-    if ($in['password'] !== '' && mb_strlen($in['password']) < 6) {
-        $errors[] = 'Heslo klienta musí mít aspoň 6 znaků.';
+    if ($in['password'] !== '' && mb_strlen($in['password']) < 8) {
+        $errors[] = 'Heslo klienta musí mít aspoň 8 znaků.';
     }
     return $errors;
 }
@@ -423,7 +468,7 @@ function admin_item_save(string $id): void
         $meta['family'] = trim((string) ($_POST['font_family'] ?? ''));
         $meta['weights'] = trim((string) ($_POST['font_weights'] ?? ''));
         $meta['sample'] = trim((string) ($_POST['font_sample'] ?? ''));
-        $meta['google_url'] = filter_var(trim((string) ($_POST['font_google_url'] ?? '')), FILTER_VALIDATE_URL) ?: '';
+        $meta['google_url'] = safe_url((string) ($_POST['font_google_url'] ?? ''));
         $meta['license'] = trim((string) ($_POST['font_license'] ?? ''));
     }
     db_exec(

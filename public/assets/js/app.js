@@ -46,6 +46,39 @@
   });
 
   /* ---------- Potvrzení před odesláním ---------- */
+  /* ---------- Drobnosti bez inline skriptů (kvůli Content-Security-Policy) ---------- */
+  document.addEventListener('click', function (ev) {
+    var c = ev.target.closest('[data-confirm-click]');
+    if (c && !window.confirm(c.getAttribute('data-confirm-click'))) {
+      ev.preventDefault();
+      return;
+    }
+    if (ev.target.closest('[data-print]')) {
+      window.print();
+    }
+  });
+  document.addEventListener('change', function (ev) {
+    if (ev.target.matches('[data-autosubmit]') && ev.target.form) {
+      ev.target.form.submit();
+    }
+  });
+
+  /* ---------- QR kód pro dvoufázové ověření (vzniká v prohlížeči, klíč nikam neodchází) ---------- */
+  var qrEls = document.querySelectorAll('[data-qr]');
+  if (qrEls.length) {
+    var qs = document.createElement('script');
+    qs.src = '/assets/vendor/qrcode.js';
+    qs.onload = function () {
+      qrEls.forEach(function (el) {
+        var qr = window.qrcode(0, 'M');
+        qr.addData(el.getAttribute('data-qr'));
+        qr.make();
+        el.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+      });
+    };
+    document.head.appendChild(qs);
+  }
+
   document.addEventListener('submit', function (ev) {
     var msg = ev.target.getAttribute('data-confirm');
     if (msg && !window.confirm(msg)) {

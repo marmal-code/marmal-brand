@@ -3,7 +3,7 @@
   <h1>Aktivita</h1>
   <form method="get" action="/admin/activity" class="row">
     <label class="sr-only" for="brand">Klient</label>
-    <select class="select" id="brand" name="brand" style="width: auto" onchange="this.form.submit()">
+    <select class="select" id="brand" name="brand" style="width: auto" data-autosubmit>
       <option value="0">Všichni klienti</option>
       <?php foreach ($brands as $b): ?><option value="<?= (int) $b['id'] ?>"<?= $brandId === (int) $b['id'] ? ' selected' : '' ?>><?= e($b['name']) ?></option><?php endforeach; ?>
     </select>

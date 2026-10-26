@@ -3,8 +3,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/app/bootstrap.php';
 
-header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: strict-origin-when-cross-origin');
+send_security_headers();
 
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 $path = '/' . trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
@@ -51,6 +50,8 @@ $routes = [
     ['GET',  '#^/$#', 'home'],
     ['GET',  '#^/login$#', 'login_form'],
     ['POST', '#^/login$#', 'login_submit'],
+    ['GET',  '#^/login/2fa$#', 'login_2fa_form'],
+    ['POST', '#^/login/2fa$#', 'login_2fa_submit'],
     ['POST', '#^/logout$#', 'logout'],
 
     // administrace
@@ -86,6 +87,11 @@ $routes = [
     // nastavení
     ['GET',  '#^/admin/settings$#', 'settings_profile'],
     ['POST', '#^/admin/settings$#', 'settings_profile_save'],
+    ['GET',  '#^/admin/settings/2fa$#', 'settings_2fa_setup'],
+    ['POST', '#^/admin/settings/2fa$#', 'settings_2fa_enable'],
+    ['POST', '#^/admin/settings/2fa/disable$#', 'settings_2fa_disable'],
+    ['POST', '#^/admin/settings/2fa/codes$#', 'settings_2fa_codes'],
+    ['POST', '#^/admin/settings/logout-others$#', 'settings_logout_others'],
     ['GET',  '#^/admin/settings/update$#', 'settings_update'],
     ['POST', '#^/admin/settings/update/token$#', 'settings_update_token'],
     ['POST', '#^/admin/settings/update/check$#', 'settings_update_check'],

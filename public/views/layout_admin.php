@@ -37,6 +37,9 @@
         <?= icon($f['type'] === 'error' ? 'alert' : 'check', 20) ?><div><?= e($f['message']) ?></div>
       </div>
     <?php endforeach; ?>
+    <?php if ($me && empty($me['totp_enabled_at']) && ($tab ?? '') !== 'profile'): ?>
+      <div class="alert alert-info" role="status"><?= icon('shield', 20) ?><div>Účet chrání jen heslo. <a href="/admin/settings/2fa">Zapněte si dvoufázové ověření</a>, zabere to minutu.</div></div>
+    <?php endif; ?>
     <?= $content ?>
   </main>
 </div>
