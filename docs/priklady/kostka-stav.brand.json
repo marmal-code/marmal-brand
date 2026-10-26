@@ -1,0 +1,884 @@
+{
+  "format": "brand-hub",
+  "version": 1,
+  "brand": {
+    "name": "KOSTKA stav",
+    "slug": "kostka-stav",
+    "intro": "KOSTKA stav je generální dodavatel skupiny KOSTKA: bytové domy, průmyslové stavby a veřejné zakázky. Brand manuál 1.0 z října 2026 sjednocuje logomanuál, manuál 2022 a tiskoviny z let 2019–2025.\nVše je tu vždy v aktuální verzi.",
+    "hero_bg": "#E6F3F6",
+    "contact_name": "Martin Malý · MarMal.cz",
+    "contact_note": "Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.",
+    "public_links": true
+  },
+  "texts": {
+    "logo": "KOSTKA stav je generální dodavatel skupiny KOSTKA. Staví bytové domy, průmyslové stavby a veřejné zakázky do 250 mil. Kč, pro projekty skupiny i pro externí zadavatele. Firma funguje od roku 2016.\n\nKomunikace míří v tomto pořadí na investory a zadavatele staveb, na obce, města a kraj a na budoucí zaměstnance. Vizuál má působit věcně a spolehlivě: skutečné stavby, jasná čísla, žádná okázalost.\n\n## Jedna skupina, jedna barva na firmu\nVšechny firmy skupiny mají stejně stavěné logo: hranaté závorky, slovo KOSTKA a podnázev malými písmeny. Liší se jen barvou. **KOSTKA stav má stavební azurit a barvu si s ostatními firmami nepůjčuje.**\n\n| Firma | Barva |\n|---|---|\n| KOSTKA holding | {#231F20} černá · #231F20 |\n| KOSTKA development | {#ECB116} developerský jantar · #ECB116 |\n| KOSTKA invest | {#B60F25} investiční karmínová · #B60F25 |\n| **KOSTKA stav** | {#0083A9} **stavební azurit · #0083A9** |\n| KOSTKA plus | {#00A956} facility emerald · #00A956 |\n\nBarvy ostatních firem jsou převzaté z jejich barevných listů. Podrobná pravidla určí manuál holdingu.\n\n## Symbol\nDvě hranaté závorky. Každá má poměr 5 : 2 při tloušťce 1, mezi nimi je mezera 1. Dohromady tvoří čtverec 5 × 5 jednotek s otevřenými stranami.\n\n### Jak symbol čteme\n- **Kostka ze dvou dílů.** Dvě stejné závorky dávají dohromady obrys čtverce, tedy kostky při pohledu zepředu. Kostka je složená ze dvou dílů, které do sebe zapadají. Stavba také vzniká z dílů, které musí přesně sedět.\n- **Spára mezi díly.** Mezi závorkami zůstává mezera široká jako jejich tloušťka. Na stavbě je spára mezi prefabrikáty nebo zdivem samozřejmostí: celek drží pohromadě a zároveň dává místo pro pohyb.\n- **Co je v závorce, patří k sobě.** Závorky drží obsah pohromadě. To odpovídá konceptu Development v KOSTCE: příprava, financování, stavba i správa uvnitř jedné skupiny. KOSTKA stav je v tom celku díl, který staví.\n\n## Zápis značky a claim\nKOSTKA vždy velkými písmeny, ve všech pádech (v KOSTCE, s KOSTKOU), podnázev malými: **KOSTKA stav**. Úřední název KOSTKA stav s.r.o. jen ve smlouvách, patičkách a GDPR. Další zápisy jsou v sekci Pravidla použití.\n\n> **Stavíme na zkušenostech, rosteme s každým projektem.**\n> Jediný claim KOSTKA stav. „S hrdostí a pokorou“ zůstává mottem holdingu.\n\n## Kompozice loga\nLogo má tři kompozice a samostatný symbol. **Přednostně používejte primární vodorovné logo na bílém podkladu.**\n\n| Kompozice | Kdy použít | Soubory |\n|---|---|---|\n| **Primární · vodorovné** | Web, dopisy, vizitky, inzerce, referenční listy, bannery, polepy aut. Symbol ve stavebním azuritu, slovo KOSTKA a podnázev v černé. | logo-kostka-stav-primarni-* |\n| Sekundární · vertikální | Profilové obrázky, roll-upy, stavební tabule na výšku, razítko. Symbol nad textem, vše zarovnané vlevo. | logo-kostka-stav-sekundarni-* |\n| Jednořádkové | Stavební stroje, nákladní auta, stavební buňky, propisky a další úzké a nízké plochy. „stav“ stojí za slovem KOSTKA na společné účaří. | logo-kostka-stav-jednoradkove-* |\n| Symbol | Favicon, ikona aplikace, střed QR kódu, malé plochy, reklamní předměty. | symbol-kostka-stav-* |\n\n### Kterou kompozici kdy\n- Plocha široká a nízká (poměr nad 4 : 1): jednořádkové.\n- Běžný formát: primární vodorovné.\n- Plocha úzká nebo čtvercová: vertikální.\n- Méně než minimální velikost loga: symbol.\n\nPoužívejte jen soubory z balíčku k tomuto manuálu: vše je převedené na křivky a v barvách palety. Starší soubory (logo 2024, logomanuál A4, starší vizitky) mají „stav“ jako živý text v jiném řezu a nahrazují se.\n\n## Konstrukce\nVšechny proporce loga vycházejí z jedné jednotky **x**. Výška slova KOSTKA je 3x, symbol má 5 × 5x. Poměrová síť slouží k přesnému sestavení loga při velkých zvětšeních (plachty, polepy strojů, stavební tabule). Hodnoty jsou převzaté z manuálu 2022 a ověřené na dodaném SVG.\n\n- **Symbol:** čtverec 5 × 5x. Každá závorka je 2x široká, mezera mezi nimi 1x, tloušťka ramen 1x.\n- **Slovo KOSTKA:** výška verzálek 3x, odsazení od symbolu 2x. Horní hrana leží 1x pod horní hranou symbolu.\n- **Podnázev stav:** výška malých písmen 1,5x, mezera pod slovem KOSTKA 1x. U jednořádkového loga stojí „stav“ na účaří slova KOSTKA.\n- **Vertikální logo** skládá stejný logotyp pod symbol s mezerou 2x. **Jednořádkové logo** staví „stav“ za slovo KOSTKA na společné účaří a vychází z polepů strojů.\n\n## Ochranná zóna\nKolem loga musí zůstat volný prostor **3x, tedy výška písmene K** ve slově KOSTKA. Do zóny nezasahuje text, okraj formátu, jiné logo ani výrazný detail fotografie. Stejné pravidlo platí pro všechny kompozice a samostatný symbol.\n\nZóna zároveň určuje minimální vzdálenost loga od okraje listu, tabule, polepu nebo jiné plochy. Pravidlo je shodné v logomanuálu A4 i v manuálu 2022.\n\n## Minimální velikost\nPod tyto rozměry přestane být čitelný podnázev „stav“. Na menší plochy použijte samostatný symbol.\n\n| Kompozice | Tisk | Digitál |\n|---|---|---|\n| Vodorovné logo | šířka 22 mm (výška 7 mm) | šířka 120 px |\n| Vertikální logo | šířka 12 mm | šířka 64 px |\n| Jednořádkové logo | šířka 30 mm | propiska: výška symbolu min. 4 mm |\n\n## Barevné verze\nNa bílé plochy patří plnobarevné logo, na stavební azurit a na fotografie bílé, na černé a tmavě šedé plochy (stroje, auta) verze s azuritovým symbolem a bílým textem.\n\n| Verze | Soubor | Použití |\n|---|---|---|\n| Plnobarevné | …-plnobarevne | Bílá a světlé plochy. Základní varianta. |\n| Inverzní | …-bile | Celé logo bílé na stavebním azuritu. Rozměr modré plochy není daný, platí ochranná zóna. |\n| Na tmavý podklad | …-na-tmavy-podklad | Symbol ve stavebním azuritu, text bílý. Stroje, auta, patička webu, tmavé prezentace. |\n| Černobílé | …-cerne | Černobílý tisk, razítka, faxy, jednobarevná inzerce, potisk světlého textilu. |\n| Černobílé inverzní | …-bile | Bílé logo na černé. Gravura, ražba, potisk tmavého textilu. |\n| Na fotografii | …-bile | Jen bílé logo na klidné tmavé části snímku. Na pestré fotce použijte panel (Pravidla použití → Grafické prvky). |\n\n## Logo na podkladech\n| Podklad | Verze loga | Použití |\n|---|---|---|\n| {#FFFFFF} Bílá a světlé plochy | plnobarevné | ✓ ano |\n| {#0083A9} Stavební azurit | bílé (inverzní) | ✓ ano |\n| {#231F20} Černá a tmavě šedé plochy, stroje, auta | azuritový symbol, bílý text | ✓ ano |\n| Klidná tmavá část fotografie | bílé | ✓ ano |\n| Jednobarevný tisk, světlý textil | černé | ✓ ano |\n| {#0083A9} Stavební azurit | plnobarevné (symbol se ztratí) | ✗ ne |\n| {#231F20} Tmavé stroje | plnobarevné s černým textem | ✗ ne |\n| Pestrá fotografie | logo přímo na snímku | ✗ ne (použijte panel) |\n\n### Logo jako vodoznak\nPro speciální účely (podklad prezentace, obal, plachta) je přípustné jen jednobarevné bílé logo s viditelností 20–100 %.\n\n## Symbol a závorky\nSymbol používejte samostatně jen tam, kde je potřeba: střed QR kódu, oddělovač v řádku, favicon, reklamní předměty.\n\nPravá a levá závorka mohou stát i samostatně jako grafický prvek (Pravidla použití → Grafické prvky), jako odrážka v textu, ukazatel „dál“ a v ikonách. Vždy platí: tloušťka 1x, výška 5x, šířka jednoho ramene 2x. Nikdy natočené, natažené ani zkrácené a jen v barvách palety.\n\n> V manuálu 2022 byl symbol na modré ploše ve světle šedé (#EBEBEB). Sjednocujeme ho na čistou bílou jako u inverzního loga.\n\n## Nesprávné použití\nLogo se nedeformuje, nenatáčí, nepřebarvuje a nepřepisuje jiným písmem. Výčet není úplný: logo se používá jen z dodaných souborů.\n\n- **Natáčení.** Logo stojí vždy vodorovně. Na rameni stroje se natáčí s ramenem, ne vůči němu.\n- **Cizí barva.** Investiční karmínová patří KOSTKA invest. Každá firma má jen svou barvu.\n- **Deformace.** Žádné roztažení ani stlačení. Měňte jen celou velikost.\n- **Kurzíva a zkosení.** Logo nemá šikmou verzi.\n- **Přepsání písmem.** Logotyp je kreslený. Nesázejte ho písmem a neměňte velikost písmen.\n- **Nízký kontrast.** Plnobarevné logo na stavebním azuritu ztratí symbol. Použijte bílou verzi.",
+    "barvy": "KOSTKA stav stojí na třech barvách: **stavební azurit, černá a bílá**. Tři doplňkové odstíny řeší čitelnost textu a plochy na webu.\n\nNázev „stavební azurit“ a jeho hodnoty CMYK, RGB, HEX a Pantone pocházejí z původního logomanuálu A4 a z listu „KOSTKA stav – modrá barva“. CMYK doplňkových odstínů je převod přes profil **Coated FOGRA39**. Černá #231F20 je hodnota pro obrazovku, v tisku je vždy jen K (0 · 0 · 0 · 100).\n\n## Doplňkové barvy\n- **Tmavý azurit** {#006A89} je nový: stavební azurit má na bílé kontrast 4,36 : 1 a na drobný text nestačí.\n- **Betonová šedá** {#666666} je z manuálu 2022 a nahrazuje světlou šedou #999999 z hlavičkového papíru (ta má na bílé kontrast jen 2,8 : 1).\n- **Světlý azurit** {#E6F3F6} je plocha na webu a v tabulkách.\n\n## Odstíny\nOdstíny po 20 % slouží pro grafy, tabulky a podklady. **Pro text ani logo se nepoužívají.**\n\n| Barva | 100 % | 80 % | 60 % | 40 % | 20 % | 10 % |\n|---|---|---|---|---|---|---|\n| Stavební azurit | {#0083A9} #0083A9 | {#339CBA} #339CBA | {#66B5CB} #66B5CB | {#99CDDD} #99CDDD | {#CCE6EE} #CCE6EE | {#E6F3F6} #E6F3F6 |\n| Černá | {#231F20} #231F20 | {#4F4C4D} #4F4C4D | {#7B7979} #7B7979 | {#A7A5A6} #A7A5A6 | {#D3D2D2} #D3D2D2 | {#E9E9E9} #E9E9E9 |\n\n## Poměr ploch\n| Barva | Podíl |\n|---|---|\n| {#FFFFFF} Bílá · plochy, vzduch | 60 % |\n| {#0083A9} Stavební azurit · pásy, panely | 30 % |\n| {#231F20} Černá | 10 % |\n\nPoměr odpovídá vizitkám, bannerům i referenčním listům: bílá plocha, azuritový pás nebo panel, černý text. Na webu je akcentem pro tlačítka tmavý azurit.\n\n## Kombinace a kontrast\nText musí mít vůči podkladu kontrast alespoň **4,5 : 1** (WCAG AA). Velkým nadpisům (od 24 px, tučně od 19 px) stačí 3 : 1.\n\n| Kombinace | Kontrast | Použití |\n|---|---|---|\n| {#231F20} Černá na bílé | 16,3 : 1 · AA | Běžný text, tabulky |\n| Bílá na {#231F20} černé | 16,3 : 1 · AA | Patička, tmavé plochy, stroje |\n| Černá na {#E6F3F6} světlém azuritu | 14,4 : 1 · AA | Boxy a tabulky na webu |\n| Bílá na {#006A89} tmavém azuritu | 6,1 : 1 · AA | Tlačítka, delší text v panelu |\n| {#006A89} Tmavý azurit na bílé | 6,1 : 1 · AA | Odkazy, web na vizitce, zvýraznění |\n| Bílá na {#0083A9} stavebním azuritu | 4,4 : 1 · jen velký text | Nadpisy, jména, krátké údaje |\n| {#0083A9} Stavební azurit na bílé | 4,4 : 1 · jen velký text | Nadpisy, čísla, symbol |\n| {#0083A9} Azurit na černé | 3,7 : 1 · ne pro text | Jen symbol a grafika |\n| Černá na {#0083A9} stavebním azuritu | 3,7 : 1 · ne | Nepoužívat |\n\nNa vizitkách a referenčních listech je drobný bílý text na stavebním azuritu, tedy pod hranicí 4,5 : 1. V tisku je to přijatelné od 8 pt v řezu Regular. Na webu a v digitálu dejte delší text na tmavý azurit.",
+    "typografie": "Dvě rodiny písma. **Roboto** jen v tučných řezech na nadpisy, jména, čísla a roky. **IBM Plex Sans** na všechen ostatní text, jednotně pro celou skupinu KOSTKA. Obě písma jsou zdarma (SIL Open Font License 1.1), v Google Fonts a s plnou češtinou. Písma jsou ke stažení v této sekci.\n\nMění se tím pravidlo z logomanuálu A4, kde bylo Roboto jediným písmem ve řezech Light až Extrabold. Na stávajících tiskovinách je text v Roboto Light a Regular. Při dalším tisku se převede na IBM Plex Sans.\n\n| Písmo | Řez | Použití |\n|---|---|---|\n| Roboto | Black 900 | H1, roky, velká čísla |\n| Roboto | Bold 700 | H2–H4, jména, titulky panelů |\n| IBM Plex Sans | Light 300 | perex, funkce na vizitce |\n| IBM Plex Sans | Regular 400 | běžný text, kontakty, výčet činností |\n| IBM Plex Sans | Italic 400 | citace, poznámky |\n| IBM Plex Sans | SemiBold 600 | tlačítka, štítky, web na vizitce |\n\nŘezy Roboto Regular, Light a Thin se v nové komunikaci nepoužívají. Verzálky jen na krátké titulky a štítky do čtyř slov a na výčet činností.\n\nIBM Plex Sans má technický původ a pravidelné číslice, které sedí ke stavbě: hodnoty zakázek, termíny a tabulky se čtou rovně. Vedle Roboto Black působí klidně a nesoupeří s ním. Má 7 řezů s kurzívou a užší variantu Condensed pro tabulky.\n\n## Typografická škála\n| Úroveň | Ukázka | Písmo a řez | Web desktop / mobil | Tisk | Řádkování |\n|---|---|---|---|---|---|\n| H1 | Stavíme | Roboto Black | 64 / 40 px | 36 pt | 1,0 |\n| H2 | Reference | Roboto Black | 44 / 30 px | 24 pt | 1,1 |\n| H3 | Trafostanice Rokycany | Roboto Bold | 28 / 24 px | 16 pt | 1,15 |\n| H4 | Předmět zakázky | Roboto Bold | 20 / 18 px | 12 pt | 1,2 |\n| Perex | Od základů po kolaudaci. | IBM Plex Sans Light | 20 / 18 px | 12 pt | 1,5 |\n| Text | Generální dodávka staveb. | IBM Plex Sans Regular | 17 / 16 px | 9,5 pt | 1,6 |\n| Malý text | Objednatel: KLEMENT a.s. | IBM Plex Sans Regular | 14 px | 8 pt | 1,5 |\n| Štítek | REFERENCE | IBM Plex Sans SemiBold, verzálky, prostrkání 0,08 em | 12 px | 7 pt | 1,2 |\n\n## Zásady\n- Roboto jen v řezech Bold a Black, nikdy na odstavce.\n- Textové písmo i na tlačítka, formuláře, kontakty a výčet činností.\n- Řádek textu 50–75 znaků.\n- Ceny a hodnoty s pevnou šířkou číslic.\n\n## Náhradní písma\n- Word a Office bez nainstalovaných písem: **Arial Bold** na nadpisy, **Arial** na text.\n- E-mailový podpis: Arial (písma značky se v e-mailu nezobrazí spolehlivě).\n- Nepoužívat Times, Open Sans, Calibri ani dekorativní písma.\n\n> Logo na písmech nezávisí: logotyp je kreslený a v souborech loga převedený na křivky.\n\n## Licence\n| Písmo | Licence | Zdroj |\n|---|---|---|\n| Roboto Bold, Roboto Black | SIL Open Font License 1.1 | [fonts.google.com/specimen/Roboto](https://fonts.google.com/specimen/Roboto) |\n| IBM Plex Sans (Light až Bold, s kurzívami) | SIL Open Font License 1.1 | [fonts.google.com/specimen/IBM+Plex+Sans](https://fonts.google.com/specimen/IBM+Plex+Sans) |\n| Arial | systémové písmo | jen e-mailový podpis a Office bez písem značky |",
+    "tisk": "Tiskoviny sjednocují logomanuál A4, grafický manuál 2022 a tiskoviny z let 2019–2025. Kde se podklady lišily, platí tento manuál. Tiskové soubory zatím nejsou součástí balíčku. Rozměry a pravidla jsou níže a vycházejí z nich i nové podklady. Hlavičkový papír je v sekci Kancelář.\n\n## Vizitka\nBílá strana je pro všechny stejná a nemění se. Osobní údaje jsou jen na azuritové straně. Příjmení vždy verzálkami, stejně jako KOSTKA. Sjednoceno ze šesti vizitek a ze strany „Vizitky“ v logomanuálu A4. Rozměry a velikosti písma jsou převzaté z aktuální vizitky (Michaela KUŠKOVÁ).\n\n| Parametr | Hodnota |\n|---|---|\n| Formát | 90 × 50 mm, spadávka 2 mm |\n| Azuritová strana | osobní údaje, QR kód s vizitkou (vCard) |\n| Závorka | výška 35 mm, šířka 14 mm, tloušťka 7 mm, 7,5 mm od horního okraje, ramena do okraje |\n| Jméno | Roboto Bold 16 pt, bílá, Jméno PŘÍJMENÍ, 21 mm od levého okraje |\n| Funkce | IBM Plex Sans Light 7 pt, nejvýš 2 řádky |\n| Kontakty | IBM Plex Sans Light 7 pt, telefon a e-mail |\n| QR kód | 13 × 13 mm na bílém, 7 mm od pravého a dolního okraje |\n| Bílá strana | logo šířka 30 mm, 7 mm od levého a 7,5 mm od horního okraje; údaje firmy 7 pt vpravo zarovnané do 69 mm; web SemiBold v tmavém azuritu |\n\nPravidla:\n- Jméno PŘÍJMENÍ, akademický titul před jménem (Ing., Bc.).\n- Funkce začíná velkým písmenem, u dvou funkcí každá na vlastním řádku.\n- Telefon s předvolbou +420 a mezerami po trojicích.\n- QR kód (vCard) mají všechny vizitky, vpravo dole.\n\nBílá strana: KOSTKA stav s.r.o. · Ve Štědrém 198 · 273 62 Družec · IČO 05344433 · DIČ CZ05344433 · www.kostkastav.cz\n\n## Referenční list\nReferenční list představuje jednu stavbu. Tvoří sadu s titulním listem o firmě.\n\n| Parametr | Hodnota |\n|---|---|\n| Formát | 210 × 210 mm |\n| Logo | primární, vlevo nahoře, šířka 50 mm, na bílém pruhu |\n| Rok | vpravo nahoře, Roboto Black, pod ním „reference“ |\n| Fotografie | hlavní snímek přes celou výšku, vpravo sloupec 3–4 detailů |\n| Panel | stavební azurit přes celou šířku, u spodního okraje |\n| Titulek | Roboto Bold, bílá, název stavby |\n| Údaje | Objednatel, Hodnota, Předmět zakázky; textové písmo od 8 pt |\n| QR kód | bílý na panelu, vpravo dole, symbol uprostřed; odkaz na referenci na webu. Kódy vkládá grafik ve finálních datech. |\n\nTitulní list uvádí místo obecných služeb šest činností (Pravidla použití → Výčet činností). „Developerská činnost“ se vypouští, patří KOSTKA development.\n\n## Bannery a velkoformát\nBannery mají tři rozvržení podle poměru stran. Všechny stojí na bílé ploše s logem, činnosti jsou verzálkami a kontakty v azuritovém pásu dole. Sjednoceno ze šesti bannerů (2019–2024) a sítě na lešení. Dnešní činnosti jsou v Roboto Regular, nově v textovém písmu Regular.\n\n| Rozvržení | Formát | Skladba |\n|---|---|---|\n| A · na výšku a téměř čtverec | 280 × 180 cm (hřiště, ploty) | Logo na střed, činnosti na střed, pás 1/12 výšky. |\n| B · široký | 280 × 100 a 280 × 130 cm (lešení, oplocení staveb) | Logo vlevo, činnosti vpravo, u pravého okraje ořezaná závorka. Ve třetím poli pásu telefon místo druhého webu. |\n| B · velmi široký | 270 × 70 cm | Stejné rozvržení jako B, pás 1/9 výšky. |\n| C · jen logo | 280 × 130 a 280 × 100 cm (stadiony, kde je banner daleko) | Logo 70 % šířky na střed. |\n\n| Parametr | Hodnota |\n|---|---|\n| Formáty | na míru ploše; obvykle 280 × 180, 280 × 130, 280 × 100 a 270 × 70 cm. Rozvržení A, B nebo C se volí podle poměru stran. |\n| Okraj | logo a text min. 3x od okraje, kvůli lemu a okům |\n| Logo | primární; A 64 % šířky, B 40 % šířky, C 70 % šířky |\n| Činnosti | textové písmo Regular, verzálky, černá; výška verzálek = 1/2 výšky slova „stav“ |\n| Pás | stavební azurit, bílé údaje (www.kostkastav.cz · info@kostkastav.cz · +420 777 700 942), symbol jako oddělovač |\n| Tisková data | PDF v měřítku 1 : 10, CMYK, písma v křivkách, spadávka podle výrobce |\n\n### Síť na lešení\nPruh 300 × 2500 mm ve dvou verzích, lichý a sudý. Pruhy se kladou střídavě vedle sebe. Malá loga stojí střídavě vlevo a vpravo, velké logo na střed po každých čtyřech malých. V sudém pruhu jsou velká loga posunutá o půl rozestupu, takže vedle sebe tvoří šachovnicový vzor. Jen primární logo na bílém, bez textu. Data: síť na lešení, 2 strany (lichá, sudá).\n\n## Další tiskoviny\n- **Plaketa na stavbu** · 400 × 400 mm. Rok a text v Roboto Black verzálkami vlevo nahoře, logo přes 80 % šířky, QR a web vpravo dole.\n- **Desky A4 s chlopněmi** · výřez pro vizitky. Vnitřek bílý s logem, kontakty a QR. Obálka s fotografií. Stávající pásy pod 45° (natočená závorka) se při dalším tisku nahradí ořezanou závorkou.\n- **Leták na výšku** · 79 × 139 mm. Logo, šest činností se závorkou, 6 fotografií referencí, azuritový pás s webem.\n- **Leták / omalovánky** · podle dodaného PDF. Ukázka se doplní po dodání zdrojových dat.",
+    "digital": "## Sociální sítě\nPříspěvky používají stejné prvky jako tiskoviny: bílý pruh s logem, azuritový panel přes fotografii a ořezanou závorku. Místo šipky ukazuje „dál“ závorka. Nový návrh místo šablon 2024. Nadpisy v Roboto, text v IBM Plex Sans, adresa webu malými písmeny.\n\n| Typ příspěvku | Formát | Skladba |\n|---|---|---|\n| Reference | 1080 × 1350 px | Stejná skladba jako referenční list: logo a rok nahoře, fotografie, azuritový panel přes celou šířku s typem stavby, názvem a údaji. |\n| Sdělení a claim | 1080 × 1080 px | Celá plocha v azuritu, bílá ořezaná závorka u levého okraje, text v Roboto Black do 10 slov, dole web. Bez loga: profil už značku nese. |\n| Karusel | 1080 × 1080 px | Levá závorka u pravého okraje říká „pokračuj“. Na další straně na ni navazuje pravá závorka u levého okraje: na přechodu mezi stranami se složí přesný symbol včetně mezery 1 jednotky. Obsah je odsazený 12 % od stran. Poslední strana závorku vpravo nemá. Každá strana nese ikonu činnosti. |\n\n| Parametr | Hodnota |\n|---|---|\n| Formáty | 1080 × 1350 px (výchozí), 1080 × 1080 px, příběh 1080 × 1920 px |\n| Okraj | 7 % šířky (75 px), u karuselu 12 % ze stran kvůli závorkám |\n| Logo | primární, šířka 300–320 px, vlevo nahoře; příspěvek se sdělením je bez loga |\n| Nadpis | Roboto Bold 70–80 px; sdělení Roboto Black do 95 px |\n| Text | IBM Plex Sans Regular 44 px, nejvýš 3 řádky |\n| Typ příspěvku | v panelu verzálkami: typ stavby z výčtu činností, Podporujeme, Kariéra |\n\n### Profilový obrázek\nBílý symbol na stavebním azuritu, 400 × 400 px. Symbol zabírá 46 % průměru, aby ho kruhový ořez nezasáhl.\n\n### Zásady\n- Žádné šipky, uvozovky ani čísla v kolečkách.\n- Na jedné straně jen jeden výrazný prvek: panel, nebo závorka.\n- Projekty skupiny jen tehdy, když je staví KOSTKA stav, s podpisem „Projekt skupiny KOSTKA“.\n- Místo motta holdingu „S hrdostí a pokorou“ vlastní claim.\n\n## Web\n- Tlačítka, odkazy a delší text v panelech jsou v tmavém azuritu {#006A89}, boxy a tabulky na světlém azuritu {#E6F3F6}.\n- Místo šipky „dál“ se na tlačítkách a odkazech používá pravá závorka v přesném tvaru ze symbolu.\n- V digitálu se web píše jako kostkastav.cz, v tisku www.kostkastav.cz.\n- Favicon a ikona aplikace: symbol (soubor favicon-512.png v této sekci).\n\n## Ikony\nKaždá ikona je levá závorka loga a piktogram činnosti. Závorka zůstává v přesném poměru ze symbolu, piktogram doplňuje její otevřenou stranu. Ikona se tak čte stejně jako logo: [ a co stavíme.\n\nSada modernizuje ikony služeb z webu kostkastav.cz, které také vznikly z piktogramu. Pokrývá šest činností a šest doplňkových služeb. Novostavby a komunikace z dnešního webu spadají pod bytovou výstavbu, komerční a liniové stavby.\n\n- **Činnosti:** Komerční stavby, Bytová výstavba, Občanská vybavenost, Liniové stavby, Inženýrské sítě, Projekční činnost.\n- **Doplňkové služby:** Rekonstrukce, Sanace staveb, Demolice, Diamantové řezání a vrtání, Autodoprava, Zemní práce.\n\nKaždá ikona je ve třech verzích: azurit (závorka stavební azurit, piktogram černá), bílá (na stavebním azuritu jsou závorka i piktogram bílé) a černá (jednobarevně obojí černé).\n\n| Parametr | Hodnota |\n|---|---|\n| Mřížka | 48 × 48 px, jednotka 8 px |\n| Závorka | levá závorka symbolu: výška 40 px (5 jednotek), šířka 16 px (2), tloušťka 8 px (1); vlevo, 4 px od horního a dolního okraje |\n| Piktogram | pole 24 × 40 px vpravo, tah 4 px = půl jednotky, hranaté konce a ostré rohy |\n| Plochy | plná výplň jen tam, kde nese význam (okna, kola, koule bouracího stroje) |\n| Barvy | závorka stavební azurit, piktogram černá; inverzně obojí bílé; jednobarevně obojí černé |\n| Velikost | web 32–96 px, nejmenší 24 px; tisk nejméně 8 mm |\n\n### Provozní ikony\nKontakty a ovládání na webu a v tiskovinách: telefon, e-mail, adresa, web, dokument a dál. Bez závorky, mřížka 24 px, tah 2 px (stejná tloušťka jako u ikon činností při 48 px).\n\n### Zásady\n- Bez kruhů, čtverců a stínů pod ikonou.\n- Závorka se nepřebarvuje podle služby a nevynechává.\n- Nemíchat s ikonami z jiných sad.",
+    "kancelar": "## E-mailový podpis\nPodpis je krátký: kdo píše, jak ho zastihnout a za jakou firmu. Firemní údaje jsou v jednom bloku s logem, oddělené tenkou šedou linkou. V e-mailu se písma značky nezobrazí spolehlivě, proto je podpis v **Arialu**.\n\nPodpis je ve dvou formátech: **podpis-kostka-stav.html** pro Outlook a webovou poštu a **podpis-kostka-stav.docx** jako předloha.\n\n### Jak podpis nastavit\n1. Nahrajte soubor logo-podpis.png na web na adresu https://www.kostkastav.cz/wp-content/uploads/podpis/logo-podpis.png (jiná adresa = upravte odkaz na obrázek v HTML).\n2. V HTML přepište Jméno PŘÍJMENÍ, pozici, telefon a e-mail. Příjmení vždy verzálkami.\n3. Otevřete soubor v prohlížeči, označte celý podpis (Ctrl+A), zkopírujte (Ctrl+C) a vložte do nastavení podpisu v Outlooku nebo Gmailu (Ctrl+V).\n\n### Pravidla\n- Jméno PŘÍJMENÍ tučně 16 px, funkce šedě pod ním. Pod kontakty mezera 26 px.\n- Logo svisle na střed firemního bloku, od textu ho dělí linka 1 px v betonové šedé.\n- Odkazy v tmavém azuritu, bez podtržení.\n- Logo jako PNG ve dvojnásobném rozlišení z veřejné adresy webu.\n- **Bez bankovního účtu:** je na faktuře, hlavičkovém papíru a na webu v Kontaktech. Mění-li se účet v e-mailu, je to častý znak podvodu.\n- Upozornění zkrácené, česky i anglicky v jednom odstavci.\n\n## Hlavičkový papír\n| Parametr | Hodnota |\n|---|---|\n| Formát | A4, šablona Word (.docx) |\n| Okraje | vlevo a vpravo 12,7 mm, nahoře 30 mm |\n| Logo | primární, vpravo nahoře, šířka 40 mm |\n| Text | IBM Plex Sans Regular 10 pt, řádkování 1,4; náhradní Arial 10 pt. Odstavce bez odsazení, mezi nimi volný řádek. |\n| Patička | 7,5 pt, betonová šedá {#666666} #666666, název firmy tučně v černé |\n| Závorka | světle šedá {#C2C2C2} #C2C2C2 (betonová 40 %), tloušťka 4 mm, šířka 8 mm, výška 20 mm; u levého okraje vedle patičky, ramena přes okraj; jen doplněk |\n\n### Změny proti dřívější šabloně\n- Patička z šedé #999999 (kontrast 2,8 : 1) na betonovou šedou (5,7 : 1).\n- Závorka v patičce zůstává světle šedá, aby nestrhávala pozornost.\n- Telefon sjednocen na +420 777 700 942 (šablona měla 777 747 624).\n- Doplněné ISO 9001 a ISO 14001.\n\nPatička: KOSTKA stav s.r.o. · Ve Štědrém 198, 273 62 Družec · IČO 05344433 · DIČ CZ05344433 · ID datové schránky u6j2tuf · Bankovní spojení 4372463389/0800 · Společnost je vedená u Městského soudu v Praze, spisová značka C 262243 · +420 777 700 942 · info@kostkastav.cz · www.kostkastav.cz · ISO 9001:2016 · ISO 14001:2016",
+    "pravidla": "Brand manuál 1.0 (říjen 2026) sjednocuje logomanuál A4, grafický manuál 2022 a všechny tiskoviny, které KOSTKA stav používá: vizitky, hlavičkový papír, bannery, síť na lešení, referenční listy, desky, plaketu, šablony pro Instagram a polepy strojů. **Kde se podklady lišily, platí tento manuál.** Je určený grafikům, tiskárnám, polepům, webu a sociálním sítím.\n\n## Zápis údajů\nStejný údaj se všude píše stejně: na vizitce, v podpisu, na banneru i na webu.\n\n| Údaj | Správně | Nepoužívat |\n|---|---|---|\n| Značka | KOSTKA stav | Kostka Stav, KOSTKA Stav, Kostka stav |\n| Úřední název | KOSTKA stav s.r.o. | KOSTKA STAV s.r.o. |\n| Jméno osoby | Jméno PŘÍJMENÍ · Pavel TOMÁŠ · Michaela KUŠKOVÁ | Pavel Tomáš, PAVEL TOMÁŠ |\n| Titul | Jen akademický, před jménem: Ing. Jméno PŘÍJMENÍ | Jméno PŘÍJMENÍ, Ing. · tituly za jménem |\n| Funkce | Velké první písmeno: Výrobní ředitel · Stavbyvedoucí | výrobní ředitel / Stavbyvedoucí v jedné sadě |\n| Telefon firmy | +420 777 700 942 (jen KOSTKA stav, ostatní firmy mají vlastní) | 777 747 624, čísla bez předvolby +420 |\n| E-mail | jmeno.prijmeni@kostkastav.cz (bez diakritiky) | velká písmena v adrese |\n| Web | www.kostkastav.cz v tisku · kostkastav.cz v digitálu | KOSTKAstav.cz, Kostkastav.cz |\n| Adresa | Ve Štědrém 198, 273 62 Družec | Družec 273 62 |\n| IČO / DIČ | IČO 05344433 · DIČ CZ05344433 | IČ, IČ:, IČO: 053 44 433 |\n| Hodnota zakázky | 52,3 mil. Kč bez DPH | 52,3M Kč |\n| Období a data | 2016–2025 · 7. 3. 2025 | 2016 - 2025 · 07.03.2025 |\n| Certifikace | ISO 9001:2016 · ISO 14001:2016 | ISO certifikace (bez čísla normy) |\n\n### Výčet činností\nNa bannerech, letácích a deskách se píše verzálkami v textovém písmu Regular. Pořadí je pevné:\n\n**KOMERČNÍ STAVBY · BYTOVÁ VÝSTAVBA · OBČANSKÁ VYBAVENOST · LINIOVÉ STAVBY · INŽENÝRSKÉ SÍTĚ · PROJEKČNÍ ČINNOST**\n\nVždy všech šest v tomto pořadí. „Liniové stavby“ a „inženýrské sítě“ jsou dvě samostatné činnosti. Výčet nahrazuje dřívější obecné popisy (například „Developerská činnost“), které patří jiným firmám skupiny.\n\n## Grafické prvky\nVšechny prvky vycházejí z loga a ze stávajících tiskovin. **Na jedné ploše vždy jen jeden výrazný prvek.**\n\n| Prvek | Popis |\n|---|---|\n| Velká ořezaná závorka | Hlavní prvek značky. Závorka v poměru loga (výška 5, šířka 2, tloušťka 1) přesahuje okraj formátu, ramena míří ven. Na bílé v azuritu, na azuritu bílá. Vizitky, bannery, hlavičkový papír, úvody kapitol. |\n| Symbol jako oddělovač | Malý symbol mezi údaji v řádku (web, e-mail, činnosti). Výška symbolu = výška verzálek textu. Bílý na azuritu, azuritový na bílé. |\n| Panel přes fotografii | Azuritový obdélník u spodního okraje fotografie, zarovnaný doleva. Nese titulek v Roboto Bold a krátké údaje. Ostré rohy, bez stínu a průhlednosti. |\n| Pravá závorka jako ukazatel | Místo šipky „dál“: tlačítka a odkazy na webu, pokračování karuselu na sítích, odkaz na web v tiskovinách. Vždy v přesném tvaru pravé závorky ze symbolu. |\n| Pás s ořezanou závorkou | Úvod kapitoly nebo sekce: azuritový pás přes celou šířku, u levého okraje bílá závorka. Převzato z manuálu 2022. |\n| Rok a číslo | Rok dokončení nebo klíčové číslo v Roboto Black, pod ním popisek v textovém písmu. Vpravo nahoře, naproti logu. |\n\n### Nepoužívat\n- Žádné stíny, přechody, zaoblené rohy ani průhledné panely.\n- Závorky nenatáčet, nerozdělovat na kusy a neměnit poměr.\n- Závorka se nenatáčí, ani o 45° jako na stávajících deskách. Při dalším tisku desek ji nahradí ořezaná závorka.\n- Šestiúhelník z kostek patří holdingu a skupině. KOSTKA stav ho sama nepoužívá.\n- Šipky se nepoužívají, „dál“ ukazuje pravá závorka. Ikony jen z vlastní sady (sekce Digitál a sítě).\n\n## Fotografie\nFotografie ukazují skutečné stavby KOSTKA stav, lidi při práci a vlastní techniku. **Fotobanka se nepoužívá.**\n\n- **Technika a velká zakázka v jednom záběru** (např. TR Rokycany, 2021).\n- **Lidé při práci:** v ochranných pomůckách, při skutečné činnosti.\n- **Vlastní technika:** stroje s polepem KOSTKA stav.\n- **Dokončená stavba:** za denního světla, rovné linie.\n- **Vizualizace:** jen jako vizualizace, vždy s popiskem.\n\n### Portréty\nPortréty lidí, kteří firmu zastupují na webu a v médiích, mají jednotnou podobu, aby vedle sebe působily jako jeden tým.\n- Na výšku 2 : 3, výřez od pasu nahoru, postava na střed.\n- Venku v přirozeném světle, rozostřené zelené pozadí.\n- Tmavé oblečení bez cizích log, pohled do objektivu, založené ruce nebo volný postoj.\n- Na webu všichni ve stejném výřezu a stejné velikosti, bez filtrů.\n\n| Ano | Ne |\n|---|---|\n| Vlastní stavby, technika s logem a lidé KOSTKA stav. | Fotobanka a cizí stavby. |\n| Rovné svislice budov, přirozené barvy, denní světlo. | Barevné filtry, přebarvení do azuritu, HDR efekty. |\n| U každé reference název stavby a rok. | Lidé na stavbě bez ochranných pomůcek. |\n\n## Praktické použití\n### Stroje a vozidla\n- **Rypadlo, zadní kryt:** jednořádkové logo na tmavý podklad, QR kód se symbolem na bílém štítku.\n- **Rameno rypadla:** jednořádkové logo podél ramene, na tmavý podklad.\n- **Nákladní auto:** jednořádkové logo na korbě, azuritová linka po kabině.\n- Na tmavých strojích verze se symbolem v azuritu a bílým textem, nikdy plnobarevné černé logo.\n- Logo nesmí překrývat výstražné štítky a logo výrobce stroje; od loga výrobce min. ochranná zóna.\n- Polep z fólie v odstínu stavebního azuritu; kód fólie uvede finální PDF podle údajů od tiskárny.\n\n### Další použití\nStavební buňka (jednořádkové logo, polep), osobní a dodávkové auto (polep boků a zádi), stavební tabule (informační tabule stavby), pracovní oblečení a OOPP (bunda, vesta, helma), propisky a předměty (jednořádkové logo), kancelář a sídlo (cedule, recepce). Mockupy se doplní po dodání.\n\n### Sponzoring\nNa cizích materiálech (dresy, trenýrky, programy akcí) platí obecné pravidlo:\n- Jednobarevné logo, černé nebo bílé podle barvy podkladu.\n- Logo na střed hrudi, zóna 3x i vůči švům a znakům klubu.\n- Velikost podle loga výrobce nebo hlavního partnera: výška loga KOSTKA stav = vzdálenost od loga výrobce (Y)."
+  },
+  "colors": [
+    {
+      "name": "Stavební azurit",
+      "hex": "#0083A9",
+      "cmyk": "100 · 5 · 14 · 17",
+      "pantone": "314 EC",
+      "role": "Barva firmy",
+      "usage": "Symbol, pásy, panely a inverzní plochy. Na drobný text nestačí (4,4 : 1), na něj patří tmavý azurit.",
+      "tints": true
+    },
+    {
+      "name": "Černá",
+      "hex": "#231F20",
+      "cmyk": "0 · 0 · 0 · 100",
+      "pantone": "Black C",
+      "role": "Text, logotyp",
+      "usage": "Slovo KOSTKA a podnázev, běžný text. #231F20 je hodnota pro obrazovku, tisk vždy jen K.",
+      "tints": true
+    },
+    {
+      "name": "Bílá",
+      "hex": "#FFFFFF",
+      "cmyk": "0 · 0 · 0 · 0",
+      "pantone": "",
+      "role": "Podklad, inverzní logo",
+      "usage": "Plochy a vzduch (60 % plochy), inverzní logo na stavebním azuritu.",
+      "tints": false
+    },
+    {
+      "name": "Tmavý azurit",
+      "hex": "#006A89",
+      "cmyk": "87 · 32 · 19 · 34",
+      "pantone": "",
+      "role": "Doplňková · malý text",
+      "usage": "Malý text, odkazy, tlačítka, web na vizitce. Na bílé 6,1 : 1.",
+      "tints": false
+    },
+    {
+      "name": "Betonová šedá",
+      "hex": "#666666",
+      "cmyk": "0 · 0 · 0 · 75",
+      "pantone": "",
+      "role": "Doplňková · vedlejší text",
+      "usage": "Vedlejší text, patičky, linky. Nahrazuje šedou #999999.",
+      "tints": false
+    },
+    {
+      "name": "Světlý azurit",
+      "hex": "#E6F3F6",
+      "cmyk": "10 · 4 · 5 · 0",
+      "pantone": "",
+      "role": "Doplňková · plochy",
+      "usage": "Plochy na webu, boxy a tabulky.",
+      "tints": false
+    }
+  ],
+  "items": [
+    {
+      "section": "logo",
+      "slug": "logo-primarni",
+      "title": "Vodorovné · plnobarevné",
+      "description": "Primární logo. Web, dopisy, vizitky, inzerce, referenční listy, bannery, polepy aut. Symbol ve stavebním azuritu, text černý. Na bílou a světlé plochy, základní varianta.",
+      "specs": "SVG na křivkách, PNG 3000 × 948 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-primarni-plnobarevne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-primarni-plnobarevne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-negativ",
+      "title": "Vodorovné · na tmavý podklad",
+      "description": "Primární logo. Web, dopisy, vizitky, inzerce, referenční listy, bannery, polepy aut. Symbol ve stavebním azuritu, text bílý. Na černé a tmavě šedé plochy: stroje, auta, patička webu, tmavé prezentace.",
+      "specs": "SVG na křivkách, PNG 3000 × 948 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#231F20",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-primarni-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-primarni-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-inverzni",
+      "title": "Vodorovné · bílé (inverzní)",
+      "description": "Primární logo. Web, dopisy, vizitky, inzerce, referenční listy, bannery, polepy aut. Celé logo bílé. Na stavebním azuritu, na černé (gravura, ražba, tmavý textil) a na klidné tmavé části fotografie.",
+      "specs": "SVG na křivkách, PNG 3000 × 948 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#0083A9",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-primarni-bile.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-primarni-bile.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne",
+      "title": "Vodorovné · černé",
+      "description": "Primární logo. Web, dopisy, vizitky, inzerce, referenční listy, bannery, polepy aut. Černobílý tisk, razítka, faxy, jednobarevná inzerce, potisk světlého textilu.",
+      "specs": "SVG na křivkách, PNG 3000 × 948 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-primarni-cerne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-primarni-cerne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni",
+      "title": "Vertikální · plnobarevné",
+      "description": "Sekundární logo. Profilové obrázky, roll-upy, stavební tabule na výšku, razítko. Symbol ve stavebním azuritu, text černý. Na bílou a světlé plochy, základní varianta.",
+      "specs": "SVG na křivkách, PNG 2000 × 1844 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-plnobarevne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-plnobarevne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-tmavy-podklad",
+      "title": "Vertikální · na tmavý podklad",
+      "description": "Sekundární logo. Profilové obrázky, roll-upy, stavební tabule na výšku, razítko. Symbol ve stavebním azuritu, text bílý. Na černé a tmavě šedé plochy: stroje, auta, patička webu, tmavé prezentace.",
+      "specs": "SVG na křivkách, PNG 2000 × 1844 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#231F20",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-bile",
+      "title": "Vertikální · bílé (inverzní)",
+      "description": "Sekundární logo. Profilové obrázky, roll-upy, stavební tabule na výšku, razítko. Celé logo bílé. Na stavebním azuritu, na černé (gravura, ražba, tmavý textil) a na klidné tmavé části fotografie.",
+      "specs": "SVG na křivkách, PNG 2000 × 1844 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#0083A9",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-bile.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-bile.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-cerne",
+      "title": "Vertikální · černé",
+      "description": "Sekundární logo. Profilové obrázky, roll-upy, stavební tabule na výšku, razítko. Černobílý tisk, razítka, faxy, jednobarevná inzerce, potisk světlého textilu.",
+      "specs": "SVG na křivkách, PNG 2000 × 1844 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-cerne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-sekundarni-cerne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednoradkove",
+      "title": "Jednořádkové · plnobarevné",
+      "description": "Stavební stroje, nákladní auta, stavební buňky, propisky a další úzké a nízké plochy. Symbol ve stavebním azuritu, text černý. Na bílou a světlé plochy, základní varianta.",
+      "specs": "SVG na křivkách, PNG 3000 × 588 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-plnobarevne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-plnobarevne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednoradkove-tmavy-podklad",
+      "title": "Jednořádkové · na tmavý podklad",
+      "description": "Stavební stroje, nákladní auta, stavební buňky, propisky a další úzké a nízké plochy. Symbol ve stavebním azuritu, text bílý. Na černé a tmavě šedé plochy: stroje, auta, patička webu, tmavé prezentace.",
+      "specs": "SVG na křivkách, PNG 3000 × 588 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#231F20",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednoradkove-bile",
+      "title": "Jednořádkové · bílé (inverzní)",
+      "description": "Stavební stroje, nákladní auta, stavební buňky, propisky a další úzké a nízké plochy. Celé logo bílé. Na stavebním azuritu, na černé (gravura, ražba, tmavý textil) a na klidné tmavé části fotografie.",
+      "specs": "SVG na křivkách, PNG 3000 × 588 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#0083A9",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-bile.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-bile.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednoradkove-cerne",
+      "title": "Jednořádkové · černé",
+      "description": "Stavební stroje, nákladní auta, stavební buňky, propisky a další úzké a nízké plochy. Černobílý tisk, razítka, faxy, jednobarevná inzerce, potisk světlého textilu.",
+      "specs": "SVG na křivkách, PNG 3000 × 588 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-cerne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-kostka-stav-jednoradkove-cerne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol",
+      "title": "Symbol · stavební azurit",
+      "description": "Samostatné závorky na bílou a světlé plochy. Favicon, ikona aplikace, střed QR kódu, oddělovač v řádku, reklamní předměty.",
+      "specs": "SVG na křivkách, PNG 1024 × 1024 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/symbol-kostka-stav-azurit.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-kostka-stav-azurit.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-bily",
+      "title": "Symbol · bílý",
+      "description": "Bílé závorky na stavebním azuritu a tmavých plochách. Profilový obrázek, oddělovač v azuritovém pásu.",
+      "specs": "SVG na křivkách, PNG 1024 × 1024 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#0083A9",
+      "files": [
+        {
+          "path": "loga/symbol-kostka-stav-bily.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-kostka-stav-bily.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-cerny",
+      "title": "Symbol · černý",
+      "description": "Jednobarevný tisk, razítka, ražba a potisk světlých předmětů.",
+      "specs": "SVG na křivkách, PNG 1024 × 1024 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/symbol-kostka-stav-cerny.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-kostka-stav-cerny.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-nadpisy",
+      "title": "Písmo pro nadpisy",
+      "description": "Roboto jen v tučných řezech: Black na H1, roky a velká čísla, Bold na H2–H4, jména a titulky panelů. Nikdy na odstavce.",
+      "specs": "TTF · Black 900, Bold 700",
+      "tags": "TTF",
+      "required": true,
+      "meta": {
+        "family": "Roboto",
+        "weights": "Black 900, Bold 700",
+        "sample": "Stavíme na zkušenostech",
+        "google_url": "https://fonts.google.com/specimen/Roboto",
+        "license": "SIL OFL 1.1"
+      },
+      "files": [
+        {
+          "path": "pisma/Roboto-Black.ttf",
+          "label": "TTF Black"
+        },
+        {
+          "path": "pisma/Roboto-Bold.ttf",
+          "label": "TTF Bold"
+        },
+        {
+          "path": "pisma/OFL-Roboto.txt",
+          "label": "Licence OFL"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-text",
+      "title": "Písmo pro text",
+      "description": "IBM Plex Sans na všechen ostatní text, jednotně pro celou skupinu KOSTKA: Light perex, Regular běžný text a kontakty, Italic citace, SemiBold tlačítka a štítky.",
+      "specs": "TTF · Light až Bold, s kurzívami",
+      "tags": "TTF",
+      "required": true,
+      "meta": {
+        "family": "IBM Plex Sans",
+        "weights": "Light 300, Regular 400, Italic 400, SemiBold 600 (k dispozici Light až Bold s kurzívami)",
+        "sample": "Generální dodávka staveb · 22,48 mil. Kč bez DPH",
+        "google_url": "https://fonts.google.com/specimen/IBM+Plex+Sans",
+        "license": "SIL OFL 1.1"
+      },
+      "files": [
+        {
+          "path": "pisma/IBMPlexSans-Regular.ttf",
+          "label": "TTF Regular"
+        },
+        {
+          "path": "pisma/IBMPlexSans-Light.ttf",
+          "label": "TTF Light"
+        },
+        {
+          "path": "pisma/IBMPlexSans-Italic.ttf",
+          "label": "TTF Italic"
+        },
+        {
+          "path": "pisma/IBMPlexSans-SemiBold.ttf",
+          "label": "TTF SemiBold"
+        },
+        {
+          "path": "pisma/IBMPlexSans-Medium.ttf",
+          "label": "TTF Medium"
+        },
+        {
+          "path": "pisma/IBMPlexSans-Bold.ttf",
+          "label": "TTF Bold"
+        },
+        {
+          "path": "pisma/IBMPlexSans-LightItalic.ttf",
+          "label": "TTF Light Italic"
+        },
+        {
+          "path": "pisma/IBMPlexSans-MediumItalic.ttf",
+          "label": "TTF Medium Italic"
+        },
+        {
+          "path": "pisma/IBMPlexSans-SemiBoldItalic.ttf",
+          "label": "TTF SemiBold Italic"
+        },
+        {
+          "path": "pisma/IBMPlexSans-BoldItalic.ttf",
+          "label": "TTF Bold Italic"
+        },
+        {
+          "path": "pisma/OFL-IBM-Plex.txt",
+          "label": "Licence OFL"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "profilovy-obrazek",
+      "title": "Profilový obrázek",
+      "description": "Bílý symbol na stavebním azuritu pro profily na sociálních sítích. Symbol zabírá 46 % průměru, aby ho kruhový ořez nezasáhl.",
+      "specs": "PNG 400 × 400 px",
+      "tags": "PNG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/profilovy-obrazek-400.png",
+          "label": "PNG 400 px"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "favicon",
+      "title": "Ikona webu (favicon)",
+      "description": "Symbol pro ikonu webu a aplikace.",
+      "specs": "PNG 512 × 512 px",
+      "tags": "PNG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/favicon-512.png",
+          "label": "PNG 512 px"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-komercni-stavby",
+      "title": "Ikona · Komerční stavby",
+      "description": "Činnost. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-komercni-stavby.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-komercni-stavby-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-komercni-stavby-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-bytova-vystavba",
+      "title": "Ikona · Bytová výstavba",
+      "description": "Činnost. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-bytova-vystavba.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-bytova-vystavba-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-bytova-vystavba-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-obcanska-vybavenost",
+      "title": "Ikona · Občanská vybavenost",
+      "description": "Činnost. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-obcanska-vybavenost.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-obcanska-vybavenost-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-obcanska-vybavenost-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-liniove-stavby",
+      "title": "Ikona · Liniové stavby",
+      "description": "Činnost. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-liniove-stavby.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-liniove-stavby-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-liniove-stavby-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-inzenyrske-site",
+      "title": "Ikona · Inženýrské sítě",
+      "description": "Činnost. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-inzenyrske-site.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-inzenyrske-site-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-inzenyrske-site-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-projekcni-cinnost",
+      "title": "Ikona · Projekční činnost",
+      "description": "Činnost. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-projekcni-cinnost.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-projekcni-cinnost-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-projekcni-cinnost-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-rekonstrukce",
+      "title": "Ikona · Rekonstrukce",
+      "description": "Doplňková služba. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-rekonstrukce.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-rekonstrukce-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-rekonstrukce-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-sanace-staveb",
+      "title": "Ikona · Sanace staveb",
+      "description": "Doplňková služba. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-sanace-staveb.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-sanace-staveb-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-sanace-staveb-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-demolice",
+      "title": "Ikona · Demolice",
+      "description": "Doplňková služba. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-demolice.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-demolice-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-demolice-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-diamantove-rezani-a-vrtani",
+      "title": "Ikona · Diamantové řezání a vrtání",
+      "description": "Doplňková služba. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-diamantove-rezani-a-vrtani.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-diamantove-rezani-a-vrtani-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-diamantove-rezani-a-vrtani-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-autodoprava",
+      "title": "Ikona · Autodoprava",
+      "description": "Doplňková služba. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-autodoprava.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-autodoprava-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-autodoprava-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-zemni-prace",
+      "title": "Ikona · Zemní práce",
+      "description": "Doplňková služba. Levá závorka loga a piktogram. Tři verze: azurit (na bílou), bílá (na stavební azurit), černá (jednobarevně).",
+      "specs": "SVG 48 × 48 px, mřížka 8 px · web 32–96 px, tisk min. 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/ikona-zemni-prace.svg",
+          "label": "SVG azurit"
+        },
+        {
+          "path": "ikony/ikona-zemni-prace-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "ikony/ikona-zemni-prace-cerna.svg",
+          "label": "SVG černá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "provozni-ikony",
+      "title": "Provozní ikony",
+      "description": "Kontakty a ovládání na webu a v tiskovinách: telefon, e-mail, adresa, web, dokument a dál. Bez závorky, tah 2 px.",
+      "specs": "SVG 24 × 24 px",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/provozni-telefon.svg",
+          "label": "SVG Telefon"
+        },
+        {
+          "path": "ikony/provozni-e-mail.svg",
+          "label": "SVG E-mail"
+        },
+        {
+          "path": "ikony/provozni-adresa.svg",
+          "label": "SVG Adresa"
+        },
+        {
+          "path": "ikony/provozni-web.svg",
+          "label": "SVG Web"
+        },
+        {
+          "path": "ikony/provozni-dokument.svg",
+          "label": "SVG Dokument"
+        },
+        {
+          "path": "ikony/provozni-dal.svg",
+          "label": "SVG Dál"
+        },
+        {
+          "path": "nahledy/nahled-provozni-ikony.svg",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "emailovy-podpis",
+      "title": "E-mailový podpis",
+      "description": "HTML pro Outlook a webovou poštu, Word jako předloha, logo do podpisu (PNG ve dvojnásobném rozlišení). Písmo Arial, bez bankovního účtu.",
+      "specs": "šířka 560 px, logo 130 × 41 px",
+      "tags": "HTML, DOCX, PNG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "kancelar/podpis-kostka-stav.html",
+          "label": "HTML"
+        },
+        {
+          "path": "kancelar/podpis-kostka-stav.docx",
+          "label": "Word"
+        },
+        {
+          "path": "kancelar/logo-podpis.png",
+          "label": "Logo do podpisu PNG"
+        },
+        {
+          "path": "nahledy/nahled-emailovy-podpis.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "sablona-dopisu",
+      "title": "Hlavičkový papír (Word)",
+      "description": "Šablona dopisu A4. Primární logo vpravo nahoře, patička v betonové šedé se světle šedou závorkou u levého okraje.",
+      "specs": "A4, 210 × 297 mm",
+      "tags": "DOCX",
+      "preview_bg": "#E6F3F6",
+      "files": [
+        {
+          "path": "kancelar/hlavickovy-papir-kostka-stav.docx",
+          "label": "Word"
+        },
+        {
+          "path": "nahledy/nahled-hlavickovy-papir.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "pravidla-pouziti",
+      "title": "Brand manuál (PDF)",
+      "description": "Kompletní brand manuál KOSTKA stav 1.0: logo, barvy, písmo, ikony, fotografie, tiskoviny, polepy a soubory.",
+      "specs": "A4 na šířku · 37 stran",
+      "tags": "PDF",
+      "required": true,
+      "preview_bg": "#E6F3F6",
+      "files": [
+        {
+          "path": "manual/brand-manual-kostka-stav.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "nahledy/nahled-manual.png",
+          "role": "preview"
+        }
+      ]
+    }
+  ],
+  "prune_empty": true
+}
