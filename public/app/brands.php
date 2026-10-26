@@ -146,6 +146,160 @@ function font_format(string $ext): string
     return ['woff2' => 'woff2', 'woff' => 'woff', 'ttf' => 'truetype', 'otf' => 'opentype'][$ext] ?? 'truetype';
 }
 
+/* ---------- Písma brandu (řezy a @font-face) ---------- */
+
+/** Adresa souboru v klientském pohledu (na vlastní doméně bez /b/{slug}). */
+function client_file_url(array $brand, array $file, bool $inline = false): string
+{
+    return brand_url($brand, '/file/' . (int) $file['id']) . ($inline ? '?inline=1' : '');
+}
+
+/**
+ * Řez písma podle názvu souboru a popisku (např. „OpenSans-SemiBold.ttf“, „TTF Bold“).
+ * Vrací ['weight' => '600' nebo rozsah '100 900' u variabilního písma, 'style' => normal|italic, 'width' => bool (zúžený/rozšířený řez)].
+ */
+function font_face_info(array $file): array
+{
+    $text = strtolower(($file['original_name'] ?? '') . ' ' . ($file['stored_name'] ?? '') . ' ' . ($file['label'] ?? ''));
+    $flat = preg_replace('/[^a-z]+/', '', $text) ?? '';
+    $variable = str_contains($flat, 'variable') || str_contains($text, '[wght') || str_contains($flat, 'wght');
+    $weights = [
+        'extralight' => 200, 'ultralight' => 200, 'semibold' => 600, 'demibold' => 600,
+        'extrabold' => 800, 'ultrabold' => 800, 'hairline' => 100, 'thin' => 100, 'light' => 300,
+        'medium' => 500, 'black' => 900, 'heavy' => 900, 'bold' => 700, 'regular' => 400, 'book' => 400, 'normal' => 400,
+    ];
+    $weight = 400;
+    foreach ($weights as $word => $w) {
+        if (str_contains($flat, $word)) {
+            $weight = $w;
+            break;
+        }
+    }
+    return [
+        'weight' => $variable ? '100 900' : (string) $weight,
+        'style' => (str_contains($flat, 'italic') || str_contains($flat, 'oblique')) ? 'italic' : 'normal',
+        'width' => (bool) preg_match('/(condensed|cond|narrow|compressed|expanded|extended|wide)/', $flat),
+    ];
+}
+
+/**
+ * Řezy jedné položky písma: [['weight'=>, 'style'=>, 'file'=>], …].
+ * Ke každému řezu vybere nejúspornější formát (WOFF2 > WOFF > TTF > OTF), i ze souborů „jen náhled“.
+ * Zúžené a rozšířené řezy vynechá, pokud má písmo i běžné.
+ */
+function font_faces(array $item): array
+{
+    $faces = [];
+    $hasNormalWidth = false;
+    foreach ($item['all_files'] ?? [] as $f) {
+        $ext = file_ext($f['stored_name']);
+        if (!in_array($ext, FONT_EXT, true)) {
+            continue;
+        }
+        $info = font_face_info($f);
+        $hasNormalWidth = $hasNormalWidth || !$info['width'];
+        $key = ($info['width'] ? 'w' : 'n') . '|' . $info['weight'] . '|' . $info['style'];
+        $rank = array_search($ext, FONT_EXT, true);
+        if (!isset($faces[$key]) || $rank < $faces[$key]['rank']) {
+            $faces[$key] = $info + ['file' => $f, 'rank' => $rank];
+        }
+    }
+    if ($hasNormalWidth) {
+        $faces = array_filter($faces, fn ($face) => !$face['width']);
+    }
+    uasort($faces, fn ($a, $b) => [(int) $a['weight'], $a['style']] <=> [(int) $b['weight'], $b['style']]);
+    return array_values($faces);
+}
+
+/** CSS @font-face pro všechny řezy položky pod názvem rodiny $family. */
+function font_faces_css(array $faces, string $family, callable $url): string
+{
+    $css = '';
+    foreach ($faces as $face) {
+        $ext = file_ext($face['file']['stored_name']);
+        $css .= '@font-face{font-family:"' . $family . '";src:url("' . $url($face['file']) . '") format("' . font_format($ext) . '");'
+            . 'font-weight:' . $face['weight'] . ';font-style:' . $face['style'] . ';font-display:swap}' . "\n";
+    }
+    return $css;
+}
+
+/** Nejbližší dostupná tloušťka k požadované (pro mapování tlouštěk rozhraní na řezy brandu). */
+function nearest_weight(array $faces, array $wanted, int $fallback): int
+{
+    $have = [];
+    foreach ($faces as $f) {
+        if ($f['style'] !== 'normal') {
+            continue;
+        }
+        if (str_contains($f['weight'], ' ')) {
+            return $wanted[0]; // variabilní písmo umí všechny tloušťky
+        }
+        $have[] = (int) $f['weight'];
+    }
+    foreach ($wanted as $w) {
+        if (in_array($w, $have, true)) {
+            return $w;
+        }
+    }
+    return $fallback;
+}
+
+/**
+ * Písma brandu pro klientský pohled a tiskovou verzi.
+ * Nadpisy = pozice „pismo-nadpisy“ (jinak první písmo), text = „pismo-text“ (jinak druhé, jinak stejné jako nadpisy).
+ * Vrací null, když je přepínač vypnutý nebo brand nemá nahrané žádné písmo.
+ * Jinak ['css' => …, 'preload' => [[url, typ], …]].
+ */
+function brand_typefaces(array $brand, ?array $typoItems = null): ?array
+{
+    if (isset($brand['brand_fonts']) && !(int) $brand['brand_fonts']) {
+        return null;
+    }
+    $typoItems ??= brand_items((int) $brand['id'], 'typografie', true);
+    $withFaces = [];
+    foreach ($typoItems as $it) {
+        $faces = font_faces($it);
+        if ($faces) {
+            $withFaces[$it['slug']] = $faces;
+        }
+    }
+    if (!$withFaces) {
+        return null;
+    }
+    $others = array_values(array_diff_key($withFaces, ['pismo-nadpisy' => 1, 'pismo-text' => 1]));
+    $display = $withFaces['pismo-nadpisy'] ?? null;
+    $text = $withFaces['pismo-text'] ?? null;
+    $display ??= array_shift($others) ?? $text;
+    $text ??= array_shift($others) ?? $display;
+
+    $url = fn (array $file) => client_file_url($brand, $file, true);
+    $css = font_faces_css($display, 'bh-display', $url) . font_faces_css($text, 'bh-text', $url);
+    // Tloušťky rozhraní: běžný text v regularu (ne v lightu jako MarMal), tlačítka a popisky v mediu/semiboldu.
+    $light = nearest_weight($text, [400], 400);
+    $medium = nearest_weight($text, [500, 600], 600);
+    $css .= ':root{--font-display:"bh-display","Lexend",system-ui,sans-serif;--font-sans:"bh-text","Lexend",system-ui,sans-serif;'
+        . '--fw-light:' . $light . ';--fw-medium:' . $medium . '}' . "\n";
+
+    // Přednačíst řez pro nadpisy (700, jinak nejtučnější) a běžný text (400, jinak první).
+    $pick = function (array $faces, int $want): array {
+        $best = $faces[0];
+        foreach ($faces as $f) {
+            if ($f['style'] === 'normal' && (str_contains($f['weight'], ' ') || abs((int) $f['weight'] - $want) < abs((int) $best['weight'] - $want) || $best['style'] !== 'normal')) {
+                $best = $f;
+            }
+        }
+        return $best;
+    };
+    $preload = [];
+    foreach ([$pick($display, 700), $pick($text, 400)] as $face) {
+        $u = $url($face['file']);
+        if (!isset($preload[$u])) {
+            $preload[$u] = [$u, 'font/' . (file_ext($face['file']['stored_name']) === 'otf' ? 'otf' : file_ext($face['file']['stored_name']))];
+        }
+    }
+    return ['css' => $css, 'preload' => array_values($preload)];
+}
+
 function brand_colors(int $brandId): array
 {
     return db_all('SELECT * FROM colors WHERE brand_id = ? ORDER BY sort, id', [$brandId]);
@@ -282,4 +436,19 @@ function color_tints(string $hex): array
         $out[] = [$p, sprintf('#%02X%02X%02X', $mix($r), $mix($g), $mix($b))];
     }
     return $out;
+}
+
+function font_weight_name(int $w): string
+{
+    return [100 => 'Thin', 200 => 'ExtraLight', 300 => 'Light', 400 => 'Regular', 500 => 'Medium', 600 => 'SemiBold', 700 => 'Bold', 800 => 'ExtraBold', 900 => 'Black'][$w] ?? (string) $w;
+}
+
+/** Hlavní tloušťka písma pro ukázku „Aa“: první z popisu řezů („Bold 700, Regular 400“), tenčí než regular jen když regular chybí. */
+function font_main_weight(array $meta): int
+{
+    if (!preg_match_all('/\b([1-9]00)\b/', (string) ($meta['weights'] ?? ''), $m)) {
+        return 400;
+    }
+    $list = array_map('intval', $m[1]);
+    return ($list[0] < 400 && in_array(400, $list, true)) ? 400 : $list[0];
 }

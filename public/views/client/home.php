@@ -39,8 +39,8 @@ $hasAny = $bySection || $colors;
     <div class="row-between">
       <h2>Logo</h2>
       <span class="row" style="gap: 16px">
-        <?php if (isset($texts['logo'])): ?><a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/s/logo')) ?>">Pravidla pro logo</a><?php endif; ?>
-        <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/zip/logo')) ?>">Stáhnout všechna loga (ZIP)</a>
+        <?php if (isset($texts['logo'])): ?><a class="small" style="font-weight: var(--fw-medium)" href="<?= e(brand_url($brand, '/s/logo')) ?>">Pravidla pro logo</a><?php endif; ?>
+        <a class="small" style="font-weight: var(--fw-medium)" href="<?= e(brand_url($brand, '/zip/logo')) ?>">Stáhnout všechna loga (ZIP)</a>
       </span>
     </div>
     <div class="grid-cards">
@@ -54,8 +54,8 @@ $hasAny = $bySection || $colors;
     <div class="row-between">
       <h2>Barvy</h2>
       <span class="row" style="gap: 16px">
-        <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/s/barvy')) ?>">Odstíny a pravidla</a>
-        <a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/zip/barvy')) ?>">Stáhnout hodnoty (TXT, CSS)</a>
+        <a class="small" style="font-weight: var(--fw-medium)" href="<?= e(brand_url($brand, '/s/barvy')) ?>">Odstíny a pravidla</a>
+        <a class="small" style="font-weight: var(--fw-medium)" href="<?= e(brand_url($brand, '/zip/barvy')) ?>">Stáhnout hodnoty (TXT, CSS)</a>
       </span>
     </div>
     <div class="grid-colors">
@@ -68,7 +68,7 @@ $hasAny = $bySection || $colors;
   <section class="stack-lg" id="typografie">
     <div class="row-between">
       <h2>Typografie</h2>
-      <?php if (isset($texts['typografie'])): ?><a class="small" style="font-weight: 500" href="<?= e(brand_url($brand, '/s/typografie')) ?>">Typografická škála a zásady</a><?php endif; ?>
+      <?php if (isset($texts['typografie'])): ?><a class="small" style="font-weight: var(--fw-medium)" href="<?= e(brand_url($brand, '/s/typografie')) ?>">Typografická škála a zásady</a><?php endif; ?>
     </div>
     <div class="grid-fonts">
       <?php foreach ($bySection['typografie'] as $it): ?><?= client_font_card($brand, $it) ?><?php endforeach; ?>

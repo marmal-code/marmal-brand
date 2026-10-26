@@ -138,9 +138,12 @@ function brand_form_input(?array $brand): array
         'intro' => trim((string) ($_POST['intro'] ?? '')),
         'contact_name' => trim((string) ($_POST['contact_name'] ?? '')),
         'contact_note' => trim((string) ($_POST['contact_note'] ?? '')),
+        'contact_phone' => mb_substr(trim((string) ($_POST['contact_phone'] ?? '')), 0, 40),
+        'contact_email' => mb_strtolower(trim((string) ($_POST['contact_email'] ?? ''))),
         'hero_bg' => $hero,
         'custom_domain' => $domain,
         'public_links' => !empty($_POST['public_links']) ? 1 : 0,
+        'brand_fonts' => !empty($_POST['brand_fonts']) ? 1 : 0,
         'share_enabled' => !empty($_POST['share_enabled']) ? 1 : 0,
         'share_days' => (int) ($_POST['share_days'] ?? 30),
         'is_active' => !empty($_POST['is_active']) || $brand === null ? 1 : 0,
@@ -161,6 +164,12 @@ function validate_brand_input(array $in, int $brandId = 0): array
             $errors[] = 'Tuto doménu už používá jiný klient.';
         }
     }
+    if ($in['contact_email'] !== '' && !filter_var($in['contact_email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Kontaktní e-mail nemá platný tvar.';
+    }
+    if ($in['contact_phone'] !== '' && !preg_match('/^\+?[0-9 ()\/-]{6,40}$/', $in['contact_phone'])) {
+        $errors[] = 'Kontaktní telefon může obsahovat jen číslice, mezery a znak +.';
+    }
     if ($in['password'] !== '' && mb_strlen($in['password']) < 6) {
         $errors[] = 'Heslo klienta musí mít aspoň 6 znaků.';
     }
@@ -180,13 +189,13 @@ function admin_brand_create(): void
     }
     $slug = unique_brand_slug($in['slug'] ?: $in['name']);
     $id = db_insert(
-        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, custom_domain, is_active, created_at, updated_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, NOW(), NOW())',
+        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, contact_phone, contact_email, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, brand_fonts, custom_domain, is_active, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, NOW(), NOW())',
         [
-            $in['name'], $slug, $in['intro'] ?: null, $in['contact_name'] ?: null, $in['contact_note'] ?: null, $in['hero_bg'],
+            $in['name'], $slug, $in['intro'] ?: null, $in['contact_name'] ?: null, $in['contact_note'] ?: null, $in['contact_phone'] ?: null, $in['contact_email'] ?: null, $in['hero_bg'],
             password_hash($in['password'], PASSWORD_DEFAULT), $in['share_enabled'], new_share_token(),
             $in['share_enabled'] && $in['share_days'] > 0 ? date('Y-m-d H:i:s', strtotime('+' . $in['share_days'] . ' days')) : null,
-            $in['public_links'], $in['custom_domain'] ?: null,
+            $in['public_links'], $in['brand_fonts'], $in['custom_domain'] ?: null,
         ]
     );
     sync_template($id);
@@ -246,11 +255,11 @@ function admin_brand_settings_save(string $id): void
         $expires = $in['share_days'] > 0 ? date('Y-m-d H:i:s', strtotime('+' . $in['share_days'] . ' days')) : null;
     }
     db_exec(
-        'UPDATE brands SET name = ?, slug = ?, intro = ?, contact_name = ?, contact_note = ?, hero_bg = ?, share_enabled = ?, share_expires_at = ?,
-         public_links = ?, custom_domain = ?, is_active = ?, updated_at = NOW() WHERE id = ?',
+        'UPDATE brands SET name = ?, slug = ?, intro = ?, contact_name = ?, contact_note = ?, contact_phone = ?, contact_email = ?, hero_bg = ?, share_enabled = ?, share_expires_at = ?,
+         public_links = ?, brand_fonts = ?, custom_domain = ?, is_active = ?, updated_at = NOW() WHERE id = ?',
         [
-            $in['name'], $slug, $in['intro'] ?: null, $in['contact_name'] ?: null, $in['contact_note'] ?: null, $in['hero_bg'],
-            $in['share_enabled'], $expires, $in['public_links'], $in['custom_domain'] ?: null, $in['is_active'], $brand['id'],
+            $in['name'], $slug, $in['intro'] ?: null, $in['contact_name'] ?: null, $in['contact_note'] ?: null, $in['contact_phone'] ?: null, $in['contact_email'] ?: null, $in['hero_bg'],
+            $in['share_enabled'], $expires, $in['public_links'], $in['brand_fonts'], $in['custom_domain'] ?: null, $in['is_active'], $brand['id'],
         ]
     );
     if (!$brand['share_token']) {
@@ -550,7 +559,7 @@ function admin_file_get(string $id): void
 {
     require_admin();
     $f = db_one('SELECT * FROM item_files WHERE id = ?', [(int) $id]) ?? abort(404);
-    stream_file(stored_file_path($f), $f['original_name'], !empty($_GET['inline']), (string) $f['mime']);
+    stream_file(stored_file_path($f), $f['original_name'], !empty($_GET['inline']), (string) $f['mime'], !empty($_GET['inline']) ? 31536000 : 0);
 }
 
 /* ================= Texty sekcí ================= */

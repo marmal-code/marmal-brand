@@ -14,7 +14,10 @@ Stejný formát vytváří **Exportovat brand (ZIP)** v nastavení klienta.
     "hero_bg": "#F4F4EF",
     "contact_name": "Martin Malý · MarMal.cz",
     "contact_note": "Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.",
+    "contact_phone": "+420 724 257 563",
+    "contact_email": "martin@marmal.cz",
     "public_links": true,
+    "brand_fonts": true,
     "password": "volitelné – jinak se vygeneruje"
   },
   "texts": {
@@ -55,6 +58,10 @@ Stejný formát vytváří **Exportovat brand (ZIP)** v nastavení klienta.
 - **Sekce:** `logo`, `typografie`, `tisk`, `digital`, `kancelar`, `pravidla` (barvy patří do `colors`, text barev do `texts.barvy`).
 - **slug** stejný jako pozice ze šablony (`logo-primarni`, `logo-negativ`, `symbol`, `vizitka`…) tu pozici vyplní, jiný slug založí novou.
 - **files[].role** `preview` = soubor jen pro náhled, klient ho nestahuje. **files[].preview** `true` = soubor ke stažení, který se zároveň použije jako náhled.
+- **brand.brand_fonts** `true` (výchozí) = klientský pohled a tisková verze v písmech brandu (pozice `pismo-nadpisy` a `pismo-text`),
+  `false` = v písmech MarMal. **contact_phone / contact_email** chybí → doplní se výchozí kontakt Martina, `""` = bez kontaktu.
+- **Písma:** každý řez samostatný soubor s řezem v názvu (`OpenSans-SemiBold.ttf`). WOFF2 se stejným názvem s `"role": "preview"`
+  použije web místo TTF (menší, rychlejší), klient stahuje TTF.
 - **prune_empty** odebere prázdné pozice ze šablony, které import nevyplnil (lze je vrátit tlačítkem „Doplnit chybějící pozice ze šablony“).
 - **texts** v Markdownu: `## Nadpis`, `### Podnadpis`, `- odrážka`, `1. bod`, `**tučně**`, `*kurzíva*`, `> poznámka`, tabulky `| a | b |`, barevný čtvereček `{#373F48}`, odkaz `[text](https://…)`.
 - Import nejdřív zkontroluje celý balíček. Když najde chybu, nezaloží nic a vypíše, co opravit.

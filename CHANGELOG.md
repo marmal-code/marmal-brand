@@ -1,5 +1,14 @@
 # Změny
 
+## 1.2.0 – 26. 10. 2026
+- Klientský pohled i tisková verze se zobrazují v písmech brandu: nadpisy v „Písmu pro nadpisy“, texty, tlačítka a navigace v „Písmu pro text“
+- Přepínač „Zobrazovat manuál v písmech brandu“ v nastavení klienta (i v importu a exportu jako `brand_fonts`)
+- Aplikace pozná řez písma z názvu souboru (Light, SemiBold, Bold, Italic, variabilní…) a načte každý řez zvlášť, takže tučné písmo není „dopočítané“
+- WOFF2 má přednost před TTF (soubor „jen náhled“ se stejným názvem), prohlížeč stahuje jen použité řezy, dva hlavní řezy přednačítá
+- Karta písma ukazuje všechny řezy a velké „Aa“ v hlavním řezu
+- Náhledy a písma mají cache na rok, server vrací „nezměněno“ (304), takže se při další návštěvě nic nestahuje znovu
+- Karta „Brand spravuje“ má telefon a e-mail (výchozí kontakt Martina, upravitelné u klienta) a na mobilu je vidět pod obsahem
+
 ## 1.1.0 – 20. 10. 2026
 - Import klienta z jednoho ZIPu (brand.json + soubory) a export klienta do stejného formátu
 - Texty sekcí pro klienta (pravidla, tabulky, poznámky) s jednoduchým formátováním

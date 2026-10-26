@@ -21,6 +21,10 @@ const ALLOWED_EXT = [
 const IMAGE_EXT = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'gif'];
 const FONT_EXT = ['woff2', 'woff', 'ttf', 'otf'];
 
+/** Výchozí kontakt v kartě „Brand spravuje“ (nový klient, import bez kontaktu). */
+const DEFAULT_CONTACT_PHONE = '+420 724 257 563';
+const DEFAULT_CONTACT_EMAIL = 'martin@marmal.cz';
+
 function e(mixed $v): string
 {
     return htmlspecialchars((string) $v, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
@@ -311,6 +315,7 @@ function icon(string $name, int $size = 20, string $extra = ''): string
         'logout'   => '<path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l-5-5 5-5M5 12h11"/>',
         'printer'  => '<path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/>',
         'monitor'  => '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+        'phone'    => '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
         'mail'     => '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
         'shield'   => '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/>',
         'check'    => '<path d="M5 12l5 5 9-10"/>',

@@ -18,12 +18,15 @@ $num = 0;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title><?= e($brand['name']) ?> – brand manuál</title>
+<?php if (empty($typefaces)): ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;500&display=swap">
+<?php else: foreach ($typefaces['preload'] as [$href, $type]): ?>
+<link rel="preload" href="<?= e($href) ?>" as="font" type="<?= e($type) ?>" crossorigin>
+<?php endforeach; endif; ?>
 <link rel="stylesheet" href="/assets/css/app.css?v=<?= e(APP_VERSION) ?>">
 <link rel="stylesheet" href="/assets/css/print.css?v=<?= e(APP_VERSION) ?>">
-<?php foreach ($bySection['typografie'] ?? [] as $it): if ($it['font_file']): ?>
-<style>@font-face { font-family: "bf<?= (int) $it['id'] ?>"; src: url("<?= e(client_file_url($brand, $it['font_file'], true)) ?>") format("<?= font_format(file_ext($it['font_file']['stored_name'])) ?>"); }</style>
-<?php endif; endforeach; ?>
+<?php if (!empty($typefaces)): ?><style><?= $typefaces['css'] ?></style><?php endif; ?>
+<style><?php foreach ($bySection['typografie'] ?? [] as $it): ?><?= font_faces_css(font_faces($it), 'bf' . (int) $it['id'], fn ($f) => client_file_url($brand, $f, true)) ?><?php endforeach; ?></style>
 </head>
 <body class="print-body">
 
@@ -111,10 +114,10 @@ $num = 0;
 
   <?php elseif ($k === 'typografie'): ?>
     <div class="p-fonts">
-      <?php foreach ($bySection['typografie'] ?? [] as $it): $m = $it['meta']; $ff = "'bf" . (int) $it['id'] . "', var(--font-sans)"; ?>
+      <?php foreach ($bySection['typografie'] ?? [] as $it): $m = $it['meta']; $ff = "'bf" . (int) $it['id'] . "', var(--font-sans)"; $mainW = font_main_weight($m); ?>
         <div class="p-font">
           <div class="p-font-head"><b><?= e(($m['family'] ?? '') ?: $it['title']) ?></b><span class="small muted"><?= e($it['title']) ?><?= !empty($m['weights']) ? ' · ' . e($m['weights']) : '' ?></span></div>
-          <div style="font-family: <?= $ff ?>; font-size: 54px; line-height: 1">Aa Žž</div>
+          <div style="font-family: <?= $ff ?>; font-weight: <?= $mainW ?>; font-size: 54px; line-height: 1">Aa Žž</div>
           <div style="font-family: <?= $ff ?>; font-size: 20px"><?= e(($m['sample'] ?? '') ?: 'Příliš žluťoučký kůň úpěl ďábelské ódy') ?></div>
           <div class="small" style="font-family: <?= $ff ?>">AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ<br>aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž 0123456789</div>
           <?php if ($it['description']): ?><p class="small"><?= e($it['description']) ?></p><?php endif; ?>
@@ -150,7 +153,7 @@ $num = 0;
   <h2>Soubory ke stažení</h2>
   <p>Všechna loga, písma a podklady v aktuální verzi najdete online:</p>
   <p class="p-url"><?= e(brand_public_url($brand)) ?></p>
-  <?php if ($brand['contact_name']): ?><p class="small muted">Brand spravuje <?= e($brand['contact_name']) ?><?= $brand['contact_note'] ? ' · ' . e($brand['contact_note']) : '' ?></p><?php endif; ?>
+  <?php if ($brand['contact_name']): ?><p class="small muted">Brand spravuje <?= e($brand['contact_name']) ?><?= $brand['contact_note'] ? ' · ' . e($brand['contact_note']) : '' ?><?= !empty($brand['contact_phone']) ? '<br>' . e($brand['contact_phone']) : '' ?><?= !empty($brand['contact_email']) ? (empty($brand['contact_phone']) ? '<br>' : ' · ') . e($brand['contact_email']) : '' ?></p><?php endif; ?>
 </section>
 
 </body>

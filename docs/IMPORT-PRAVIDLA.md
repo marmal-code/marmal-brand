@@ -42,6 +42,14 @@ a pár vět o značce. Na nic se zbytečně nedoptávám. Co chybí, napíšu do
    Texty věrně podle manuálu, bez vymýšlení nových pravidel. Barvy v tabulkách lze značit `{#HEX}`.
 7. **Písma.** Jen volně šiřitelná (OFL, Apache). Pokud v podkladech chybí a jsou volná, doplnit (např. přes balíčky
    `fonts-*` nebo Google Fonts) a uvést licenci. Nevolná písma (např. Candara, Calibri) **nikdy** nepřikládat, jen zmínit v textu.
+   - **Každý řez jako samostatný soubor** s řezem v názvu (`OpenSans-SemiBold.ttf`, `Carlito-Bold.ttf`). Aplikace podle názvu
+     pozná tloušťku (Thin … Black, Italic, variabilní `[wght]`) a klientský pohled v nich zobrazí nadpisy a texty.
+     Písmo pro nadpisy patří na pozici `pismo-nadpisy`, písmo pro text na `pismo-text`.
+   - **Ke každému TTF/OTF přidat WOFF2 se stejným názvem** jako `"role": "preview"` (klient stahuje TTF, web zobrazuje
+     o 50–70 % menší WOFF2):
+     `python3 -c "import sys;from fontTools.ttLib import TTFont as T;f=T(sys.argv[1]);f.flavor='woff2';f.save(sys.argv[2])" X.ttf X.woff2`
+     (potřebuje `pip install fonttools brotli`).
+   - Ozdobné nebo skriptové písmo na nadpisy, které se nehodí na tlačítka a navigaci → v brandu `"brand_fonts": false`.
 8. **Náhledy.** K PDF tiskovinám a manuálu vytvořit náhled první strany (`pdftoppm -png -r 60 -f 1 -l 1`)
    a přidat ho s `"role": "preview"`.
 9. **`prune_empty: true`**, aby po importu nezůstaly prázdné pozice ze šablony.

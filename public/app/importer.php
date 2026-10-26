@@ -94,18 +94,21 @@ function import_brand_package(string $zipFile): array
     $password = trim((string) ($b['password'] ?? '')) ?: suggest_password();
     $hero = normalize_hex((string) ($b['hero_bg'] ?? '')) ?? '#EAF2FA';
     $brandId = db_insert(
-        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, custom_domain, is_active, created_at, updated_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, 0, ?, NULL, ?, NULL, 1, NOW(), NOW())',
+        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, contact_phone, contact_email, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, brand_fonts, custom_domain, is_active, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, NULL, ?, ?, NULL, 1, NOW(), NOW())',
         [
             trim((string) $b['name']),
             unique_brand_slug(trim((string) ($b['slug'] ?? '')) ?: (string) $b['name']),
             trim((string) ($b['intro'] ?? '')) ?: null,
             trim((string) ($b['contact_name'] ?? '')) ?: null,
             trim((string) ($b['contact_note'] ?? '')) ?: null,
+            array_key_exists('contact_phone', $b) ? (mb_substr(trim((string) $b['contact_phone']), 0, 40) ?: null) : DEFAULT_CONTACT_PHONE,
+            array_key_exists('contact_email', $b) ? (filter_var(trim((string) $b['contact_email']), FILTER_VALIDATE_EMAIL) ?: null) : DEFAULT_CONTACT_EMAIL,
             $hero,
             password_hash($password, PASSWORD_DEFAULT),
             new_share_token(),
             array_key_exists('public_links', $b) ? (!empty($b['public_links']) ? 1 : 0) : 1,
+            array_key_exists('brand_fonts', $b) ? (!empty($b['brand_fonts']) ? 1 : 0) : 1,
         ]
     );
 
@@ -230,7 +233,10 @@ function send_brand_export(array $brand): never
             'hero_bg' => $brand['hero_bg'],
             'contact_name' => $brand['contact_name'],
             'contact_note' => $brand['contact_note'],
+            'contact_phone' => $brand['contact_phone'] ?? null,
+            'contact_email' => $brand['contact_email'] ?? null,
             'public_links' => (bool) $brand['public_links'],
+            'brand_fonts' => (bool) ($brand['brand_fonts'] ?? true),
         ],
         'texts' => section_texts($brandId),
         'colors' => array_map(fn ($c) => [
@@ -269,5 +275,5 @@ function send_brand_export(array $brand): never
     $zip->addFromString('brand.json', json_encode($manifest, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
     $zip->close();
     register_shutdown_function(fn () => @unlink($tmp));
-    stream_file($tmp, $brand['slug'] . '-export-' . date('Y-m-d') . '.zip');
+    stream_file($tmp, $brand['slug'] . '-export-' . date('Y-m-d') . '.zip', false, '', 0);
 }

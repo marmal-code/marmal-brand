@@ -16,9 +16,9 @@
 .cover-logo img { max-width: 120mm; max-height: 70mm; object-fit: contain; }
 .cover-name { font-family: var(--font-display); font-weight: 700; font-size: 44px; }
 .cover h1 { font-size: 52px; }
-.cover-sub { font-size: 22px; font-weight: 300; }
+.cover-sub { font-size: 22px; font-weight: var(--fw-light); }
 .toc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; font-size: 15px; }
-.toc span { font-weight: 500; margin-right: 6px; }
+.toc span { font-weight: var(--fw-medium); margin-right: 6px; }
 
 .p-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .p-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; break-inside: avoid; }

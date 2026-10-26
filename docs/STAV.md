@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.1.0** (20. 10. 2026)
+**Aktuální verze: 1.2.0** (26. 10. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,7 +34,7 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.1.0)
+## Co aplikace umí (1.2.0)
 
 ### Administrace (`/admin`)
 - Přehled klientů: vyplněnost sekcí, poslední změna, typ přístupu, statistiky (stažení za 30 dní, neúplné brandy), aktivita.
@@ -49,18 +49,27 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   - **Text sekce pro klienta** (Markdown) v každé sekci.
   - Barvy: název, HEX (RGB se dopočítá), CMYK, Pantone, role, **použití**, **odstíny** (zobrazí tóny 100–10 %), pořadí.
 - Nastavení klienta: heslo (změna odhlásí klienta), sdílený odkaz bez hesla s platností (7/30/90/365 dní/bez omezení,
-  nový token), veřejné trvalé odkazy, vlastní doména (CNAME), aktivní/neaktivní, doplnit pozice ze šablony, export, smazání.
+  nový token), veřejné trvalé odkazy, **zobrazovat v písmech brandu** (přepínač), kontakt (jméno, poznámka, **telefon, e-mail**),
+  vlastní doména (CNAME), aktivní/neaktivní, doplnit pozice ze šablony, export, smazání.
 - Šablona sekcí: úprava výchozích pozic pro nové klienty.
 - Aktivita: log přihlášení, stažení, ZIPů, tiskových verzí, nahrání, importů.
 - Nastavení: profil a heslo, aktualizace a zálohy (ruční záloha, obnova), kontrola serveru a limitů PHP.
 
 ### Klientský pohled (`/b/{slug}` nebo vlastní doména)
 - Přihlášení heslem, nebo sdíleným odkazem `?s=TOKEN`. Administrátor vidí vše jako náhled.
+- **Písma brandu:** nadpisy v písmu z pozice `pismo-nadpisy`, texty, tlačítka a navigace v `pismo-text` (i v tiskové verzi).
+  Řezy se poznají z názvu souboru (`brand_typefaces()`, `font_faces()` v `brands.php`), WOFF2 má přednost před TTF.
+  Tloušťky rozhraní jsou v CSS proměnných `--fw-light` / `--fw-medium` (v písmu brandu regular / semibold).
+  Prohlížeč stahuje jen řezy, které stránka použije. Přednačítají se 2 hlavní řezy. Vypnuto → MarMal (Lexend).
+  Bez přihlášení písma nejdou stáhnout, proto přihlašovací stránka zůstává v písmech MarMal.
+- Karta „Brand spravuje“ s telefonem a e-mailem (na mobilu dole pod obsahem).
 - Přehled: úvodní plocha s logem, karty log (náhled + formáty), barvy (HEX/RGB/CMYK/Pantone, použití, kopírování),
-  písma (živá ukázka přes @font-face), dlaždice dalších sekcí.
+  písma (živá ukázka všech řezů přes @font-face), dlaždice dalších sekcí.
 - Sekce: soubory podle typu (logo karty, barvy + odstíny, písma, řádky dokumentů s náhledem) + text sekce.
 - Stažení: jednotlivé soubory, ZIP celé sekce, ZIP celého brandu (vč. barvy.txt a barvy.css).
 - **Trvalé odkazy** `/b/{slug}/f/{pozice}.{přípona}` → vždy aktuální verze (lze vypnout veřejnost).
+- **Cache:** náhledy a písma (`/file/{id}?inline=1`) mají cache 1 rok (soubor s daným ID se nikdy nemění), ostatní 5 minut,
+  exporty a ZIPy žádnou. Server odpovídá 304, když se soubor nezměnil (ETag / Last-Modified).
 - **PDF:** tlačítko „Manuál PDF“ (první PDF v sekci Pravidla použití) a „Tisková verze“ / „Stáhnout jako PDF“
   (`/b/{slug}/manual`): celý manuál na stránkách A4, prohlížeč ho uloží jako PDF. PDF se negeneruje na serveru
   (limit 128 MB, bez exec).
@@ -83,13 +92,13 @@ public/app/updater.php        GitHub API, run_update → apply_update_package, k
 public/app/controllers/       install.php, admin.php, client.php, settings.php
 public/views/                 layout_admin, layout_client, layout_plain, admin/*, client/* (home, section, print, _parts)
 public/assets/                css/app.css (tokeny MarMal DS), css/print.css, js/app.js (upload, kopírování), fonts/MarMal-Bold.woff2
-public/migrations/            001_init, 002_template, 003_texty_a_import
+public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu
 .github/workflows/release.yml automatické vydání po změně public/VERSION
 scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 ```
 
 ### Databáze
-`users`, `settings` (github_repo, github_token šifrovaně, update_last_check, update_last_log), `brands`,
+`users`, `settings` (github_repo, github_token šifrovaně, update_last_check, update_last_log), `brands` (… brand_fonts, contact_phone, contact_email),
 `template_items`, `items` (brand, sekce, kind file|font, slug, popisy, meta JSON, current_version_id),
 `item_versions`, `item_files` (role download|preview, is_preview), `colors` (usage_note, tints), `section_texts`,
 `activity`, `login_attempts`, `migrations`.
@@ -129,6 +138,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.2.0** (26. 10. 2026): klientský pohled a tisková verze v písmech brandu (přepínač), všechny řezy písma, WOFF2, dlouhá cache + 304, telefon a e-mail v kartě kontaktu.
 - **1.1.0** (20. 10. 2026): import/export ZIP, texty sekcí (Markdown), použití barev + odstíny, PDF (nahraný manuál + tisková verze), vlastní náhled souboru.
 - **1.0.0** (20. 10. 2026): první verze.
 

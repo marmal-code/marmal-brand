@@ -81,6 +81,7 @@ function client_vars(array $brand, string $access): array
         'texts' => $texts,
         'totals' => $totals,
         'symbol' => brand_symbol((int) $brand['id']),
+        'typefaces' => brand_typefaces($brand),
         'admin' => current_admin(),
     ];
 }
@@ -140,7 +141,7 @@ function client_file(string $slug, string $fileId): void
         log_activity((int) $brand['id'], $access, 'download', $row['item_title'] . ' – ' . $row['label']);
     }
     $item = ['slug' => $row['item_slug']];
-    stream_file(stored_file_path($row), $inline ? $row['stored_name'] : download_name($brand, $item, $row), $inline, (string) $row['mime']);
+    stream_file(stored_file_path($row), $inline ? $row['stored_name'] : download_name($brand, $item, $row), $inline, (string) $row['mime'], $inline ? 31536000 : 300);
 }
 
 /** Trvalý odkaz /b/{slug}/f/{pozice}.{přípona} – vždy vrací aktuální verzi. */

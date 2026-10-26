@@ -1,6 +1,6 @@
 <?php
 $isNew = $brand === null;
-$b = $brand ?? ['name' => old('name'), 'slug' => old('slug'), 'intro' => old('intro'), 'contact_name' => old('contact_name', 'Martin Malý · MarMal.cz'), 'contact_note' => old('contact_note', 'Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.'), 'hero_bg' => old('hero_bg', '#EAF2FA'), 'custom_domain' => old('custom_domain'), 'public_links' => 1, 'share_enabled' => 0, 'is_active' => 1];
+$b = $brand ?? ['name' => old('name'), 'slug' => old('slug'), 'intro' => old('intro'), 'contact_name' => old('contact_name', 'Martin Malý · MarMal.cz'), 'contact_note' => old('contact_note', 'Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.'), 'contact_phone' => old('contact_phone', DEFAULT_CONTACT_PHONE), 'contact_email' => old('contact_email', DEFAULT_CONTACT_EMAIL), 'hero_bg' => old('hero_bg', '#EAF2FA'), 'custom_domain' => old('custom_domain'), 'public_links' => 1, 'brand_fonts' => 1, 'share_enabled' => 0, 'is_active' => 1];
 $action = $isNew ? '/admin/brands/new' : '/admin/brands/' . (int) $b['id'] . '/settings';
 if (!$isNew) {
     $active = 'settings';
@@ -38,6 +38,8 @@ $shareUrl = !$isNew && $b['share_token'] ? brand_public_url($b, '?s=' . $b['shar
       </div>
       <div class="field"><label for="contact_name">Kontakt pro klienta</label><input class="input" id="contact_name" name="contact_name" value="<?= e($b['contact_name']) ?>"></div>
       <div class="field full"><label for="contact_note">Poznámka ke kontaktu</label><input class="input" id="contact_note" name="contact_note" value="<?= e($b['contact_note']) ?>"></div>
+      <div class="field"><label for="contact_phone">Telefon</label><input class="input" id="contact_phone" name="contact_phone" type="tel" value="<?= e($b['contact_phone'] ?? '') ?>" placeholder="<?= e(DEFAULT_CONTACT_PHONE) ?>"></div>
+      <div class="field"><label for="contact_email">E-mail</label><input class="input" id="contact_email" name="contact_email" type="email" value="<?= e($b['contact_email'] ?? '') ?>" placeholder="<?= e(DEFAULT_CONTACT_EMAIL) ?>"></div>
     </div>
   </section>
 
@@ -75,6 +77,9 @@ $shareUrl = !$isNew && $b['share_token'] ? brand_public_url($b, '?s=' . $b['shar
       <?php endif; ?>
       <div class="field full">
         <label class="check"><input type="checkbox" name="public_links" value="1"<?= $b['public_links'] ? ' checked' : '' ?>><span><b>Veřejné trvalé odkazy na soubory</b><br><span class="hint">Odkazy typu …/f/logo-primarni.svg půjde vložit do webu nebo e-mailového podpisu bez přihlášení.</span></span></label>
+      </div>
+      <div class="field full">
+        <label class="check"><input type="checkbox" name="brand_fonts" value="1"<?= !empty($b['brand_fonts']) ? ' checked' : '' ?>><span><b>Zobrazovat manuál v písmech brandu</b><br><span class="hint">Klient uvidí nadpisy a texty v písmech z pozic „Písmo pro nadpisy“ a „Písmo pro text“. Vypněte u ozdobných písem, která se na tlačítka a navigaci nehodí.</span></span></label>
       </div>
     </div>
   </section>

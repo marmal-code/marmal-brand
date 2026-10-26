@@ -1,11 +1,6 @@
 <?php
 /* Sdílené kousky klientského pohledu. */
 
-function client_file_url(array $brand, array $file, bool $inline = false): string
-{
-    return brand_url($brand, '/file/' . (int) $file['id']) . ($inline ? '?inline=1' : '');
-}
-
 function client_format_buttons(array $brand, array $item): string
 {
     $out = '';
@@ -30,7 +25,7 @@ function client_asset_card(array $brand, array $item): string
       </div>
       <div class="asset-body">
         <div>
-          <div style="font-weight: 500"><?= e($item['title']) ?></div>
+          <div style="font-weight: var(--fw-medium)"><?= e($item['title']) ?></div>
           <?php if ($item['description']): ?><div class="small muted"><?= e($item['description']) ?></div><?php endif; ?>
         </div>
         <div class="formats"><?= client_format_buttons($brand, $item) ?></div>
@@ -47,7 +42,7 @@ function client_color_card(array $c): string
     <article class="card" style="overflow: hidden">
       <div class="swatch-top" style="background: <?= e($c['hex']) ?>"></div>
       <div class="asset-body" style="gap: 8px">
-        <div style="font-weight: 500"><?= e($c['name']) ?><?php if ($c['role']): ?> <span class="tiny muted">· <?= e($c['role']) ?></span><?php endif; ?></div>
+        <div style="font-weight: var(--fw-medium)"><?= e($c['name']) ?><?php if ($c['role']): ?> <span class="tiny muted">· <?= e($c['role']) ?></span><?php endif; ?></div>
         <dl class="color-meta">
           <dt>HEX</dt><dd><?= e($c['hex']) ?></dd>
           <dt>RGB</dt><dd><?= e($rgb) ?></dd>
@@ -71,14 +66,23 @@ function client_font_card(array $brand, array $item): string
     $sample = ($m['sample'] ?? '') ?: 'Příliš žluťoučký kůň úpěl ďábelské ódy';
     ob_start(); ?>
     <article class="card card-pad stack">
-      <?php if ($item['font_file']): ?>
-        <style>@font-face { font-family: "<?= $family ?>"; src: url("<?= e(client_file_url($brand, $item['font_file'], true)) ?>") format("<?= font_format(file_ext($item['font_file']['stored_name'])) ?>"); font-display: swap; }</style>
+      <?php if ($faces = font_faces($item)): ?>
+        <style><?= font_faces_css($faces, $family, fn ($f) => client_file_url($brand, $f, true)) ?></style>
       <?php endif; ?>
       <div class="row-between" style="align-items: baseline">
-        <div style="font-weight: 500"><?= !empty($m['family']) ? e($m['family']) . ' <span class="muted" style="font-weight: 300">· ' . e(mb_strtolower($item['title'])) . '</span>' : e($item['title']) ?></div>
+        <div style="font-weight: var(--fw-medium)"><?= !empty($m['family']) ? e($m['family']) . ' <span class="muted" style="font-weight: var(--fw-light)">· ' . e(mb_strtolower($item['title'])) . '</span>' : e($item['title']) ?></div>
         <?php if (!empty($m['weights'])): ?><div class="small muted"><?= e($m['weights']) ?></div><?php endif; ?>
       </div>
-      <div class="font-big" style="font-family: '<?= $family ?>', var(--font-sans); color: var(--ink)">Aa</div>
+      <?php
+        $mainWeight = font_main_weight($m);
+        $normalFaces = array_values(array_filter($faces ?: [], fn ($f) => $f['style'] === 'normal' && !str_contains($f['weight'], ' ')));
+      ?>
+      <div class="font-big" style="font-family: '<?= $family ?>', var(--font-sans); font-weight: <?= e($mainWeight) ?>; color: var(--ink)">Aa</div>
+      <?php if (count($normalFaces) > 1): ?>
+        <div class="font-weights" style="font-family: '<?= $family ?>', var(--font-sans)">
+          <?php foreach ($normalFaces as $f): ?><span style="font-weight: <?= (int) $f['weight'] ?>"><?= e(font_weight_name((int) $f['weight'])) ?> <?= (int) $f['weight'] ?></span><?php endforeach; ?>
+        </div>
+      <?php endif; ?>
       <div class="font-sample" style="font-family: '<?= $family ?>', var(--font-sans)"><?= e($sample) ?></div>
       <div class="small muted" style="font-family: '<?= $family ?>', var(--font-sans)">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ěščřžýáíéůú</div>
       <?php if ($item['description']): ?><p class="small"><?= e($item['description']) ?></p><?php endif; ?>

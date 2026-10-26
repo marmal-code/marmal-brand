@@ -187,7 +187,12 @@ function mime_for(string $name, string $fallback = 'application/octet-stream'): 
     return $map[file_ext($name)] ?? ($fallback ?: 'application/octet-stream');
 }
 
-function stream_file(string $path, string $downloadName, bool $inline = false, string $mime = ''): never
+/**
+ * Pošle soubor prohlížeči.
+ * $cacheSeconds: jak dlouho si ho prohlížeč smí držet. Soubory adresované přes ID se nemění (nová verze = nové ID),
+ * takže náhledy a písma můžou mít cache dlouhou. Prohlížeč se navíc může zeptat, jestli se soubor změnil (304).
+ */
+function stream_file(string $path, string $downloadName, bool $inline = false, string $mime = '', int $cacheSeconds = 300): never
 {
     if (!is_file($path)) {
         abort(404, 'Soubor už na serveru není.');
@@ -199,6 +204,22 @@ function stream_file(string $path, string $downloadName, bool $inline = false, s
     session_write_close();
     $mime = mime_for($downloadName, $mime);
     $size = (int) filesize($path);
+    $mtime = (int) filemtime($path);
+    $etag = '"' . dechex($mtime) . '-' . dechex($size) . '"';
+    $cache = $cacheSeconds > 0
+        ? 'private, max-age=' . $cacheSeconds . ($cacheSeconds >= 86400 ? ', immutable' : '')
+        : 'private, no-store';
+    header_remove('Expires'); // posílá je session_start(), u souborů by pletly cache
+    header_remove('Pragma');
+    header('Cache-Control: ' . $cache);
+    header('ETag: ' . $etag);
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $mtime) . ' GMT');
+    $ifNone = (string) ($_SERVER['HTTP_IF_NONE_MATCH'] ?? '');
+    $ifSince = strtotime((string) ($_SERVER['HTTP_IF_MODIFIED_SINCE'] ?? '')) ?: 0;
+    if ($cacheSeconds > 0 && (($ifNone !== '' && in_array($etag, array_map('trim', explode(',', $ifNone)), true)) || ($ifNone === '' && $ifSince >= $mtime))) {
+        http_response_code(304);
+        exit;
+    }
     header('Content-Type: ' . $mime);
     header('Content-Length: ' . $size);
     header('X-Content-Type-Options: nosniff');
@@ -207,8 +228,6 @@ function stream_file(string $path, string $downloadName, bool $inline = false, s
     $ascii = preg_replace('/[^A-Za-z0-9._-]/', '_', $downloadName);
     $disposition = $inline && (in_array(file_ext($downloadName), array_merge(IMAGE_EXT, FONT_EXT, ['pdf']), true)) ? 'inline' : 'attachment';
     header('Content-Disposition: ' . $disposition . '; filename="' . $ascii . '"; filename*=UTF-8\'\'' . rawurlencode($downloadName));
-    header('Cache-Control: private, max-age=300');
-    header('Last-Modified: ' . gmdate('D, d M Y H:i:s', (int) filemtime($path)) . ' GMT');
     if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'HEAD') {
         exit;
     }
@@ -273,7 +292,7 @@ function send_brand_zip(array $brand, ?string $section = null): never
     $zip->close();
     $name = $brand['slug'] . '-' . ($section ? slugify(SECTIONS[$section]['title'] ?? $section) : 'brand-manual') . '.zip';
     register_shutdown_function(fn () => @unlink($tmp));
-    stream_file($tmp, $name);
+    stream_file($tmp, $name, false, '', 0);
 }
 
 function colors_as_text(array $brand, array $colors): string
