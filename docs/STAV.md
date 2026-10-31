@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.3.0** (26. 10. 2026)
+**Aktuální verze: 1.3.1** (31. 10. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,10 +34,10 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.3.0)
+## Co aplikace umí (1.3.1)
 
 ### Administrace (`/admin`)
-- Přehled klientů: vyplněnost sekcí, poslední změna, typ přístupu, statistiky (stažení za 30 dní, neúplné brandy), aktivita.
+- Přehled klientů: vyplněnost sekcí, poslední změna, typ přístupu, statistiky (stažení za 30 dní, neúplné brandy), aktivita. U každého klienta odkazy Upravit, Náhled, Kopírovat odkaz a Smazat.
 - Nový klient: název, adresa (slug), úvodní text, barva úvodní plochy, kontakt, heslo (návrh se generuje).
 - **Import klienta ze ZIPu** (Klienti → Importovat) a **export klienta** do stejného formátu (nastavení klienta).
 - Editor brandu, záložky sekcí: Logo, Barvy, Typografie, Tisk, Digitál a sítě, Kancelář, Pravidla použití + Přístup a nastavení.
@@ -50,7 +50,7 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   - Barvy: název, HEX (RGB se dopočítá), CMYK, Pantone, role, **použití**, **odstíny** (zobrazí tóny 100–10 %), pořadí.
 - Nastavení klienta: heslo (změna odhlásí klienta), sdílený odkaz bez hesla s platností (7/30/90/365 dní/bez omezení,
   nový token), veřejné trvalé odkazy, **zobrazovat v písmech brandu** (přepínač), kontakt (jméno, poznámka, **telefon, e-mail**),
-  vlastní doména (CNAME), aktivní/neaktivní, doplnit pozice ze šablony, export, smazání.
+  vlastní doména (CNAME), aktivní/neaktivní, doplnit pozice ze šablony, export, smazání (potvrzuje se opsáním adresy; odkaz „Smazat“ je i v přehledu klientů a vede na tuto kartu).
 - Šablona sekcí: úprava výchozích pozic pro nové klienty.
 - Aktivita: log přihlášení, stažení, ZIPů, tiskových verzí, nahrání, importů.
 - Nastavení: profil a heslo, **dvoufázové ověření** (TOTP s QR kódem, 10 záložních kódů, nové kódy, vypnutí s heslem + kódem),
@@ -149,6 +149,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.3.1** (31. 10. 2026): odkaz „Smazat“ v přehledu klientů (vede na potvrzení v nastavení klienta).
 - **1.3.0** (26. 10. 2026): 2FA administrátora, odhlášení ostatních zařízení, limity pokusů ze všech IP, silnější hesla klientů, CSP a další bezpečnostní hlavičky, relace ve vlastní složce. Audit v `docs/BEZPECNOST.md`.
 - **1.2.0** (26. 10. 2026): klientský pohled a tisková verze v písmech brandu (přepínač), všechny řezy písma, WOFF2, dlouhá cache + 304, telefon a e-mail v kartě kontaktu.
 - **1.1.0** (20. 10. 2026): import/export ZIP, texty sekcí (Markdown), použití barev + odstíny, PDF (nahraný manuál + tisková verze), vlastní náhled souboru.

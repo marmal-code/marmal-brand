@@ -1,5 +1,10 @@
 # Změny
 
+## 1.3.1 – 31. 10. 2026
+- Odkaz „Smazat“ v přehledu klientů u každého klienta. Vede na kartu „Smazat klienta“ v nastavení klienta, kde se smazání potvrzuje opsáním adresy, takže klienta nejde smazat jedním nechtěným kliknutím
+- Karta „Smazat klienta“ se po příchodu z přehledu zvýrazní a kurzor je rovnou v poli pro opsání adresy
+- U smazání upozornění, že klienta lze předtím zazálohovat exportem
+
 ## 1.3.0 – 26. 10. 2026
 Zabezpečení aplikace (podrobně v `docs/BEZPECNOST.md`).
 - Dvoufázové ověření administrátora: kód z aplikace Authenticator (QR kód), 10 záložních kódů, nové kódy na požádání, vypnutí jen s heslem a kódem

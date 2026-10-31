@@ -284,4 +284,14 @@
     t.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) { var d = el.querySelector('[data-drop]'); if (d) d.focus(); }
   });
+
+  /* ---------- Odkaz „Smazat“ z přehledu klientů: kurzor rovnou do pole pro opsání adresy ---------- */
+  if (location.hash === '#smazat') {
+    var zone = document.getElementById('smazat');
+    var inp = zone && zone.querySelector('input[name="confirm"]');
+    if (inp) {
+      zone.scrollIntoView({ block: 'center' });
+      inp.focus({ preventScroll: true });
+    }
+  }
 })();

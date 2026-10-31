@@ -119,9 +119,9 @@ $shareUrl = !$isNew && $b['share_token'] ? brand_public_url($b, '?s=' . $b['shar
       <a class="btn btn-ghost" href="/admin/brands/<?= (int) $b['id'] ?>/export"><?= icon('download', 18) ?>Exportovat brand (ZIP)</a>
     </div>
   </section>
-  <section class="card card-pad stack" style="border-color: var(--error-soft)">
+  <section class="card card-pad stack danger-zone" id="smazat">
     <h2>Smazat klienta</h2>
-    <p class="small">Smaže brand, všechny jeho soubory i historii verzí. Nejde to vrátit.</p>
+    <p class="small">Smaže brand, všechny jeho soubory i historii verzí. Nejde to vrátit. Pokud si chcete klienta schovat, exportujte ho předtím (Exportovat brand výše).</p>
     <form method="post" action="/admin/brands/<?= (int) $b['id'] ?>/delete" class="row" data-confirm="Opravdu smazat klienta <?= e($b['name']) ?> včetně všech souborů?">
       <?= csrf_field() ?>
       <label class="sr-only" for="confirm">Pro potvrzení opište adresu</label>

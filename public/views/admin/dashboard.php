@@ -63,6 +63,7 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
               <a href="/admin/brands/<?= (int) $b['id'] ?>/s/logo">Upravit</a>
               <a href="<?= e(brand_url($b)) ?>" target="_blank" rel="noopener">Náhled</a>
               <button type="button" class="link-btn" data-copy="<?= e(brand_public_url($b)) ?>" data-copy-msg="Odkaz na brand manuál je zkopírovaný">Kopírovat odkaz</button>
+              <a class="link-danger" href="/admin/brands/<?= (int) $b['id'] ?>/settings#smazat" aria-label="Smazat klienta <?= e($b['name']) ?>">Smazat</a>
             </div>
           </td>
         </tr>
