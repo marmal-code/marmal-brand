@@ -1,3 +1,4 @@
 dist/
 .DS_Store
 /public/data-path.php
+/brand-data/
