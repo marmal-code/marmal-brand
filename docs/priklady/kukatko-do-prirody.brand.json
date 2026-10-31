@@ -9,16 +9,18 @@
     "contact_name": "Martin Malý · MarMal.cz",
     "contact_note": "Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.",
     "public_links": true,
-    "brand_fonts": true
+    "brand_fonts": true,
+    "contact_phone": "+420 724 257 563",
+    "contact_email": "martin@marmal.cz"
   },
   "texts": {
     "logo": "Logo tvoří **symbol** (lupa, ze které vykukuje žabák) a **název** KUKÁTKO do přírody. Existuje ve dvou skladbách, vodorovné a svislé. **Přednostně používejte vodorovné logo na světlém podkladu.**\n\n## Co symbol ukazuje\nLupa je pomůcka, se kterou děti na workshopu pracují nejčastěji. Z jejího skla vykukuje žabák, stejná postava jako maskot, který děti provází v ilustracích a pracovních listech. Ruce mu přesahují přes okraj a kruh čočky je otevřený: příroda nekončí rámečkem.\n\n## Název\n**KUKÁTKO** verzálkami v Hlubině, **do přírody** v písmu Nunito Bold v Tůňce. Název je v souborech převedený na křivky a nikdy se nepřepisuje písmem.\n\n## Varianty\n| Varianta | Použití |\n|---|---|\n| Vodorovné · hlavní varianta | Hlavička webu, e-mailový podpis, pracovní listy, inzerce, všechny široké formáty. |\n| Svislé | Čtvercové a vysoké formáty: obálka složky, plakát, titulní strana. |\n| Symbol | Ikona webu, profilová fotka, razítko. |\n\n### Na tmavém podkladu a jednobarevně\nNa tmavých plochách je lupa bílá, KUKÁTKO v Chmýří a „do přírody“ v Meruňce. Žabák zůstává barevný, oči mají bílou výplň.\n\nJednobarevné verze (černá a bílá) slouží pro ražbu, razítka, gravuru a potisk textilu: pusa a nosní dírky jsou v nich vyříznuté.\n\n## Ochranná zóna\nMěrnou jednotkou je **X = výška písmene K** ve slově KUKÁTKO. Kolem loga zůstává volné místo nejméně **1 X** ze všech stran. Do zóny nezasahuje text, okraj formátu ani výrazný detail ilustrace. Stejné pravidlo platí pro svislé logo i samostatný symbol.\n\n## Minimální velikost\n| Varianta | Tisk | Web |\n|---|---|---|\n| Vodorovné logo | šířka 35 mm | šířka 160 px |\n| Svislé logo | šířka 22 mm | šířka 100 px |\n| Symbol | šířka 8 mm | 32 px (ikona webu) |\n\n## Logo na podkladech\nNa bílé, Chmýří a Louce stojí barevné logo. Na Hlubině a Tůňce verze pro tmavý podklad. Žabka a Meruňka nejsou podklad pro logo, protože jsou v něm samy obsažené.\n\n| Podklad | Verze loga | Použít |\n|---|---|---|\n| {#FFFFFF} Bílá | barevné logo | ✓ ano |\n| {#FAF8EF} Chmýří | barevné logo | ✓ ano |\n| {#E9EEDC} Louka | barevné logo | ✓ ano |\n| {#17323A} Hlubina | verze pro tmavý podklad | ✓ ano |\n| {#0F6E73} Tůňka | verze pro tmavý podklad | ✓ ano |\n| Pestrá ilustrace | jakákoli | ✗ ne |\n| {#75B636} Žabka | jakákoli | ✗ ne |\n| {#FB9F70} Meruňka | jakákoli | ✗ ne |\n| {#17323A} Tmavý podklad | barevné logo pro světlý podklad | ✗ ne |\n\n## Nesprávné použití\nLogo se vkládá jen z dodaných souborů a v nezměněné podobě. Tyto úpravy nejsou přípustné:\n- Roztažení a deformace.\n- Natáčení.\n- Barvy mimo paletu.\n- Stíny, obrysy, 3D efekty.\n- Přepsání názvu písmem.\n- Maskot místo symbolu v logu.\n- Změna poměru symbolu a názvu nebo jejich vzájemné polohy.\n- Logo zmenšené pod minimální velikost.\n- Logo v rámečku nebo na podkladovém tvaru.\n- Vyříznutý samotný žabák. Samostatně se používá celý symbol.\n",
     "barvy": "Čtyři barvy pocházejí přímo z loga, dvě světlé z webu. Názvy berou z tůňky a louky, kde žabák bydlí. Používejte je v komunikaci s grafikem i tiskárnou.\n\n## Poměr ploch 60 / 30 / 10\n| Skupina | Barvy | Podíl |\n|---|---|---|\n| Světlé plochy | {#FAF8EF} Chmýří 50 % · {#E9EEDC} Louka 10 % | 60 % |\n| Text a tlačítka | {#17323A} Hlubina 20 % · {#0F6E73} Tůňka 10 % | 30 % |\n| Akcent | {#75B636} Žabka 6 % · {#FB9F70} Meruňka 4 % | 10 % |\n\n## Odstíny\nOdstíny pro plochy, tabulky a ilustrace.\n\n| Barva | 100 % | 80 % | 60 % | 40 % | 20 % | 10 % |\n|---|---|---|---|---|---|---|\n| Tůňka | {#0F6E73} #0F6E73 | {#3F8B8F} #3F8B8F | {#6FA8AB} #6FA8AB | {#9FC5C7} #9FC5C7 | {#CFE2E3} #CFE2E3 | {#E7F1F1} #E7F1F1 |\n| Hlubina | {#17323A} #17323A | {#455B61} #455B61 | {#748489} #748489 | {#A2ADB0} #A2ADB0 | {#D1D6D8} #D1D6D8 | {#E8EBEB} #E8EBEB |\n| Žabka | {#75B636} #75B636 | {#91C55E} #91C55E | {#ACD386} #ACD386 | {#C8E2AF} #C8E2AF | {#E3F0D7} #E3F0D7 | {#F1F8EB} #F1F8EB |\n| Meruňka | {#FB9F70} #FB9F70 | {#FCB28D} #FCB28D | {#FDC5A9} #FDC5A9 | {#FDD9C6} #FDD9C6 | {#FEECE2} #FEECE2 | {#FFF5F1} #FFF5F1 |\n\n## Kombinace textu a podkladu\nText musí mít kontrast nejméně **4,5 : 1** (WCAG AA). Velké nadpisy od 24 px nejméně **3 : 1**.\n\n| Text na podkladu | Kontrast | Hodnocení |\n|---|---|---|\n| Hlubina na Chmýří | 12,7 : 1 | ✓ AAA |\n| Chmýří na Hlubině | 12,7 : 1 | ✓ AAA |\n| Hlubina na Meruňce | 6,6 : 1 | ✓ AA |\n| Meruňka na Hlubině | 6,6 : 1 | ✓ AA |\n| Bílá na Tůňce | 6,0 : 1 | ✓ AA |\n| Tůňka na Chmýří | 5,6 : 1 | ✓ AA |\n| Hlubina na Žabce | 5,5 : 1 | ✓ AA |\n| Tůňka na Louce | 5,1 : 1 | ✓ AA |\n| Žabka na bílé | 2,5 : 1 | ✗ ne |\n| Tůňka na Hlubině | 2,3 : 1 | ✗ ne |\n| Bílá na Meruňce | 2,0 : 1 | ✗ ne |\n| Meruňka na Chmýří | 1,9 : 1 | ✗ ne |\n\nBarvy na webu (pozadí, text, odkazy, fokus, chyba ve formuláři) jsou v sekci Digitál a sítě.\n",
     "typografie": "Dvě písma z rodiny zaoblených tvarů, která ladí s logem. Obě jsou zdarma pod licencí SIL Open Font License, i pro komerční použití, a mají českou diakritiku. Písma jsou ke stažení v této sekci.\n\n| Písmo | Řez | Použití |\n|---|---|---|\n| Baloo 2 | SemiBold 600 | nadpisy |\n| Baloo 2 | Bold 700 | krátké titulky |\n| Baloo 2 | ExtraBold 800 | výjimečně |\n| Nunito | Regular 400 | běžný text |\n| Nunito | Bold 700 | zvýraznění, popisky |\n| Nunito | ExtraBold 800 | tlačítka, štítky |\n\n## Velikosti\n| Úroveň | Ukázka | Písmo | Web počítač / mobil | Tisk |\n|---|---|---|---|---|\n| H1 | Přírodu zkoumáme | Baloo 2 · 600 | 50 / 34 px | 28–36 pt |\n| H2 | Co budou děti dělat | Baloo 2 · 600 | 36 / 28 px | 20–24 pt |\n| H3 | Ovoce a zelenina | Baloo 2 · 600 | 24 / 21 px | 14–16 pt |\n| Nadtitulek | PŘÍRODA JE NEJLEPŠÍ UČITELKA | Nunito · 800, verzálky | 14 / 13 px | 8–9 pt |\n| Text | Děti pracují s lupami a přírodninami. | Nunito · 400 | 18 / 17 px | 10–11 pt |\n| Popisek | Podzim · říjen, listopad | Nunito · 400/700 | 15 / 14 px | 8 pt |\n| Pracovní list | Nakresli, co vidíš pod lupou. | Nunito · 700 | – | min. 16 pt |\n\n## Zásady\n- Řádkování textu 1,5–1,6, nadpisů 1,05–1,15. Řádek nejvýš 70 znaků.\n- Klíčové slovo nadpisu se může zvýraznit Tůňkou, nikdy celý nadpis.\n- Pod hlavní nadpis patří krátká Meruňková linka (64 × 4 px).\n- Formuláře na webu nejméně 16 px, jinak telefon přiblíží stránku.\n- Písma nahrajte přímo do WordPressu, ne ze serverů Google. Návštěvníci pak neposílají Googlu svou IP adresu.\n\n## Náhradní písma\nTrebuchet MS a Segoe UI. V e-mailovém podpisu Segoe UI nebo Arial.\n",
-    "tisk": "## Pracovní list pro děti\nPracovní listy si děti odnášejí domů a rodiče je vidí jako první. List provází žabák v póze podle úkolu.\n\n| Parametr | Hodnota |\n|---|---|\n| Formát | A4 na výšku |\n| Okraje | 15 mm, spadávka 3 mm |\n| Logo | vodorovné, vlevo nahoře, šířka 60 mm |\n| Nadpis | Baloo 2 600, 28–32 pt |\n| Zadání | Nunito 700, min. 16 pt, nejvýš 2 řádky |\n| Maskot | jeden, výška 50–70 mm, dole u okraje |\n| Barvy | tisk i černobíle: kresba v Tůňce, plochy jen obrysem |\n| Patička | kukatkodoprirody.cz, Nunito 8 pt |\n\nVelké volné plochy pro kreslení, žádné drobné texty. Zadní strana může nést vzor.\n\n## Vzor pro dětské materiály\nVzor skládá ikony a jejich dráhy letu na Chmýří. Patří na složky, obaly, zadní strany pracovních listů a tašky. Dlaždice 480 × 480 px se opakuje bez švu.\n- Vzor nikdy pod textem, jen jako plocha nebo okraj.\n- Na listu, kde je vzor, je logo na bílém štítku.\n- Varianta na Louce pro vnitřní strany složek.\n\n## Míry v tisku\n| Prvek | Tisk |\n|---|---|\n| Vodorovné logo | nejméně 35 mm na šířku |\n| Svislé logo | nejméně 22 mm na šířku |\n| Symbol | nejméně 8 mm na šířku |\n| Ikony | nejmenší výška 6 mm |\n| Meruňková linka | 12 × 1 mm, jen jedna na stranu |\n| Nadpisy a text | podle tabulky velikostí v sekci Typografie |\n",
-    "digital": "## Náhled při sdílení odkazu\n1200 × 628 px. Obrázek se ukáže na Facebooku, v e-mailu a v chatu, když někdo pošle odkaz na web. Text a logo drží levé 2/3, ilustrace vpravo.\n\n## Ikona webu\n512 × 512 px, symbol na Chmýří. WordPress z ní vytvoří ikonu v prohlížeči (32 px) i na ploše telefonu.\n\n## Sociální sítě\n| Formát | Rozměr | Skladba |\n|---|---|---|\n| Příspěvek | 1080 × 1080 px | Krátký nadpis, ilustrace podle ročního období, logo na bílém štítku. Do textu příspěvku obec a téma. |\n| Stories | 1080 × 1920 px | Tůňka, žabák, jedna výzva. |\n| Profilovka | 1080 × 1080 px | Symbol na Chmýří. Kruhový ořez nechá celý symbol. |\n\nDo příspěvků na sítích dáváme obec a téma, třeba „Podzimní workshop v MŠ Čelákovice“, a odkaz na web.\n\n## Prvky webu\n### Tlačítka\nVýška 48 px, zaoblení 8 px, Nunito 800. Na stránce je jedno hlavní tlačítko. Manuál ukazuje stavy hlavní (Poptat workshop), vedlejší (Prohlédnout témata), najetí myší a fokus klávesnicí.\n\n### Formulář\nUkázková pole: Název mateřské školy (např. MŠ Sluníčko, Čelákovice), E-mail, Preferovaný termín (nepovinné). Písmo ve formulářích nejméně 16 px. Chyba se vždy ukáže i textem, např. „Doplňte celý e-mail, např. jmeno@skolka.cz.“\n\n### Rozestupy\nJen z řady 8 px: 8, 16, 24, 32, 48, 64. Mezi nadpisem a textem 16, mezi bloky 48–64, mezi sekcemi 96.\n\n### Barvy rolí\n- {#FAF8EF} Pozadí stránky Chmýří, {#E9EEDC} střídavé sekce Louka, karty bílé.\n- {#17323A} Text Hlubina, {#0F6E73} odkazy a tlačítka Tůňka.\n- {#FB9F70} Fokus: obrys 3 px v Meruňce.\n- {#B3402E} Chyba ve formuláři: #B3402E, vždy i s textem.\n\n## Ikony\nOsm barevných ikon z tůňky a louky. Slouží jako drobné ilustrace u témat, v pracovních listech, ve vzoru a v příspěvcích. Nejsou to ovládací ikony webu.\n- Ikony se vkládají jako SVG, nejmenší výška 24 px, v tisku 6 mm.\n- Dráha letu je v originále světlá pro tmavé a pestré plochy. Na Chmýří a bílé použijte verzi s dráhou v Tůňce (soubor „na světlý podklad“).\n- Ovládací ikony webu (telefon, e-mail, šipka) jsou linkové, tah 2 px, v Tůňce, z jedné sady.\n- Ikony nekombinujte s fotobankovými obrázky ani emoji.\n",
-    "kancelar": "## E-mailový podpis\nFunkční podpis pro Gmail, Outlook a Apple Mail je ke stažení v této sekci (podpis-kukatko.html).\n\n- Symbol 74 × 64 px, svislá linka 2 px v Meruňce.\n- Jméno 15 px tučně, ostatní 13 px, barvy Hlubina a Tůňka.\n- Písmo Nunito. Kde chybí, zobrazí se Segoe UI nebo Arial.\n- Obrázek symbolu musí ležet na webu (adresa v souboru).\n- Bez citátů, obrázků z fotobank a dlouhých právních doložek.\n\n### Jak podpis nastavit\n1. Nahrajte podpis-symbol-kukatko.png do knihovny médií na webu a zkopírujte jeho adresu.\n2. V souboru podpis-kukatko.html nahraďte adresu obrázku (src=\"…\") touto adresou.\n3. Otevřete soubor v prohlížeči, označte celý podpis, zkopírujte ho a vložte do nastavení podpisu.\n\n## Automatická odpověď na poptávku\n**Předmět:** Vaše poptávka – Kukátko do přírody\n\n> Dobrý den,\n> děkuji za poptávku workshopu. Přečtu si ji a do dvou pracovních dnů se vám ozvu s návrhem termínu a tématu.\n> Pokud chcete něco doplnit, stačí odpovědět na tento e-mail.\n> S pozdravem\n> Dana Stemberková\n",
-    "pravidla": "Brand manuál 1.0 (říjen 2026) popisuje, jak značku používat na webu, v tisku a na sociálních sítích. Je pro grafiky, tiskárny, správu webu a sociálních sítí.\n\nKukátko do přírody jsou přírodovědné workshopy s badatelským zaměřením pro mateřské školy: **3–6 let, 60 minut, až 15 dětí**, Čelákovice a okolí, Praha. Claim: *Přírodu zkoumáme zblízka. Malé objevy. Velká dobrodružství.*\n\n## Komu píšeme\nČtyři modelové persony pro web. Jsou smyšlené, ale vycházejí z ŠVP čelákovické školky, přehledu konkurence a zkušeností lektorky.\n\n| Persona | Kdo to je | Co chce | Co ji přesvědčí |\n|---|---|---|---|\n| **Jana** · rozhoduje | Ředitelka školky v Čelákovicích a okolí, sama i učí. | Rychle vidět věk, délku, počet dětí a co zajistí školka. Aby program zapadl do ŠVP a dopoledního režimu. | Praktické informace na jednom místě, odborné vzdělání lektorky, osobní setkání. |\n| **Petra** · navrhuje | Učitelka věkově smíšené třídy, plánuje integrované bloky. | Konkrétní popis, co budou děti dělat, průběh hodiny po částech a témata podle ročního období. | Střídání zkoumání, pohybu a tvoření, jasná role učitelky. |\n| **Lenka** · srovnává | Zástupkyně pražské školky, hledá programy na internetu. | Parametry na první pohled, zda lektorka dojede do její části Prahy, jednoduchý formulář. | Menší skupina, přehledná témata, rychlá a konkrétní odpověď. |\n| **Tomáš** · doporučuje | Táta pětileté dcery, web navštíví občas. | Vědět, kdo program vede, vidět fotky z workshopů a co si dítě odnese domů. | Fotky dětí u mikroskopu (se souhlasem rodičů), výrobek, o kterém dcera vypráví. |\n\n## Jak píšeme\nPíšeme ředitelce nebo učitelce tak, jako bychom jí vlastními slovy vysvětlovaly, co nabízíme. Profesionálně, ale civilně a přátelsky. Lektorka mluví v první osobě.\n- Konkrétní činnosti místo obecných slibů: děti pozorují, porovnávají, sází, zkoumají pod mikroskopem.\n- Střídáme délku vět, píšeme krátké odstavce a výstižné nadpisy.\n- Bez přemíry zdrobnělin, vykřičníků a emoji.\n- Nevymýšlíme reference, reakce dětí ani zkušenosti, které nemáme.\n- Výzvy k akci říkají, co se stane: **Poptat workshop**, **Zeptat se na termín**, **Odeslat poptávku**.\n- Do příspěvků na sítích dáváme obec a téma, třeba „Podzimní workshop v MŠ Čelákovice“, a odkaz na web.\n\n| ✓ Takto | ✗ Ne takto |\n|---|---|\n| Na workshopu má každé dítě k dispozici lupu nebo mikroskop a před sebou skutečné přírodniny. | Vstupte s námi do kouzelného světa poznání a dopřejte dětem nezapomenutelný zážitek! |\n| Odpovím do dvou pracovních dnů. | Inovativní vzdělávání pro vaše zlatíčka. |\n\n### Výrazy, které patří do nadpisů a textů webu\npřírodovědné workshopy pro MŠ · výukové programy pro mateřské školy · ekologické programy pro MŠ · badatelské programy pro MŠ · program do školky příroda · workshop MŠ Čelákovice · programy pro MŠ Praha · podzimní program pro MŠ\n\n## Grafické prvky\nPrvky vycházejí z loga, webu a ilustrací. Na jedné ploše stačí jeden nebo dva.\n\n| Prvek | Pravidlo |\n|---|---|\n| Lupa | Obrys lupy z loga v Tůňce. Značí kapitoly, rámuje fotku nebo číslo. Vždy celá, bez žabáka. |\n| Okénko | Měkký nepravidelný tvar, ve kterém jsou ilustrace. Jako výřez pro ilustrace i fotografie. |\n| Dráha letu | Přerušovaná čára za hmyzem z ikon. Na světlém podkladu v Tůňce se 40% krytím. |\n| Meruňková linka | 64 × 4 px, 6 px pod hlavním nadpisem. V tisku 12 × 1 mm. Jen jedna na stranu. |\n| Štítky | Výška 32 px, zaoblení 16 px. Roční období v Meruňce, parametry v Louce. |\n| Zaoblení | Jen násobky 8 px: 8 tlačítka a pole, 16 karty, 24 velké obrázky a panely. |\n\n## Maskot žabák\nŽabák provází děti v pracovních listech, složkách, ilustracích webu a na sítích. Každá póza má svůj úkol. Všechny pózy jsou ke stažení níže (PNG s průhledným pozadím).\n\n| Póza | Úkol |\n|---|---|\n| Mává | pozdrav, úvod |\n| Ukazuje doprava | vede k textu, k tlačítku |\n| Drží lupu | zkoumání |\n| Dívá se přes lupu | pozorování |\n| Ukazuje na tabuli | zadání úkolu |\n| S listem | přírodniny, podzim |\n| Zkoumá berušku | hmyz, detail |\n| Poslouchá | zvuky, hádanky |\n| Píše do sešitu | zápis, tvoření |\n\n- Na stránce nebo listu je jen jeden žabák.\n- Póza odpovídá činnosti: u zadání tabule, u pozorování lupa.\n- Žabák se nepřebarvuje, nedeformuje a nekreslí se znovu.\n- Stojí na světlém podkladu nebo v okénku ilustrace.\n- Maskot nenahrazuje symbol v logu a logo ho nenahrazuje.\n\n## Ilustrace ročních období\nŠest scén v okénku, vždy se žabákem. Témata workshopů se drží ročních období, proto ilustraci volte podle nich.\n\n| Roční období | Ilustrace |\n|---|---|\n| Jaro | Jarní louka, Jarní potok |\n| Léto | Letní louka, Letní les |\n| Podzim | Podzimní jezírko, Podzimní les |\n\n- Ilustraci neořezávejte, tvar okénka je její součást.\n- Přes ilustraci nepište text a nedávejte logo.\n- Kolem okénka nechte volné místo, nic do něj nevkládejte.\n- Na zimní téma zatím ilustrace chybí, doplní se do sady.\n\n## Fotografie\nFotografie jsou jen ze skutečných workshopů: lupy, mikroskopy, ruce dětí u přírodnin, výrobky. Žádné fotobanky s cizími dětmi.\n\n| Tvar | Použití |\n|---|---|\n| Kruh lupy | Detail přírodniny, list pod mikroskopem. Rámeček 8 px v Tůňce. |\n| Obdélník | Průběh workshopu. Poměr 3 : 2 nebo 4 : 5, zaoblení 24 px. |\n| Okénko | Portrét do části O mně a výjimečné fotky. Jedno na stránku. |\n\n### Ano\n- Denní světlo, přirozené barvy, pohled z výšky dětí.\n- Ruce, pomůcky a přírodniny zblízka, když nemáte souhlas rodičů.\n- Výrobek, který si dítě odnese domů.\n- Popisek fotky říká, co je na ní (alt text pro web).\n\n### Ne\n- Fotky dětí bez písemného souhlasu rodičů.\n- Fotobanky, aranžované úsměvy do objektivu.\n- Logo přes fotku. Patří vedle ní.\n- Filtry, rámečky, nápisy přes obličeje.\n\n## Kontakty\n| | |\n|---|---|\n| Značka | Kukátko do přírody · Mgr. et Bc. Dana Stemberková |\n| Kontakt | kukatkodoprirody@gmail.com · +420 606 406 987 |\n| Web | kukatkodoprirody.cz |\n| Manuál a logo | Martin Malý · verze 1.0 · říjen 2026 |\n"
+    "tisk": "Všechny tiskoviny jsou ke stažení v této sekci jako PDF pro tiskárnu, s náhledem PNG. Pracovní list, diplom a hlavičkový papír mají i šablonu ve Wordu.\n\n## Společná pravidla\n| | |\n|---|---|\n| Spadávka | 3 mm u všech tiskovin kromě obálek, ořezový formát je v PDF vyznačený |\n| Barvy | Soubory jsou v RGB, tiskárna je převede do CMYK. Pro kontrolu použijte hodnoty ze sekce Barvy. |\n| Písma | Vložená v PDF. Pro šablony ve Wordu nainstalujte Baloo 2 a Nunito ze sekce Typografie. |\n\n## Hlavičkový papír\nA4 na výšku.\n\n| Prvek | Pravidlo |\n|---|---|\n| Logo | vodorovné, vlevo nahoře, šířka 55 mm, 15 mm od horního a 20 mm od levého okraje |\n| Prvek | vážka s dráhou letu vpravo nahoře, jediný doplněk |\n| Text | Nunito 10–11 pt, řádkování 1,5, okraje 25 mm vlevo a 20 mm vpravo |\n| Patička | Nunito 7,5 pt nad linkou v Louce |\n\nPDF je pro tiskárnu, šablona pro psaní dopisů ve Wordu je v sekci Kancelář.\n\n## Obálky DL a C4\n- **DL · 110 × 220 mm:** dopisy a faktury přeložené na třetiny.\n- **C4 · 229 × 324 mm:** složka na pracovní listy, diplomy a dopisy bez přehýbání.\n\n| Prvek | Pravidlo |\n|---|---|\n| Logo | vodorovné, vlevo nahoře 10 mm od okrajů, šířka 52 mm (DL) a 72 mm (C4) |\n| Odesílatel | jméno, telefon a web pod logem, Nunito 7,5 pt |\n| Prvek | motýl s dráhou letu vlevo dole |\n\n- Pravá polovina zůstává volná pro adresu, známku a razítko pošty.\n- Tiskne se na hotové obálky, bez spadávky. Grafika drží odstup 10 mm od kraje.\n- Vzor na obálky nepatří, je vyhrazený dětským materiálům.\n\n## Vizitka\n85 × 55 mm, oboustranná. **Přední strana:** vzor na Chmýří, logo na bílém štítku. **Zadní strana:** jméno, obor a kontakty na Chmýří, symbol vpravo nahoře.\n\n| Prvek | Pravidlo |\n|---|---|\n| Logo | vodorovné, šířka 49 mm, na bílém štítku se zaoblením 2,5 mm |\n| Jméno | Baloo 2 600, 10,5 pt |\n| Kontakty | Nunito 7,5 pt, web tučně v Tůňce |\n| Linka | Meruňka, 8 × 0,8 mm |\n\n- Spadávka 3 mm, text a symbol nejméně 4 mm od ořezu.\n- Doporučený papír: matný, 300–350 g/m².\n- Vzor nikdy pod textem, proto je zadní strana bez vzoru.\n\n## Pracovní list pro děti\nPracovní listy si děti odnášejí domů a rodiče je vidí jako první. List provází žabák v póze podle úkolu.\n\n| Parametr | Hodnota |\n|---|---|\n| Formát | A4 na výšku |\n| Okraje | 15 mm, spadávka 3 mm |\n| Logo | vodorovné, vlevo nahoře, šířka 60 mm |\n| Nadpis | Baloo 2 600, 28–32 pt |\n| Zadání | Nunito 700, min. 16 pt, nejvýš 2 řádky |\n| Maskot | jeden, výška 50–70 mm, dole u okraje |\n| Barvy | tisk i černobíle: kresba v Tůňce, plochy jen obrysem |\n| Patička | kukatkodoprirody.cz, Nunito 8 pt |\n\nVelké volné plochy pro kreslení, žádné drobné texty. Zadní strana může nést vzor.\n\nKe stažení: ukázka, šablona s vyplnitelným nadpisem a zadáním, šablona pro Word a zadní strana se vzorem. Žabáka v póze podle úkolu vložte ze sekce Pravidla použití.\n\n## Složka A4 na pracovní listy\nArch A3 na šířku, po přeložení A4. Vnější strana: vlevo zadní strana, vpravo přední se štítkem „Moje objevy“. Vnitřní strana: varianta vzoru na Louce.\n\n| Prvek | Pravidlo |\n|---|---|\n| Vzor | dlaždice 120 mm, venku na Chmýří, uvnitř na Louce |\n| Štítek | bílý, zaoblení 4 mm, logo 62 mm, „Moje objevy“ Baloo 2 600, 28 pt |\n| Jméno | tečkovaná linka pro jméno dítěte, Nunito 800, 11 pt |\n| Zadní strana | malý štítek s logem a adresou webu |\n\n- Oboustranný tisk na karton 250–300 g/m², uprostřed bigovat a přeložit.\n- Do složky se vejdou pracovní listy A4 bez přehýbání.\n\n## Diplom malého badatele\nA5 na šířku · 210 × 148 mm. Ve stylu složky: vzor po okraji, bílá plocha s textem, jeden žabák.\n\n| Prvek | Pravidlo |\n|---|---|\n| Rámeček | vzor na Chmýří, bílá plocha 9 mm od ořezu, zaoblení 5 mm |\n| Nadpis | Baloo 2 600, 25 pt, „badatele“ v Tůňce, pod ním Meruňková linka |\n| Pole | jméno, téma workshopu, datum a podpis lektorky na tečkovaných linkách |\n| Maskot | žabák drží lupu, vpravo dole |\n\n- **Vyplnitelné PDF:** jméno, téma a datum se napíšou na počítači. Prohlížeč PDF je zobrazí běžným bezpatkovým písmem.\n- **Čisté PDF** pro ruční dopsání na místě.\n- **Word** s poli v písmu Baloo 2.\n\n## Jmenovky a samolepka\n**Jmenovky · 70 × 42,3 mm.** Lektorka přijíždí do cizí třídy a oslovuje děti jménem. Každá jmenovka má jiné zvířátko nebo rostlinu z ikon.\n- Arch A4 s 21 etiketami 3 × 7, například Avery Zweckform 3652. Tisk na běžné tiskárně bez okrajů.\n- „Jmenuji se“ Nunito 800 v Tůňce, jméno se píše fixou na linku.\n\n**Samolepka Malý badatel · kruh 40 mm.** Odměna na pracovní list nebo domů.\n- Prstenec v Tůňce s nápisem Baloo 2 800, uprostřed symbol na Chmýří.\n- Spadávka 2 mm, tiskárna vyseká kruh.\n\n## Pozvánka na nástěnku\nŠkolka ji vyvěsí pár dní před workshopem. Rodiče z ní poznají, kdo přijede, co budou děti dělat a co si odnesou domů. A4 na výšku.\n\n| Prvek | Pravidlo |\n|---|---|\n| Nadpis | Baloo 2 600, 40 pt, klíčové slovo v Tůňce |\n| Pole | téma, kdy, třída, co si děti odnesou domů |\n| Ilustrace | podle ročního období, celá a mimo text |\n| Pozadí | Chmýří, pole na bílé kartě se zaoblením 5 mm |\n\nVyplnitelné PDF pro psaní na počítači, nebo čisté PDF pro ruční vyplnění.\n\n## Vzor pro dětské materiály\nVzor skládá ikony a jejich dráhy letu na Chmýří. Patří na složky, obaly, zadní strany pracovních listů a tašky. Dlaždice 480 × 480 px se opakuje bez švu.\n- Vzor nikdy pod textem, jen jako plocha nebo okraj.\n- Na listu, kde je vzor, je logo na bílém štítku.\n- Varianta na Louce pro vnitřní strany složek.\n\n## Míry v tisku\n| Prvek | Tisk |\n|---|---|\n| Vodorovné logo | nejméně 35 mm na šířku |\n| Svislé logo | nejméně 22 mm na šířku |\n| Symbol | nejméně 8 mm na šířku |\n| Ikony | nejmenší výška 6 mm |\n| Meruňková linka | 12 × 1 mm, jen jedna na stranu |\n| Nadpisy a text | podle tabulky velikostí v sekci Typografie |",
+    "digital": "## Náhled při sdílení odkazu\n1200 × 628 px. Obrázek se ukáže na Facebooku, v e-mailu a v chatu, když někdo pošle odkaz na web. Text a logo drží levé 2/3, ilustrace vpravo.\n\n## Ikona webu\n512 × 512 px, symbol na Chmýří. WordPress z ní vytvoří ikonu v prohlížeči (32 px) i na ploše telefonu.\n\n## Sociální sítě\n| Formát | Rozměr | Skladba |\n|---|---|---|\n| Příspěvek | 1080 × 1080 px | Krátký nadpis, ilustrace podle ročního období, logo na bílém štítku. Do textu příspěvku obec a téma. |\n| Stories | 1080 × 1920 px | Tůňka, žabák, jedna výzva. |\n| Profilovka | 1080 × 1080 px | Symbol na Chmýří. Kruhový ořez nechá celý symbol. |\n\nDo příspěvků na sítích dáváme obec a téma, třeba „Podzimní workshop v MŠ Čelákovice“, a odkaz na web.\n\nPříspěvek i stories jsou ke stažení jako ukázka a jako podklad. Podklad je bez nadpisu: text doplníte v libovolném editoru písmem Baloo 2.\n\n## Titulní fotka na Facebooku\n1640 × 624 px. Text vlevo, ilustrace vpravo, obojí uvnitř bezpečné zóny. Logo nepatří do titulní fotky, stránku představuje profilovka se symbolem.\n- Bezpečná zóna pro mobil: střed 1109 × 624 px. Telefon ořízne boky, na počítači se fotka zmenší na 820 × 312 px. Důležitý obsah držte ve středu.\n- Vlevo dole je místo, které může zakrýt profilovka.\n- Ilustraci volte podle ročního období a celou, bez ořezu.\n- Nadpis Baloo 2 600, štítky s parametry v Louce.\n\n## Prvky webu\n### Tlačítka\nVýška 48 px, zaoblení 8 px, Nunito 800. Na stránce je jedno hlavní tlačítko. Manuál ukazuje stavy hlavní (Poptat workshop), vedlejší (Prohlédnout témata), najetí myší a fokus klávesnicí.\n\n### Formulář\nUkázková pole: Název mateřské školy (např. MŠ Sluníčko, Čelákovice), E-mail, Preferovaný termín (nepovinné). Písmo ve formulářích nejméně 16 px. Chyba se vždy ukáže i textem, např. „Doplňte celý e-mail, např. jmeno@skolka.cz.“\n\n### Rozestupy\nJen z řady 8 px: 8, 16, 24, 32, 48, 64. Mezi nadpisem a textem 16, mezi bloky 48–64, mezi sekcemi 96.\n\n### Barvy rolí\n- {#FAF8EF} Pozadí stránky Chmýří, {#E9EEDC} střídavé sekce Louka, karty bílé.\n- {#17323A} Text Hlubina, {#0F6E73} odkazy a tlačítka Tůňka.\n- {#FB9F70} Fokus: obrys 3 px v Meruňce.\n- {#B3402E} Chyba ve formuláři: #B3402E, vždy i s textem.\n\n## Ikony\nOsm barevných ikon z tůňky a louky. Slouží jako drobné ilustrace u témat, v pracovních listech, ve vzoru a v příspěvcích. Nejsou to ovládací ikony webu.\n- Ikony se vkládají jako SVG, nejmenší výška 24 px, v tisku 6 mm.\n- Dráha letu je v originále světlá pro tmavé a pestré plochy. Na Chmýří a bílé použijte verzi s dráhou v Tůňce (soubor „na světlý podklad“).\n- Ovládací ikony webu (telefon, e-mail, šipka) jsou linkové, tah 2 px, v Tůňce, z jedné sady.\n- Ikony nekombinujte s fotobankovými obrázky ani emoji.\n",
+    "kancelar": "## E-mailový podpis\nFunkční podpis pro Gmail, Outlook a Apple Mail je ke stažení v této sekci (podpis-kukatko.html).\n\n- Symbol 74 × 64 px, svislá linka 2 px v Meruňce.\n- Jméno 15 px tučně, ostatní 13 px, barvy Hlubina a Tůňka.\n- Písmo Nunito. Kde chybí, zobrazí se Segoe UI nebo Arial.\n- Obrázek symbolu musí ležet na webu (adresa v souboru).\n- Bez citátů, obrázků z fotobank a dlouhých právních doložek.\n\n### Jak podpis nastavit\n1. Nahrajte podpis-symbol-kukatko.png do knihovny médií na webu a zkopírujte jeho adresu.\n2. V souboru podpis-kukatko.html nahraďte adresu obrázku (src=\"…\") touto adresou.\n3. Otevřete soubor v prohlížeči, označte celý podpis, zkopírujte ho a vložte do nastavení podpisu.\n\n## Hlavičkový papír pro Word\nŠablona pro psaní dopisů je ke stažení v této sekci (hlavickovy-papir-a4.docx). Před použitím nainstalujte písma Baloo 2 a Nunito ze sekce Typografie, jinak Word použije náhradní písmo. Text Nunito 10–11 pt, řádkování 1,5. PDF pro tiskárnu je v sekci Tisk.\n\n## Automatická odpověď na poptávku\n**Předmět:** Vaše poptávka – Kukátko do přírody\n\nDobrý den,\nděkuji za poptávku workshopu. Přečtu si ji a do dvou pracovních dnů se vám ozvu s návrhem termínu a tématu.\nPokud chcete něco doplnit, stačí odpovědět na tento e-mail.\n\nS pozdravem\nDana Stemberková",
+    "pravidla": "Brand manuál 1.0 (říjen 2026) popisuje, jak značku používat na webu, v tisku a na sociálních sítích. Je pro grafiky, tiskárny, správu webu a sociálních sítí.\n\nKukátko do přírody jsou přírodovědné workshopy s badatelským zaměřením pro mateřské školy: **3–6 let, 60 minut, až 15 dětí**, Čelákovice a okolí, Praha. Claim: *Přírodu zkoumáme zblízka. Malé objevy. Velká dobrodružství.*\n\n## Komu píšeme\nČtyři modelové persony pro web. Jsou smyšlené, ale vycházejí z ŠVP čelákovické školky, přehledu konkurence a zkušeností lektorky.\n\n| Persona | Kdo to je | Co chce | Co ji přesvědčí |\n|---|---|---|---|\n| **Jana** · rozhoduje | Ředitelka školky v Čelákovicích a okolí, sama i učí. | Rychle vidět věk, délku, počet dětí a co zajistí školka. Aby program zapadl do ŠVP a dopoledního režimu. | Praktické informace na jednom místě, odborné vzdělání lektorky, osobní setkání. |\n| **Petra** · navrhuje | Učitelka věkově smíšené třídy, plánuje integrované bloky. | Konkrétní popis, co budou děti dělat, průběh hodiny po částech a témata podle ročního období. | Střídání zkoumání, pohybu a tvoření, jasná role učitelky. |\n| **Lenka** · srovnává | Zástupkyně pražské školky, hledá programy na internetu. | Parametry na první pohled, zda lektorka dojede do její části Prahy, jednoduchý formulář. | Menší skupina, přehledná témata, rychlá a konkrétní odpověď. |\n| **Tomáš** · doporučuje | Táta pětileté dcery, web navštíví občas. | Vědět, kdo program vede, vidět fotky z workshopů a co si dítě odnese domů. | Fotky dětí u mikroskopu (se souhlasem rodičů), výrobek, o kterém dcera vypráví. |\n\n## Jak píšeme\nPíšeme ředitelce nebo učitelce tak, jako bychom jí vlastními slovy vysvětlovaly, co nabízíme. Profesionálně, ale civilně a přátelsky. Lektorka mluví v první osobě.\n- Konkrétní činnosti místo obecných slibů: děti pozorují, porovnávají, sází, zkoumají pod mikroskopem.\n- Střídáme délku vět, píšeme krátké odstavce a výstižné nadpisy.\n- Bez přemíry zdrobnělin, vykřičníků a emoji.\n- Nevymýšlíme reference, reakce dětí ani zkušenosti, které nemáme.\n- Výzvy k akci říkají, co se stane: **Poptat workshop**, **Zeptat se na termín**, **Odeslat poptávku**.\n- Do příspěvků na sítích dáváme obec a téma, třeba „Podzimní workshop v MŠ Čelákovice“, a odkaz na web.\n\n| ✓ Takto | ✗ Ne takto |\n|---|---|\n| Na workshopu má každé dítě k dispozici lupu nebo mikroskop a před sebou skutečné přírodniny. | Vstupte s námi do kouzelného světa poznání a dopřejte dětem nezapomenutelný zážitek! |\n| Odpovím do dvou pracovních dnů. | Inovativní vzdělávání pro vaše zlatíčka. |\n\n### Výrazy, které patří do nadpisů a textů webu\npřírodovědné workshopy pro MŠ · výukové programy pro mateřské školy · ekologické programy pro MŠ · badatelské programy pro MŠ · program do školky příroda · workshop MŠ Čelákovice · programy pro MŠ Praha · podzimní program pro MŠ\n\n## Grafické prvky\nPrvky vycházejí z loga, webu a ilustrací. Na jedné ploše stačí jeden nebo dva.\n\n| Prvek | Pravidlo |\n|---|---|\n| Lupa | Obrys lupy z loga v Tůňce. Značí kapitoly, rámuje fotku nebo číslo. Vždy celá, bez žabáka. |\n| Okénko | Měkký nepravidelný tvar, ve kterém jsou ilustrace. Jako výřez pro ilustrace i fotografie. |\n| Dráha letu | Přerušovaná čára za hmyzem z ikon. Na světlém podkladu v Tůňce se 40% krytím. |\n| Meruňková linka | 64 × 4 px, 6 px pod hlavním nadpisem. V tisku 12 × 1 mm. Jen jedna na stranu. |\n| Štítky | Výška 32 px, zaoblení 16 px. Roční období v Meruňce, parametry v Louce. |\n| Zaoblení | Jen násobky 8 px: 8 tlačítka a pole, 16 karty, 24 velké obrázky a panely. |\n\n## Maskot žabák\nŽabák provází děti v pracovních listech, složkách, ilustracích webu a na sítích. Každá póza má svůj úkol. Všechny pózy jsou ke stažení v této sekci (PNG s průhledným pozadím).\n\n| Póza | Úkol |\n|---|---|\n| Mává | pozdrav, úvod |\n| Ukazuje doprava | vede k textu, k tlačítku |\n| Drží lupu | zkoumání |\n| Dívá se přes lupu | pozorování |\n| Ukazuje na tabuli | zadání úkolu |\n| S listem | přírodniny, podzim |\n| Zkoumá berušku | hmyz, detail |\n| Poslouchá | zvuky, hádanky |\n| Píše do sešitu | zápis, tvoření |\n\n- Na stránce nebo listu je jen jeden žabák.\n- Póza odpovídá činnosti: u zadání tabule, u pozorování lupa.\n- Žabák se nepřebarvuje, nedeformuje a nekreslí se znovu.\n- Stojí na světlém podkladu nebo v okénku ilustrace.\n- Maskot nenahrazuje symbol v logu a logo ho nenahrazuje.\n\n## Ilustrace ročních období\nŠest scén v okénku, vždy se žabákem. Témata workshopů se drží ročních období, proto ilustraci volte podle nich.\n\n| Roční období | Ilustrace |\n|---|---|\n| Jaro | Jarní louka, Jarní potok |\n| Léto | Letní louka, Letní les |\n| Podzim | Podzimní jezírko, Podzimní les |\n\n- Ilustraci neořezávejte, tvar okénka je její součást.\n- Přes ilustraci nepište text a nedávejte logo.\n- Kolem okénka nechte volné místo, nic do něj nevkládejte.\n- Na zimní téma zatím ilustrace chybí, doplní se do sady.\n\n## Fotografie\nFotografie jsou jen ze skutečných workshopů: lupy, mikroskopy, ruce dětí u přírodnin, výrobky. Žádné fotobanky s cizími dětmi.\n\n| Tvar | Použití |\n|---|---|\n| Kruh lupy | Detail přírodniny, list pod mikroskopem. Rámeček 8 px v Tůňce. |\n| Obdélník | Průběh workshopu. Poměr 3 : 2 nebo 4 : 5, zaoblení 24 px. |\n| Okénko | Portrét do části O mně a výjimečné fotky. Jedno na stránku. |\n\n### Ano\n- Denní světlo, přirozené barvy, pohled z výšky dětí.\n- Ruce, pomůcky a přírodniny zblízka, když nemáte souhlas rodičů.\n- Výrobek, který si dítě odnese domů.\n- Popisek fotky říká, co je na ní (alt text pro web).\n\n### Ne\n- Fotky dětí bez písemného souhlasu rodičů.\n- Fotobanky, aranžované úsměvy do objektivu.\n- Logo přes fotku. Patří vedle ní.\n- Filtry, rámečky, nápisy přes obličeje.\n\n## Kontakty\n| | |\n|---|---|\n| Značka | Kukátko do přírody · Mgr. et Bc. Dana Stemberková |\n| Kontakt | kukatkodoprirody@gmail.com · +420 606 406 987 |\n| Web | kukatkodoprirody.cz |\n| Manuál a logo | Martin Malý · verze 1.0 · říjen 2026 |\n"
   },
   "colors": [
     {
@@ -91,7 +93,7 @@
       "slug": "logo-primarni",
       "title": "Vodorovné · hlavní varianta",
       "description": "Hlavička webu, e-mailový podpis, pracovní listy, inzerce, všechny široké formáty. Na bílé, Chmýří a Louce.",
-      "specs": "SVG na křivkách, PNG 2400 × 645 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 642 px s průhledností",
       "tags": "SVG, PNG",
       "required": true,
       "preview_bg": "#FAF8EF",
@@ -111,7 +113,7 @@
       "slug": "logo-negativ",
       "title": "Vodorovné · na tmavý podklad",
       "description": "Na Hlubině a Tůňce. Lupa je bílá, KUKÁTKO v Chmýří a „do přírody“ v Meruňce, žabák zůstává barevný.",
-      "specs": "SVG na křivkách, PNG 2400 × 645 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 642 px s průhledností",
       "tags": "SVG, PNG",
       "required": true,
       "preview_bg": "#17323A",
@@ -131,7 +133,7 @@
       "slug": "logo-svisle",
       "title": "Svislé",
       "description": "Čtvercové a vysoké formáty: obálka složky, plakát, titulní strana. Na bílé, Chmýří a Louce.",
-      "specs": "SVG na křivkách, PNG 2400 × 2109 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 2086 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#FAF8EF",
@@ -151,7 +153,7 @@
       "slug": "logo-svisle-negativ",
       "title": "Svislé · na tmavý podklad",
       "description": "Čtvercové a vysoké formáty na Hlubině a Tůňce.",
-      "specs": "SVG na křivkách, PNG 2400 × 2109 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 2086 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#0F6E73",
@@ -171,7 +173,7 @@
       "slug": "symbol",
       "title": "Symbol",
       "description": "Ikona webu, profilová fotka, razítko. Samostatně se používá vždy celý symbol, nikdy jen žabák.",
-      "specs": "SVG na křivkách, PNG 1600 × 1412 px s průhledností",
+      "specs": "SVG na křivkách, PNG 1600 × 1398 px s průhledností",
       "tags": "SVG, PNG",
       "required": true,
       "preview_bg": "#FAF8EF",
@@ -191,7 +193,7 @@
       "slug": "symbol-negativ",
       "title": "Symbol · na tmavý podklad",
       "description": "Symbol na Hlubině a Tůňce: lupa bílá, žabák barevný.",
-      "specs": "SVG na křivkách, PNG 1600 × 1412 px s průhledností",
+      "specs": "SVG na křivkách, PNG 1600 × 1398 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#17323A",
@@ -211,7 +213,7 @@
       "slug": "logo-jednobarevne",
       "title": "Vodorovné · jednobarevné černé",
       "description": "Ražba, razítka, gravura a potisk textilu. Pusa a nosní dírky jsou vyříznuté.",
-      "specs": "SVG na křivkách, PNG 2400 × 645 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 642 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#FFFFFF",
@@ -231,7 +233,7 @@
       "slug": "logo-jednobarevne-bile",
       "title": "Vodorovné · jednobarevné bílé",
       "description": "Ražba, razítka, gravura a potisk textilu. Pusa a nosní dírky jsou vyříznuté.",
-      "specs": "SVG na křivkách, PNG 2400 × 645 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 642 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#17323A",
@@ -251,7 +253,7 @@
       "slug": "logo-svisle-jednobarevne-cerne",
       "title": "Svislé · jednobarevné černé",
       "description": "Ražba, razítka, gravura a potisk textilu. Pusa a nosní dírky jsou vyříznuté.",
-      "specs": "SVG na křivkách, PNG 2400 × 2109 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 2086 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#FFFFFF",
@@ -271,7 +273,7 @@
       "slug": "logo-svisle-jednobarevne-bile",
       "title": "Svislé · jednobarevné bílé",
       "description": "Ražba, razítka, gravura a potisk textilu. Pusa a nosní dírky jsou vyříznuté.",
-      "specs": "SVG na křivkách, PNG 2400 × 2109 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 2086 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#17323A",
@@ -291,7 +293,7 @@
       "slug": "symbol-cerny",
       "title": "Symbol · jednobarevný černý",
       "description": "Ražba, razítka, gravura a potisk textilu. Pusa a nosní dírky jsou vyříznuté.",
-      "specs": "SVG na křivkách, PNG 1600 × 1412 px s průhledností",
+      "specs": "SVG na křivkách, PNG 1600 × 1398 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#FFFFFF",
@@ -311,7 +313,7 @@
       "slug": "symbol-bily",
       "title": "Symbol · jednobarevný bílý",
       "description": "Ražba, razítka, gravura a potisk textilu. Pusa a nosní dírky jsou vyříznuté.",
-      "specs": "SVG na křivkách, PNG 1600 × 1412 px s průhledností",
+      "specs": "SVG na křivkách, PNG 1600 × 1398 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#17323A",
@@ -331,7 +333,7 @@
       "slug": "logo-jednobarevne-hlubina",
       "title": "Vodorovné · jednobarevné v Hlubině",
       "description": "Celé logo v Hlubině #17323A, stejná kresba jako jednobarevné verze (pusa a nosní dírky vyříznuté).",
-      "specs": "SVG na křivkách, PNG 2400 × 645 px s průhledností",
+      "specs": "SVG na křivkách, PNG 2400 × 642 px s průhledností",
       "tags": "SVG, PNG",
       "required": false,
       "preview_bg": "#FAF8EF",
@@ -440,6 +442,279 @@
     },
     {
       "section": "tisk",
+      "slug": "hlavickovy-papir",
+      "title": "Hlavičkový papír A4",
+      "description": "Logo vlevo nahoře, vážka s dráhou letu vpravo nahoře, patička nad linkou v Louce. PDF pro tiskárnu, šablona pro psaní dopisů ve Wordu je v sekci Kancelář.",
+      "specs": "A4 na výšku · PDF se spadávkou 3 mm",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "tisk/hlavickovy-papir-a4.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/hlavickovy-papir-a4.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "obalka-dl",
+      "title": "Obálka DL",
+      "description": "Dopisy a faktury přeložené na třetiny. Logo a odesílatel vlevo nahoře, motýl s dráhou letu vlevo dole, pravá polovina zůstává volná.",
+      "specs": "110 × 220 mm · tiskne se na hotové obálky, bez spadávky",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#E9EEDC",
+      "files": [
+        {
+          "path": "tisk/obalka-dl.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/obalka-dl.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "obalka-c4",
+      "title": "Obálka C4",
+      "description": "Pracovní listy, diplomy a dopisy bez přehýbání. Stejné rozvržení jako DL, logo široké 72 mm.",
+      "specs": "229 × 324 mm · tiskne se na hotové obálky, bez spadávky",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#E9EEDC",
+      "files": [
+        {
+          "path": "tisk/obalka-c4.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/obalka-c4.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "vizitka",
+      "title": "Vizitka",
+      "description": "Přední strana: vzor na Chmýří, logo na bílém štítku. Zadní strana: jméno, obor a kontakty na Chmýří, symbol vpravo nahoře.",
+      "specs": "85 × 55 mm, oboustranná · PDF 2 strany, spadávka 3 mm · matný papír 300–350 g/m²",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#E9EEDC",
+      "files": [
+        {
+          "path": "tisk/vizitka-85x55.pdf",
+          "label": "PDF pro tisk (2 strany)"
+        },
+        {
+          "path": "tisk/vizitka-85x55-predni.png",
+          "label": "PNG přední strana"
+        },
+        {
+          "path": "tisk/vizitka-85x55-zadni.png",
+          "label": "PNG zadní strana"
+        },
+        {
+          "path": "tisk/nahled-vizitka.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "pracovni-list",
+      "title": "Pracovní list pro děti",
+      "description": "Ukázka „Co vidím pod lupou?“, šablona s vyplnitelným nadpisem a zadáním a šablona pro Word. Žabáka v póze podle úkolu vložte ze sekce Pravidla použití.",
+      "specs": "A4 na výšku · okraje 15 mm, spadávka 3 mm · tisk i černobíle",
+      "tags": "PDF, DOCX, PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "tisk/pracovni-list-a4-ukazka.pdf",
+          "label": "PDF ukázka"
+        },
+        {
+          "path": "tisk/pracovni-list-a4-sablona.pdf",
+          "label": "PDF šablona (vyplnitelná)"
+        },
+        {
+          "path": "tisk/pracovni-list-a4.docx",
+          "label": "Word"
+        },
+        {
+          "path": "tisk/pracovni-list-a4-ukazka.png",
+          "label": "PNG ukázka",
+          "preview": true
+        },
+        {
+          "path": "tisk/pracovni-list-a4-sablona.png",
+          "label": "PNG šablona"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "pracovni-list-zadni-strana",
+      "title": "Pracovní list · zadní strana se vzorem",
+      "description": "Zadní strana pracovního listu se vzorem na Chmýří.",
+      "specs": "A4 na výšku · PDF se spadávkou 3 mm",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "tisk/pracovni-list-a4-zadni-strana.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/pracovni-list-a4-zadni-strana.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "slozka-a4-pracovni-listy",
+      "title": "Složka A4 na pracovní listy",
+      "description": "Vnější strana: vlevo zadní strana s malým štítkem, vpravo přední se štítkem „Moje objevy“ a linkou pro jméno dítěte. Vnitřní strana: vzor na Louce.",
+      "specs": "Arch A3 na šířku, po přeložení A4 · PDF 2 strany (venku, uvnitř), spadávka 3 mm · karton 250–300 g/m², bigovat",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "tisk/slozka-a4-pracovni-listy.pdf",
+          "label": "PDF pro tisk (2 strany)"
+        },
+        {
+          "path": "tisk/slozka-a4-pracovni-listy-venku.png",
+          "label": "PNG vnější strana",
+          "preview": true
+        },
+        {
+          "path": "tisk/slozka-a4-pracovni-listy-uvnitr.png",
+          "label": "PNG vnitřní strana"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "diplom-a5",
+      "title": "Diplom malého badatele",
+      "description": "Vzor po okraji, bílá plocha s textem, žabák s lupou vpravo dole. Vyplnitelné PDF pro psaní na počítači, čisté PDF pro ruční dopsání, Word s poli v písmu Baloo 2.",
+      "specs": "A5 na šířku · 210 × 148 mm · PDF se spadávkou 3 mm",
+      "tags": "PDF, DOCX, PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "tisk/diplom-a5.pdf",
+          "label": "PDF čisté"
+        },
+        {
+          "path": "tisk/diplom-a5-vyplnitelny.pdf",
+          "label": "PDF vyplnitelné"
+        },
+        {
+          "path": "tisk/diplom-a5.docx",
+          "label": "Word"
+        },
+        {
+          "path": "tisk/diplom-a5-ukazka.png",
+          "label": "PNG ukázka",
+          "preview": true
+        },
+        {
+          "path": "tisk/diplom-a5.png",
+          "label": "PNG čisté"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "jmenovky",
+      "title": "Jmenovky pro děti",
+      "description": "Každá jmenovka má jiné zvířátko nebo rostlinu z ikon. „Jmenuji se“ v Tůňce, jméno se píše fixou na linku.",
+      "specs": "70 × 42,3 mm · arch A4 s 21 etiketami 3 × 7 (např. Avery Zweckform 3652) · tisk bez okrajů",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "tisk/jmenovky-70x42.pdf",
+          "label": "PDF arch A4"
+        },
+        {
+          "path": "tisk/jmenovky-70x42.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "samolepka-maly-badatel",
+      "title": "Samolepka Malý badatel",
+      "description": "Odměna na pracovní list nebo domů. Prstenec v Tůňce s nápisem, uprostřed symbol na Chmýří.",
+      "specs": "Kruh 40 mm · spadávka 2 mm, tiskárna vyseká kruh",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "tisk/samolepka-maly-badatel-40mm.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/samolepka-maly-badatel-40mm.png",
+          "label": "PNG náhled"
+        },
+        {
+          "path": "tisk/nahled-samolepka.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "pozvanka-a4",
+      "title": "Pozvánka na nástěnku",
+      "description": "Školka ji vyvěsí pár dní před workshopem. Pole: téma, kdy, třída, co si děti odnesou domů. Vyplnitelné PDF pro psaní na počítači, nebo čisté pro ruční vyplnění.",
+      "specs": "A4 na výšku · PDF se spadávkou 3 mm",
+      "tags": "PDF, PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "tisk/pozvanka-a4.pdf",
+          "label": "PDF čisté"
+        },
+        {
+          "path": "tisk/pozvanka-a4-vyplnitelna.pdf",
+          "label": "PDF vyplnitelné"
+        },
+        {
+          "path": "tisk/pozvanka-a4.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
       "slug": "vzor-chmyri",
       "title": "Vzor · dlaždice na Chmýří",
       "description": "Složky, obaly, zadní strany pracovních listů a tašky. Nikdy pod textem.",
@@ -498,7 +773,7 @@
       "slug": "favicon",
       "title": "Ikona webu",
       "description": "Symbol na Chmýří. WordPress z ní vytvoří ikonu v prohlížeči (32 px) i na ploše telefonu.",
-      "specs": "SVG, PNG 512 × 512 px · favicon PNG 32 px",
+      "specs": "SVG, PNG 512 × 512 px · favicon PNG 32 × 28 px",
       "tags": "SVG, PNG",
       "preview_bg": "#FAF8EF",
       "files": [
@@ -508,12 +783,12 @@
         },
         {
           "path": "digital/ikona-webu-512.png",
-          "label": "PNG 512 px",
+          "label": "PNG 512",
           "preview": true
         },
         {
           "path": "digital/favicon-32.png",
-          "label": "Favicon PNG 32 px"
+          "label": "Favicon 32"
         }
       ]
     },
@@ -533,6 +808,64 @@
         {
           "path": "digital/profilovka-1080.png",
           "label": "PNG",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "facebook-cover",
+      "title": "Titulní fotka na Facebooku",
+      "description": "Text vlevo, ilustrace vpravo, obojí uvnitř bezpečné zóny. Logo do titulní fotky nepatří, stránku představuje profilovka se symbolem.",
+      "specs": "PNG 1640 × 624 px · bezpečná zóna pro mobil 1109 × 624 px uprostřed",
+      "tags": "PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "digital/titulni-fotka-facebook-1640x624.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "sablona-prispevku",
+      "title": "Příspěvek na sítě",
+      "description": "Krátký nadpis, ilustrace podle ročního období, logo na bílém štítku. Podklad je bez nadpisu: text doplníte v libovolném editoru písmem Baloo 2.",
+      "specs": "PNG 1080 × 1080 px · ukázka a podklad bez nadpisu",
+      "tags": "PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "digital/prispevek-1080-podklad.png",
+          "label": "PNG podklad"
+        },
+        {
+          "path": "digital/prispevek-1080-ukazka.png",
+          "label": "PNG ukázka",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "sablona-stories",
+      "title": "Stories",
+      "description": "Tůňka, žabák, jedna výzva. Podklad je bez nadpisu: text doplníte v libovolném editoru písmem Baloo 2.",
+      "specs": "PNG 1080 × 1920 px · ukázka a podklad bez nadpisu",
+      "tags": "PNG",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "digital/stories-1080x1920-podklad.png",
+          "label": "PNG podklad"
+        },
+        {
+          "path": "digital/stories-1080x1920-ukazka.png",
+          "label": "PNG ukázka",
           "preview": true
         }
       ]
@@ -682,7 +1015,7 @@
       "slug": "emailovy-podpis",
       "title": "E-mailový podpis",
       "description": "Funkční HTML podpis pro Gmail, Outlook a Apple Mail. Obrázek symbolu nahrajte na web a jeho adresu doplňte do souboru.",
-      "specs": "HTML · symbol 74 × 64 px (PNG 148 × 131 px)",
+      "specs": "HTML · symbol 74 × 64 px (PNG 148 × 130 px)",
       "tags": "HTML, PNG",
       "preview_bg": "#FFFFFF",
       "files": [
@@ -692,7 +1025,7 @@
         },
         {
           "path": "kancelar/podpis-symbol-kukatko.png",
-          "label": "Symbol do podpisu PNG"
+          "label": "PNG symbol"
         },
         {
           "path": "kancelar/nahled-podpis-kukatko.png",
@@ -701,18 +1034,42 @@
       ]
     },
     {
+      "section": "kancelar",
+      "slug": "sablona-dopisu",
+      "title": "Hlavičkový papír pro Word",
+      "description": "Šablona pro psaní dopisů a potvrzení termínů. Před použitím nainstalujte písma Baloo 2 a Nunito ze sekce Typografie.",
+      "specs": "DOCX · A4 na výšku · Nunito 10–11 pt, okraje 25 mm vlevo a 20 mm vpravo",
+      "tags": "DOCX",
+      "required": false,
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "kancelar/hlavickovy-papir-a4.docx",
+          "label": "Word"
+        },
+        {
+          "path": "tisk/hlavickovy-papir-a4.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
       "section": "pravidla",
       "slug": "pravidla-pouziti",
       "title": "Brand manuál (PDF)",
-      "description": "Kompletní pravidla vizuální identity: značka, tón komunikace, logo, barvy, písma, grafické prvky, maskot, ilustrace, fotografie, web a ukázky použití.",
-      "specs": "Čtverec 210 × 210 mm · 26 stran · verze 1.0, říjen 2026",
-      "tags": "PDF",
+      "description": "Kompletní pravidla vizuální identity: značka, tón komunikace, logo, barvy, písma, grafické prvky, maskot, ilustrace, fotografie, web, sociální sítě a tiskoviny.",
+      "specs": "Čtverec 210 × 210 mm · 34 stran · verze 1.0, říjen 2026",
+      "tags": "PDF, HTML",
       "required": true,
       "preview_bg": "#FAF8EF",
       "files": [
         {
           "path": "pravidla/kukatko-do-prirody-brand-manual.pdf",
           "label": "PDF"
+        },
+        {
+          "path": "pravidla/kukatko-do-prirody-brand-manual.html",
+          "label": "HTML"
         },
         {
           "path": "pravidla/nahled-brand-manual.png",
@@ -800,13 +1157,18 @@
       "slug": "zabak-s-listem",
       "title": "Žabák · S listem",
       "description": "Přírodniny, podzim. Na stránce nebo listu je jen jeden žabák.",
-      "specs": "PNG 1254 × 1254 px, průhledné pozadí",
-      "tags": "PNG",
+      "specs": "SVG, PNG 1254 × 1254 px, průhledné pozadí",
+      "tags": "SVG, PNG",
       "preview_bg": "#FAF8EF",
       "files": [
         {
+          "path": "pravidla/zabak/06_zaba_s_listem.svg",
+          "label": "SVG"
+        },
+        {
           "path": "pravidla/zabak/06_zaba_s_listem.png",
-          "label": "PNG"
+          "label": "PNG",
+          "preview": true
         }
       ]
     },
