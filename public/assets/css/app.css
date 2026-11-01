@@ -288,6 +288,14 @@ form.inline { display: inline; }
 /* ---------- Statistiky zobrazení ---------- */
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; align-items: start; }
 .stat-value-sm { font-size: 22px; padding-top: 6px; }
+.fill-cell { display: flex; flex-direction: column; gap: 6px; }
+.icon-actions { display: flex; flex-wrap: nowrap; gap: 4px; }
+.icon-action { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-width: 60px; min-height: 52px; padding: 6px 4px; border: 0; border-radius: var(--radius-sm); background: none; font: inherit; color: var(--blue-700); text-decoration: none; cursor: pointer; }
+.icon-action > span { font-size: 12px; font-weight: var(--fw-medium); color: var(--ink-muted); }
+.icon-action:hover { background: var(--bg-tint); color: var(--blue-700); }
+.icon-action:hover > span { color: var(--ink); }
+.icon-action.danger { color: var(--error); }
+.icon-action.danger:hover { background: var(--error-bg); color: var(--error); }
 .views-cell { display: inline-flex; flex-direction: column; gap: 2px; text-decoration: none; color: var(--ink); }
 .views-cell:hover .views-count { color: var(--blue-700); }
 .views-count { display: inline-flex; align-items: center; gap: 6px; font-weight: var(--fw-medium); }

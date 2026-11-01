@@ -35,7 +35,7 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
   </div>
 <?php else: ?>
   <div class="card table-wrap">
-    <table class="table" style="min-width: 900px">
+    <table class="table" style="min-width: 820px">
       <thead><tr><th scope="col">Klient</th><th scope="col">Vyplněno</th><th scope="col">Viděno</th><th scope="col">Poslední změna</th><th scope="col">Přístup</th><th scope="col">Akce</th></tr></thead>
       <tbody>
       <?php foreach ($brands as $b): $c = $b['completeness']; ?>
@@ -52,9 +52,9 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
             </div>
           </td>
           <td>
-            <div class="row" style="gap: 10px; flex-wrap: nowrap">
-              <div class="progress<?= $c['done'] === $c['total'] ? ' done' : ($c['pct'] < 50 ? ' low' : '') ?>"><span style="width: <?= $c['pct'] ?>%"></span></div>
-              <span class="small nowrap"><?= $c['done'] ?> / <?= $c['total'] ?> sekcí</span>
+            <div class="fill-cell">
+              <div class="progress<?= $c['done'] === $c['total'] ? ' done' : ($c['pct'] < 50 ? ' low' : '') ?>" aria-hidden="true"><span style="width: <?= $c['pct'] ?>%"></span></div>
+              <span class="tiny muted nowrap"><?= $c['done'] ?> / <?= $c['total'] ?> sekcí</span>
             </div>
           </td>
           <td>
@@ -66,11 +66,11 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
           <td class="small nowrap"><?= cz_date($b['updated_at']) ?></td>
           <td class="small"><?= $b['password_hash'] ? 'Heslo' : '–' ?><?= share_link_valid($b) ? ' + sdílený odkaz' : '' ?></td>
           <td>
-            <div class="row small" style="gap: 14px; font-weight: 500; flex-wrap: nowrap">
-              <a href="/admin/brands/<?= (int) $b['id'] ?>/s/logo">Upravit</a>
-              <a href="<?= e(brand_url($b)) ?>" target="_blank" rel="noopener">Náhled</a>
-              <button type="button" class="link-btn" data-copy="<?= e(brand_public_url($b)) ?>" data-copy-msg="Odkaz na brand manuál je zkopírovaný">Kopírovat odkaz</button>
-              <a class="link-danger" href="/admin/brands/<?= (int) $b['id'] ?>/settings#smazat" aria-label="Smazat klienta <?= e($b['name']) ?>">Smazat</a>
+            <div class="icon-actions">
+              <a class="icon-action" href="/admin/brands/<?= (int) $b['id'] ?>/s/logo" aria-label="Upravit klienta <?= e($b['name']) ?>"><?= icon('gear', 20) ?><span>Upravit</span></a>
+              <a class="icon-action" href="<?= e(brand_url($b)) ?>" target="_blank" rel="noopener" aria-label="Náhled manuálu <?= e($b['name']) ?> (nové okno)"><?= icon('search', 20) ?><span>Náhled</span></a>
+              <button type="button" class="icon-action" data-copy="<?= e(brand_public_url($b)) ?>" data-copy-msg="Odkaz na brand manuál je zkopírovaný" aria-label="Kopírovat odkaz na manuál <?= e($b['name']) ?>"><?= icon('copy', 20) ?><span>Kopírovat</span></button>
+              <a class="icon-action danger" href="/admin/brands/<?= (int) $b['id'] ?>/settings#smazat" aria-label="Smazat klienta <?= e($b['name']) ?>"><?= icon('trash', 20) ?><span>Smazat</span></a>
             </div>
           </td>
         </tr>

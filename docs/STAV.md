@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.4.0** (1. 11. 2026)
+**Aktuální verze: 1.4.1** (1. 11. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,10 +34,10 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.4.0)
+## Co aplikace umí (1.4.1)
 
 ### Administrace (`/admin`)
-- Přehled klientů: vyplněnost sekcí, **Viděno** (očíčko + počet zobrazení celkem, den poslední návštěvy, odkaz na statistiky), poslední změna, typ přístupu, statistiky (zobrazení a stažení za 30 dní, neúplné brandy), aktivita. U každého klienta odkazy Upravit, Náhled, Kopírovat odkaz a Smazat.
+- Přehled klientů: vyplněnost sekcí (pruh + počet sekcí), **Viděno** (očíčko + počet zobrazení celkem, den poslední návštěvy, odkaz na statistiky), poslední změna, typ přístupu, statistiky (zobrazení a stažení za 30 dní, neúplné brandy), aktivita. Akce jako ikony s popiskem: Upravit (ozubené kolo), Náhled (lupa), Kopírovat odkaz, Smazat (koš, vede na potvrzení v nastavení klienta).
 - Nový klient: název, adresa (slug), úvodní text, barva úvodní plochy, kontakt, heslo (návrh se generuje).
 - **Import klienta ze ZIPu** (Klienti → Importovat) a **export klienta** do stejného formátu (nastavení klienta).
 - Editor brandu, záložky sekcí: Logo, Barvy, Typografie, Tisk, Digitál a sítě, Kancelář, Pravidla použití + Přístup a nastavení.
@@ -156,6 +156,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.4.1** (1. 11. 2026): akce v přehledu klientů jako ikony s popiskem, sloupec Vyplněno na dva řádky.
 - **1.4.0** (1. 11. 2026): počítání zobrazení klientských stránek, sloupec „Viděno“ s očíčkem v přehledu klientů, záložka „Statistiky“ v detailu klienta.
 - **1.3.1** (31. 10. 2026): odkaz „Smazat“ v přehledu klientů (vede na potvrzení v nastavení klienta).
 - **1.3.0** (26. 10. 2026): 2FA administrátora, odhlášení ostatních zařízení, limity pokusů ze všech IP, silnější hesla klientů, CSP a další bezpečnostní hlavičky, relace ve vlastní složce. Audit v `docs/BEZPECNOST.md`.

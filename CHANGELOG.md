@@ -1,5 +1,9 @@
 # Změny
 
+## 1.4.1 – 1. 11. 2026
+- Přehled klientů: akce jako ikony s popiskem pod nimi. Upravit (ozubené kolo), Náhled (lupa), Kopírovat (odkaz na manuál) a Smazat (koš, červeně)
+- Sloupec „Vyplněno“ na dva řádky: nahoře pruh, pod ním počet sekcí, takže tabulka je užší
+
 ## 1.4.0 – 1. 11. 2026
 - Počítání zobrazení klientských stránek: přehled, sekce i tisková verze. Nepočítají se náhledy administrátora, přednačítání prohlížeče ani opakované obnovení stejné stránky do 30 sekund. Ukládají se jen souhrnné počty po dnech, žádné IP adresy
 - Přehled klientů: nový sloupec „Viděno“ s očíčkem, počtem zobrazení celkem a dnem poslední návštěvy (odkaz vede na statistiky), nová karta „Zobrazení za 30 dní“
