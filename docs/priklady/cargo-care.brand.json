@@ -1,0 +1,1067 @@
+{
+  "format": "brand-hub",
+  "version": 1,
+  "brand": {
+    "name": "CARGO CARE",
+    "slug": "cargo-care",
+    "intro": "CARGO CARE s.r.o. je logistická společnost z Kladna: přeprava, skladování a distribuce zboží v tuzemsku i v zahraničí, se specializací na Benelux a německé příhraničí. Doprava s péčí, logistika s jistotou.\nVše je tu vždy v aktuální verzi.",
+    "hero_bg": "#E9E9F7",
+    "contact_name": "Martin Malý · MarMal.cz",
+    "contact_note": "Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.",
+    "contact_phone": "+420 724 257 563",
+    "contact_email": "martin@marmal.cz",
+    "public_links": true,
+    "brand_fonts": true
+  },
+  "texts": {
+    "logo": "Logo CARGO CARE tvoří piktogram ze dvou písmen C a název. Manuál platí pro všechny, kdo připravují cokoli s logem firmy: grafiky, tiskárny, polepy vozidel, web i kolegy v kanceláři.\n\n## Tři pravidla, která platí vždy\n1. **Název píšeme verzálkami: CARGO CARE.** V textu vždy velkými písmeny, s právní formou CARGO CARE s.r.o.\n2. **Pro text používáme písmo Raleway.** Je zdarma na Google Fonts. Kde Raleway není (e-mail, Office), nahrazuje ho Arial.\n3. **Dokumenty posíláme jako PDF.** Jen tak zůstanou písmo, barvy i rozvržení stejné u každého příjemce.\n\n## Claim\n> **Doprava s péčí, logistika s jistotou.**\n> Claim převzatý z bannerů a z titulku webu. Shrnuje obě hlavní služby a hraje si s názvem: CARE je péče.\n\n- Vždy celý a vždy stejně, se dvěma čárkami a tečkou na konci. Zalomení za čárkou.\n- Raleway Medium, malá písmena, bílá na Cargo modré nebo Cargo modrá na bílé.\n- Pod logem nebo vedle něj, nikdy uvnitř ochranné zóny loga. Velikost písma nejvýš výška názvu v logu.\n- Jen česky. V anglických materiálech se claim zatím nepoužívá.\n\n## Dvě C, jeden nekonečný pohyb\nLogo tvoří piktogram a název. Piktogram jsou dvě stylizovaná písmena C otočená proti sobě. Dohromady opisují smyčku bez začátku a konce.\n\nNázev vychází z písma Museo 700. Písmena jsou upravená, pospojovaná a převedená do křivek, takže název nelze napsat žádným písmem. Vkládá se vždy jako hotový soubor loga.\n\n| Část | Samostatné použití |\n|---|---|\n| **Piktogram** | Jen tam, kde je značka už představená: ikona webu, profilová fotka, kabina, výšivka. |\n| **Název** | Jen na masce kabiny (viz Tisk → Vozidla), nikdy přepsaný písmem. V logu je malými písmeny, v textu píšeme CARGO CARE. |\n\n## Varianty\n| Varianta | Kdy použít |\n|---|---|\n| **1.2 Primární** (vodorovné) | Všechny hlavní materiály. Kde to plocha dovolí, má přednost primární logo. |\n| **1.3 Sekundární** (piktogram nad názvem) | Plochy, kam se vodorovné logo kompozičně nevejde: čtvercové a vysoké formáty, štítky, razítka. |\n| **1.4 a 1.5 Na Cargo modré** | Žlutý piktogram, světlý název, modrá plocha. Primárním užitím je plachta návěsu, stejně se použije na bannerech, totemu, webu a v e-mailovém banneru. |\n| **1.6 a 1.7 Černé** | Černobílý tisk, gravírování, razítka, ražba a fólie v jedné barvě. |\n| **1.8 a 1.9 Inverzní bílé** | Tmavé podklady a tmavé fotografie. |\n\nTakhle CARGO CARE poznají lidé na dálnici. Piktogram je v Signální žluté, název bílý a podkladem je Cargo modrá. Bílý název je na všech bannerech, vlajkách i letácích, proto platí i v manuálu. Kombinace drží čitelnost i na velkou vzdálenost.\n\nKdykoli to technologie dovolí, přednost má barevná verze.\n\n## Konstrukce\nPoměry vycházejí z jedné míry: **x** je výška nožičky písmene g, **y** tloušťka tahu písmene C. **4x** je výška písmene g (viz ochranná zóna).\n\n- **Primární logo (1.10):** piktogram 5x, mezera k názvu x, název 25x.\n- **Sekundární logo (1.11):** piktogram 12x na šířku, mezera k názvu 2x, celková výška 13,5x.\n\n## Ochranná zóna\nKolem loga zůstává volno **X**. Pro obě varianty platí stejná míra: X je výška písmene g v názvu, od horní hrany písmen po konec nožičky (4x z konstrukce).\n\nDo ochranné zóny nesmí zasahovat text, jiné logo, okraj tiskoviny, ilustrace ani rušivá část fotografie.\n\n## Minimální rozměry\n| Varianta | Tisk | Obrazovka |\n|---|---|---|\n| Primární logo | šířka 27,6 mm, výška 4 mm | šířka 120 px |\n| Sekundární logo | šířka 18,5 mm, výška 10 mm | šířka 80 px |\n| Samotný piktogram | šířka 6 mm | 16 px, ikona webu 32 px |\n\nPod těmito rozměry přestane být název čitelný. U výšivky, gravírování a speciálních materiálů se minimum může zvětšit, vždy to konzultujte s grafikem.\n\n## Logo na pozadí\nZákladem je primární logo na bílé. Na šedých a tmavých podkladech vybírejte variantu podle sytosti podkladu. Na Cargo modré vždy barevná varianta 1.4.\n\n| Sytost podkladu | Varianta loga |\n|---|---|\n| 0–20 % | barevné logo |\n| 30–50 % | černé |\n| 60–100 % | inverzní bílé |\n\n| Příklad | |\n|---|---|\n| Logo na klidné obloze, bílá verze | ✓ ANO |\n| {#1E22AA} Cargo modrá, varianta 1.4 | ✓ ANO |\n| Barevné logo přes rušivé pozadí | ✗ NE |\n\n## Zakázané úpravy\nLogo se neupravuje. Každá úprava oslabuje rozpoznatelnost. Když hotová varianta nestačí, ozvěte se grafikovi.\n\n- **Deformace.** Neměňte poměr stran.\n- **Změna barev.** Jen barvy z palety.\n- **Rotace.** Logo je vždy vodorovně.\n- **Efekty.** Žádné stíny, 3D ani obrysy.\n- **Jiné písmo.** Název se nikdy nepřepisuje.\n- **Jiné uspořádání.** Neměňte pořadí, velikost ani mezeru.\n- **Rušivé pozadí.** Logo nepřekrývejte rušivým pozadím nebo fotografií (viz Logo na pozadí).\n\n> Jedinou schválenou výjimkou z rotace je otočené vodorovné logo na beach vlajkách (viz Tisk → Beach vlajky).",
+    "barvy": "Cargo modrá a Signální žlutá podle vzorníku Pantone, doplněné neutrálními barvami.\n\n## Modrá nese, žlutá upozorní\nVýchozím bodem jsou přímé barvy Pantone. HEX, RGB a CMYK jsou z nich odvozené.\n\n| Technologie | Podle čeho tisknout |\n|---|---|\n| Ofset a plachty | Přímá barva Pantone, nebo nátisk podle vzorníku. |\n| Digitální tisk | CMYK podle tabulky, přepočet profilem FOGRA39 (Coated). **Tyto hodnoty jsou závazné.** |\n| Obrazovka | HEX a RGB. |\n\nBeton a Asfalt slouží hlavně webu a dokumentům: pozadí sekcí, doplňkový text, tabulky. Pantone je u nich nejbližší odstín ze vzorníku, HEX je podle něj doladěný.\n\n> Starší hodnoty CMYK 100/90/0/10 a 0/14/100/0 (např. na beach vlajkách) už neplatí.\n\n## Odstíny Cargo modré pro web a grafy\n| Podíl | HEX |\n|---|---|\n| {#1E22AA} 100 % | #1E22AA |\n| {#4B4EBB} 80 % | #4B4EBB |\n| {#787ACC} 60 % | #787ACC |\n| {#A5A7DD} 40 % | #A5A7DD |\n| {#D2D3EE} 20 % | #D2D3EE |\n| {#E9E9F7} 10 % | #E9E9F7 |\n\n## Poměr ploch: žlutá jen na jednu věc\nVětšinu plochy tvoří bílá a Beton, modrá nese nadpisy a hlavní plochy. Žlutá zvýrazní jednu informaci, kterou má člověk vidět jako první, třeba provozní dobu nebo tlačítko.\n\n| {#FFFFFF} Bílá a Beton | {#1E22AA} Cargo modrá | {#FBD800} Signální žlutá |\n|---|---|---|\n| 60 % | 30 % | 10 % |\n\n## Kontrast\nText musí mít vůči podkladu kontrast alespoň 4,5 : 1 (WCAG AA). Žlutá na bílé tuto hranici nesplní, proto se žlutý text na bílou nikdy nepíše.\n\n| Text | Podklad | Kontrast | |\n|---|---|---|---|\n| Bílý | {#1E22AA} Cargo modrá | 11,3 : 1 | ✓ ANO |\n| Žlutý | {#1E22AA} Cargo modrá | 8,0 : 1 | ✓ ANO |\n| Modrý | {#FFFFFF} bílá | 11,3 : 1 | ✓ ANO |\n| Modrý | {#D9D9D6} Beton | 8,0 : 1 | ✓ ANO |\n| Asfalt | {#FFFFFF} bílá | 7,4 : 1 | ✓ ANO |\n| Černý | {#FBD800} Signální žlutá | 14,9 : 1 | ✓ ANO |\n| Modrý | {#000000} černá | 1,9 : 1 | ✗ NE |\n| Modrý | {#53565A} Asfalt | 1,5 : 1 | ✗ NE |\n| Žlutý | {#FFFFFF} bílá | 1,4 : 1 | ✗ NE |\n\nPaletu pro Affinity a Adobe (.ase) najdete v sekci Tisk.",
+    "typografie": "Raleway pro text a tiskoviny, Poppins pro nadpisy na webu. Obě písma jsou zdarma pod licencí SIL Open Font License 1.1, i pro komerční použití.\n\n**Náhradní písmo pro e-mail a Office je Arial.** Písmo v logu (upravené Museo 700) je převedené do křivek, k používání logo nepotřebuje žádné písmo.\n\n## Raleway – základní písmo\nPro běžný text, dokumenty a tiskoviny. Primárně řezy Light a Bold. Nadpisy na letácích a bannerech se sázejí verzálkami v řezu ExtraBold.\n\n| Řez | Ukázka z manuálu |\n|---|---|\n| Light 300 | Spolehlivá přeprava |\n| Regular 400 | Spolehlivá přeprava |\n| Medium 500 | Spolehlivá přeprava |\n| Bold 700 | Spolehlivá přeprava |\n| ExtraBold 800 | SKLADOVÁNÍ BRNO |\n\n## Poppins – doplňkové písmo\nPro nadpisy a výzvy k akci na webu a v e-mailových bannerech. V tiskovinách jen výjimečně.\n\n| Řez | Použití |\n|---|---|\n| Regular 400 | Paletová distribuce |\n| SemiBold 600 | Paletová distribuce |\n| Bold 700 | Nadpisy webu: „Vaše zboží v dobrých rukou“ |\n\n## Velikosti pro web\n| Prvek | Písmo | Desktop | Mobil |\n|---|---|---|---|\n| Nadpis H1 | Poppins 700 | 48 px | 34 px |\n| Nadpis H2 | Poppins 700 | 34 px | 26 px |\n| Nadpis H3 | Poppins 700 | 22 px | 20 px |\n| Text odstavce | Raleway 400 | 17 px | 16 px |\n| Tlačítko | Raleway 700 | 17 px | 16 px |\n| Popisek | Raleway 500 | 14 px | 14 px |\n\n## Velikosti pro tisk A4\n| Prvek | Písmo | Velikost |\n|---|---|---|\n| NADPIS | Raleway 800, verzálky | 26–32 pt |\n| Podnadpis | Raleway 700 | 14–16 pt |\n| Zvýraznění | Raleway 700 | 9–10 pt |\n| Text | Raleway 500 | 9–10 pt |\n| Kontakty, poznámky | Raleway 500 | 7–8 pt |\n\nNadpisy na mobilu zmenšujte, text nechte stejný. Řádek textu má mít 50–75 znaků.\n\n## Nadpisy na tiskovinách: verzálky, bez kurzívy a stínů\nLetáky, bannery a plakáty dosud používaly několik stylů nadpisů. Sjednocený styl vychází z letáků Brno a Benelux.\n\n- Raleway ExtraBold, verzálky, na bílé v Cargo modré, na modré bílé.\n- Jedno slovo nebo údaj lze zvýraznit Signální žlutou, jen na modré ploše.\n- Bez kurzívy, stínů a uvozovek kolem zkratek (C+E, FTL).\n- Poppins zůstává jen pro web a e-mailový banner.\n\n| Příklad | |\n|---|---|\n| VÁŠ SPECIALISTA NA BENELUX – na bílé: Cargo modrá a žlutá linka | ✓ ANO |\n| HLEDÁME ŘIDIČE SKUPINY C A C+E – na modré: bílá, jedno slovo žlutě | ✓ ANO |\n| HLEDÁME ŘIDIČE \"C+E\" – kurzíva, stín a uvozovky | ✗ NE |",
+    "tisk": "## Společná pravidla\n- Barvy: Pantone 2736 C a Medium Yellow C, nebo CMYK podle sekce Barvy (přepočet FOGRA39, hodnoty jsou závazné).\n- Tiskoviny se spadávkou 3 mm. U velkoformátu určuje spadávku a oka tiskárna.\n- Nadpisy Raleway ExtraBold verzálkami, bez kurzívy a stínů (viz Typografie).\n- Odrážky jsou žluté kulaté tečky, ne piktogram, emoji ani znaky Wingdings.\n- Fotografie vždy s celým vozidlem (viz Pravidla použití → Fotografie).\n\n## Vozidla: plachta a kabina\n| Část | Pravidlo |\n|---|---|\n| Plachta | Cargo modrá, barevná varianta 1.4. Logo v horní polovině, opticky na střed. |\n| Web | www.cargocare.cz vpravo dole, v barvě Beton. |\n| Clona kabiny | Sekundární logo, nebo jen piktogram v Cargo modré. |\n| Maska | Název bez piktogramu, černě. Jediná výjimka, kdy se logo dělí: piktogram na cloně a název na masce tvoří logo společně. |\n| Dveře | Obchodní firma CARGO CARE s.r.o. drobným písmem. |\n| Dodávky | Stejná pravidla. Na kratší plachtě primární logo, ochranná zóna X. |\n| Fotografie | Vozidlo vždy celé. |\n\n## Banner a totem u skladu\n| Parametr | Pravidlo |\n|---|---|\n| Banner | Vchod do skladu Brno, 175 × 95 cm |\n| Totem | 90 × 52 cm |\n| Podklad | Cargo modrá přes celou plochu |\n| Logo | Barevná varianta 1.4, na střed, s ochrannou zónou X od okrajů |\n| Tisk | Pantone 2736 C a Medium Yellow C, nebo CMYK podle sekce Barvy. Spadávku a oka určuje tiskárna. |\n\n## Bannery s fotografií: šipka, logo, claim, web\n| Parametr | Pravidlo |\n|---|---|\n| Formáty | 120 × 375 cm a 80 × 250 cm |\n| Panel | Cargo modrá, tvar šipky, zhruba 60 % šířky |\n| Logo | Varianta 1.4, vlevo nahoře, ochranná zóna X |\n| Claim | Doprava s péčí, logistika s jistotou. |\n| Web | Vpravo dole přes fotografii, Raleway Bold bílá |\n| Fotografie | Celá kabina, souprava jede k hrotu šipky |\n\n> Banner 80 × 250 cm má omylem upravené logo s menším piktogramem a větší mezerou. Při dalším tisku použijte nezměněnou variantu 1.4.\n\n## Beach vlajky\nKapky ve dvou provedeních.\n\n| Parametr | Pravidlo |\n|---|---|\n| Provedení 1 | Sekundární logo 1.5 nahoře, pod ním tři služby, web podél okraje |\n| Provedení 2 | Jen logo, vodorovné logo otočené o 90° podél vlajky. Čte se zdola nahoru. |\n| Odrážky | Žluté tečky jako všude jinde. Piktogram jako odrážku už nepoužívejte. |\n| Písmo | Raleway Medium, bílá |\n| Barvy | Pantone 2736 C a Medium Yellow C, nebo CMYK ze sekce Barvy. Starší hodnoty 100/90/0/10 a 0/14/100/0 už neplatí. |\n\n> Otočené logo je schválená výjimka. Platí jen pro vysoké úzké plochy, kde by vodorovné logo nevyšlo čitelně velké.\n\n## Letáky A4: jedna šablona pro všechny letáky\n1. Logo primární, vlevo nahoře na bílé, ochranná zóna X.\n2. Modrý pás s diagonálou, nadpis verzálkami a fotografie s celým vozidlem.\n3. Žlutý pruh podél diagonály.\n4. Nadpis sekce Raleway ExtraBold, Cargo modrá, s ikonou ze sady ikon.\n5. Žluté tečky jako odrážky, tučně začátek bodu.\n6. Mapa nebo fotografie u spodního okraje.\n7. Patička modrá s diagonálou a žlutým rohem, kontakt a web.\n8. Motivy tečkový rastr a světlé trojúhelníky.\n\nTisk A4 se spadávkou 3 mm, online verze jako PDF do 2 MB. Šablona ke stažení je níže (PDF, otevře Affinity Publisher).\n\n## Přehled letáků: pět letáků, jeden styl\nLetáky už šablonu z velké části dodržují. Rozdíly jsou v ikonách, odrážkách a ve vykání.\n\n| Leták | Co upravit |\n|---|---|\n| Skladování Brno-Rajhrad | Tisk a online verze. Na zadní straně opravit adresu, vlastní ikony. |\n| Specialista na Benelux | Vzor šablony. Ikony sekcí z jiné sady, „Vám“ a „Vaše“. |\n| Letecké služby | Šipky Wingdings místo teček, „Vašich“. |\n| Bonus za doporučení | Plné ikony v kruzích nahradit ikonami ze sady v kruhu. |\n\n## Náborové plakáty\nStávající plakáty používají kurzívu se stínem a fotografii návěsu bez polepu CARGO CARE. Schválená sjednocená verze drží styl nadpisů na tiskovinách, diagonálu a vlastní soupravu.\n\n| Parametr | Pravidlo |\n|---|---|\n| Formáty | 80 × 60 cm, A3 (ve stejném rozvržení) |\n| Nadpis | HLEDÁME ŘIDIČE, skupina žlutě pod ním |\n| Kontakt | Telefon žlutě, Raleway ExtraBold |\n| Foto | Vlastní souprava, celá |\n\n## Trička: logo na hrudi, výročí na zádech\n| Parametr | Pravidlo |\n|---|---|\n| Přední díl | Sekundární logo, žlutý piktogram a bílý název, potisková plocha 70 × 40 mm, levá strana hrudi |\n| Zadní díl | Ilustrace soupravy, CARGO CARE, letopočty 2011–2026 mezi žlutými linkami a věta „15 let spolu na cestě“. Potisková plocha 370 × 420 mm |\n| Barvy | Bílá a Signální žlutá, texty převedené do křivek |\n| Barva trika | Vždy tmavá, ideálně co nejblíž Cargo modré |\n\n## Desky A4 s chlopněmi\n| Parametr | Pravidlo |\n|---|---|\n| Formát | 220 × 310 mm, chlopně 70 mm, bez hřbetu |\n| Přední | Fotka s celým vozidlem, modrá plocha s diagonálou a žlutým pruhem, logo 1.4 a claim |\n| Zadní | Cargo modrá, logo, adresy poboček, fakturační údaje, web, výřez smyčky |\n| Chlopně | Cargo modrá, smyčka přechází ze zadní strany |\n| Varianty | A: tahač Actros před skladem. B: souprava na silnici, stejná jako obálka manuálu. |\n| Tisk | Spadávka 3 mm a výsekový tvar podle tiskárny |",
+    "digital": "## Web: prvky z cargocare.cz\n| Prvek | Pravidlo |\n|---|---|\n| Štítek | Název sekce verzálkami, tenké písmo v Cargo modré, za ním tenká linka |\n| Nadpis | Poppins Bold, začátek černě {#0F0F0F} #0F0F0F, konec v Cargo modré |\n| Text | Raleway 400, Asfalt |\n| Tlačítko | {#FBD800} Signální žlutá, ostré rohy, Raleway Bold 17 px, text #0F0F0F, odsazení 14 × 24 px |\n| Ikony | Sada ikon nad štítkem |\n| Claim | V titulku stránky a v patičce |\n| Čísla | Modré dlaždice, jedna žlutá |\n\n## Sociální sítě a sdílení: malé plochy, stejná značka\nNa profilové fotce a ikoně webu je jen piktogram, název by byl nečitelný. Náhled pro sdílení odkazu kombinuje fotografii, modrý panel a logo.\n\n| Formát | Rozměr | Obsah |\n|---|---|---|\n| Profilová fotka | 512 × 512 px | Piktogram na Cargo modré |\n| Ikona webu | 512 px | Čitelná i ve 32 px |\n| Náhled odkazu (OG) | 1200 × 628 px | Logo a nadpis v modrém panelu |\n\n## Ikony: jedna sada dvanácti ikon\nTahové ikony z webu a z grafiky CARGO CARE. Kresba v Cargo modré, jeden nebo dva detaily ve žluté: oblouk v kolech, šipka, štítek.\n\n- **Jen tato sada.** Plné ikony z letáků a banneru 15 let a znaky Wingdings nahraďte ikonami odsud.\n- **Tři podoby:** modrá na světlé (barevná), bílá na Cargo modré, celá modrá ve žlutém kruhu (letáky a karty).\n- **Velikost** nejméně 32 px nebo 8 mm.\n- **Nové ikony** kreslete tahem 9 px na ploše 300 × 300 px, se zaoblenými konci a jedním žlutým detailem.\n- Ikona ceny má místo znaku $ nově Kč.\n\nIkony vlak, letadlo, loď, pobočka a znak Kč jsou kreslené tahem. Ostatních osm ikon je převedených z PNG do obrysových křivek, tah není editovatelný jako čára.\n\n## Banner 15 let\n| Parametr | Pravidlo |\n|---|---|\n| Číslo | Velká číslice 15 v Cargo modré, Raleway Black |\n| Letopočty | 2011–2026 ve žluté, s rychlostními linkami |\n| Osa | Časová osa, ikony ze sady ikon |\n| Logo | Varianta 1.5 v modré šipce vpravo nahoře |\n| Údaje | Počty vozidel, poboček a ploch musí souhlasit s webem a letáky |\n\nČeská i anglická verze mají stejné rozvržení, letopočty s pomlčkou bez mezer: 2011–2026. Ikony na ose jsou plné a z jiné sady, při další verzi je nahraďte tahovými ikonami ze sady.",
+    "kancelar": "Dokumenty posíláme jako PDF. Jen tak zůstanou písmo, barvy i rozvržení stejné u každého příjemce. Kde Raleway není (e-mail, Office), nahrazuje ho Arial.\n\n## E-mailový banner pod podpisem\n| Parametr | Pravidlo |\n|---|---|\n| Rozměr | Poměr 5 : 1, například 1280 × 256 px, export JPG pod 150 kB |\n| Obsah | Česká a anglická verze, uprostřed fotografie s logem, po stranách modré panely s diagonálním řezem |\n| Písmo | Nadpis Poppins v Signální žluté, text Poppins Light bílý |\n| Odrážky | Žluté kulaté odrážky místo emoji (zatržítka a špendlíky se v poštovních programech zobrazují různě) |\n\n## Obchodní prezentace 16 : 9\n| Parametr | Pravidlo |\n|---|---|\n| Formát | 16 : 9, 1920 × 1080 px, okraje 128 px |\n| Titulní | Fotka s diagonálou a žlutým pruhem, logo 1.4, claim, název verzálkami |\n| Obsah | Štítek kapitoly, žlutá linka, dvoubarevný nadpis Poppins Bold, ikona ze sady ve žlutém kruhu vpravo nahoře |\n| Text | Raleway 28 px, žluté tečky, začátek bodu tučně |\n| Patička | Logo vlevo, název a číslo strany vpravo |\n| Závěr | Cargo modrá, výřez smyčky, kontakt a claim |\n\n> Obchodní prezentace 2026 je při dalším vydání potřeba upravit: čísla na slidu O nás sjednotit s aktualizací od klienta, u železnice ověřit IMDG (obvykle RID), fotky skladu a vozového parku vyměnit za větší.",
+    "pravidla": "## Kdo jsme\n**Přeprava, sklad a distribuce od roku 2011.** CARGO CARE s.r.o. je logistická společnost se zaměřením na přepravu, skladování a distribuci zboží v tuzemsku i v zahraničí. Specializací jsou trasy do zemí Beneluxu a do německého příhraničí.\n\n| Služba | |\n|---|---|\n| Vnitrostátní autodoprava | Paletová distribuce po celé ČR, denní sběrka od 1 palety |\n| Mezinárodní autodoprava | Benelux a německé Porúří |\n| Logistika | Skladování a distribuce, Kladno, Brno-Rajhrad a Benešov |\n\n| Základní informace v číslech | |\n|---|---|\n| 2011 | rok založení |\n| 3 | pobočky: Kladno, Brno, Benešov |\n| 85+ | vozidel CARGO CARE |\n| 7 000 | m² skladových ploch |\n| 87 | zaměstnanců |\n| 16 401 | přepravených zásilek ročně |\n\n> Předběžná čísla podle banneru k 15 letům a webu, říjen 2026. Aktualizované údaje dodá klient. Stejná čísla patří na web, do letáků, na banner i do prezentace. Jedna dlaždice ve žluté, ostatní v Cargo modré, stejně jako na webu.\n\n## Jak píšeme: konkrétně a srozumitelně\nTón převzatý z webu a letáků: klidný, věcný, s důrazem na spolehlivost a konkrétní čísla.\n\n- **Čísla místo přídavných jmen.** „2 000 m² s možností úpravy“ řekne víc než „velký sklad“.\n- **Nadpis ve dvou barvách.** Začátek v černé pojmenuje situaci, konec v Cargo modré slibuje řešení. Jen na webu a v prezentacích.\n- **Krátké nadpisy, které pojmenují službu.** Skladování a logistické centrum Brno-Rajhrad. Paletová distribuce po celé ČR.\n- **Zákazníkovi vykáme malým písmenem.** „vaše zboží“, „vašim potřebám“. Velké V jen v osobním dopise.\n- **Česká typografie.** Mezera v tisících (16 401, ne 16.401), pomlčka v rozsahu (6:00–22:00), PSČ 272 03.\n\n| Takhle | Takhle ne |\n|---|---|\n| Denní sběrka již od 1 palety. Dva crossdocky v Kladně a Brně. | Jsme dynamická a flexibilní firma s komplexními službami. |\n\n## Grafické prvky: čtyři prvky, které už značka používá\nPrvky vycházejí z letáku, e-mailového banneru a z loga. **Na jedné ploše stačí dva, víc jich vedle sebe nedávejte.**\n\n| Prvek | Pravidlo |\n|---|---|\n| Žlutá linka pod nadpisem | Krátká, pod začátkem nadpisu. Délka zhruba tři písmena, tloušťka jako tah piktogramu. |\n| Diagonální řez | Modrá plocha nebo fotografie seříznutá šikmo. Šikmina vede vždy zleva nahoře doprava dolů. Nikdy nepřetne vozidlo. |\n| Výřez smyčky | Velký piktogram, který přesahuje okraj plochy. Jen na Cargo modré, jen na obálkách a titulech. |\n| Žluté odrážky | Kulaté odrážky v Signální žluté. Nahrazují emoji a zatržítka, která se v tisku i e-mailu zobrazují různě. |\n\nIkony: jedna sada jednoduchých piktogramů v Cargo modré (viz Digitál a sítě → Ikony).\n\n### Diagonála a šipka: dva tvary modré plochy\nModrá plocha se k fotografii připojuje dvěma způsoby. Oba už značka používá, nově mají jasné místo.\n\n- **Diagonála** pro letáky, e-mail, web a úvodní plochy (leták, e-mailový banner, náhled odkazu, úvodní strany). Řez vede zleva nahoře doprava dolů, sklon zhruba 15°. Může ho doprovázet tenký žlutý pruh.\n- **Šipka** jen pro velkoformát na šířku: bannery 120 × 375 a 80 × 250 cm, plachty, výročí. Hrot míří k vozidlu, tedy dopředu.\n- Na jedné ploše jen jeden tvar. Šipka ani diagonála nikdy nepřetne vozidlo.\n\n### Doplňkové motivy z letáků a bannerů\nDrobné motivy dávají letákům rytmus. Používají se střídmě a vždy ve stejné podobě.\n\n| Motiv | Kde |\n|---|---|\n| Tečkový rastr | V rozích letáku, Beton, slábne do ztracena. |\n| Světlé trojúhelníky | Pozadí letáku u okraje, světlý Beton. |\n| Žlutý roh v patičce | Modrá patička letáku se žlutým trojúhelníkem vpravo dole. |\n| Rychlostní linky | Jen u výročí a náboru, vede k letopočtu nebo hlavnímu údaji. |\n\n- Na jednu plochu nejvýš dva motivy.\n- Jen barvy palety: Beton, světlý Beton, Signální žlutá.\n- Motiv nikdy pod textem ani přes vozidlo.\n\n### Časová osa a mapa\nČasová osa pochází z banneru k 15 letům, mapa z letáku Benelux. Osa je modrá šipka se žlutými body a ikonami ze sady. Na mapě jsou cílové země v Cargo modré, ostatní v Betonu a trasa je žlutá.\n\n## Fotografie: vůz s logem v místě, kam jezdí\nHlavním motivem je souprava CARGO CARE s čitelnou plachtou. Prostředí ukazuje, kam a pro koho vozy jezdí: Benelux, průmyslové areály, sklady, servis.\n\n- **Vozidlo je vždy celé.** Kabinu ani návěs nesmí useknout okraj fotky, výřez v layoutu ani modrý panel.\n- Nízký úhel záběru, vůz působí sebevědomě.\n- Modrá plachta je v záběru celá nebo z větší části.\n- Úpravy střídmě, barva plachty má odpovídat skutečnosti.\n\n### Co do materiálů patří a co ne\nFotky ze sociálních sítí a z telefonu používejte jen bez prvků aplikací a bez vodoznaků. Na web a tisk vždy originál v plném rozlišení. Fotku s vodoznakem neořezávejte, pokud by ořez useknul vozidlo. Vyberte jinou.\n\n| ANO ✓ | NE ✗ |\n|---|---|\n| Odraz loga, výrazná atmosféra | Vodoznak fotoaparátu v rohu |\n| Celá souprava, čelo i oba návěsy | Ikony a čísla z Instagramu |\n| Čisté nebe, čitelná plachta | Useknutá kabina |\n\n## Sjednocení materiálů: co upravit při dalším tisku\nPřehled všech dosavadních materiálů CARGO CARE. Nic z toho není nutné přetiskovat hned. Úpravy stačí udělat při nejbližší nové objednávce.\n\n| Materiál | Stav | Co upravit |\n|---|---|---|\n| Banner vchod Brno, totem | V pořádku | Odpovídá manuálu. |\n| Obchodní prezentace 2026 | Upravit | Čísla na slidu O nás sjednotit s aktualizací od klienta. U železnice ověřit IMDG (obvykle RID). Fotky skladu a vozového parku vyměnit za větší. |\n| Desky s chlopněmi | V pořádku | Odpovídá manuálu. Vybrat variantu a ověřit adresy a fakturační údaje. |\n| Banner 120 × 375 cm | V pořádku | Odpovídá manuálu, vzor pro bannery s fotografií. |\n| Banner 80 × 250 cm | Upravit | Logo upravené omylem: menší piktogram, větší mezera. Nahradit variantou 1.4. |\n| Beach vlajky | Upravit | Přejít na CMYK ze sekce Barvy. Odrážky z piktogramů nahradit žlutými tečkami. |\n| Leták Brno-Rajhrad, tisk i online | Upravit | Platná adresa je Stará pošta 1026, hala 1, 664 61 Rajhrad. Zadní strana uvádí 664. Ikony nahradit sadou ikon. |\n| Leták Benelux | Upravit | Ikony sekcí nahradit sadou ikon. Vykání malým písmenem. |\n| Leták Letecké služby | Upravit | Šipky Wingdings nahradit žlutými tečkami. „Vašich“ na „vašich“. |\n| Leták Bonus za doporučení | Upravit | Plné ikony v kruzích nahradit ikonami ze sady v kruhu. |\n| Náborové plakáty | Upravit | Nahradit schválenou verzí, 80 × 60 cm i A3. |\n| E-mailový banner | Upravit | Emoji místo odrážek, PSČ 272 030 opravit na 272 03. |\n| Banner 15 let | Upravit | Česká i anglická verze. Plné ikony na ose nahradit sadou ikon, čísla podle aktualizace od klienta. |\n| Web cargocare.cz | Upravit | Dlaždice aktualizovat podle čísel od klienta. Tisíce psát s mezerou (16 401). |\n| Trička | V pořádku | Odpovídá manuálu. |\n| Ikona ceny | Hotovo | Znak $ nahrazen Kč, nová verze je v podkladech. |\n\nCARGO CARE s.r.o. · Kročehlavská 1040, 272 03 Kladno · [www.cargocare.cz](https://www.cargocare.cz)"
+  },
+  "colors": [
+    {
+      "name": "Cargo modrá",
+      "hex": "#1E22AA",
+      "cmyk": "98 · 93 · 0 · 0",
+      "pantone": "2736 C",
+      "role": "Hlavní barva",
+      "usage": "Plochy, nadpisy, plachty. Nese zhruba 30 % plochy.",
+      "tints": true
+    },
+    {
+      "name": "Signální žlutá",
+      "hex": "#FBD800",
+      "cmyk": "4 · 11 · 94 · 3",
+      "pantone": "Medium Yellow C",
+      "role": "Akcent",
+      "usage": "Piktogram a jeden akcent na plochu (10 %). Nikdy jako text na bílé.",
+      "tints": false
+    },
+    {
+      "name": "Beton",
+      "hex": "#D9D9D6",
+      "cmyk": "18 · 13 · 16 · 0",
+      "pantone": "Cool Gray 1 C",
+      "role": "Doplňková",
+      "usage": "Pozadí sekcí, tabulky, motivy. Spolu s bílou zhruba 60 % plochy.",
+      "tints": false
+    },
+    {
+      "name": "Asfalt",
+      "hex": "#53565A",
+      "cmyk": "67 · 55 · 49 · 40",
+      "pantone": "Cool Gray 11 C",
+      "role": "Doplňková",
+      "usage": "Doplňkový text, popisky, text odstavců na webu.",
+      "tints": false
+    },
+    {
+      "name": "Černá",
+      "hex": "#000000",
+      "cmyk": "0 · 0 · 0 · 100",
+      "pantone": "Black 6 C",
+      "role": "Text",
+      "usage": "Text, název v primárním logu, jednobarevné logo.",
+      "tints": false
+    },
+    {
+      "name": "Bílá",
+      "hex": "#FFFFFF",
+      "cmyk": "0 · 0 · 0 · 0",
+      "pantone": "barva papíru",
+      "role": "Pozadí",
+      "usage": "Pozadí, logo na tmavé.",
+      "tints": false
+    }
+  ],
+  "items": [
+    {
+      "section": "logo",
+      "slug": "logo-primarni",
+      "title": "Primární · na světlý podklad",
+      "description": "1.2 · Piktogram v Cargo modré, název černý. Patří na všechny hlavní materiály. Kde to plocha dovolí, má přednost před sekundárním logem.",
+      "specs": "SVG na křivkách, PNG 3000 × 439 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-primarni-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-primarni-na-svetly-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-negativ",
+      "title": "Primární · na Cargo modré",
+      "description": "1.4 · Žlutý piktogram, bílý název, podkladem Cargo modrá. Primárním užitím je plachta návěsu, dále bannery, totem, web a e-mailový banner. Na Cargo modré vždy tato varianta.",
+      "specs": "SVG na křivkách, PNG 3000 × 439 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#1E22AA",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-primarni-na-modry-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-primarni-na-modry-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-sekundarni",
+      "title": "Sekundární · na světlý podklad",
+      "description": "1.3 · Piktogram nad názvem. Pro plochy, kam se vodorovné logo kompozičně nevejde: čtvercové a vysoké formáty, štítky, razítka.",
+      "specs": "SVG na křivkách, PNG 3000 × 1622 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-sekundarni-na-svetly-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-sekundarni-na-svetly-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-sekundarni-na-modre",
+      "title": "Sekundární · na Cargo modré",
+      "description": "1.5 · Žlutý piktogram, bílý název na Cargo modré. Beach vlajky, banner 15 let, přední díl triček.",
+      "specs": "SVG na křivkách, PNG 3000 × 1622 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#1E22AA",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-sekundarni-na-modry-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-sekundarni-na-modry-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne",
+      "title": "Primární · černé",
+      "description": "1.6 · Černobílý tisk, gravírování, razítka, ražba a fólie v jedné barvě. Kdykoli to technologie dovolí, přednost má barevná verze.",
+      "specs": "SVG na křivkách, PNG 3000 × 439 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-primarni-jednobarevne-cerne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-primarni-jednobarevne-cerne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-sekundarni-cerne",
+      "title": "Sekundární · černé",
+      "description": "1.7 · Jednobarevná verze sekundárního loga pro černobílý tisk, razítka, ražbu a fólie.",
+      "specs": "SVG na křivkách, PNG 3000 × 1622 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-sekundarni-jednobarevne-cerne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-sekundarni-jednobarevne-cerne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-inverzni",
+      "title": "Primární · inverzní bílé",
+      "description": "1.8 · Bílá verze na tmavé podklady (60–100 % sytosti) a tmavé fotografie. Na Cargo modré použijte barevnou variantu 1.4.",
+      "specs": "SVG na křivkách, PNG 3000 × 439 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#000000",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-primarni-jednobarevne-bile.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-primarni-jednobarevne-bile.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-sekundarni-inverzni",
+      "title": "Sekundární · inverzní bílé",
+      "description": "1.9 · Bílá verze sekundárního loga na tmavé podklady a tmavé fotografie.",
+      "specs": "SVG na křivkách, PNG 3000 × 1622 px s průhledností",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#000000",
+      "files": [
+        {
+          "path": "loga/logo-cargocare-sekundarni-jednobarevne-bile.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/logo-cargocare-sekundarni-jednobarevne-bile.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol",
+      "title": "Piktogram · Cargo modrá",
+      "description": "Dvě písmena C otočená proti sobě. Samostatně jen tam, kde je značka už představená: ikona webu, profilová fotka, kabina, výšivka. Na cloně kabiny v Cargo modré.",
+      "specs": "SVG na křivkách, PNG 1500 × 928 px s průhledností · min. 6 mm, 16 px",
+      "tags": "SVG, PNG",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "loga/symbol-cargocare-modry.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-cargocare-modry.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-zluty",
+      "title": "Piktogram · Signální žlutá",
+      "description": "Žlutý piktogram na Cargo modrou: profilová fotka, ikona webu, výřez smyčky na obálkách a titulech.",
+      "specs": "SVG na křivkách, PNG 1500 × 928 px s průhledností · min. 6 mm, 16 px",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#1E22AA",
+      "files": [
+        {
+          "path": "loga/symbol-cargocare-zluty.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-cargocare-zluty.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-bily",
+      "title": "Piktogram · bílý",
+      "description": "Bílý piktogram na tmavé podklady a jednobarevné použití.",
+      "specs": "SVG na křivkách, PNG 1500 × 928 px s průhledností · min. 6 mm, 16 px",
+      "tags": "SVG, PNG",
+      "required": false,
+      "preview_bg": "#1E22AA",
+      "files": [
+        {
+          "path": "loga/symbol-cargocare-bily.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "loga/symbol-cargocare-bily.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-nadpisy",
+      "title": "Doplňkové písmo pro nadpisy webu",
+      "description": "Doplňkové písmo pro nadpisy a výzvy k akci na webu a v e-mailových bannerech (Bold 700 na H1–H3, Light v textu e-mailového banneru). V tiskovinách jen výjimečně.",
+      "specs": "TTF · Light 300, Regular 400, SemiBold 600, Bold 700",
+      "tags": "TTF",
+      "required": true,
+      "meta": {
+        "family": "Poppins",
+        "weights": "Light 300, Regular 400, SemiBold 600, Bold 700",
+        "sample": "Vaše zboží v dobrých rukou",
+        "google_url": "https://fonts.google.com/specimen/Poppins",
+        "license": "SIL OFL 1.1"
+      },
+      "files": [
+        {
+          "path": "pisma/Poppins-Bold.ttf",
+          "label": "TTF Bold"
+        },
+        {
+          "path": "pisma/Poppins-Bold.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Poppins-SemiBold.ttf",
+          "label": "TTF SemiBold"
+        },
+        {
+          "path": "pisma/Poppins-SemiBold.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Poppins-Regular.ttf",
+          "label": "TTF Regular"
+        },
+        {
+          "path": "pisma/Poppins-Regular.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Poppins-Light.ttf",
+          "label": "TTF Light"
+        },
+        {
+          "path": "pisma/Poppins-Light.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/OFL-Poppins.txt",
+          "label": "Licence OFL"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-text",
+      "title": "Základní písmo pro text a tiskoviny",
+      "description": "Pro běžný text, dokumenty a tiskoviny, primárně řezy Light a Bold. Nadpisy na letácích a bannerech verzálkami v ExtraBold, číslo 15 na banneru výročí v Black. Náhradní písmo pro e-mail a Office je Arial.",
+      "specs": "TTF · Light 300 až Black 900 (statické řezy)",
+      "tags": "TTF",
+      "required": true,
+      "meta": {
+        "family": "Raleway",
+        "weights": "Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black 900",
+        "sample": "Spolehlivá přeprava · 16 401 zásilek ročně",
+        "google_url": "https://fonts.google.com/specimen/Raleway",
+        "license": "SIL OFL 1.1"
+      },
+      "files": [
+        {
+          "path": "pisma/Raleway-Regular.ttf",
+          "label": "TTF Regular"
+        },
+        {
+          "path": "pisma/Raleway-Regular.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Raleway-Light.ttf",
+          "label": "TTF Light"
+        },
+        {
+          "path": "pisma/Raleway-Light.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Raleway-Medium.ttf",
+          "label": "TTF Medium"
+        },
+        {
+          "path": "pisma/Raleway-Medium.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Raleway-SemiBold.ttf",
+          "label": "TTF SemiBold"
+        },
+        {
+          "path": "pisma/Raleway-SemiBold.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Raleway-Bold.ttf",
+          "label": "TTF Bold"
+        },
+        {
+          "path": "pisma/Raleway-Bold.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Raleway-ExtraBold.ttf",
+          "label": "TTF ExtraBold"
+        },
+        {
+          "path": "pisma/Raleway-ExtraBold.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/Raleway-Black.ttf",
+          "label": "TTF Black"
+        },
+        {
+          "path": "pisma/Raleway-Black.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/OFL-Raleway.txt",
+          "label": "Licence OFL"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "sablona-letaku-a4",
+      "title": "Šablona letáku A4",
+      "description": "Jedna šablona pro všechny letáky: styly písma, barvy palety, místa pro text a fotografii. Přední a zadní strana. PDF otevře Affinity Publisher jako upravitelný dokument.",
+      "specs": "A4 na výšku · PDF 2 strany, spadávka 3 mm · online verze jako PDF do 2 MB",
+      "tags": "PDF, Affinity",
+      "preview_bg": "#F2F2F0",
+      "files": [
+        {
+          "path": "tisk/cargocare-sablona-letaku-A4.pdf",
+          "label": "PDF (2 strany)"
+        },
+        {
+          "path": "nahledy/letak.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "desky-s-chlopnemi",
+      "title": "Desky A4 s chlopněmi",
+      "description": "Varianta A (tahač Actros před skladem) a B (souprava na silnici, stejná jako obálka manuálu): přední strana, zadní strana a rozvinutý tvar s bigovacími linkami. Před tiskem vybrat variantu a ověřit adresy a fakturační údaje.",
+      "specs": "220 × 310 mm, chlopně 70 mm, bez hřbetu · PDF 6 stran · spadávka 3 mm a výsek podle tiskárny",
+      "tags": "PDF",
+      "preview_bg": "#F2F2F0",
+      "files": [
+        {
+          "path": "tisk/CARGO-CARE-desky-s-chlopnemi.pdf",
+          "label": "PDF varianty A a B"
+        },
+        {
+          "path": "nahledy/desky.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "paleta-ase",
+      "title": "Paleta barev pro Affinity a Adobe",
+      "description": "Soubor .ase s paletou CARGO CARE (Paleta → Importovat) a textový přehled barev HEX/RGB/CMYK/Pantone. Závazné CMYK = přepočet z Pantone profilem FOGRA39 (Coated).",
+      "specs": "ZIP: cargocare-paleta.ase + barvy.txt",
+      "tags": "ASE, TXT",
+      "files": [
+        {
+          "path": "tisk/cargocare-paleta-ase.zip",
+          "label": "ZIP (.ase + .txt)"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-vnitrostatni",
+      "title": "Ikona · Vnitrostátní autodoprava",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Převedená z PNG do obrysových křivek.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-vnitrostatni-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-vnitrostatni-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-vnitrostatni-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-mezinarodni",
+      "title": "Ikona · Mezinárodní autodoprava",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Převedená z PNG do obrysových křivek.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-mezinarodni-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-mezinarodni-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-mezinarodni-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-logistika",
+      "title": "Ikona · Logistika",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Převedená z PNG do obrysových křivek.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-logistika-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-logistika-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-logistika-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-sklad",
+      "title": "Ikona · Skladování",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Převedená z PNG do obrysových křivek.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-sklad-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-sklad-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-sklad-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-distribuce",
+      "title": "Ikona · Distribuce",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Převedená z PNG do obrysových křivek.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-distribuce-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-distribuce-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-distribuce-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-crossdock",
+      "title": "Ikona · Příjem a výdej, crossdock",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Převedená z PNG do obrysových křivek.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-crossdock-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-crossdock-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-crossdock-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-certifikat",
+      "title": "Ikona · Kvalita a jistota",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Převedená z PNG do obrysových křivek.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-certifikat-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-certifikat-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-certifikat-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-cena",
+      "title": "Ikona · Cena a nabídka",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Kreslená tahem 9 px na ploše 300 × 300 px. Nově se znakem Kč místo $.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-cena-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-cena-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-cena-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-vlak",
+      "title": "Ikona · Železniční přeprava",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Kreslená tahem 9 px na ploše 300 × 300 px.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-vlak-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-vlak-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-vlak-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-letadlo",
+      "title": "Ikona · Letecká přeprava",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Kreslená tahem 9 px na ploše 300 × 300 px.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-letadlo-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-letadlo-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-letadlo-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-lod",
+      "title": "Ikona · Námořní přeprava",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Kreslená tahem 9 px na ploše 300 × 300 px.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-lod-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-lod-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-lod-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikona-pobocka",
+      "title": "Ikona · Pobočka",
+      "description": "Tři podoby: barevná (modrá kresba se žlutým detailem) na světlý podklad, bílá na Cargo modrou, celá modrá do žlutého kruhu a pro jednobarevný tisk. Kreslená tahem 9 px na ploše 300 × 300 px.",
+      "specs": "SVG · nejméně 32 px nebo 8 mm",
+      "tags": "SVG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/ikony/cargocare-ikona-pobocka-barevna.svg",
+          "label": "SVG barevná"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-pobocka-bila.svg",
+          "label": "SVG bílá"
+        },
+        {
+          "path": "digital/ikony/cargocare-ikona-pobocka-modra.svg",
+          "label": "SVG modrá"
+        }
+      ]
+    },
+    {
+      "section": "digital",
+      "slug": "ikony-vsechny",
+      "title": "Sada ikon · všech 36 v jednom souboru",
+      "description": "Všech 12 ikon ve třech verzích, každá ve vlastní skupině. PDF otevře Affinity jako upravitelný dokument.",
+      "specs": "SVG, PDF · popisky v SVG jsou text (Raleway, Poppins)",
+      "tags": "SVG, PDF",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "digital/cargocare-ikony-vsechny.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "digital/cargocare-ikony-vsechny.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "nahledy/ikony-vsechny.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "obchodni-prezentace",
+      "title": "Obchodní prezentace 2026",
+      "description": "11 slidů: titulní, O nás, služby (tuzemská, mezinárodní, letecká, námořní, železniční, nadrozměrná přeprava, skladování), vozový park a kontakty. Před dalším použitím upravit čísla na slidu O nás, u železnice ověřit IMDG (obvykle RID) a vyměnit malé fotky.",
+      "specs": "16 : 9, 1920 × 1080 px, okraje 128 px · PDF 11 stran",
+      "tags": "PDF",
+      "preview_bg": "#F2F2F0",
+      "files": [
+        {
+          "path": "kancelar/CARGO-CARE-obchodni-prezentace-2026.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "nahledy/prezentace.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "pravidla-pouziti",
+      "title": "Brand manuál (PDF)",
+      "description": "Celý manuál vizuální identity: logo, barvy, písmo, grafické prvky, fotografie, aplikace a sjednocení materiálů.",
+      "specs": "A4 na šířku · 50 stran · verze 2.0, říjen 2026",
+      "tags": "PDF",
+      "required": true,
+      "preview_bg": "#1E22AA",
+      "files": [
+        {
+          "path": "pravidla/CARGO-CARE-brand-manual-2.0.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "nahledy/manual.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "mapa-cesko-benelux",
+      "title": "Mapa Česko – Benelux",
+      "description": "Mapa z letáku Benelux: cílové země v Cargo modré, ostatní v Betonu, trasa žlutá. Na letáku u spodního okraje.",
+      "specs": "JPG 876 × 729 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/mapa-cesko-benelux.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-actros-u-rampy",
+      "title": "Fotografie · Souprava Actros u rampy",
+      "description": "Celá souprava, čelo i oba návěsy, čitelná plachta.",
+      "specs": "JPG 5642 × 4063 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-actros-u-rampy.jpg",
+          "label": "JPG"
+        },
+        {
+          "path": "nahledy/foto-souprava-actros-u-rampy.jpg",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-actros-prumysl",
+      "title": "Fotografie · Bok soupravy · průmysl",
+      "description": "Souprava v průmyslovém areálu, plachta z boku.",
+      "specs": "JPG 4730 × 2280 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-actros-prumysl.jpg",
+          "label": "JPG"
+        },
+        {
+          "path": "nahledy/foto-souprava-actros-prumysl.jpg",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-scania-kaluz",
+      "title": "Fotografie · Scania s odrazem v kaluži",
+      "description": "Odraz loga, výrazná atmosféra, nízký úhel.",
+      "specs": "JPG 1170 × 882 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-scania-kaluz.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-scania-centrala",
+      "title": "Fotografie · Scania před centrálou",
+      "description": "Čisté nebe, čitelná plachta.",
+      "specs": "JPG 2048 × 1536 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-scania-centrala.jpg",
+          "label": "JPG"
+        },
+        {
+          "path": "nahledy/foto-souprava-scania-centrala.jpg",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-dlazba",
+      "title": "Fotografie · Souprava na dlažbě · nízký úhel",
+      "description": "Nízký úhel záběru, vůz působí sebevědomě.",
+      "specs": "JPG 1170 × 1163 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-dlazba.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-nizozemsko",
+      "title": "Fotografie · Benelux · Nizozemsko",
+      "description": "Souprava na trase v Beneluxu.",
+      "specs": "JPG 1600 × 900 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-nizozemsko.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-nizozemsko-ctverec",
+      "title": "Fotografie · Benelux · Nizozemsko (čtverec)",
+      "description": "Čtvercový výřez. Vlevo dole je ikona z Instagramu, na web a tisk vyžádejte originál bez prvků aplikace.",
+      "specs": "JPG 1170 × 1033 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-nizozemsko-ctverec.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-vetrny-mlyn",
+      "title": "Fotografie · Benelux · větrný mlýn",
+      "description": "Souprava u větrného mlýna (obálka kapitoly Fotografie). Vlevo dole je ikona z Instagramu, na web a tisk vyžádejte originál bez prvků aplikace.",
+      "specs": "JPG 1170 × 1412 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-vetrny-mlyn.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-belgie-statek",
+      "title": "Fotografie · Belgie · statek",
+      "description": "Souprava u statku v Belgii. Vlevo dole je vodoznak fotoaparátu (Galaxy S23+), na web a tisk vyžádejte originál bez vodoznaku.",
+      "specs": "JPG 1600 × 1200 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-belgie-statek.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-hute",
+      "title": "Fotografie · Souprava u hutí",
+      "description": "Souprava v průmyslovém areálu. Vlevo dole je vodoznak fotoaparátu (Galaxy S23+), na web a tisk vyžádejte originál bez vodoznaku.",
+      "specs": "JPG 1600 × 1200 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-hute.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-souprava-hute-bok",
+      "title": "Fotografie · Souprava u hutí · bok",
+      "description": "Bok soupravy s čitelnou plachtou v průmyslovém areálu.",
+      "specs": "JPG 1500 × 1556 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/souprava-hute-bok.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-tahac-actros-pred-skladem",
+      "title": "Fotografie · Tahač Actros před skladem",
+      "description": "Fotografie z přední strany desek, varianta A.",
+      "specs": "JPG 1717 × 2576 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/tahac-actros-pred-skladem.jpg",
+          "label": "JPG"
+        },
+        {
+          "path": "nahledy/foto-tahac-actros-pred-skladem.jpg",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-antonov-letiste",
+      "title": "Fotografie · Souprava u letadla Antonov",
+      "description": "Letecká přeprava. Nízké rozlišení, do tisku jen malé.",
+      "specs": "JPG 707 × 503 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/antonov-letiste.jpg",
+          "label": "JPG"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "foto-sklad-brno-interier",
+      "title": "Fotografie · Sklad Brno · interiér",
+      "description": "Skladování Brno-Rajhrad. Nízké rozlišení, do tisku jen malé.",
+      "specs": "JPG 1440 × 471 px",
+      "tags": "JPG",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "pravidla/fotografie/sklad-brno-interier.jpg",
+          "label": "JPG"
+        }
+      ]
+    }
+  ],
+  "prune_empty": true
+}
