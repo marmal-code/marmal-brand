@@ -39,6 +39,7 @@ function client_home(string $slug): void
     }
 
     $access = client_guard($brand);
+    record_view($brand, $access, 'home');
     $items = brand_items((int) $brand['id'], null, true);
     $bySection = [];
     foreach ($items as $it) {
@@ -111,6 +112,7 @@ function client_section(string $slug, string $section): void
         abort(404);
     }
     $access = client_guard($brand);
+    record_view($brand, $access, $section);
     render('client/section', client_vars($brand, $access) + [
         'title' => SECTIONS[$section]['title'] . ' – ' . $brand['name'],
         'current' => $section,
@@ -204,6 +206,7 @@ function client_print(string $slug): void
     if ($access !== 'admin') {
         log_activity((int) $brand['id'], $access, 'print', 'Tisková verze manuálu (PDF)');
     }
+    record_view($brand, $access, 'manual');
     $items = brand_items((int) $brand['id'], null, true);
     $bySection = [];
     foreach ($items as $it) {

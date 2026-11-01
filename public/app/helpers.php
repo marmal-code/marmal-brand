@@ -191,6 +191,12 @@ function cz_date(?string $datetime, bool $withTime = false): string
     return date($withTime ? 'j. n. Y H:i' : 'j. n. Y', $ts);
 }
 
+/** Celé číslo s českým oddělovačem tisíců (pevná mezera). */
+function cz_num(int|float|string|null $n): string
+{
+    return number_format((float) $n, 0, ',', "\u{00A0}");
+}
+
 function relative_day(?string $datetime): string
 {
     if (!$datetime) {
@@ -358,6 +364,7 @@ function icon(string $name, int $size = 20, string $extra = ''): string
         'user'     => '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>',
         'menu'     => '<path d="M4 6h16M4 12h16M4 18h16"/>',
         'search'   => '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+        'chart'    => '<path d="M4 20h16"/><path d="M7 16v-5M12 16V6M17 16v-8"/>',
         'up'       => '<path d="M12 19V5M6 11l6-6 6 6"/>',
         'down'     => '<path d="M12 5v14M6 13l6 6 6-6"/>',
     ];

@@ -61,6 +61,7 @@ $routes = [
     ['POST', '#^/admin/brands/new$#', 'admin_brand_create'],
     ['GET',  '#^/admin/brands/(\d+)$#', 'admin_brand_home'],
     ['GET',  '#^/admin/brands/(\d+)/s/([a-z]+)$#', 'admin_brand_section'],
+    ['GET',  '#^/admin/brands/(\d+)/stats$#', 'admin_brand_stats'],
     ['GET',  '#^/admin/brands/(\d+)/settings$#', 'admin_brand_settings'],
     ['POST', '#^/admin/brands/(\d+)/settings$#', 'admin_brand_settings_save'],
     ['POST', '#^/admin/brands/(\d+)/share$#', 'admin_brand_share_regenerate'],

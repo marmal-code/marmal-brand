@@ -1,5 +1,11 @@
 # Změny
 
+## 1.4.0 – 1. 11. 2026
+- Počítání zobrazení klientských stránek: přehled, sekce i tisková verze. Nepočítají se náhledy administrátora, přednačítání prohlížeče ani opakované obnovení stejné stránky do 30 sekund. Ukládají se jen souhrnné počty po dnech, žádné IP adresy
+- Přehled klientů: nový sloupec „Viděno“ s očíčkem, počtem zobrazení celkem a dnem poslední návštěvy (odkaz vede na statistiky), nová karta „Zobrazení za 30 dní“
+- Detail klienta: nová záložka „Statistiky“ s počtem zobrazení u záložky. Zobrazení, návštěvy a stažení za 7 / 30 / 90 dní, zobrazení celkem, naposledy viděno, graf po dnech (i jako tabulka), nejčastěji otevírané stránky, přístup heslem vs. sdíleným odkazem a poslední aktivita klienta
+- Migrace `006_zobrazeni.sql`: tabulky `brand_views` a `brand_visits`, sloupce `brands.views_total` a `brands.last_viewed_at`. Při smazání klienta se statistiky smažou s ním
+
 ## 1.3.1 – 31. 10. 2026
 - Odkaz „Smazat“ v přehledu klientů u každého klienta. Vede na kartu „Smazat klienta“ v nastavení klienta, kde se smazání potvrzuje opsáním adresy, takže klienta nejde smazat jedním nechtěným kliknutím
 - Karta „Smazat klienta“ se po příchodu z přehledu zvýrazní a kurzor je rovnou v poli pro opsání adresy

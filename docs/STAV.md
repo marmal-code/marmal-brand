@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.3.1** (31. 10. 2026)
+**Aktuální verze: 1.4.0** (1. 11. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,10 +34,10 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.3.1)
+## Co aplikace umí (1.4.0)
 
 ### Administrace (`/admin`)
-- Přehled klientů: vyplněnost sekcí, poslední změna, typ přístupu, statistiky (stažení za 30 dní, neúplné brandy), aktivita. U každého klienta odkazy Upravit, Náhled, Kopírovat odkaz a Smazat.
+- Přehled klientů: vyplněnost sekcí, **Viděno** (očíčko + počet zobrazení celkem, den poslední návštěvy, odkaz na statistiky), poslední změna, typ přístupu, statistiky (zobrazení a stažení za 30 dní, neúplné brandy), aktivita. U každého klienta odkazy Upravit, Náhled, Kopírovat odkaz a Smazat.
 - Nový klient: název, adresa (slug), úvodní text, barva úvodní plochy, kontakt, heslo (návrh se generuje).
 - **Import klienta ze ZIPu** (Klienti → Importovat) a **export klienta** do stejného formátu (nastavení klienta).
 - Editor brandu, záložky sekcí: Logo, Barvy, Typografie, Tisk, Digitál a sítě, Kancelář, Pravidla použití + Přístup a nastavení.
@@ -48,6 +48,11 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
     rodina/řezy/ukázka/Google Fonts/licence. Historie verzí: obnovit, smazat verzi, smazat soubor, „použít jako náhled“.
   - **Text sekce pro klienta** (Markdown) v každé sekci.
   - Barvy: název, HEX (RGB se dopočítá), CMYK, Pantone, role, **použití**, **odstíny** (zobrazí tóny 100–10 %), pořadí.
+- **Statistiky klienta** (záložka v detailu klienta, `/admin/brands/{id}/stats`): zobrazení, návštěvy a stažení za 7/30/90 dní,
+  zobrazení celkem, naposledy viděno, graf po dnech (CSS sloupce + tabulka), nejčastěji otevírané stránky, přístup heslem vs. sdíleným odkazem,
+  poslední aktivita klienta. Počítá `record_view()` v `brands.php` při otevření přehledu, sekce a tiskové verze klientem.
+  Nepočítá se administrátor, HEAD, přednačítání (`Sec-Purpose: prefetch`) ani obnovení stejné stránky do 30 s. Návštěva = jedna relace prohlížeče za den.
+  Ukládají se jen denní souhrny, žádné IP adresy.
 - Nastavení klienta: heslo (změna odhlásí klienta), sdílený odkaz bez hesla s platností (7/30/90/365 dní/bez omezení,
   nový token), veřejné trvalé odkazy, **zobrazovat v písmech brandu** (přepínač), kontakt (jméno, poznámka, **telefon, e-mail**),
   vlastní doména (CNAME), aktivní/neaktivní, doplnit pozice ze šablony, export, smazání (potvrzuje se opsáním adresy; odkaz „Smazat“ je i v přehledu klientů a vede na tuto kartu).
@@ -100,16 +105,17 @@ public/app/controllers/       install.php, admin.php, client.php, settings.php
 public/views/                 layout_admin, layout_client, layout_plain, admin/*, client/* (home, section, print, _parts)
 public/assets/                css/app.css (tokeny MarMal DS), css/print.css, js/app.js (upload, kopírování, QR, potvrzení), fonts/MarMal-Bold.woff2,
                               vendor/qrcode.js (QR kód pro 2FA, MIT, generuje se v prohlížeči)
-public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu, 005_bezpecnost_2fa
+public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu, 005_bezpecnost_2fa, 006_zobrazeni
 .github/workflows/release.yml automatické vydání po změně public/VERSION
 scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 ```
 
 ### Databáze
-`users`, `settings` (github_repo, github_token šifrovaně, update_last_check, update_last_log), `brands` (… brand_fonts, contact_phone, contact_email),
+`users`, `settings` (github_repo, github_token šifrovaně, update_last_check, update_last_log), `brands` (… brand_fonts, contact_phone, contact_email, views_total, last_viewed_at),
 `template_items`, `items` (brand, sekce, kind file|font, slug, popisy, meta JSON, current_version_id),
 `item_versions`, `item_files` (role download|preview, is_preview), `colors` (usage_note, tints), `section_texts`,
-`activity`, `login_attempts`, `migrations`, `recovery_codes` (záložní kódy 2FA, hash). `users` má navíc
+`activity`, `login_attempts`, `migrations`, `recovery_codes` (záložní kódy 2FA, hash),
+`brand_views` (brand_id, day, page = home | sekce | manual, views), `brand_visits` (brand_id, day, access = client | share, visits). `users` má navíc
 totp_secret (šifrovaně), totp_enabled_at, totp_last_step, auth_epoch.
 
 ### Sekce a pozice šablony (slugy)
@@ -124,7 +130,7 @@ totp_secret (šifrovaně), totp_enabled_at, totp_last_step, auth_epoch.
 (* = povinné)
 
 ### Důležité routy
-Admin: `/admin`, `/admin/import`, `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
+Admin: `/admin`, `/admin/import`, `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/stats`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
 `/admin/items/{id}`, `/admin/settings` (profil, 2FA), `/admin/settings/2fa`, `/admin/settings/update`, `/admin/template`, `/admin/activity`.
 Přihlášení: `/login`, `/login/2fa`.
 Klient: `/b/{slug}`, `/b/{slug}/s/{sekce}`, `/b/{slug}/file/{id}`, `/b/{slug}/f/{pozice}.{ext}`, `/b/{slug}/zip[/{sekce}]`, `/b/{slug}/manual`.
@@ -150,6 +156,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.4.0** (1. 11. 2026): počítání zobrazení klientských stránek, sloupec „Viděno“ s očíčkem v přehledu klientů, záložka „Statistiky“ v detailu klienta.
 - **1.3.1** (31. 10. 2026): odkaz „Smazat“ v přehledu klientů (vede na potvrzení v nastavení klienta).
 - **1.3.0** (26. 10. 2026): 2FA administrátora, odhlášení ostatních zařízení, limity pokusů ze všech IP, silnější hesla klientů, CSP a další bezpečnostní hlavičky, relace ve vlastní složce. Audit v `docs/BEZPECNOST.md`.
 - **1.2.0** (26. 10. 2026): klientský pohled a tisková verze v písmech brandu (přepínač), všechny řezy písma, WOFF2, dlouhá cache + 304, telefon a e-mail v kartě kontaktu.

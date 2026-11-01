@@ -23,6 +23,7 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
 <div class="grid-stats">
   <div class="card card-pad-sm"><div class="stat-label">Aktivní brandy</div><div class="stat-value"><?= $stats['brands'] ?></div></div>
   <div class="card card-pad-sm"><div class="stat-label">Souborů ke stažení</div><div class="stat-value"><?= $stats['files'] ?></div></div>
+  <div class="card card-pad-sm"><div class="stat-label">Zobrazení za 30 dní</div><div class="stat-value"><?= cz_num($stats['views']) ?></div></div>
   <div class="card card-pad-sm"><div class="stat-label">Stažení za 30 dní</div><div class="stat-value"><?= $stats['downloads'] ?></div></div>
   <div class="card card-pad-sm<?= $stats['incomplete'] ? ' stat-warn' : '' ?>"><div class="stat-label">Neúplné brandy</div><div class="stat-value"><?= $stats['incomplete'] ?></div></div>
 </div>
@@ -34,8 +35,8 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
   </div>
 <?php else: ?>
   <div class="card table-wrap">
-    <table class="table" style="min-width: 760px">
-      <thead><tr><th scope="col">Klient</th><th scope="col">Vyplněno</th><th scope="col">Poslední změna</th><th scope="col">Přístup</th><th scope="col">Akce</th></tr></thead>
+    <table class="table" style="min-width: 900px">
+      <thead><tr><th scope="col">Klient</th><th scope="col">Vyplněno</th><th scope="col">Viděno</th><th scope="col">Poslední změna</th><th scope="col">Přístup</th><th scope="col">Akce</th></tr></thead>
       <tbody>
       <?php foreach ($brands as $b): $c = $b['completeness']; ?>
         <tr<?= $b['is_active'] ? '' : ' style="opacity:.6"' ?>>
@@ -55,6 +56,12 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
               <div class="progress<?= $c['done'] === $c['total'] ? ' done' : ($c['pct'] < 50 ? ' low' : '') ?>"><span style="width: <?= $c['pct'] ?>%"></span></div>
               <span class="small nowrap"><?= $c['done'] ?> / <?= $c['total'] ?> sekcí</span>
             </div>
+          </td>
+          <td>
+            <a class="views-cell" href="/admin/brands/<?= (int) $b['id'] ?>/stats" title="Zobrazení celkem <?= cz_num($b['views_total'] ?? 0) ?>, za 30 dní <?= cz_num($b['views_30']) ?><?= ($b['last_viewed_at'] ?? null) ? ', naposledy ' . e(cz_date($b['last_viewed_at'], true)) : '' ?>" aria-label="Statistiky zobrazení klienta <?= e($b['name']) ?>: celkem <?= cz_num($b['views_total'] ?? 0) ?>, za 30 dní <?= cz_num($b['views_30']) ?>">
+              <span class="views-count"><?= icon('eye', 18) ?><?= cz_num($b['views_total'] ?? 0) ?></span>
+              <span class="tiny muted nowrap"><?= ($b['last_viewed_at'] ?? null) ? e(relative_day($b['last_viewed_at'])) : 'zatím ne' ?></span>
+            </a>
           </td>
           <td class="small nowrap"><?= cz_date($b['updated_at']) ?></td>
           <td class="small"><?= $b['password_hash'] ? 'Heslo' : '–' ?><?= share_link_valid($b) ? ' + sdílený odkaz' : '' ?></td>

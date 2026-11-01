@@ -452,3 +452,121 @@ function font_main_weight(array $meta): int
     $list = array_map('intval', $m[1]);
     return ($list[0] < 400 && in_array(400, $list, true)) ? 400 : $list[0];
 }
+
+/* ---------- Zobrazení klientských stránek ---------- */
+
+/** Názvy stránek pro statistiky (klíč = hodnota sloupce brand_views.page). */
+function view_page_label(string $page): string
+{
+    if ($page === 'home') {
+        return 'Přehled';
+    }
+    if ($page === 'manual') {
+        return 'Tisková verze (PDF)';
+    }
+    return SECTIONS[$page]['title'] ?? $page;
+}
+
+/**
+ * Započítá zobrazení stránky klientem. Administrátor (náhled), HEAD a přednačítání prohlížeče se nepočítají,
+ * stejně jako opakované obnovení stejné stránky do 30 sekund. Návštěva = jeden prohlížeč za den.
+ * Ukládají se jen souhrnné počty po dnech, žádné IP adresy ani identifikátory.
+ */
+function record_view(array $brand, string $access, string $page): void
+{
+    if ($access === 'admin' || current_admin() || ($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'GET') {
+        return;
+    }
+    $purpose = strtolower((string) ($_SERVER['HTTP_SEC_PURPOSE'] ?? $_SERVER['HTTP_PURPOSE'] ?? $_SERVER['HTTP_X_MOZ'] ?? ''));
+    if (str_contains($purpose, 'prefetch') || str_contains($purpose, 'prerender')) {
+        return;
+    }
+    $id = (int) $brand['id'];
+    $now = time();
+    $last = $_SESSION['views_last'][$id] ?? null;
+    if (is_array($last) && $last[0] === $page && $now - (int) $last[1] < 30) {
+        return;
+    }
+    $_SESSION['views_last'][$id] = [$page, $now];
+    $today = date('Y-m-d');
+    try {
+        db_exec(
+            'INSERT INTO brand_views (brand_id, day, page, views) VALUES (?, ?, ?, 1) ON DUPLICATE KEY UPDATE views = views + 1',
+            [$id, $today, substr($page, 0, 20)]
+        );
+        db_exec('UPDATE brands SET views_total = views_total + 1, last_viewed_at = NOW() WHERE id = ?', [$id]);
+        if (($_SESSION['views_day'][$id] ?? '') !== $today) {
+            $_SESSION['views_day'][$id] = $today;
+            db_exec(
+                'INSERT INTO brand_visits (brand_id, day, access, visits) VALUES (?, ?, ?, 1) ON DUPLICATE KEY UPDATE visits = visits + 1',
+                [$id, $today, substr($access, 0, 10)]
+            );
+        }
+    } catch (Throwable $e) {
+        // Statistika nesmí rozbít stránku klienta (např. před spuštěním migrace).
+        error_log('[brand-hub] record_view: ' . $e->getMessage());
+    }
+}
+
+/** Počty zobrazení za posledních N dní pro všechny brandy: [brand_id => počet]. */
+function views_by_brand(int $days = 30): array
+{
+    $out = [];
+    try {
+        foreach (db_all('SELECT brand_id, SUM(views) AS n FROM brand_views WHERE day >= ? GROUP BY brand_id', [date('Y-m-d', strtotime('-' . ($days - 1) . ' days'))]) as $r) {
+            $out[(int) $r['brand_id']] = (int) $r['n'];
+        }
+    } catch (Throwable $e) {
+        error_log('[brand-hub] views_by_brand: ' . $e->getMessage());
+    }
+    return $out;
+}
+
+/** Statistiky zobrazení jednoho brandu pro administraci. */
+function brand_view_stats(int $brandId, int $days = 30): array
+{
+    $since = date('Y-m-d', strtotime('-' . ($days - 1) . ' days'));
+    $series = [];
+    for ($i = $days - 1; $i >= 0; $i--) {
+        $d = date('Y-m-d', strtotime('-' . $i . ' days'));
+        $series[$d] = ['views' => 0, 'visits' => 0];
+    }
+    foreach (db_all('SELECT day, SUM(views) AS n FROM brand_views WHERE brand_id = ? AND day >= ? GROUP BY day', [$brandId, $since]) as $r) {
+        if (isset($series[$r['day']])) {
+            $series[$r['day']]['views'] = (int) $r['n'];
+        }
+    }
+    foreach (db_all('SELECT day, SUM(visits) AS n FROM brand_visits WHERE brand_id = ? AND day >= ? GROUP BY day', [$brandId, $since]) as $r) {
+        if (isset($series[$r['day']])) {
+            $series[$r['day']]['visits'] = (int) $r['n'];
+        }
+    }
+    $pages = [];
+    foreach (db_all(
+        'SELECT page, SUM(CASE WHEN day >= ? THEN views ELSE 0 END) AS period, SUM(views) AS total
+         FROM brand_views WHERE brand_id = ? GROUP BY page ORDER BY period DESC, total DESC',
+        [$since, $brandId]
+    ) as $r) {
+        $pages[] = ['page' => $r['page'], 'label' => view_page_label($r['page']), 'period' => (int) $r['period'], 'total' => (int) $r['total']];
+    }
+    $access = [];
+    foreach (db_all('SELECT access, SUM(visits) AS n FROM brand_visits WHERE brand_id = ? AND day >= ? GROUP BY access ORDER BY n DESC', [$brandId, $since]) as $r) {
+        $access[$r['access']] = (int) $r['n'];
+    }
+    $first = db_val('SELECT MIN(day) FROM brand_views WHERE brand_id = ?', [$brandId]);
+    return [
+        'days' => $days,
+        'series' => $series,
+        'views' => array_sum(array_column($series, 'views')),
+        'visits' => array_sum(array_column($series, 'visits')),
+        'visits_total' => (int) db_val('SELECT COALESCE(SUM(visits), 0) FROM brand_visits WHERE brand_id = ?', [$brandId]),
+        'active_days' => count(array_filter($series, fn ($s) => $s['views'] > 0)),
+        'pages' => $pages,
+        'access' => $access,
+        'first_day' => $first ?: null,
+        'downloads' => (int) db_val(
+            "SELECT COUNT(*) FROM activity WHERE brand_id = ? AND action IN ('download','zip','permalink') AND actor <> 'admin' AND created_at >= ?",
+            [$brandId, $since . ' 00:00:00']
+        ),
+    ];
+}

@@ -83,7 +83,9 @@ function admin_dashboard(): void
         ? db_all('SELECT * FROM brands ORDER BY is_active DESC, updated_at DESC')
         : db_all('SELECT * FROM brands WHERE name LIKE ? OR slug LIKE ? ORDER BY is_active DESC, updated_at DESC', ['%' . $q . '%', '%' . $q . '%']);
     $incomplete = 0;
+    $views30 = views_by_brand(30);
     foreach ($brands as &$b) {
+        $b['views_30'] = $views30[(int) $b['id']] ?? 0;
         $b['completeness'] = brand_completeness((int) $b['id']);
         $b['symbol'] = brand_symbol((int) $b['id']);
         if ($b['is_active'] && $b['completeness']['done'] < $b['completeness']['total']) {
@@ -96,6 +98,7 @@ function admin_dashboard(): void
         'files' => (int) db_val('SELECT COUNT(*) FROM item_files f JOIN items i ON i.current_version_id = f.version_id WHERE f.role = ?', ['download']),
         'downloads' => (int) db_val("SELECT COUNT(*) FROM activity WHERE action IN ('download','zip','permalink') AND actor <> 'admin' AND created_at > (NOW() - INTERVAL 30 DAY)"),
         'incomplete' => $incomplete,
+        'views' => array_sum($views30),
     ];
     $activity = db_all('SELECT a.*, b.name AS brand_name FROM activity a LEFT JOIN brands b ON b.id = a.brand_id ORDER BY a.id DESC LIMIT 8');
     $release = json_decode((string) setting('update_last_check', ''), true);
@@ -282,6 +285,21 @@ function admin_brand_settings(string $id): void
     require_admin();
     $brand = load_brand_or_404($id);
     render('admin/brand_form', ['title' => $brand['name'] . ' – nastavení', 'nav' => 'clients', 'brand' => $brand, 'errors' => [], 'suggestedPassword' => suggest_password()]);
+}
+
+function admin_brand_stats(string $id): void
+{
+    require_admin();
+    $brand = load_brand_or_404($id);
+    $days = in_array((int) ($_GET['d'] ?? 30), [7, 30, 90], true) ? (int) ($_GET['d'] ?? 30) : 30;
+    render('admin/brand_stats', [
+        'title' => $brand['name'] . ' – statistiky',
+        'nav' => 'clients',
+        'brand' => $brand,
+        'active' => 'stats',
+        'views' => brand_view_stats((int) $brand['id'], $days),
+        'activity' => db_all("SELECT * FROM activity WHERE brand_id = ? AND actor <> 'admin' ORDER BY id DESC LIMIT 10", [$brand['id']]),
+    ]);
 }
 
 function admin_brand_settings_save(string $id): void

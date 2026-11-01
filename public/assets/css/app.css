@@ -285,6 +285,23 @@ form.inline { display: inline; }
   .tints-name { grid-column: 1 / -1; }
 }
 
+/* ---------- Statistiky zobrazení ---------- */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; align-items: start; }
+.stat-value-sm { font-size: 22px; padding-top: 6px; }
+.views-cell { display: inline-flex; flex-direction: column; gap: 2px; text-decoration: none; color: var(--ink); }
+.views-cell:hover .views-count { color: var(--blue-700); }
+.views-count { display: inline-flex; align-items: center; gap: 6px; font-weight: var(--fw-medium); }
+.views-count .icon { color: var(--blue-700); }
+.views-chart { display: flex; gap: 12px; height: 180px; }
+.views-axis { display: flex; flex-direction: column; justify-content: space-between; font-size: 12px; color: var(--ink-muted); text-align: right; min-width: 24px; padding-bottom: 1px; }
+.views-bars { flex: 1 1 auto; display: flex; align-items: flex-end; gap: 4px; border-bottom: 1px solid var(--border-strong); background: linear-gradient(to bottom, var(--border) 1px, transparent 1px) 0 0 / 100% 50%; }
+.views-bars.dense { gap: 1px; }
+.views-bar { flex: 1 1 0; height: 100%; display: flex; align-items: flex-end; }
+.views-bar > span { display: block; width: 100%; background: var(--blue-700); border-radius: 3px 3px 0 0; }
+.views-bar:hover > span { background: var(--ink); }
+.views-dates { display: flex; justify-content: space-between; padding-left: 36px; }
+details > summary { cursor: pointer; color: var(--blue-700); }
+
 /* ---------- Samostatné stránky (přihlášení, instalace, chyby) ---------- */
 .plain-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 16px; }
 .plain-card { width: 100%; max-width: 440px; padding: 40px; }
