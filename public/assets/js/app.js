@@ -177,6 +177,126 @@
     return next();
   }
 
+  /* ---------- WebP: SVG bez PNG vykreslí prohlížeč, převod do WebP udělá server ---------- */
+  function postJson(url, body) {
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrf },
+      credentials: 'same-origin',
+      body: JSON.stringify(body || {})
+    }).then(function (r) {
+      return r.json().catch(function () { return { ok: false, error: 'Server vrátil chybu ' + r.status + '.' }; });
+    }).then(function (j) {
+      if (!j.ok) throw new Error(j.error || 'Požadavek selhal.');
+      return j;
+    });
+  }
+
+  // SVG → PNG na plátně. Delší strana = maxSide px, poměr podle viewBoxu.
+  function svgToPng(url, maxSide) {
+    return fetch(url, { credentials: 'same-origin' }).then(function (r) {
+      if (!r.ok) throw new Error('SVG se nepodařilo načíst.');
+      return r.text();
+    }).then(function (txt) {
+      var doc = new DOMParser().parseFromString(txt, 'image/svg+xml');
+      var el = doc.documentElement;
+      if (!el || el.nodeName.toLowerCase() !== 'svg') throw new Error('Soubor není platné SVG.');
+      var vb = (el.getAttribute('viewBox') || '').trim().split(/[\s,]+/).map(parseFloat);
+      var w = parseFloat(el.getAttribute('width')) || 0;
+      var h = parseFloat(el.getAttribute('height')) || 0;
+      if (vb.length === 4 && vb[2] > 0 && vb[3] > 0) {
+        w = vb[2]; h = vb[3];
+      } else if (w > 0 && h > 0) {
+        el.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      } else {
+        w = h = maxSide;
+      }
+      var scale = maxSide / Math.max(w, h);
+      var W = Math.max(1, Math.round(w * scale));
+      var H = Math.max(1, Math.round(h * scale));
+      el.setAttribute('width', String(W));
+      el.setAttribute('height', String(H));
+      var src = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(el)], { type: 'image/svg+xml' }));
+      return new Promise(function (resolve, reject) {
+        var img = new Image();
+        img.onload = function () {
+          var c = document.createElement('canvas');
+          c.width = W;
+          c.height = H;
+          c.getContext('2d').drawImage(img, 0, 0, W, H);
+          URL.revokeObjectURL(src);
+          c.toBlob(function (b) { b ? resolve(b) : reject(new Error('Obrázek se nepodařilo vytvořit.')); }, 'image/png');
+        };
+        img.onerror = function () { URL.revokeObjectURL(src); reject(new Error('SVG se nepodařilo vykreslit.')); };
+        img.src = src;
+      });
+    });
+  }
+
+  function webpFromSvg(task) {
+    return svgToPng(task.url, task.size).then(function (png) {
+      return uploadFile(png, function () {});
+    }).then(function (uploadId) {
+      return postJson('/admin/items/' + task.item + '/webp', { upload_id: uploadId, svg_file: task.file });
+    });
+  }
+
+  // Postupně projde úkoly; chyby sbírá, ať jedna vadná pozice nezastaví ostatní.
+  function runWebpTasks(tasks, onStep) {
+    var errors = [];
+    var added = 0;
+    var steps = [];
+    tasks.forEach(function (t) {
+      if (t.raster) steps.push({ label: t.title, run: function () { return postJson('/admin/items/' + t.item + '/webp', {}); } });
+      (t.svg || []).forEach(function (s) {
+        steps.push({ label: (t.title ? t.title + ' – ' : '') + s.name, run: function () { return webpFromSvg(s); } });
+      });
+    });
+    var chain = Promise.resolve();
+    steps.forEach(function (step, i) {
+      chain = chain.then(function () {
+        if (onStep) onStep(i, steps.length, step.label);
+        return step.run().then(function (j) {
+          added += j.added || 0;
+          (j.skipped || []).forEach(function (m) { errors.push(m); });
+        }).catch(function (err) { errors.push(step.label + ': ' + err.message); });
+      });
+    });
+    return chain.then(function () {
+      if (onStep) onStep(steps.length, steps.length, '');
+      return { added: added, errors: errors };
+    });
+  }
+
+  var runner = document.querySelector('[data-webp-runner]');
+  if (runner) {
+    var runBtn = runner.querySelector('[data-webp-start]');
+    var bar = runner.querySelector('[data-webp-bar]');
+    var stat = runner.querySelector('[data-webp-status]');
+    var log = runner.querySelector('[data-webp-log]');
+    runBtn.addEventListener('click', function () {
+      var tasks = [];
+      try { tasks = JSON.parse(runner.getAttribute('data-tasks') || '[]'); } catch (e) {}
+      runBtn.disabled = true;
+      window.onbeforeunload = function () { return 'Převod do WebP ještě běží.'; };
+      runWebpTasks(tasks, function (i, n, label) {
+        bar.style.width = Math.round(i / Math.max(1, n) * 100) + '%';
+        stat.textContent = i < n ? 'Převádím ' + (i + 1) + ' / ' + n + ': ' + label : 'Hotovo.';
+      }).then(function (r) {
+        window.onbeforeunload = null;
+        stat.textContent = 'Hotovo. Vytvořil jsem ' + r.added + ' WebP.' + (r.errors.length ? ' Některé soubory se převést nepodařilo:' : '');
+        r.errors.forEach(function (m) {
+          var li = document.createElement('li');
+          li.className = 'alert alert-error';
+          li.textContent = m;
+          log.appendChild(li);
+        });
+        if (!r.errors.length) setTimeout(function () { window.location.reload(); }, 1200);
+        else runBtn.disabled = false;
+      });
+    });
+  }
+
   document.querySelectorAll('[data-uploader]').forEach(function (box) {
     var itemId = box.getAttribute('data-item');
     var commitUrl = box.getAttribute('data-commit') || ('/admin/items/' + itemId + '/upload');
@@ -238,6 +358,8 @@
       var modeEl = box.querySelector('input[name="mode-' + itemId + '"]:checked');
       var mode = modeEl ? modeEl.value : 'new';
       var note = (box.querySelector('[data-note]') || {}).value || '';
+      var webpEl = box.querySelector('[data-webp]');
+      var webp = !!(webpEl && webpEl.checked);
       startBtn.disabled = true;
       box.querySelectorAll('button, select, input').forEach(function (el) { el.disabled = true; });
       statusEl.className = 'small';
@@ -258,10 +380,19 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrf },
           credentials: 'same-origin',
-          body: JSON.stringify({ mode: mode, note: note, files: done })
+          body: JSON.stringify({ mode: mode, note: note, files: done, webp: webp })
         }).then(function (r) { return r.json(); });
       }).then(function (j) {
         if (!j.ok) throw new Error(j.error || 'Uložení selhalo.');
+        if (j.webp_svg && j.webp_svg.length) {
+          statusEl.textContent = 'Vytvářím WebP ze SVG…';
+          return runWebpTasks([{ item: itemId, title: '', raster: 0, svg: j.webp_svg }]).then(function (r) {
+            if (r.errors.length) window.alert('Soubory jsou nahrané, ale WebP se nepodařilo vytvořit:\n' + r.errors.join('\n'));
+            return j;
+          });
+        }
+        return j;
+      }).then(function (j) {
         window.onbeforeunload = null;
         if (j.redirect) { window.location.href = j.redirect; } else { window.location.reload(); }
       }).catch(function (err) {

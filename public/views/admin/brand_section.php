@@ -2,6 +2,7 @@
 $active = $section;
 require APP_ROOT . '/views/admin/_brand_header.php';
 $bid = (int) $brand['id'];
+$webpSection = in_array($section, WEBP_SECTIONS, true) && webp_supported();
 ?>
 
 <details class="card card-pad stack" id="text">
@@ -85,6 +86,13 @@ $bid = (int) $brand['id'];
       <h2 style="font-size: 24px">Pozice v sekci <?= e(SECTIONS[$section]['title']) ?></h2>
       <span class="small muted">Prázdné pozice klient nevidí.</span>
     </div>
+    <?php if ($webpSection && ($webpMissing = webp_missing($bid))):
+        $here = count(array_filter($webpMissing, fn ($m) => $m['section'] === $section)); ?>
+      <div class="alert alert-info"><?= icon('image') ?><div class="row-between" style="flex: 1">
+        <span>Pozicím tohoto klienta chybí WebP: <b><?= count($webpMissing) ?></b><?= $here ? ' (v této sekci ' . $here . ')' : '' ?>.</span>
+        <a class="btn btn-secondary btn-sm" href="/admin/webp?brand=<?= $bid ?>">Doplnit WebP</a>
+      </div></div>
+    <?php endif; ?>
 
     <?php if (!$items): ?>
       <div class="card empty-state">V této sekci zatím nejsou žádné pozice. Přidejte vlastní níže, nebo je doplňte ze šablony v nastavení klienta.</div>
@@ -149,6 +157,9 @@ $bid = (int) $brand['id'];
             <input type="file" multiple hidden>
           </div>
           <div class="queue" data-queue></div>
+          <?php if ($webpSection): ?>
+            <label class="check" style="padding-top: 0; min-height: 0"><input type="checkbox" data-webp value="1" checked><span>Vytvořit i WebP <span class="hint">(k PNG a JPG, u samotného SVG ho vykreslí váš prohlížeč)</span></span></label>
+          <?php endif; ?>
           <div class="form-grid">
             <div class="field"><label for="note-<?= (int) $it['id'] ?>">Poznámka k verzi (vidíte jen vy)</label><input class="input" id="note-<?= (int) $it['id'] ?>" data-note placeholder="např. upravená kresba klasu"></div>
             <?php if ($filled): ?>

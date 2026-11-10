@@ -16,6 +16,17 @@ $m = $item['meta'];
         <input class="input mono" id="slug" name="slug" value="<?= e($item['slug']) ?>" pattern="[a-z0-9-]+">
         <span class="hint">…/f/<b><?= e($item['slug']) ?></b>.svg – změna rozbije už vložené odkazy.</span>
       </div>
+      <?php if ($item['kind'] === 'file'): ?>
+        <div class="field">
+          <label for="section">Sekce</label>
+          <select class="select" id="section" name="section">
+            <?php foreach (SECTIONS as $key => $s): if (in_array($key, ['barvy', 'typografie'], true)) continue; ?>
+              <option value="<?= e($key) ?>"<?= $key === $item['section'] ? ' selected' : '' ?>><?= e($s['title']) ?></option>
+            <?php endforeach; ?>
+          </select>
+          <span class="hint">Přesun do jiné sekce. Soubory, verze i trvalé odkazy zůstanou.</span>
+        </div>
+      <?php endif; ?>
       <div class="field full"><label for="description">Popis pro klienta</label><textarea class="textarea" id="description" name="description"><?= e($item['description']) ?></textarea></div>
       <div class="field"><label for="specs">Rozměr / specifikace</label><input class="input" id="specs" name="specs" value="<?= e($item['specs']) ?>" placeholder="90 × 50 mm"></div>
       <div class="field"><label for="tags">Štítky (oddělené čárkou)</label><input class="input" id="tags" name="tags" value="<?= e($item['tags']) ?>" placeholder="CMYK, spadávka 3 mm"></div>

@@ -34,3 +34,5 @@ Piš vždy česky.
 3. Připoj souhrn: co se přeneslo a co v podkladech chybí nebo je potřeba opravit (např. SVG s nepřevedeným písmem).
 4. Klienta zapiš do tabulky „Klienti a importy“ v `docs/STAV.md` a nahraj na GitHub.
 5. Nevolná písma (Candara, Calibri…) nikdy nepřikládej.
+6. Ke každému PNG a JPG v Logu, Ikonách, Webu a Sociálních sítích přidej WebP se stejným názvem (loga a ikony bezeztrátově,
+   fotky v kvalitě 85, samotné SVG vykresli do WebP). Do Pravidel použití patří ze souborů jen manuál.

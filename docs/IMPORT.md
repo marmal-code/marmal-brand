@@ -39,8 +39,17 @@ Stejný formát vytváří **Exportovat brand (ZIP)** v nastavení klienta.
       "preview_bg": "#FFFFFF",
       "files": [
         { "path": "loga/logo.svg", "label": "SVG" },
-        { "path": "loga/logo.png", "label": "PNG", "preview": true },
-        { "path": "nahledy/vizitka.jpg", "role": "preview" }
+        { "path": "loga/logo.png", "label": "PNG" },
+        { "path": "loga/logo.webp", "label": "WebP" }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-klic",
+      "title": "Ikona · Klíč",
+      "files": [
+        { "path": "ikony/klic.svg", "label": "SVG" },
+        { "path": "ikony/klic.webp", "label": "WebP" }
       ]
     },
     {
@@ -55,9 +64,16 @@ Stejný formát vytváří **Exportovat brand (ZIP)** v nastavení klienta.
 }
 ```
 
-- **Sekce:** `logo`, `typografie`, `tisk`, `digital`, `kancelar`, `pravidla` (barvy patří do `colors`, text barev do `texts.barvy`).
+- **Sekce:** `logo`, `typografie`, `ikony`, `web`, `site` (Sociální sítě), `tisk`, `kancelar`, `pravidla` (barvy patří do `colors`,
+  text barev do `texts.barvy`). Starší sekce `digital` (do verze 1.4) import ještě přijme a rozdělí: pozice podle slugu
+  (`ikona-…` → `ikony`, profilovka, titulní fotky, příspěvky a stories → `site`, zbytek → `web`), text podle nadpisů `##`.
+- **WebP:** ke každému PNG a JPG v sekcích `logo`, `ikony`, `web` a `site` patří WebP se stejným názvem souboru
+  (`logo.png` + `logo.webp`). Aplikace ho použije jako náhled místo PNG. Chybějící WebP k PNG/JPG import dopočítá sám.
 - **slug** stejný jako pozice ze šablony (`logo-primarni`, `logo-negativ`, `symbol`, `vizitka`…) tu pozici vyplní, jiný slug založí novou.
-- **files[].role** `preview` = soubor jen pro náhled, klient ho nestahuje. **files[].preview** `true` = soubor ke stažení, který se zároveň použije jako náhled.
+- **files[].role** `preview` = soubor jen pro náhled, klient ho nestahuje (např. `{ "path": "nahledy/vizitka.png", "role": "preview" }`).
+  **files[].preview** `true` = soubor ke stažení, který se zároveň použije jako náhled (např. PNG u SVG s nepřevedeným písmem).
+- **files[].label** s variantou za tečkou (`"SVG · na tmavý podklad"`, `"WebP · na tmavý podklad"`) klient uvidí seskupené:
+  varianta jako popisek a pod ní tlačítka jen s formátem.
 - **brand.brand_fonts** `true` (výchozí) = klientský pohled a tisková verze v písmech brandu (pozice `pismo-nadpisy` a `pismo-text`),
   `false` = v písmech MarMal. **contact_phone / contact_email** chybí → doplní se výchozí kontakt Martina, `""` = bez kontaktu.
 - **Písma:** každý řez samostatný soubor s řezem v názvu (`OpenSans-SemiBold.ttf`). WOFF2 se stejným názvem s `"role": "preview"`

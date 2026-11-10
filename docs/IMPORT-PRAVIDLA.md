@@ -12,7 +12,9 @@ nazev-klienta/
   loga/               ← SVG + PNG ke každé variantě (stejný název, jiná přípona)
   pisma/              ← TTF/OTF/WOFF2, jen volně šiřitelná
   tisk/               ← tiskové PDF (spadávka 3 mm) + náhled JPG/PNG
-  digital/            ← profilovka, covery, šablony příspěvků
+  ikony/              ← ikony značky (SVG, případně PNG)
+  web/                ← ikona webu, náhled pro sdílení (OG), ilustrace a grafika pro web
+  site/               ← profilovka, titulní fotky, šablony příspěvků a stories
   kancelar/           ← e-mailový podpis, šablona dopisu (DOCX)
 ```
 Bez manuálu stačí textový soubor s barvami (název, HEX, CMYK, případně Pantone, jedna věta o použití)
@@ -27,6 +29,21 @@ a pár vět o značce. Na nic se zbytečně nedoptávám. Co chybí, napíšu do
    `logo-negativ`, symbol → `symbol`, jednobarevné → `logo-jednobarevne` (+ vlastní slugy pro další barevné verze),
    písmo nadpisů → `pismo-nadpisy`, písmo textu → `pismo-text`, PDF manuál → `pravidla-pouziti` (titul „Brand manuál (PDF)“).
    Další varianty dostanou vlastní slug (např. `logo-ctvercove`, `logo-ctvercove-negativ`).
+   **Soubory se řadí podle místa použití:**
+
+   | Co | Sekce | Pozice |
+   |---|---|---|
+   | Ikony značky (i celá sada v jednom souboru) | `ikony` | `ikona-{nazev}`, `ikony-vsechny` |
+   | Ikona webu (favicon), náhled pro sdílení (OG) | `web` | `favicon`, `og-obrazek` |
+   | Ilustrace, maskot, grafika a fotky pro web | `web` | `ilustrace-…`, `maskot-…`, `foto-…` |
+   | Profilovka, titulní fotky, šablony příspěvků a stories | `site` | `profilovy-obrazek`, `facebook-cover`, `linkedin-banner`, `sablona-prispevku`, `sablona-stories` |
+   | Tiskoviny, tiskové vzory a dlaždice | `tisk` | |
+   | E-mailový podpis, šablony dokumentů, prezentace | `kancelar` | |
+   | **Jen** brand manuál (PDF, HTML) | `pravidla` | `pravidla-pouziti` |
+
+   Do **Pravidel použití nepatří žádné obrázky**, ani když o nich manuál píše v kapitole „Grafické prvky“ nebo „Fotografie“.
+   Text kapitoly zůstane v textu sekce `pravidla`, soubory jdou do sekce, kde se používají (maskot a ilustrace → `web`).
+   Sekce `digital` (do verze 1.4) už neexistuje, starší balíčky import rozdělí sám.
 4. **Popisy pozic.** Převzít z manuálu, k čemu varianta slouží (1–2 věty), do `specs` rozměr nebo formát,
    `preview_bg` podle podkladu varianty (tmavá varianta = tmavé pozadí náhledu).
 5. **Barvy.** Všechny z manuálu včetně odvozených, CMYK přesně podle manuálu (nepřepočítávat), `role` krátce,
@@ -36,7 +53,9 @@ a pár vět o značce. Na nic se zbytečně nedoptávám. Co chybí, napíšu do
    - `barvy`: logika palety, profil CMYK, poměr barev, kontrasty
    - `typografie`: rodiny písem, náhradní písma, typografická škála (tabulka), zásady / nepoužívat
    - `tisk`: společná pravidla, vizitka, plachta, leták, další tiskoviny
-   - `digital`: sociální sítě, web (tlačítka, štítky), ikony, formáty vizualizací
+   - `ikony`: sada ikon, styl, velikosti, zásady
+   - `web`: ikona webu, náhled pro sdílení, prvky webu (tlačítka, štítky, formuláře), ilustrace, formáty vizualizací
+   - `site`: sociální sítě, profilovka, titulní fotky, příspěvky a stories
    - `kancelar`: e-mailový podpis, dokumenty
    - `pravidla`: grafické prvky, fotografie a vizualizace, obecná pravidla
    Texty věrně podle manuálu, bez vymýšlení nových pravidel. Barvy v tabulkách lze značit `{#HEX}`.
@@ -52,11 +71,26 @@ a pár vět o značce. Na nic se zbytečně nedoptávám. Co chybí, napíšu do
    - Ozdobné nebo skriptové písmo na nadpisy, které se nehodí na tlačítka a navigaci → v brandu `"brand_fonts": false`.
 8. **Náhledy.** K PDF tiskovinám a manuálu vytvořit náhled první strany (`pdftoppm -png -r 60 -f 1 -l 1`)
    a přidat ho s `"role": "preview"`.
-9. **`prune_empty: true`**, aby po importu nezůstaly prázdné pozice ze šablony.
-10. **Hlavička brandu.** `hero_bg` světlé (Vápenec, bílá…), pokud je primární logo pro světlý podklad. `intro` 1–2 věty
+9. **WebP pro web a digitál (povinné).** Ke každému PNG a JPG v sekcích `logo`, `ikony`, `web` a `site` přidat WebP
+   **se stejným názvem** (`logo-primarni.png` → `logo-primarni.webp`) a popiskem, kde je místo PNG/JPG „WebP“
+   (`"PNG 512 px"` → `"WebP 512 px"`, `"PNG · na tmavý podklad"` → `"WebP · na tmavý podklad"`). Aplikace pak WebP použije
+   i jako náhled. Pozice, která má jen SVG (typicky ikony), dostane WebP vykreslené ze SVG.
+   - Loga, symboly a ikony **bezeztrátově**: `cwebp -lossless -z 9 X.png -o X.webp`
+   - Fotky, titulní fotky, příspěvky, OG obrázek a JPG **ztrátově, kvalita 85**: `cwebp -q 85 -alpha_q 100 X.png -o X.webp`
+     (u grafiky s plochými barvami, např. ilustrací, použít bezeztrátový, pokud není víc než o polovinu větší)
+   - Jen SVG: vykreslit do PNG s delší stranou 512 px u ikon a 2048 px u ostatního (`rsvg-convert -w 512 X.svg -o X.png`,
+     u obrázku na výšku `-h`) a pak bezeztrátově do WebP. PNG z vykreslení do balíčku nepatří, jen WebP.
+     SVG s nepřevedeným písmem (`<text>`) vykreslit z PNG, ne ze SVG.
+   - Bez `cwebp` stačí Python: `from PIL import Image; Image.open(src).save(dst, 'WEBP', lossless=True)`
+     (ztrátově `quality=85`). Rozměry WebP jsou stejné jako u PNG.
+   - WebP se nepřidává k tiskovinám, kanceláři, písmům ani k manuálu.
+   Když WebP v balíčku chybí, aplikace ho při importu dopočítá z PNG/JPG (ne ze samotného SVG).
+10. **`prune_empty: true`**, aby po importu nezůstaly prázdné pozice ze šablony.
+11. **Hlavička brandu.** `hero_bg` světlé (Vápenec, bílá…), pokud je primární logo pro světlý podklad. `intro` 1–2 věty
     o projektu + „Vše je tu vždy v aktuální verzi.“ Kontakt: „Martin Malý · MarMal.cz“, poznámka „Potřebujete nový podklad?
     Ozvu se do 2 pracovních dnů.“ Heslo nevyplňovat, vygeneruje se při importu.
-11. **Otestovat** lokálně (PHP + MariaDB, aktuální verze aplikace): import projde bez chyb, prohlédnout klientský
-    pohled a tiskovou verzi. Chybový balíček import odmítne celý a vypíše důvody.
-12. **Předat** `{slug}-import.zip` + krátký souhrn: co se přeneslo, co chybí nebo je potřeba opravit v podkladech.
-13. **Zapsat** klienta do tabulky „Klienti a importy“ v `docs/STAV.md` a commitnout.
+12. **Otestovat** lokálně (PHP + MariaDB, aktuální verze aplikace): import projde bez chyb, prohlédnout klientský
+    pohled a tiskovou verzi. Chybový balíček import odmítne celý a vypíše důvody. Zkontrolovat, že WebP mají všechny pozice
+    v Logu, Ikonách, Webu a Sociálních sítích (přehled klientů jinak ukáže „WebP chybí“) a že v Pravidlech použití je jen manuál.
+13. **Předat** `{slug}-import.zip` + krátký souhrn: co se přeneslo, co chybí nebo je potřeba opravit v podkladech.
+14. **Zapsat** klienta do tabulky „Klienti a importy“ v `docs/STAV.md` a commitnout.

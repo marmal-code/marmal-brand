@@ -74,6 +74,8 @@ $routes = [
     ['POST', '#^/admin/items/(\d+)/upload$#', 'admin_item_upload'],
     ['POST', '#^/admin/items/(\d+)/move$#', 'admin_item_move'],
     ['POST', '#^/admin/items/(\d+)/delete$#', 'admin_item_delete'],
+    ['POST', '#^/admin/items/(\d+)/webp$#', 'admin_item_webp'],
+    ['GET',  '#^/admin/webp$#', 'admin_webp'],
     ['POST', '#^/admin/versions/(\d+)/activate$#', 'admin_version_activate'],
     ['POST', '#^/admin/versions/(\d+)/delete$#', 'admin_version_delete'],
     ['POST', '#^/admin/files/(\d+)/delete$#', 'admin_file_delete'],

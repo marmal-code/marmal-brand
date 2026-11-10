@@ -109,6 +109,7 @@ function admin_dashboard(): void
         'stats' => $stats,
         'activity' => $activity,
         'q' => $q,
+        'webpMissing' => webp_supported() ? webp_missing() : [],
         'updateHint' => is_array($release) && isset($release['version']) && version_compare($release['version'], APP_VERSION, '>') ? $release['version'] : null,
     ]);
 }
@@ -261,6 +262,9 @@ function admin_brand_section(string $id, string $section): void
 {
     require_admin();
     $brand = load_brand_or_404($id);
+    if ($section === 'digital') {
+        redirect('/admin/brands/' . (int) $brand['id'] . '/s/web'); // sekce do verze 1.4
+    }
     if (!isset(SECTIONS[$section])) {
         abort(404);
     }
@@ -284,7 +288,7 @@ function admin_brand_settings(string $id): void
 {
     require_admin();
     $brand = load_brand_or_404($id);
-    render('admin/brand_form', ['title' => $brand['name'] . ' – nastavení', 'nav' => 'clients', 'brand' => $brand, 'errors' => [], 'suggestedPassword' => suggest_password()]);
+    render('admin/brand_form', ['title' => $brand['name'] . ' – nastavení', 'nav' => 'clients', 'brand' => $brand, 'errors' => [], 'suggestedPassword' => suggest_password(), 'webpMissing' => webp_missing((int) $brand['id'])]);
 }
 
 function admin_brand_stats(string $id): void
@@ -481,6 +485,14 @@ function admin_item_save(string $id): void
     }
     $slugIn = trim((string) ($_POST['slug'] ?? ''));
     $slug = $slugIn !== '' && $slugIn !== $item['slug'] ? unique_item_slug((int) $item['brand_id'], $slugIn, (int) $item['id']) : $item['slug'];
+    // Přesun do jiné sekce: písma zůstávají v Typografii, soubory do ní nepatří, barvy nemají pozice.
+    $section = (string) ($_POST['section'] ?? $item['section']);
+    $moved = $section !== $item['section'] && $item['kind'] === 'file' && isset(SECTIONS[$section]) && !in_array($section, ['barvy', 'typografie'], true);
+    if ($moved) {
+        $sort = (int) db_val('SELECT COALESCE(MAX(sort), 0) + 10 FROM items WHERE brand_id = ? AND section = ?', [$item['brand_id'], $section]);
+        db_exec('UPDATE items SET section = ?, sort = ? WHERE id = ?', [$section, $sort, $item['id']]);
+        log_activity((int) $item['brand_id'], 'admin', 'move', $item['title'] . ' → ' . SECTIONS[$section]['title']);
+    }
     $meta = $item['meta'];
     if ($item['kind'] === 'font') {
         $meta['family'] = trim((string) ($_POST['font_family'] ?? ''));
@@ -503,7 +515,13 @@ function admin_item_save(string $id): void
         ]
     );
     touch_brand((int) $item['brand_id']);
-    flash('success', 'Pozice je uložená.' . ($slug !== $item['slug'] ? ' Pozor: změnila se adresa trvalých odkazů.' : ''));
+    $webpNote = '';
+    if ($moved && in_array($section, WEBP_SECTIONS, true) && webp_supported()) {
+        $w = item_add_webp(item_by_id((int) $item['id']));
+        $webpNote = $w['added'] ? ' Doplnil jsem WebP (' . $w['added'] . ').' : ($w['svg'] ? ' WebP doplníte v přehledu „Doplnit WebP“.' : '');
+    }
+    flash('success', 'Pozice je uložená.' . ($moved ? ' Přesunul jsem ji do sekce ' . SECTIONS[$section]['title'] . '.' : '') . $webpNote
+        . ($slug !== $item['slug'] ? ' Pozor: změnila se adresa trvalých odkazů.' : ''));
     redirect('/admin/items/' . $item['id']);
 }
 
@@ -536,6 +554,59 @@ function admin_item_delete(string $id): void
     redirect('/admin/brands/' . $item['brand_id'] . '/s/' . $item['section']);
 }
 
+/* ================= WebP ================= */
+
+/** Přehled pozic bez WebP a spuštění převodu (všichni klienti, nebo ?brand=ID). */
+function admin_webp(): void
+{
+    require_admin();
+    $brandId = (int) ($_GET['brand'] ?? 0);
+    $brand = $brandId ? load_brand_or_404($brandId) : null;
+    render('admin/webp', [
+        'title' => 'Doplnit WebP',
+        'nav' => 'clients',
+        'brand' => $brand,
+        'supported' => webp_supported(),
+        'missing' => webp_missing($brand ? (int) $brand['id'] : null),
+    ]);
+}
+
+/**
+ * Doplní WebP k jedné pozici (JSON). Bez souboru převede PNG/JPG na serveru.
+ * S {upload_id, svg_file} převede PNG, které prohlížeč vykreslil ze SVG.
+ */
+function admin_item_webp(string $id): void
+{
+    require_admin();
+    $item = load_item_or_404($id);
+    $data = json_decode((string) file_get_contents('php://input'), true);
+    $data = is_array($data) ? $data : [];
+    try {
+        if (!webp_supported()) {
+            throw new RuntimeException('Server neumí ukládat WebP (chybí rozšíření GD s podporou WebP).');
+        }
+        if (!empty($data['upload_id'])) {
+            $path = chunk_path((string) $data['upload_id']);
+            if (!is_file($path)) {
+                throw new RuntimeException('Obrázek se nenahrál celý, zkuste to znovu.');
+            }
+            try {
+                item_add_webp_from_svg($item, (int) ($data['svg_file'] ?? 0), $path);
+            } finally {
+                @unlink($path);
+            }
+            json_response(['ok' => true, 'added' => 1, 'skipped' => []]);
+        }
+        $r = item_add_webp($item);
+        if ($r['added']) {
+            log_activity((int) $item['brand_id'], 'admin', 'webp', $item['title'] . ' – WebP (' . $r['added'] . ')');
+        }
+        json_response(['ok' => true, 'added' => $r['added'], 'skipped' => $r['skipped']]);
+    } catch (Throwable $e) {
+        json_response(['ok' => false, 'error' => $e->getMessage()], 400);
+    }
+}
+
 /* ================= Nahrávání ================= */
 
 function admin_upload_chunk(): void
@@ -562,8 +633,16 @@ function admin_item_upload(string $id): void
         $versionId = commit_uploads($item, (array) ($data['files'] ?? []), $mode, trim((string) ($data['note'] ?? '')));
         $v = db_one('SELECT version FROM item_versions WHERE id = ?', [$versionId]);
         log_activity((int) $item['brand_id'], 'admin', 'upload', $item['title'] . ' – verze ' . $v['version']);
-        flash('success', '„' . $item['title'] . '“: soubory nahrané (verze ' . $v['version'] . '). Klient je vidí hned.');
-        json_response(['ok' => true, 'version' => (int) $v['version']]);
+        // WebP k PNG/JPG udělá server hned, SVG bez PNG vykreslí prohlížeč (vrací se jako úkoly).
+        $webp = ['added' => 0, 'skipped' => [], 'svg' => []];
+        if (!empty($data['webp']) && in_array($item['section'], WEBP_SECTIONS, true) && webp_supported()) {
+            $webp = item_add_webp(item_by_id((int) $item['id']));
+        }
+        flash('success', '„' . $item['title'] . '“: soubory nahrané (verze ' . $v['version'] . ')' . ($webp['added'] ? ', WebP doplněno (' . $webp['added'] . ')' : '') . '. Klient je vidí hned.');
+        foreach ($webp['skipped'] as $msg) {
+            flash('error', 'WebP jsem nevytvořil: ' . $msg . '.');
+        }
+        json_response(['ok' => true, 'version' => (int) $v['version'], 'webp_svg' => $webp['svg']]);
     } catch (Throwable $e) {
         json_response(['ok' => false, 'error' => $e->getMessage()], 400);
     }
@@ -682,7 +761,7 @@ function admin_import_run(): void
             @unlink($path);
         }
         $s = $r['stats'];
-        flash('success', sprintf('Klient je naimportovaný: %d pozic, %d souborů, %d barev, %d textů. Heslo pro klienta: %s', $s['items'], $s['files'], $s['colors'], $s['texts'], $r['password']));
+        flash('success', sprintf('Klient je naimportovaný: %d pozic, %d souborů, %d barev, %d textů%s. Heslo pro klienta: %s', $s['items'], $s['files'], $s['colors'], $s['texts'], $s['webp'] ? ', doplněno ' . $s['webp'] . ' WebP' : '', $r['password']));
         json_response(['ok' => true, 'redirect' => '/admin/brands/' . $r['brand_id'] . '/s/logo']);
     } catch (Throwable $e) {
         json_response(['ok' => false, 'error' => $e->getMessage()], 400);

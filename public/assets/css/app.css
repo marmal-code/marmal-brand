@@ -204,6 +204,8 @@ form.inline { display: inline; }
 .queue-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-surface); font-size: 14px; }
 .queue-row .qname { flex: 1 1 200px; min-width: 0; overflow-wrap: anywhere; }
 .queue-row .qbar { flex: 1 1 100%; height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.progress { height: 8px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.progress span { display: block; height: 100%; width: 0; background: var(--blue-700); transition: width .2s; }
 .queue-row .qbar span { display: block; height: 100%; width: 0; background: var(--blue-700); transition: width .2s; }
 .history-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
 .history-item.current { background: var(--success-bg); border-color: var(--success-soft); }
@@ -227,6 +229,15 @@ form.inline { display: inline; }
 .asset-card { overflow: hidden; display: flex; flex-direction: column; }
 .asset-preview { height: 170px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff; border-bottom: 1px solid var(--border); }
 .asset-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.grid-icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(156px, 1fr)); gap: 16px; }
+.icon-tile { overflow: hidden; display: flex; flex-direction: column; }
+.icon-tile-preview { height: 112px; display: flex; align-items: center; justify-content: center; padding: 16px; border-bottom: 1px solid var(--border); }
+.icon-tile-preview img { width: 100%; height: 100%; max-width: 72px; max-height: 72px; object-fit: contain; }
+.icon-tile-body { padding: 12px; display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: space-between; }
+.format-group { display: flex; flex-direction: column; gap: 4px; }
+.format-group + .format-group { margin-top: 4px; }
+.icon-tile .formats { gap: 4px; }
+.icon-tile .formats .btn { padding: 0 8px; font-size: 13px; }
 .asset-body { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 12px; }
 .formats { display: flex; flex-wrap: wrap; gap: 8px; }
 .swatch-top { height: 120px; border-bottom: 1px solid var(--border); }

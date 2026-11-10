@@ -48,13 +48,13 @@ function validate_manifest(array $m, ZipArchive $zip, string $prefix): array
         }
     }
     foreach ((array) ($m['texts'] ?? []) as $sec => $_) {
-        if (!isset(SECTIONS[$sec])) {
+        if (!isset(SECTIONS[$sec]) && $sec !== 'digital') {
             $errors[] = 'texts: neznámá sekce „' . $sec . '“.';
         }
     }
     foreach ((array) ($m['items'] ?? []) as $n => $it) {
         $label = 'items[' . $n . '] (' . ($it['title'] ?? '?') . ')';
-        if (!isset(SECTIONS[$it['section'] ?? '']) || ($it['section'] ?? '') === 'barvy') {
+        if ((!isset(SECTIONS[$it['section'] ?? '']) && ($it['section'] ?? '') !== 'digital') || ($it['section'] ?? '') === 'barvy') {
             $errors[] = $label . ': neznámá sekce „' . ($it['section'] ?? '') . '“.';
         }
         if (trim((string) ($it['title'] ?? '')) === '' && trim((string) ($it['slug'] ?? '')) === '') {
@@ -73,6 +73,27 @@ function validate_manifest(array $m, ZipArchive $zip, string $prefix): array
 }
 
 /**
+ * Balíčky připravené do verze 1.4 mají jednu sekci „digital“. Pozice rozdělí podle slugu,
+ * text podle nadpisů (stejně jako migrace 007 u stávajících klientů).
+ */
+function upgrade_legacy_manifest(array $m): array
+{
+    foreach ((array) ($m['items'] ?? []) as $n => $it) {
+        if (($it['section'] ?? '') === 'digital') {
+            $m['items'][$n]['section'] = legacy_digital_section(slugify(trim((string) ($it['slug'] ?? '')) ?: (string) ($it['title'] ?? '')));
+        }
+    }
+    if (isset($m['texts']['digital'])) {
+        $old = (string) $m['texts']['digital'];
+        unset($m['texts']['digital']);
+        foreach (split_legacy_digital_text($old) as $sec => $part) {
+            $m['texts'][$sec] = trim((string) ($m['texts'][$sec] ?? '')) === '' ? $part : rtrim((string) $m['texts'][$sec]) . "\n\n" . $part;
+        }
+    }
+    return $m;
+}
+
+/**
  * Založí nového klienta z importního ZIPu.
  * Vrací ['brand_id' => int, 'password' => string, 'stats' => [...]].
  */
@@ -85,6 +106,7 @@ function import_brand_package(string $zipFile): array
     }
     [$prefix, $m] = read_manifest($zip);
     $errors = validate_manifest($m, $zip, $prefix);
+    $m = upgrade_legacy_manifest($m);
     if ($errors) {
         $zip->close();
         throw new RuntimeException("Import se nespustil, v balíčku jsou chyby:\n– " . implode("\n– ", $errors));
@@ -112,7 +134,8 @@ function import_brand_package(string $zipFile): array
         ]
     );
 
-    $stats = ['colors' => 0, 'texts' => 0, 'items' => 0, 'files' => 0, 'pruned' => 0];
+    $stats = ['colors' => 0, 'texts' => 0, 'items' => 0, 'files' => 0, 'pruned' => 0, 'webp' => 0];
+    $webp = webp_supported();
     try {
         sync_template($brandId);
 
@@ -194,6 +217,10 @@ function import_brand_package(string $zipFile): array
                 $item = item_by_id($itemId);
                 commit_uploads($item, $uploads, 'new', trim((string) ($it['note'] ?? '')) ?: 'Import');
                 $stats['files'] += count($uploads);
+                // Chybějící WebP k PNG/JPG dopočítá server (balíček by je měl mít, viz docs/IMPORT-PRAVIDLA.md).
+                if ($webp && in_array($section, WEBP_SECTIONS, true)) {
+                    $stats['webp'] += item_add_webp(item_by_id($itemId))['added'];
+                }
             }
         }
 
@@ -212,7 +239,7 @@ function import_brand_package(string $zipFile): array
     }
     $zip->close();
     touch_brand($brandId);
-    log_activity($brandId, 'admin', 'import', sprintf('Import: %d barev, %d textů, %d pozic, %d souborů', $stats['colors'], $stats['texts'], $stats['items'], $stats['files']));
+    log_activity($brandId, 'admin', 'import', sprintf('Import: %d barev, %d textů, %d pozic, %d souborů', $stats['colors'], $stats['texts'], $stats['items'], $stats['files']) . ($stats['webp'] ? ', ' . $stats['webp'] . ' WebP doplněno' : ''));
     return ['brand_id' => $brandId, 'password' => $password, 'stats' => $stats];
 }
 

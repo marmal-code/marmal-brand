@@ -108,6 +108,9 @@ function client_logout(string $slug): void
 function client_section(string $slug, string $section): void
 {
     $brand = load_client_brand($slug);
+    if ($section === 'digital') {
+        redirect(brand_url($brand, '/s/web')); // sekce „Digitál a sítě“ do verze 1.4
+    }
     if (!isset(SECTIONS[$section])) {
         abort(404);
     }
@@ -188,6 +191,9 @@ function client_zip(string $slug, ?string $section = null): void
     $access = brand_access($brand);
     if (!$access) {
         abort(403, 'Pro stažení se nejdřív přihlaste.');
+    }
+    if ($section === 'digital') {
+        redirect(brand_url($brand, '/zip/web'));
     }
     if ($section !== null && !isset(SECTIONS[$section])) {
         abort(404);

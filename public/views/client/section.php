@@ -49,6 +49,14 @@ $empty = !$hasFiles && $text === '';
   <div class="grid-cards">
     <?php foreach ($items as $it): ?><?= client_asset_card($brand, $it) ?><?php endforeach; ?>
   </div>
+<?php elseif ($section === 'ikony'): ?>
+  <div class="grid-icons">
+    <?php foreach ($items as $it): ?><?= client_icon_tile($brand, $it) ?><?php endforeach; ?>
+  </div>
+<?php elseif ($section === 'web' || $section === 'site'): ?>
+  <div class="grid-cards">
+    <?php foreach ($items as $it): ?><?= client_asset_card($brand, $it, true) ?><?php endforeach; ?>
+  </div>
 <?php elseif ($section === 'typografie'): ?>
   <div class="grid-fonts">
     <?php foreach ($items as $it): ?><?= client_font_card($brand, $it) ?><?php endforeach; ?>

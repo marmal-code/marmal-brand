@@ -107,6 +107,21 @@ function file_ext(string $name): string
 
 function pick_preview(array $files): ?array
 {
+    $p = pick_preview_source($files);
+    // Místo PNG/JPG se jako náhled použije WebP se stejným názvem (menší, rychlejší načítání).
+    if ($p && in_array(file_ext($p['stored_name']), ['png', 'jpg', 'jpeg'], true)) {
+        $stem = pathinfo($p['stored_name'], PATHINFO_FILENAME);
+        foreach ($files as $f) {
+            if (file_ext($f['stored_name']) === 'webp' && pathinfo($f['stored_name'], PATHINFO_FILENAME) === $stem) {
+                return $f;
+            }
+        }
+    }
+    return $p;
+}
+
+function pick_preview_source(array $files): ?array
+{
     // 1) soubor nahraný jen jako náhled, 2) soubor ke stažení označený jako náhled, 3) první obrázek
     foreach ($files as $f) {
         if ($f['role'] === 'preview' && in_array(file_ext($f['stored_name']), IMAGE_EXT, true)) {
@@ -397,8 +412,16 @@ function new_share_token(): string
 
 function section_texts(int $brandId): array
 {
+    $rows = db_all('SELECT section, body FROM section_texts WHERE brand_id = ?', [$brandId]);
+    foreach ($rows as $r) {
+        if ($r['section'] === 'digital') {
+            migrate_legacy_digital_text($brandId);
+            $rows = db_all('SELECT section, body FROM section_texts WHERE brand_id = ?', [$brandId]);
+            break;
+        }
+    }
     $out = [];
-    foreach (db_all('SELECT section, body FROM section_texts WHERE brand_id = ?', [$brandId]) as $r) {
+    foreach ($rows as $r) {
         if (trim((string) $r['body']) !== '') {
             $out[$r['section']] = (string) $r['body'];
         }
@@ -418,6 +441,44 @@ function save_section_text(int $brandId, string $section, string $body): void
          ON DUPLICATE KEY UPDATE body = VALUES(body), updated_at = NOW()',
         [$brandId, $section, $body]
     );
+}
+
+/** Připojí text na konec textu sekce (prázdná sekce = nový text). */
+function append_section_text(int $brandId, string $section, string $body): void
+{
+    $current = (string) db_val('SELECT body FROM section_texts WHERE brand_id = ? AND section = ?', [$brandId, $section]);
+    save_section_text($brandId, $section, trim($current) === '' ? $body : rtrim($current) . "\n\n" . trim($body));
+}
+
+/**
+ * Jednorázový převod textu staré sekce „Digitál a sítě“ (do verze 1.4) do sekcí Ikony, Web a Sociální sítě.
+ * Spustí se sám při prvním načtení textů brandu po aktualizaci na 1.5.0. Pozice přesunula migrace 007.
+ */
+function migrate_legacy_digital_text(int $brandId): void
+{
+    $pdo = db();
+    $own = !$pdo->inTransaction();
+    try {
+        if ($own) {
+            $pdo->beginTransaction();
+        }
+        // Zámek řádku: když stránku otevřou dva lidé naráz, text se rozdělí jen jednou.
+        $body = db_val('SELECT body FROM section_texts WHERE brand_id = ? AND section = ? FOR UPDATE', [$brandId, 'digital']);
+        if ($body !== null && $body !== false) {
+            foreach (split_legacy_digital_text((string) $body) as $section => $part) {
+                append_section_text($brandId, $section, $part);
+            }
+            db_exec('DELETE FROM section_texts WHERE brand_id = ? AND section = ?', [$brandId, 'digital']);
+        }
+        if ($own) {
+            $pdo->commit();
+        }
+    } catch (Throwable $e) {
+        if ($own && $pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
+        error_log('[brand-hub] migrate_legacy_digital_text: ' . $e->getMessage());
+    }
 }
 
 /* ---------- Odstíny barev (tóny s bílou) ---------- */
@@ -463,6 +524,9 @@ function view_page_label(string $page): string
     }
     if ($page === 'manual') {
         return 'Tisková verze (PDF)';
+    }
+    if ($page === 'digital') {
+        return 'Digitál a sítě (do verze 1.4)';
     }
     return SECTIONS[$page]['title'] ?? $page;
 }

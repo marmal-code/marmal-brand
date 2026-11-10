@@ -126,6 +126,18 @@ $num = 0;
       <?php endforeach; ?>
     </div>
 
+  <?php elseif ($k === 'ikony'): ?>
+    <div class="p-icons">
+      <?php foreach ($bySection['ikony'] ?? [] as $it): ?>
+        <div class="p-icon">
+          <div class="p-icon-preview" style="background: <?= e($it['preview_bg'] ?: '#FFFFFF') ?>">
+            <?php if ($it['preview']): ?><img src="<?= e(client_file_url($brand, $it['preview'], true)) ?>" alt=""><?php endif; ?>
+          </div>
+          <b class="tiny"><?= e(preg_replace('/^ikon[ay]\s*[·:–-]\s*/iu', '', (string) $it['title']) ?: $it['title']) ?></b>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
   <?php else: ?>
     <div class="p-list">
       <?php foreach ($bySection[$k] ?? [] as $it): ?>

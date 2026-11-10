@@ -31,6 +31,7 @@ require __DIR__ . '/brands.php';
 require __DIR__ . '/markdown.php';
 require __DIR__ . '/importer.php';
 require __DIR__ . '/files.php';
+require __DIR__ . '/webp.php';
 require __DIR__ . '/migrator.php';
 require __DIR__ . '/backup.php';
 require __DIR__ . '/updater.php';

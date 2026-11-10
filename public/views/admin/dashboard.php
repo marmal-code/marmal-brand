@@ -20,6 +20,14 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
   <div class="alert alert-info"><?= icon('refresh') ?><div>Je k dispozici nová verze aplikace <b><?= e($updateHint) ?></b>. <a href="/admin/settings/update">Přejít na aktualizace</a></div></div>
 <?php endif; ?>
 
+<?php if ($webpMissing):
+    $webpBrands = count(array_unique(array_column($webpMissing, 'brand_id'))); ?>
+  <div class="alert alert-info"><?= icon('image') ?><div class="row-between" style="flex: 1">
+    <span>WebP chybí u <b><?= count($webpMissing) ?></b> <?= count($webpMissing) === 1 ? 'pozice' : 'pozic' ?> (<?= $webpBrands ?> <?= $webpBrands === 1 ? 'klient' : ($webpBrands < 5 ? 'klienti' : 'klientů') ?>). Doplním je ke všem PNG, JPG a samostatným SVG v Logu, Ikonách, Webu a Sociálních sítích.</span>
+    <a class="btn btn-secondary btn-sm" href="/admin/webp">Doplnit WebP</a>
+  </div></div>
+<?php endif; ?>
+
 <div class="grid-stats">
   <div class="card card-pad-sm"><div class="stat-label">Aktivní brandy</div><div class="stat-value"><?= $stats['brands'] ?></div></div>
   <div class="card card-pad-sm"><div class="stat-label">Souborů ke stažení</div><div class="stat-value"><?= $stats['files'] ?></div></div>

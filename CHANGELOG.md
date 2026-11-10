@@ -1,5 +1,20 @@
 # Změny
 
+## 1.5.0 – 10. 11. 2026
+- **Nové sekce místo „Digitál a sítě“:** Ikony, Web a Sociální sítě. Pořadí sekcí: Logo, Barvy, Typografie, Ikony, Web, Sociální sítě, Tisk, Kancelář, Pravidla použití
+- Migrace `007_rozdeleni_digitalu.sql` přesune pozice stávajících klientů: `ikona-…` → Ikony, profilovka, titulní fotky, příspěvky a stories → Sociální sítě, ostatní (ikona webu, náhled pro sdílení…) → Web. Stejně se upraví šablona sekcí
+- Text staré sekce se rozdělí podle nadpisů `##` sám při prvním otevření klienta (kapitola o ikonách → Ikony, o sociálních sítích, profilovce, titulní fotce a příspěvcích → Sociální sítě, zbytek → Web)
+- Kukátko do přírody: maskot žabák a ilustrace ročních období se přesunou z Pravidel použití do Webu
+- Staré adresy `/s/digital` a `/zip/digital` přesměrují na Web. Import přijme i starší balíčky se sekcí `digital` a rozdělí je stejně
+- **Přesun pozice do jiné sekce:** v detailu pozice nové pole „Sekce“. Soubory, verze i trvalé odkazy zůstanou
+- Klientský pohled: ikony jako mřížka malých dlaždic, Web a Sociální sítě jako karty s rozměrem. Formáty s variantou v popisku („SVG · na tmavý podklad“) se seskupí pod variantu, tlačítka ukazují jen formát. Tisková verze má ikony v mřížce po šesti
+- **WebP pro web a digitální výstupy:** ke každému PNG a JPG v sekcích Logo, Ikony, Web a Sociální sítě vytvoří server WebP se stejným názvem a přidá ho k aktuální verzi (nová verze nevzniká). Loga a ikony bezeztrátově, JPG ztrátově v kvalitě 85, ostatní PNG bezeztrátově, pokud není o víc než polovinu větší než ztrátové. SVG bez PNG vykreslí do PNG prohlížeč administrátora a server ho převede stejně
+- WebP se použije jako náhled místo PNG/JPG se stejným názvem, takže se klientský pohled načítá rychleji. Trvalé odkazy `…/f/{pozice}.webp` fungují samy
+- Stránka **Doplnit WebP** (`/admin/webp`, pro jednoho klienta `?brand=ID`) s průběhem převodu. Upozornění „WebP chybí“ v přehledu klientů a v sekci, tlačítko v nastavení klienta
+- Při nahrávání do Loga, Ikon, Webu a Sociálních sítí volba „Vytvořit i WebP“ (zapnutá). Import dopočítá chybějící WebP k PNG/JPG
+- Kontrola serveru ukazuje „GD s podporou WebP“ (nepovinné, bez něj WebP jen nahrát ručně)
+- Pravidla importu: WebP povinně u Loga, Ikon, Webu a Sociálních sítí, soubory podle místa použití, do Pravidel použití jen manuál. Vzorové manifesty převedené na nové sekce
+
 ## 1.4.1 – 1. 11. 2026
 - Přehled klientů: akce jako ikony s popiskem pod nimi. Upravit (ozubené kolo), Náhled (lupa), Kopírovat (odkaz na manuál) a Smazat (koš, červeně)
 - Sloupec „Vyplněno“ na dva řádky: nahoře pruh, pod ním počet sekcí, takže tabulka je užší

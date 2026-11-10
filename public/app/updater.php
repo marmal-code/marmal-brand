@@ -230,6 +230,7 @@ function requirements(): array
         ['Rozšíření fileinfo', class_exists('finfo'), 'Rozpoznání typu souborů'],
         ['Rozšíření sodium', function_exists('sodium_crypto_secretbox'), 'Šifrování tokenu'],
         ['Rozšíření mbstring', function_exists('mb_strtolower'), 'Práce s češtinou'],
+        ['GD s podporou WebP', webp_supported(), webp_supported() ? 'Převod PNG a JPG do WebP' : 'Nepovinné. Bez něj WebP nevytvořím, nahrát ho jde dál.'],
         ['Zápis do datové složky', $writable(DATA_DIR), DATA_DIR],
         ['Zápis do webové složky', is_writable(APP_ROOT), 'Potřeba pro aktualizace'],
     ];

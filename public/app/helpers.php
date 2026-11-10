@@ -6,8 +6,10 @@ const SECTIONS = [
     'logo'       => ['title' => 'Logo',             'icon' => 'image',    'lead' => 'Všechny varianty loga v aktuální verzi.'],
     'barvy'      => ['title' => 'Barvy',            'icon' => 'palette',  'lead' => 'Barevná paleta značky s hodnotami pro web i tisk.'],
     'typografie' => ['title' => 'Typografie',       'icon' => 'type',     'lead' => 'Písma značky a jejich použití.'],
+    'ikony'      => ['title' => 'Ikony',            'icon' => 'shapes',   'lead' => 'Ikony značky pro web, prezentace a tiskoviny.'],
+    'web'        => ['title' => 'Web',              'icon' => 'monitor',  'lead' => 'Ikona webu, náhled pro sdílení a grafika pro web.'],
+    'site'       => ['title' => 'Sociální sítě',    'icon' => 'share',    'lead' => 'Profilovky, titulní fotky a šablony příspěvků.'],
     'tisk'       => ['title' => 'Tisk',             'icon' => 'printer',  'lead' => 'Tiskoviny připravené pro tiskárnu.'],
-    'digital'    => ['title' => 'Digitál a sítě',   'icon' => 'monitor',  'lead' => 'Podklady pro web a sociální sítě.'],
     'kancelar'   => ['title' => 'Kancelář',         'icon' => 'mail',     'lead' => 'E-mailový podpis a šablony dokumentů.'],
     'pravidla'   => ['title' => 'Pravidla použití', 'icon' => 'shield',   'lead' => 'Jak se značkou správně zacházet.'],
 ];
@@ -19,6 +21,53 @@ const ALLOWED_EXT = [
     'doc', 'docx', 'dotx', 'xls', 'xlsx', 'ppt', 'pptx', 'potx', 'odt', 'html', 'htm', 'txt', 'mp4', 'mov', 'webm',
 ];
 const IMAGE_EXT = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'gif'];
+
+/** Sekce, ve kterých má každý obrázek i verzi WebP (web a digitální výstupy). */
+const WEBP_SECTIONS = ['logo', 'ikony', 'web', 'site'];
+/** Sekce, kde se WebP ukládá bezeztrátově (ostré hrany, průhlednost). Jinde rozhoduje velikost výsledku. */
+const WEBP_LOSSLESS_SECTIONS = ['logo', 'ikony'];
+
+/*
+ * Do verze 1.4 byla jedna sekce „Digitál a sítě“ (klíč digital). Od 1.5.0 se dělí na Ikony, Web a Sociální sítě.
+ * Stejná pravidla používá migrace 007_rozdeleni_digitalu.sql (pozice) a import starších balíčků.
+ */
+function legacy_digital_section(string $slug): string
+{
+    if (!str_starts_with($slug, 'ikona-webu') && preg_match('/(^|-)ikon[ay]?(-|$)/', $slug)) {
+        return 'ikony';
+    }
+    if (preg_match('/^(profilov|facebook|linkedin|instagram|youtube|tiktok|sablona-prispevku|sablona-stories|prispevek|stories|avatar|titulni-fotka)/', $slug)) {
+        return 'site';
+    }
+    return 'web';
+}
+
+/**
+ * Rozdělí text staré sekce „Digitál a sítě“ podle nadpisů ## do nových sekcí.
+ * Kapitola o ikonách → ikony, o sociálních sítích, profilovce, titulní fotce a příspěvcích → site, zbytek → web.
+ * Podnadpisy ### zůstávají u své kapitoly. Vrací [sekce => Markdown].
+ */
+function split_legacy_digital_text(string $md): array
+{
+    $md = trim(str_replace(["\r\n", "\r"], "\n", $md));
+    $out = [];
+    foreach (preg_split('/^(?=## )/m', $md) ?: [] as $chunk) {
+        if (trim($chunk) === '') {
+            continue;
+        }
+        $target = 'web';
+        if (str_starts_with($chunk, '## ')) {
+            $head = mb_strtolower(strtok(substr($chunk, 3), "\n") ?: '');
+            if (str_contains($head, 'ikon') && !str_contains($head, 'ikona webu')) {
+                $target = 'ikony';
+            } elseif (preg_match('/sociáln|sítě|profilov|titulní|příspěv|stories|facebook|instagram|linkedin|avatar/u', $head)) {
+                $target = 'site';
+            }
+        }
+        $out[$target] = isset($out[$target]) ? $out[$target] . "\n\n" . trim($chunk) : trim($chunk);
+    }
+    return $out;
+}
 const FONT_EXT = ['woff2', 'woff', 'ttf', 'otf'];
 
 /** Výchozí kontakt v kartě „Brand spravuje“ (nový klient, import bez kontaktu). */
@@ -343,6 +392,8 @@ function icon(string $name, int $size = 20, string $extra = ''): string
         'activity' => '<path d="M3 12h4l3-8 4 16 3-8h4"/>',
         'logout'   => '<path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l-5-5 5-5M5 12h11"/>',
         'printer'  => '<path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/>',
+        'shapes'   => '<circle cx="7" cy="7" r="3.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><path d="M7 13.5l3.8 6.5H3.2zM17 13.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7z"/>',
+        'share'    => '<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/>',
         'monitor'  => '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
         'phone'    => '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
         'mail'     => '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',

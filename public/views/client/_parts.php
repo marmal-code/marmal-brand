@@ -11,7 +11,33 @@ function client_format_buttons(array $brand, array $item): string
     return $out;
 }
 
-function client_asset_card(array $brand, array $item): string
+/**
+ * Formáty seskupené podle varianty z popisku „SVG · na světlý podklad“: varianta jako popisek, tlačítka jen s formátem.
+ * Bez „ · “ v popiscích vrací stejná tlačítka jako client_format_buttons().
+ */
+function client_format_groups(array $brand, array $item): string
+{
+    $groups = [];
+    foreach ($item['files'] as $f) {
+        $parts = explode(' · ', (string) $f['label'], 2);
+        $groups[trim($parts[1] ?? '')][] = $f + ['short' => trim($parts[0])];
+    }
+    if (count($groups) === 1 && isset($groups[''])) {
+        return '<div class="formats">' . client_format_buttons($brand, $item) . '</div>';
+    }
+    $out = '';
+    foreach ($groups as $variant => $files) {
+        $out .= '<div class="format-group">' . ($variant !== '' ? '<span class="tiny muted">' . e($variant) . '</span>' : '') . '<div class="formats">';
+        foreach ($files as $f) {
+            $out .= '<a class="btn btn-ghost btn-sm" href="' . e(client_file_url($brand, $f)) . '" title="' . e($f['label'] . ' · ' . human_size((int) $f['size'])) . '">'
+                . icon('download', 16) . e($f['short']) . '</a>';
+        }
+        $out .= '</div></div>';
+    }
+    return $out;
+}
+
+function client_asset_card(array $brand, array $item, bool $specs = false): string
 {
     $bg = $item['preview_bg'] ?: '#FFFFFF';
     ob_start(); ?>
@@ -26,9 +52,31 @@ function client_asset_card(array $brand, array $item): string
       <div class="asset-body">
         <div>
           <div style="font-weight: var(--fw-medium)"><?= e($item['title']) ?></div>
+          <?php if ($specs && $item['specs']): ?><div class="tiny muted"><?= e($item['specs']) ?></div><?php endif; ?>
           <?php if ($item['description']): ?><div class="small muted"><?= e($item['description']) ?></div><?php endif; ?>
         </div>
-        <div class="formats"><?= client_format_buttons($brand, $item) ?></div>
+        <?= client_format_groups($brand, $item) ?>
+      </div>
+    </article>
+    <?php return (string) ob_get_clean();
+}
+
+/** Malá dlaždice ikony (sekce Ikony): náhled, název bez předpony „Ikona ·“, formáty. */
+function client_icon_tile(array $brand, array $item): string
+{
+    $title = preg_replace('/^ikon[ay]\s*[·:–-]\s*/iu', '', (string) $item['title']) ?: $item['title'];
+    ob_start(); ?>
+    <article class="card icon-tile" id="<?= e($item['slug']) ?>"<?= $item['description'] ? ' title="' . e($item['description']) . '"' : '' ?>>
+      <div class="icon-tile-preview" style="background: <?= e($item['preview_bg'] ?: '#FFFFFF') ?>">
+        <?php if ($item['preview']): ?>
+          <img src="<?= e(client_file_url($brand, $item['preview'], true)) ?>" alt="<?= e($title) ?>" loading="lazy">
+        <?php else: ?>
+          <span class="muted"><?= icon('file', 32) ?></span>
+        <?php endif; ?>
+      </div>
+      <div class="icon-tile-body">
+        <div class="small" style="font-weight: var(--fw-medium)"><?= e($title) ?></div>
+        <?= client_format_groups($brand, $item) ?>
       </div>
     </article>
     <?php return (string) ob_get_clean();

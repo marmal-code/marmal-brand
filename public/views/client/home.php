@@ -13,7 +13,7 @@ if (!$primary) {
     }
 }
 $dark = is_dark($brand['hero_bg']);
-$tiles = ['tisk', 'digital', 'kancelar', 'pravidla'];
+$tiles = ['ikony', 'web', 'site', 'tisk', 'kancelar', 'pravidla'];
 $hasAny = $bySection || $colors;
 ?>
 <section class="hero<?= $dark ? ' dark' : '' ?>" style="background: <?= e($brand['hero_bg']) ?>">
