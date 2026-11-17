@@ -915,6 +915,25 @@
     },
     {
       "section": "web",
+      "slug": "zabak-404",
+      "title": "Žabák · Cedule 404",
+      "description": "Drží ceduli s číslem 404, pro stránku „nenalezeno“ na webu. Na stránce nebo listu je jen jeden žabák.",
+      "specs": "SVG 1280 × 1280 px, WebP 2048 × 2048 px, průhledné pozadí",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FAF8EF",
+      "files": [
+        {
+          "path": "web/zabak/10_zaba_404.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "web/zabak/10_zaba_404.webp",
+          "label": "WebP 2048 px"
+        }
+      ]
+    },
+    {
+      "section": "web",
       "slug": "ilustrace-jarni-louka",
       "title": "Ilustrace · Jarní louka",
       "description": "Scéna v okénku pro témata na jaro. Neořezávat, nepsat přes ni text ani nedávat logo.",
