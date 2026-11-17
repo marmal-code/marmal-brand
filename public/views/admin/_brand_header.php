@@ -17,6 +17,7 @@ $symbol = brand_symbol((int) $brand['id']);
       </div>
     </div>
     <div class="row">
+      <a class="btn btn-ghost" href="/admin/brands/<?= (int) $brand['id'] ?>/doplnit"><?= icon('upload', 18) ?>Doplnit z balíčku</a>
       <a class="btn btn-secondary" href="<?= e(brand_url($brand)) ?>" target="_blank" rel="noopener"><?= icon('eye', 18) ?>Náhled jako klient</a>
     </div>
   </div>

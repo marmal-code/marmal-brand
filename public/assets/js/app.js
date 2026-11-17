@@ -375,7 +375,7 @@
         });
       });
       chain.then(function () {
-        statusEl.textContent = simple ? 'Importuji… může to chvíli trvat.' : 'Ukládám…';
+        statusEl.textContent = simple ? (box.getAttribute('data-commit-status') || 'Importuji… může to chvíli trvat.') : 'Ukládám…';
         return fetch(commitUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrf },

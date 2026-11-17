@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.5.0** (10. 11. 2026)
+**Aktuální verze: 1.6.0** (17. 11. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,12 +34,17 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.5.0)
+## Co aplikace umí (1.6.0)
 
 ### Administrace (`/admin`)
 - Přehled klientů: vyplněnost sekcí (pruh + počet sekcí), **Viděno** (očíčko + počet zobrazení celkem, den poslední návštěvy, odkaz na statistiky), poslední změna, typ přístupu, statistiky (zobrazení a stažení za 30 dní, neúplné brandy), aktivita. Akce jako ikony s popiskem: Upravit (ozubené kolo), Náhled (lupa), Kopírovat odkaz, Smazat (koš, vede na potvrzení v nastavení klienta).
 - Nový klient: název, adresa (slug), úvodní text, barva úvodní plochy, kontakt, heslo (návrh se generuje).
 - **Import klienta ze ZIPu** (Klienti → Importovat) a **export klienta** do stejného formátu (nastavení klienta).
+- **Doplnit z balíčku** (od 1.6.0, tlačítko v hlavičce klienta a v nastavení, `/admin/brands/{id}/doplnit`): ZIP ve formátu importu
+  doplní existujícího klienta – nové pozice, nové verze nebo soubory k aktuální verzi (`"mode": "append"`), úpravy popisů,
+  přesun sekce, barvy (párování podle názvu, jinak HEX) a texty (`texts` nahradí, `texts_append` připojí). Nejdřív kontrola
+  a přehled změn (`supplement_plan()`), po potvrzení `supplement_brand_package()` v transakci (při chybě vrátí DB i soubory).
+  Nic nemaže, nastavení klienta nemění. Nepotvrzený balíček leží v `brand-data/tmp/doplneni-{brand}-{token}.zip`, maže se po dni.
 - Editor brandu, záložky sekcí: Logo, Barvy, Typografie, Ikony, Web, Sociální sítě, Tisk, Kancelář, Pravidla použití + Statistiky + Přístup a nastavení.
   (Do verze 1.4 byla místo Ikon, Webu a Sociálních sítí jedna sekce „Digitál a sítě“, viz níže.)
   - Pozice (položky) ze šablony a vlastní pozice, řazení nahoru/dolů, povinné/volitelné.
@@ -112,7 +117,7 @@ public/app/brands.php         brandy, položky + soubory aktuální verze, náhl
 public/app/files.php          nahrávání po částech, commit_uploads, stream_file (CSP sandbox), ZIP, názvy souborů
 public/app/webp.php           WebP: webp_supported, item_webp_plan, webp_encode (GD), item_add_webp, item_add_webp_from_svg, webp_missing
 public/app/markdown.php       bezpečný Markdown pro texty sekcí
-public/app/importer.php       import_brand_package(), upgrade_legacy_manifest() (sekce digital), send_brand_export()
+public/app/importer.php       import_brand_package(), upgrade_legacy_manifest() (sekce digital), supplement_plan(), supplement_brand_package() (doplnění), send_brand_export()
 public/app/migrator.php       migrace z public/migrations/NNN_*.sql
 public/app/backup.php         zálohy DB+kódu, obnova, install_code_tree, údržba
 public/app/updater.php        GitHub API, run_update → apply_update_package, kontrola serveru
@@ -151,7 +156,7 @@ text sekce rozdělí `section_texts()` při prvním načtení podle nadpisů `##
 Import starších balíčků dělá totéž (`upgrade_legacy_manifest()`). Statistiky zobrazení ze staré sekce mají popisek „Digitál a sítě (do verze 1.4)“.
 
 ### Důležité routy
-Admin: `/admin`, `/admin/import`, `/admin/webp`, `/admin/items/{id}/webp` (POST), `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/stats`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
+Admin: `/admin`, `/admin/import`, `/admin/brands/{id}/doplnit` (+ `/{token}` přehled a potvrzení), `/admin/webp`, `/admin/items/{id}/webp` (POST), `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/stats`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
 `/admin/items/{id}`, `/admin/settings` (profil, 2FA), `/admin/settings/2fa`, `/admin/settings/update`, `/admin/template`, `/admin/activity`.
 Přihlášení: `/login`, `/login/2fa`.
 Klient: `/b/{slug}`, `/b/{slug}/s/{sekce}`, `/b/{slug}/file/{id}`, `/b/{slug}/f/{pozice}.{ext}`, `/b/{slug}/zip[/{sekce}]`, `/b/{slug}/manual`.
@@ -175,11 +180,12 @@ Mockup obrazovek: artefakt „Brand Hub – mockup“ (claude.ai).
 Od 1.5.0 mají všechny importy WebP u Loga, Ikon, Webu a Sociálních sítí. U klientů naimportovaných dřív je doplní **Doplnit WebP**.
 Vzorové manifesty v `docs/priklady/` jsou převedené na nové sekce (bez WebP souborů, ty vzniknou v aplikaci).
 
-Postup přípravy importů: `docs/IMPORT-PRAVIDLA.md`. Formát balíčku: `docs/IMPORT.md`.
+Postup přípravy importů i doplnění: `docs/IMPORT-PRAVIDLA.md`. Formát balíčku: `docs/IMPORT.md` (doplnění v části „Doplnění existujícího klienta“).
 Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/blue-team.brand.json`, `docs/priklady/kostka-stav.brand.json`, `docs/priklady/kukatko-do-prirody.brand.json`, `docs/priklady/cargo-care.brand.json`.
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.6.0** (17. 11. 2026): Doplnit z balíčku – více věcí najednou do existujícího klienta, s přehledem změn před potvrzením.
 - **1.5.0** (10. 11. 2026): sekce Digitál a sítě rozdělená na Ikony, Web a Sociální sítě, přesun pozice do jiné sekce, WebP ke všem PNG/JPG v Logu, Ikonách, Webu a Sítích (+ ze SVG v prohlížeči), WebP jako náhled, stránka Doplnit WebP, mřížka ikon u klienta.
 - **1.4.1** (1. 11. 2026): akce v přehledu klientů jako ikony s popiskem, sloupec Vyplněno na dva řádky.
 - **1.4.0** (1. 11. 2026): počítání zobrazení klientských stránek, sloupec „Viděno“ s očíčkem v přehledu klientů, záložka „Statistiky“ v detailu klienta.

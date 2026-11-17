@@ -1,5 +1,14 @@
 # Změny
 
+## 1.6.0 – 17. 11. 2026
+- **Doplnit z balíčku:** u existujícího klienta jde najednou přidat víc věcí jedním ZIPem ve stejném formátu jako import (`brand.json` + soubory). Tlačítko „Doplnit z balíčku“ je v hlavičce klienta a v nastavení klienta (Další akce), adresa `/admin/brands/{id}/doplnit`
+- Po nahrání balíček nejdřív zkontroluji a ukážu přehled změn (nová pozice, vyplní prázdnou pozici, nová verze, přidá k aktuální verzi, jen úprava popisu, přesun sekce, nové a upravené barvy, texty sekcí). Klient se změní až po potvrzení, zrušení nic nemění. Nepotvrzené balíčky se mažou po jednom dni
+- Nic se nemaže: pozice se stejným slugem dostane novou verzi (stará zůstane v historii), s `"mode": "append"` se soubory přidají k aktuální verzi. Pozice bez souborů jen upraví popis, rozměr, štítky apod. (mění se jen uvedená pole). Nové pozice se řadí na konec sekce
+- Barvy: stejný název (jinak stejný HEX) = úprava uvedených polí, jinak nová barva na konec palety. Texty: `texts` nahradí text sekce, nové `texts_append` ho doplní na konec
+- Nastavení klienta (název, heslo, kontakt…) doplnění nemění. Když je balíček připravený pro jiného klienta (`brand.slug`), upozorním na to
+- Doplnění běží v transakci: při chybě se databáze i soubory vrátí do původního stavu. Chybějící WebP k PNG/JPG se dopočítá jako u importu
+- Import: kontrola `texts_append` a `items[].mode`, upozornění na stránce importu, že ke stávajícímu klientovi slouží Doplnit z balíčku
+
 ## 1.5.0 – 10. 11. 2026
 - **Nové sekce místo „Digitál a sítě“:** Ikony, Web a Sociální sítě. Pořadí sekcí: Logo, Barvy, Typografie, Ikony, Web, Sociální sítě, Tisk, Kancelář, Pravidla použití
 - Migrace `007_rozdeleni_digitalu.sql` přesune pozice stávajících klientů: `ikona-…` → Ikony, profilovka, titulní fotky, příspěvky a stories → Sociální sítě, ostatní (ikona webu, náhled pro sdílení…) → Web. Stejně se upraví šablona sekcí

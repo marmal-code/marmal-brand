@@ -774,3 +774,118 @@ function admin_brand_export(string $id): void
     $brand = load_brand_or_404($id);
     send_brand_export($brand);
 }
+
+/* ================= Doplnění klienta z balíčku (od 1.6.0) ================= */
+
+function supplement_tmp_path(int $brandId, string $token): string
+{
+    return data_path('tmp/doplneni-' . $brandId . '-' . $token . '.zip');
+}
+
+/** Smaže rozpracované balíčky starší než den (nedokončené kontroly). */
+function supplement_cleanup(): void
+{
+    foreach (glob(data_path('tmp/doplneni-*.zip')) ?: [] as $f) {
+        if (filemtime($f) < time() - 86400) {
+            @unlink($f);
+        }
+    }
+}
+
+function admin_supplement_form(string $id): void
+{
+    require_admin();
+    $brand = load_brand_or_404($id);
+    supplement_cleanup();
+    render('admin/supplement', ['title' => $brand['name'] . ' – doplnit z balíčku', 'nav' => 'clients', 'brand' => $brand, 'plan' => null]);
+}
+
+/** Nahraný ZIP zkontroluje a odloží, Martin pak na další stránce potvrdí, co se doplní. */
+function admin_supplement_upload(string $id): void
+{
+    require_admin();
+    $brand = load_brand_or_404($id);
+    $data = json_decode((string) file_get_contents('php://input'), true);
+    $file = $data['files'][0] ?? null;
+    try {
+        if (!$file || file_ext((string) ($file['name'] ?? '')) !== 'zip') {
+            throw new RuntimeException('Vyberte balíček ve formátu ZIP.');
+        }
+        $path = chunk_path((string) ($file['upload_id'] ?? ''));
+        if (!is_file($path)) {
+            throw new RuntimeException('Soubor se nenahrál celý, zkuste to znovu.');
+        }
+        try {
+            [$zip, , , $plan] = open_supplement($brand, $path);
+            $zip->close();
+        } catch (Throwable $e) {
+            @unlink($path);
+            throw $e;
+        }
+        if ($plan['errors']) {
+            @unlink($path);
+            throw new RuntimeException("V balíčku jsou chyby, nic jsem nezměnil:\n– " . implode("\n– ", $plan['errors']));
+        }
+        $token = bin2hex(random_bytes(16));
+        ensure_dir(data_path('tmp'));
+        if (!rename($path, supplement_tmp_path((int) $brand['id'], $token))) {
+            throw new RuntimeException('Balíček se nepodařilo uložit.');
+        }
+        json_response(['ok' => true, 'redirect' => '/admin/brands/' . (int) $brand['id'] . '/doplnit/' . $token]);
+    } catch (Throwable $e) {
+        json_response(['ok' => false, 'error' => $e->getMessage()], 400);
+    }
+}
+
+function admin_supplement_review(string $id, string $token): void
+{
+    require_admin();
+    $brand = load_brand_or_404($id);
+    $path = supplement_tmp_path((int) $brand['id'], $token);
+    if (!is_file($path)) {
+        flash('error', 'Nahraný balíček už tu není (ruší se po jednom dni). Nahrajte ho prosím znovu.');
+        redirect('/admin/brands/' . (int) $brand['id'] . '/doplnit');
+    }
+    [$zip, , , $plan] = open_supplement($brand, $path);
+    $zip->close();
+    render('admin/supplement', ['title' => $brand['name'] . ' – doplnit z balíčku', 'nav' => 'clients', 'brand' => $brand, 'plan' => $plan, 'token' => $token]);
+}
+
+function admin_supplement_run(string $id, string $token): void
+{
+    require_admin();
+    $brand = load_brand_or_404($id);
+    $path = supplement_tmp_path((int) $brand['id'], $token);
+    $back = '/admin/brands/' . (int) $brand['id'] . '/doplnit';
+    if (!is_file($path)) {
+        flash('error', 'Nahraný balíček už tu není. Nahrajte ho prosím znovu.');
+        redirect($back);
+    }
+    if (($_POST['action'] ?? '') === 'cancel') {
+        @unlink($path);
+        flash('success', 'Doplnění jsem zrušil, nic se nezměnilo.');
+        redirect('/admin/brands/' . (int) $brand['id'] . '/s/logo');
+    }
+    try {
+        $s = supplement_brand_package($brand, $path);
+    } catch (Throwable $e) {
+        flash('error', 'Doplnění se nepovedlo, nic jsem nezměnil. ' . $e->getMessage());
+        redirect($back . '/' . $token);
+    }
+    @unlink($path);
+    $parts = array_filter([
+        $s['created'] ? $s['created'] . ' ' . cz_plural($s['created'], 'nová pozice', 'nové pozice', 'nových pozic') : '',
+        $s['filled'] ? $s['filled'] . ' ' . cz_plural($s['filled'], 'vyplněná pozice', 'vyplněné pozice', 'vyplněných pozic') : '',
+        $s['versions'] ? $s['versions'] . ' ' . cz_plural($s['versions'], 'nová verze', 'nové verze', 'nových verzí') : '',
+        $s['appended'] ? $s['appended'] . ' ' . cz_plural($s['appended'], 'doplněná verze', 'doplněné verze', 'doplněných verzí') : '',
+        $s['meta'] ? $s['meta'] . ' ' . cz_plural($s['meta'], 'upravený popis', 'upravené popisy', 'upravených popisů') : '',
+        $s['files'] ? $s['files'] . ' ' . cz_plural($s['files'], 'soubor', 'soubory', 'souborů') : '',
+        $s['colors'] ? $s['colors'] . ' ' . cz_plural($s['colors'], 'barva', 'barvy', 'barev') : '',
+        $s['texts'] ? $s['texts'] . ' ' . cz_plural($s['texts'], 'text sekce', 'texty sekcí', 'textů sekcí') : '',
+        $s['webp'] ? 'doplněno ' . $s['webp'] . ' WebP' : '',
+    ]);
+    $missing = webp_missing((int) $brand['id']);
+    flash('success', 'Hotovo, doplnil jsem: ' . implode(', ', $parts) . '.' . ($missing ? ' Některým pozicím chybí WebP, doplníte ho v Přístup a nastavení → Doplnit WebP.' : ''));
+    $first = $s['item_sections'][0] ?? $s['sections'][0] ?? 'logo';
+    redirect('/admin/brands/' . (int) $brand['id'] . '/s/' . (isset(SECTIONS[$first]) ? $first : 'logo'));
+}

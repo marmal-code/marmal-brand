@@ -116,6 +116,7 @@ $shareUrl = !$isNew && $b['share_token'] ? brand_public_url($b, '?s=' . $b['shar
     <div class="row">
       <form method="post" action="/admin/brands/<?= (int) $b['id'] ?>/share" class="inline" data-confirm="Starý sdílený odkaz přestane fungovat. Pokračovat?"><?= csrf_field() ?><button class="btn btn-ghost"><?= icon('refresh', 18) ?>Vytvořit nový sdílený odkaz</button></form>
       <form method="post" action="/admin/brands/<?= (int) $b['id'] ?>/sync" class="inline"><?= csrf_field() ?><input type="hidden" name="back" value="/admin/brands/<?= (int) $b['id'] ?>/settings"><button class="btn btn-ghost"><?= icon('grid', 18) ?>Doplnit chybějící pozice ze šablony</button></form>
+      <a class="btn btn-ghost" href="/admin/brands/<?= (int) $b['id'] ?>/doplnit"><?= icon('upload', 18) ?>Doplnit z balíčku (ZIP)</a>
       <a class="btn btn-ghost" href="/admin/brands/<?= (int) $b['id'] ?>/export"><?= icon('download', 18) ?>Exportovat brand (ZIP)</a>
       <a class="btn btn-ghost" href="/admin/webp?brand=<?= (int) $b['id'] ?>"><?= icon('image', 18) ?>Doplnit WebP<?php if (!empty($webpMissing)): ?> <span class="tag tag-warn"><?= count($webpMissing) ?></span><?php endif; ?></a>
     </div>

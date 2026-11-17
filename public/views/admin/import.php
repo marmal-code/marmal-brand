@@ -1,6 +1,7 @@
 <div class="breadcrumb"><a href="/admin">Klienti</a> / Import</div>
 <h1>Import klienta ze ZIPu</h1>
 <p style="max-width: 720px">Nahrajte importní balíček (ZIP se souborem <code>brand.json</code>). Aplikace z něj založí nového klienta i s barvami, texty sekcí, logy, písmy a dalšími soubory. Heslo pro klienta se ukáže po dokončení.</p>
+<p class="small muted" style="max-width: 720px">Chcete něco přidat ke stávajícímu klientovi? Otevřete klienta a klikněte na <b>Doplnit z balíčku</b>. Import vždy zakládá nového klienta.</p>
 
 <section class="card card-pad stack">
   <div class="uploader open" data-uploader data-item="import" data-commit="/admin/import" style="border-top: 0; padding-top: 0">

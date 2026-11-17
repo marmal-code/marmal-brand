@@ -209,6 +209,12 @@ function old(string $key, mixed $default = ''): mixed
 
 /* ---------- Formátování ---------- */
 
+/** Česká koncovka podle počtu: 1 soubor, 2–4 soubory, 5 souborů. */
+function cz_plural(int $n, string $one, string $few, string $many): string
+{
+    return $n === 1 ? $one : ($n >= 2 && $n <= 4 ? $few : $many);
+}
+
 function slugify(string $text): string
 {
     $map = ['á' => 'a', 'č' => 'c', 'ď' => 'd', 'é' => 'e', 'ě' => 'e', 'í' => 'i', 'ň' => 'n', 'ó' => 'o', 'ř' => 'r', 'š' => 's', 'ť' => 't', 'ú' => 'u', 'ů' => 'u', 'ý' => 'y', 'ž' => 'z', 'ä' => 'a', 'ö' => 'o', 'ü' => 'u', 'ľ' => 'l', 'ĺ' => 'l', 'ŕ' => 'r', 'ô' => 'o'];

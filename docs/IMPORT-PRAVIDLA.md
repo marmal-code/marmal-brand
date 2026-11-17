@@ -94,3 +94,25 @@ a pár vět o značce. Na nic se zbytečně nedoptávám. Co chybí, napíšu do
     v Logu, Ikonách, Webu a Sociálních sítích (přehled klientů jinak ukáže „WebP chybí“) a že v Pravidlech použití je jen manuál.
 13. **Předat** `{slug}-import.zip` + krátký souhrn: co se přeneslo, co chybí nebo je potřeba opravit v podkladech.
 14. **Zapsat** klienta do tabulky „Klienti a importy“ v `docs/STAV.md` a commitnout.
+
+## Doplnění existujícího klienta (od 1.6.0)
+
+Když Martin pošle jen pár nových věcí k už naimportovanému klientovi (nová tiskovina, další varianta loga, opravené SVG,
+nová barva, kapitola textu), nepřipravuji celý import, ale **doplňkový balíček** `{slug}-doplneni-{RRRR-MM-DD}.zip`.
+Formát: `docs/IMPORT.md`, část Doplnění existujícího klienta. Martin ho nahraje v detailu klienta → **Doplnit z balíčku**.
+
+1. **Zjistit stávající stav klienta.** Slugy pozic, barvy a texty vzít z vzorového manifestu `docs/priklady/{slug}.brand.json`.
+   Pokud chybí nebo může být zastaralý, požádat Martina o export klienta (Přístup a nastavení → Exportovat brand) nebo o slugy.
+   Hádat slugy nelze: jiný slug založí novou pozici místo nové verze.
+2. **Rozhodnout u každé věci:** nová pozice (nový slug), nová verze (stejný slug, soubory celé sady formátů),
+   přidat k aktuální verzi (`"mode": "append"`, např. jen chybějící PDF nebo WebP), nebo jen úprava popisu (bez `files`).
+   U nové verze přiložit **všechny** formáty pozice (stará verze odejde do historie celá).
+3. Pro soubory platí stejná pravidla jako u importu: sekce podle místa použití, kontrola SVG (`<text>`), náhledy PDF,
+   WebP u Loga, Ikon, Webu a Sociálních sítí, jen volná písma.
+4. **Texty:** nová kapitola → `texts_append`, přepracovaný text sekce → `texts` (celý text sekce).
+   **Barvy:** úprava = stejný název, jinak nová barva.
+5. `brand` jen se `name` a `slug` (kvůli kontrole správného klienta). `prune_empty` nepoužívat.
+6. **Otestovat** lokálně: import výchozího stavu klienta (vzorový manifest nebo export) a pak doplnění v aktuální verzi
+   aplikace. Přehled změn musí odpovídat záměru (žádná nečekaná „Nová pozice“ místo „Nová verze“).
+7. **Předat** ZIP + krátký souhrn, co se doplní. Aktualizovat vzorový manifest `docs/priklady/{slug}.brand.json`
+   (nové pozice, barvy, texty), aby příští doplnění vycházelo z aktuálního stavu, a poznámku v tabulce klientů v `docs/STAV.md`.

@@ -81,3 +81,43 @@ Stejný formát vytváří **Exportovat brand (ZIP)** v nastavení klienta.
 - **prune_empty** odebere prázdné pozice ze šablony, které import nevyplnil (lze je vrátit tlačítkem „Doplnit chybějící pozice ze šablony“).
 - **texts** v Markdownu: `## Nadpis`, `### Podnadpis`, `- odrážka`, `1. bod`, `**tučně**`, `*kurzíva*`, `> poznámka`, tabulky `| a | b |`, barevný čtvereček `{#373F48}`, odkaz `[text](https://…)`.
 - Import nejdřív zkontroluje celý balíček. Když najde chybu, nezaloží nic a vypíše, co opravit.
+
+## Doplnění existujícího klienta (od 1.6.0)
+
+Detail klienta → **Doplnit z balíčku** (nebo Přístup a nastavení → Další akce). Stejný formát ZIP + `brand.json`, ale:
+
+- `brand` je nepovinné. Doplnění nemění název, heslo, kontakt ani jiné nastavení klienta. `brand.slug` se jen porovná
+  s vybraným klientem, při neshodě aplikace upozorní. Název souboru: `{slug}-doplneni-{RRRR-MM-DD}.zip`.
+- Aplikace nejdřív ukáže přehled změn a klienta změní až po potvrzení. Nic se nemaže, `prune_empty` se ignoruje.
+- **items** se párují podle `slug` (jinak podle názvu):
+  - nový slug → **nová pozice** na konci sekce,
+  - existující prázdná pozice → **vyplní ji**,
+  - existující pozice se soubory → **nová verze** (stará jde do historie), nebo s `"mode": "append"` se soubory
+    **přidají k aktuální verzi** (např. doplněný formát, WebP, PDF k existujícímu SVG),
+  - pozice bez `files` → **jen úprava** uvedených polí (`title`, `description`, `specs`, `tags`, `required`, `preview_bg`, `meta`),
+  - jiná `section` než u existující pozice → pozice se **přesune** (soubory, verze i trvalé odkazy zůstanou).
+  U existujících pozic se mění jen pole, která balíček uvádí. `note` = poznámka k verzi (výchozí „Doplnění“).
+- **colors**: barva se stejným názvem (bez ohledu na velikost písmen), jinak se stejným HEX → úprava uvedených polí
+  (lze tak změnit i HEX). Jiná barva → nová na konci palety.
+- **texts** nahradí celý text sekce (prázdný řetězec text smaže). **texts_append** text připojí na konec stávajícího
+  (oddělený prázdným řádkem), u sekce bez textu ho založí.
+- Každá pozice se smí v balíčku objevit jen jednou. Balíček bez `items`, `colors` i `texts` aplikace odmítne.
+
+```json
+{
+  "format": "brand-hub",
+  "version": 1,
+  "brand": { "name": "Žehrovické byty", "slug": "zehrovicke-byty" },
+  "texts_append": { "tisk": "## Plachta na plot\nRozměr 3 × 1 m, spadávka 5 cm." },
+  "colors": [ { "name": "Pískovec", "hex": "#D8C9A7", "usage": "Podklad karet bytů" } ],
+  "items": [
+    { "section": "tisk", "slug": "plachta-plot", "title": "Plachta na plot", "specs": "3 × 1 m",
+      "files": [ { "path": "tisk/plachta.pdf", "label": "PDF tisk" }, { "path": "tisk/plachta.png", "role": "preview" } ] },
+    { "section": "logo", "slug": "logo-primarni", "mode": "append",
+      "files": [ { "path": "loga/logo-primarni.pdf", "label": "PDF" } ] },
+    { "section": "logo", "slug": "symbol", "note": "Upravená kresba",
+      "files": [ { "path": "loga/symbol.svg", "label": "SVG" }, { "path": "loga/symbol.png", "label": "PNG" }, { "path": "loga/symbol.webp", "label": "WebP" } ] },
+    { "section": "web", "slug": "og-obrazek", "description": "Obrázek při sdílení odkazu na web." }
+  ]
+}
+```
