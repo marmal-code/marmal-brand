@@ -1,5 +1,9 @@
 # Změny
 
+## 1.6.1 – 17. 11. 2026
+- Detail klienta: nová položka **Celkem** před Statistikami. Ukazuje počet a velikost souborů v aktuálních verzích ke stažení (stejné číslo, jaké vidí klient v hlavičce manuálu). Po najetí myší ukáže i vše uložené včetně náhledů a historie verzí
+- Souhrn souborů počítá jedna funkce `brand_file_totals()` pro administraci i klientský pohled
+
 ## 1.6.0 – 17. 11. 2026
 - **Doplnit z balíčku:** u existujícího klienta jde najednou přidat víc věcí jedním ZIPem ve stejném formátu jako import (`brand.json` + soubory). Tlačítko „Doplnit z balíčku“ je v hlavičce klienta a v nastavení klienta (Další akce), adresa `/admin/brands/{id}/doplnit`
 - Po nahrání balíček nejdřív zkontroluji a ukážu přehled změn (nová pozice, vyplní prázdnou pozici, nová verze, přidá k aktuální verzi, jen úprava popisu, přesun sekce, nové a upravené barvy, texty sekcí). Klient se změní až po potvrzení, zrušení nic nemění. Nepotvrzené balíčky se mažou po jednom dni

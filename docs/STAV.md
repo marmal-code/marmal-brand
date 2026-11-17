@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.6.0** (17. 11. 2026)
+**Aktuální verze: 1.6.1** (17. 11. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,7 +34,7 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.6.0)
+## Co aplikace umí (1.6.1)
 
 ### Administrace (`/admin`)
 - Přehled klientů: vyplněnost sekcí (pruh + počet sekcí), **Viděno** (očíčko + počet zobrazení celkem, den poslední návštěvy, odkaz na statistiky), poslední změna, typ přístupu, statistiky (zobrazení a stažení za 30 dní, neúplné brandy), aktivita. Akce jako ikony s popiskem: Upravit (ozubené kolo), Náhled (lupa), Kopírovat odkaz, Smazat (koš, vede na potvrzení v nastavení klienta).
@@ -47,6 +47,7 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   Nic nemaže, nastavení klienta nemění. Nepotvrzený balíček leží v `brand-data/tmp/doplneni-{brand}-{token}.zip`, maže se po dni.
 - Editor brandu, záložky sekcí: Logo, Barvy, Typografie, Ikony, Web, Sociální sítě, Tisk, Kancelář, Pravidla použití + Statistiky + Přístup a nastavení.
   (Do verze 1.4 byla místo Ikon, Webu a Sociálních sítí jedna sekce „Digitál a sítě“, viz níže.)
+  - **Celkem** (od 1.6.1, mezi sekcemi a Statistikami): počet a velikost souborů aktuálních verzí ke stažení, v popisku vše uložené včetně náhledů a historie (`brand_file_totals()` v `brands.php`).
   - Pozice (položky) ze šablony a vlastní pozice, řazení nahoru/dolů, povinné/volitelné.
   - Nahrávání drag & drop po částech, více souborů najednou. Soubor „ke stažení“ nebo „jen náhled“.
     Uložení jako **nová verze** (stará jde do historie), nebo **přidat k aktuální verzi**.
@@ -185,6 +186,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.6.1** (17. 11. 2026): položka Celkem (počet a velikost souborů) v detailu klienta.
 - **1.6.0** (17. 11. 2026): Doplnit z balíčku – více věcí najednou do existujícího klienta, s přehledem změn před potvrzením.
 - **1.5.0** (10. 11. 2026): sekce Digitál a sítě rozdělená na Ikony, Web a Sociální sítě, přesun pozice do jiné sekce, WebP ke všem PNG/JPG v Logu, Ikonách, Webu a Sítích (+ ze SVG v prohlížeči), WebP jako náhled, stránka Doplnit WebP, mřížka ikon u klienta.
 - **1.4.1** (1. 11. 2026): akce v přehledu klientů jako ikony s popiskem, sloupec Vyplněno na dva řádky.

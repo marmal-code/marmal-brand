@@ -187,6 +187,8 @@ form.inline { display: inline; }
 .tab:hover { color: var(--ink); border-bottom-color: var(--border-strong); }
 .tab.active { border-bottom-color: var(--blue-700); }
 .tab .tag { padding: 0 8px; }
+.tab-static { cursor: default; }
+.tab-static:hover { border-bottom-color: transparent; }
 
 /* Pozice v editoru brandu */
 .slot { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; padding: 16px 20px; }

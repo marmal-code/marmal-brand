@@ -31,6 +31,8 @@ $symbol = brand_symbol((int) $brand['id']);
         <?= e($s['title']) ?> <span class="tag <?= $ok ? 'tag-ok' : ($st['required_missing'] ? 'tag-warn' : 'tag-plain') ?>"><?= e($label) ?></span>
       </a>
     <?php endforeach; ?>
+    <?php $tot = brand_file_totals((int) $brand['id']); ?>
+    <span class="tab tab-static" title="Aktuální verze souborů ke stažení, tedy to, co klient vidí a stáhne. Uloženo celkem včetně náhledů a historie verzí: <?= cz_num($tot['all_n']) ?> <?= cz_plural($tot['all_n'], 'soubor', 'soubory', 'souborů') ?> · <?= e(human_size($tot['all_size'])) ?>."><?= icon('file', 16) ?>Celkem <span class="tag tag-plain"><?= cz_num($tot['n']) ?> <?= cz_plural($tot['n'], 'soubor', 'soubory', 'souborů') ?> · <?= e(human_size($tot['size'])) ?></span></span>
     <a class="tab<?= $active === 'stats' ? ' active' : '' ?>" href="/admin/brands/<?= (int) $brand['id'] ?>/stats"<?= $active === 'stats' ? ' aria-current="page"' : '' ?>><?= icon('chart', 16) ?>Statistiky <span class="tag tag-plain" title="Zobrazení celkem"><?= icon('eye', 14) ?><?= cz_num($brand['views_total'] ?? 0) ?></span></a>
     <a class="tab<?= $active === 'settings' ? ' active' : '' ?>" href="/admin/brands/<?= (int) $brand['id'] ?>/settings"><?= icon('settings', 16) ?>Přístup a nastavení</a>
   </nav>

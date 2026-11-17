@@ -634,3 +634,20 @@ function brand_view_stats(int $brandId, int $days = 30): array
         ),
     ];
 }
+
+/**
+ * Souhrn souborů brandu. n/size = aktuální verze ke stažení (to, co klient vidí a stáhne),
+ * all_n/all_size = vše uložené včetně náhledů a historie verzí.
+ */
+function brand_file_totals(int $brandId): array
+{
+    $cur = db_one(
+        'SELECT COUNT(*) AS n, COALESCE(SUM(f.size), 0) AS size FROM item_files f JOIN items i ON i.current_version_id = f.version_id WHERE i.brand_id = ? AND f.role = ?',
+        [$brandId, 'download']
+    );
+    $all = db_one(
+        'SELECT COUNT(*) AS n, COALESCE(SUM(f.size), 0) AS size FROM item_files f JOIN item_versions v ON v.id = f.version_id JOIN items i ON i.id = v.item_id WHERE i.brand_id = ?',
+        [$brandId]
+    );
+    return ['n' => (int) $cur['n'], 'size' => (int) $cur['size'], 'all_n' => (int) $all['n'], 'all_size' => (int) $all['size']];
+}

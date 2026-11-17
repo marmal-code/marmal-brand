@@ -60,10 +60,7 @@ function client_vars(array $brand, string $access): array
         $counts[$r['section']] = (int) $r['n'];
     }
     $counts['barvy'] = (int) db_val('SELECT COUNT(*) FROM colors WHERE brand_id = ?', [$brand['id']]);
-    $totals = db_one(
-        'SELECT COUNT(*) AS n, COALESCE(SUM(f.size), 0) AS size FROM item_files f JOIN items i ON i.current_version_id = f.version_id WHERE i.brand_id = ? AND f.role = ?',
-        [$brand['id'], 'download']
-    );
+    $totals = brand_file_totals((int) $brand['id']);
     $texts = section_texts((int) $brand['id']);
     // Nahraný PDF manuál: první PDF v sekci Pravidla použití
     $manualPdf = null;
