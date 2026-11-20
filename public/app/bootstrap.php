@@ -35,6 +35,8 @@ require __DIR__ . '/webp.php';
 require __DIR__ . '/migrator.php';
 require __DIR__ . '/backup.php';
 require __DIR__ . '/updater.php';
+require __DIR__ . '/mcp_oauth.php';
+require __DIR__ . '/mcp.php';
 
 /** Konfigurace z DATA_DIR/config.php (null = aplikace ještě není nainstalovaná). */
 function config(?string $key = null, mixed $default = null): mixed

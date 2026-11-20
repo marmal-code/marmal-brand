@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.6.1** (17. 11. 2026)
+**Aktuální verze: 1.7.0** (20. 11. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,7 +34,7 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.6.1)
+## Co aplikace umí (1.7.0)
 
 ### Administrace (`/admin`)
 - Přehled klientů: vyplněnost sekcí (pruh + počet sekcí), **Viděno** (očíčko + počet zobrazení celkem, den poslední návštěvy, odkaz na statistiky), poslední změna, typ přístupu, statistiky (zobrazení a stažení za 30 dní, neúplné brandy), aktivita. Akce jako ikony s popiskem: Upravit (ozubené kolo), Náhled (lupa), Kopírovat odkaz, Smazat (koš, vede na potvrzení v nastavení klienta).
@@ -84,6 +84,34 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
 - **Bezpečnost:** audit a seznam opatření v `docs/BEZPECNOST.md` (CSP bez inline skriptů – nové skripty jen do `app.js`,
   limity pokusů na IP i celkově, relace v `brand-data/sessions`).
 
+### AI konektor – MCP (od 1.7.0, Nastavení → AI konektor)
+- Adresa `https://brand.marmal.cz/mcp`. Claude (Nastavení → Konektory → Přidat vlastní konektor), ChatGPT (režim vývojáře) i Gemini; Claude Code
+  `claude mcp add --transport http brand-hub https://brand.marmal.cz/mcp`. Vzor: konektor aplikace MarMal Správa (sprava.marmal.cz).
+- Transport Streamable HTTP bez stavu (POST JSON-RPC → application/json, bez SSE a session; GET = 405). Vše jako tools.
+- **Přihlášení OAuth 2.1** (`app/mcp_oauth.php`): metadata `/.well-known/oauth-protected-resource` a `/.well-known/oauth-authorization-server`,
+  registrace aplikace DCR `POST /oauth/register`, souhlas `/oauth/authorize` (přihlášení administrátora včetně 2FA → po přihlášení zpět přes
+  `after_login`, volba čtení / zápis; stránka má CSP `form-action` rozšířené o adresu návratu do aplikace), `POST /oauth/token`
+  (authorization_code s povinným PKCE S256, refresh_token s rotací – předchozí platí ještě 10 min), `POST /oauth/revoke`.
+  Access token 1 h, refresh 90 dní klouzavě. V DB jen SHA-256 hashe. Ruční tokeny `mbt_…` z nastavení (platí do odpojení).
+  Scope: `cteni`, `zapis`. Základní adresa `mcp.base` (settings) se uloží při prvním otevření nastavení (ochrana před podvrženým Host),
+  do té doby `https://` + `app_host`. Endpointy běží jen na hlavní adrese aplikace, ne na vlastních doménách klientů.
+- **Nástroje** (`app/mcp.php`, `mcp_tools()`: název => [titulek, popis, scope, parametry, povinné, funkce, idempotentní]; funkce `mcp_t_*`):
+  - čtení: `klienti_seznam`, `brand_prehled` (barvy, kontakt, sekce s pozicemi a soubory aktuálních verzí, texty sekcí), `soubory_hledat`
+    (slova + přípona jako filtr formátu, napříč klienty), `soubor_stahnout`, `brand_css` (CSS proměnné barev vč. odstínů, písma, Google Fonts @import)
+  - zápis: `soubor_pridat` (přes `commit_uploads()`, režim nová verze / k aktuální, WebP přes `item_add_webp()`), `nahravani_pripravit`,
+    `pozice_zalozit`, `pozice_upravit`, `barvy_upravit` (párování `supplement_color_match()`), `text_sekce_upravit` (vrací i předchozí text)
+  - záměrně nikdy: mazání (pozic, verzí, souborů, barev, klientů), hesla klientů, sdílené odkazy, nastavení klienta
+  - klient a pozice jdou zadat názvem nebo jeho částí (`mcp_brand()`, `mcp_item()` – víc shod = seznam kandidátů s ID)
+- **Přenos souborů:** SVG celé jako text (oběma směry, do 600 kB). Rastr: náhled jako obrázek (`mcp_image_preview()`, GD, delší strana 1024 px,
+  WebP), originál přes **dočasný podepsaný odkaz** `/mcp/soubor/{id}/{platnost}/{HMAC}/{název}` (1 h, HMAC klíčem `secret` z config.php,
+  bez DB) a trvalý odkaz `/b/{slug}/f/…`, když ho klient má (`mcp_permalink()`). Malé soubory do 150 kB i jako base64 (data URI).
+  Nahrání: SVG text, base64 (do 25 MB), veřejná adresa (`mcp_fetch_url()`: jen veřejné IP, spojení připnuté na ověřenou IP, přesměrování po krocích,
+  max. 200 MB; pro místní test `mcp_allow_private_urls` v config.php) nebo jednorázový odkaz `PUT|POST /mcp/nahrat/{token}` (`curl -T`, max. 500 MB,
+  tabulka `mcp_uploads`, soubor v `brand-data/tmp/mcp/`, použitelný 6 h). Pracovní prostředí Claude na claude.ai se na brand.marmal.cz přímo nedostane (síť jen pro vybrané domény), proto tyto cesty.
+- Nastavení `/admin/settings/ai`: adresa + návody, kontrola serveru (curl na vlastní .well-known a /mcp – ověří přepis i předání Authorization;
+  při chybě návod `CGIPassAuth On` v Plesku), vypínač `mcp.enabled` a nástrojů `mcp.tool.<název>`, připojené aplikace (odpojit), ruční token, log 40 volání.
+- Zápisy přes konektor jdou do Aktivity jako „Vy“ s poznámkou „(AI konektor: Claude)“, každé volání do `mcp_log` (dlouhé argumenty zkrácené). Úklid `mcp_cleanup()`.
+
 ### Klientský pohled (`/b/{slug}` nebo vlastní doména)
 - Přihlášení heslem, nebo sdíleným odkazem `?s=TOKEN`. Administrátor vidí vše jako náhled.
 - **Písma brandu:** nadpisy v písmu z pozice `pismo-nadpisy`, texty, tlačítka a navigace v `pismo-text` (i v tiskové verzi).
@@ -122,11 +150,13 @@ public/app/importer.php       import_brand_package(), upgrade_legacy_manifest() 
 public/app/migrator.php       migrace z public/migrations/NNN_*.sql
 public/app/backup.php         zálohy DB+kódu, obnova, install_code_tree, údržba
 public/app/updater.php        GitHub API, run_update → apply_update_package, kontrola serveru
-public/app/controllers/       install.php, admin.php, client.php, settings.php
+public/app/mcp_oauth.php      AI konektor – OAuth 2.1 (metadata, DCR, kódy, tokeny, ruční tokeny, připojení, úklid)
+public/app/mcp.php            AI konektor – JSON-RPC, nástroje mcp_t_*, náhledy obrázků, podepsané odkazy, stahování z URL
+public/app/controllers/       install.php, admin.php, client.php, settings.php, mcp.php (endpointy konektoru před směrovačem, souhlas, Nastavení → AI konektor)
 public/views/                 layout_admin, layout_client, layout_plain, admin/*, client/* (home, section, print, _parts)
 public/assets/                css/app.css (tokeny MarMal DS), css/print.css, js/app.js (upload, kopírování, QR, potvrzení, WebP: SVG → PNG na plátně), fonts/MarMal-Bold.woff2,
                               vendor/qrcode.js (QR kód pro 2FA, MIT, generuje se v prohlížeči)
-public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu, 005_bezpecnost_2fa, 006_zobrazeni, 007_rozdeleni_digitalu
+public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu, 005_bezpecnost_2fa, 006_zobrazeni, 007_rozdeleni_digitalu, 008_mcp
 .github/workflows/release.yml automatické vydání po změně public/VERSION
 scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 ```
@@ -138,6 +168,8 @@ scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 `activity`, `login_attempts`, `migrations`, `recovery_codes` (záložní kódy 2FA, hash),
 `brand_views` (brand_id, day, page = home | sekce | manual, views), `brand_visits` (brand_id, day, access = client | share, visits). `users` má navíc
 totp_secret (šifrovaně), totp_enabled_at, totp_last_step, auth_epoch.
+AI konektor (008): `mcp_clients` (registrované aplikace), `mcp_codes` (autorizační kódy 10 min), `mcp_tokens` (připojení oauth | manual, hashe
+access/refresh), `mcp_log` (volání nástrojů, 90 dní), `mcp_uploads` (jednorázová nahrání). Nastavení `mcp.enabled`, `mcp.base`, `mcp.tool.<název>`.
 
 ### Sekce a pozice šablony (slugy)
 - `logo`: logo-primarni*, logo-negativ*, symbol*, logo-jednobarevne, logo-horizontalni
@@ -160,6 +192,9 @@ Import starších balíčků dělá totéž (`upgrade_legacy_manifest()`). Stati
 Admin: `/admin`, `/admin/import`, `/admin/brands/{id}/doplnit` (+ `/{token}` přehled a potvrzení), `/admin/webp`, `/admin/items/{id}/webp` (POST), `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/stats`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
 `/admin/items/{id}`, `/admin/settings` (profil, 2FA), `/admin/settings/2fa`, `/admin/settings/update`, `/admin/template`, `/admin/activity`.
 Přihlášení: `/login`, `/login/2fa`.
+AI konektor: `/mcp`, `/.well-known/oauth-protected-resource`, `/.well-known/oauth-authorization-server`, `/oauth/register`, `/oauth/token`, `/oauth/revoke`,
+`/mcp/soubor/{id}/{platnost}/{podpis}/{název}`, `/mcp/nahrat/{token}` (vše v `mcp_dispatch()` před směrovačem, bez session a CSRF),
+`/oauth/authorize` a `/admin/settings/ai` (směrovač).
 Klient: `/b/{slug}`, `/b/{slug}/s/{sekce}`, `/b/{slug}/file/{id}`, `/b/{slug}/f/{pozice}.{ext}`, `/b/{slug}/zip[/{sekce}]`, `/b/{slug}/manual`.
 
 ## Vzhled
@@ -186,6 +221,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.7.0** (20. 11. 2026): AI konektor (MCP) pro Claude, ChatGPT a Gemini – stahování a přidávání log, grafiky, barev a textů klientů, přihlášení OAuth s 2FA.
 - **1.6.1** (17. 11. 2026): položka Celkem (počet a velikost souborů) v detailu klienta.
 - **1.6.0** (17. 11. 2026): Doplnit z balíčku – více věcí najednou do existujícího klienta, s přehledem změn před potvrzením.
 - **1.5.0** (10. 11. 2026): sekce Digitál a sítě rozdělená na Ikony, Web a Sociální sítě, přesun pozice do jiné sekce, WebP ke všem PNG/JPG v Logu, Ikonách, Webu a Sítích (+ ze SVG v prohlížeči), WebP jako náhled, stránka Doplnit WebP, mřížka ikon u klienta.
@@ -200,5 +236,6 @@ Podrobně v `CHANGELOG.md`.
 ## Nápady na další vývoj (zatím neschválené)
 - Automatické náhledy PDF na serveru (jen pokud hosting má Imagick).
 - Více administrátorů / spolupracovníků.
+- AI konektor: ruční aplikace s tajným klíčem (Gemini Enterprise bez DCR), jako má Správa.
 - Upozornění klientovi e-mailem, že se změnil soubor.
 - Převod SVG textu na křivky nelze udělat v aplikaci, je potřeba v Affinity.

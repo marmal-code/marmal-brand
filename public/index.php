@@ -26,6 +26,13 @@ if (maintenance()) {
     abort(503, 'Aplikace se právě aktualizuje. Zkuste to prosím za minutu znovu.');
 }
 
+/* ---------- AI konektor (MCP) a jeho přihlášení – bez relace a bez CSRF, autorizace tokenem ---------- */
+require __DIR__ . '/app/controllers/mcp.php';
+if (mcp_is_endpoint($path) && mcp_on_app_host()) {
+    mcp_dispatch($method, $path);
+    exit;
+}
+
 /* ---------- Vlastní doména klienta (např. brand.klient.cz) ---------- */
 $appHost = strtolower((string) config('app_host', ''));
 $host = request_host();
@@ -53,6 +60,8 @@ $routes = [
     ['GET',  '#^/login/2fa$#', 'login_2fa_form'],
     ['POST', '#^/login/2fa$#', 'login_2fa_submit'],
     ['POST', '#^/logout$#', 'logout'],
+    ['GET',  '#^/oauth/authorize$#', 'oauth_authorize'],
+    ['POST', '#^/oauth/authorize$#', 'oauth_authorize_submit'],
 
     // administrace
     ['GET',  '#^/admin$#', 'admin_dashboard'],
@@ -105,6 +114,11 @@ $routes = [
     ['POST', '#^/admin/settings/update/run$#', 'settings_update_run'],
     ['POST', '#^/admin/settings/backup$#', 'settings_backup_create'],
     ['POST', '#^/admin/settings/backup/restore$#', 'settings_backup_restore'],
+    ['GET',  '#^/admin/settings/ai$#', 'settings_ai'],
+    ['POST', '#^/admin/settings/ai$#', 'settings_ai_save'],
+    ['POST', '#^/admin/settings/ai/disconnect$#', 'settings_ai_disconnect'],
+    ['POST', '#^/admin/settings/ai/token$#', 'settings_ai_token'],
+    ['POST', '#^/admin/settings/ai/base$#', 'settings_ai_base'],
     ['GET',  '#^/admin/template$#', 'settings_template'],
     ['POST', '#^/admin/template$#', 'settings_template_save'],
     ['POST', '#^/admin/template/new$#', 'settings_template_create'],

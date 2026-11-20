@@ -1,5 +1,17 @@
 # Změny
 
+## 1.7.0 – 20. 11. 2026
+- **AI konektor (MCP):** Brand Hub jde připojit ke Claude, ChatGPT i Gemini jako vlastní konektor. Adresa `https://brand.marmal.cz/mcp`, nastavení a návod v **Nastavení → AI konektor**. AI si pak sama bere loga, barvy, písma a další grafiku klientů a umí je sem i přidávat – soubory už není potřeba pořád nahrávat do chatu
+- Přihlášení OAuth 2.1 (stejně jako konektor ve Správě): AI aplikace se zaregistruje sama, při připojení se přihlásíte heslem a kódem 2FA a povolíte **čtení**, nebo **čtení a zápis**. PKCE povinné, přístupový token platí hodinu, obnovovací 90 dní od posledního použití. V databázi jsou jen hashe tokenů
+- Nástroje pro čtení: `klienti_seznam`, `brand_prehled` (barvy, písma, sekce, pozice a soubory), `soubory_hledat` (např. „kukátko logo bílé svg“), `soubor_stahnout`, `brand_css` (barvy jako CSS proměnné, písma a Google Fonts)
+- `soubor_stahnout`: SVG vrátí celé jako text, PNG/JPG/WebP/GIF jako zmenšený náhled obrázku (do 1024 px, WebP), ke všemu dočasný podepsaný odkaz na originál (platí 1 hodinu) a trvalý veřejný odkaz, když ho klient má zapnutý. Malé soubory (do 150 kB) i jako base64
+- Nástroje pro zápis: `soubor_pridat` (do pozice jako nová verze – předchozí zůstane v historii – nebo k aktuální verzi; zdroj SVG text, base64, veřejná adresa, nebo jednorázové nahrání), `nahravani_pripravit` (adresa pro `curl -T` pro velké soubory, platí 30 minut), `pozice_zalozit`, `pozice_upravit` (popis, rozměr, štítky, adresa, přesun sekce, údaje písma), `barvy_upravit` (úprava podle názvu nebo HEX, nové barvy na konec), `text_sekce_upravit` (nahradit nebo připojit, vrací i předchozí text)
+- K PNG/JPG nahraným přes konektor do Loga, Ikon, Webu a Sociálních sítí se WebP vytvoří samo jako při běžném nahrání
+- Přes konektor se nikdy nic nemaže a nevrací hesla ani sdílené odkazy klientů. Změny se zapisují do Aktivity s poznámkou „AI konektor: název aplikace“
+- Nastavení → AI konektor: adresa a návody (Claude, ChatGPT, Claude Code), kontrola serveru (metadata, adresa /mcp, předání hlavičky Authorization), vypínač konektoru a jednotlivých nástrojů, připojené aplikace s odpojením, ruční tokeny a posledních 40 volání
+- Stahování ze zadané adresy jen z veřejných serverů (ochrana vnitřní sítě hostingu), nejvýš 200 MB, přesměrování se ověřují po krocích
+- Migrace `008_mcp.sql` (tabulky `mcp_clients`, `mcp_codes`, `mcp_tokens`, `mcp_log`, `mcp_uploads`). `.htaccess` nově předává hlavičku Authorization do PHP
+
 ## 1.6.1 – 17. 11. 2026
 - Detail klienta: nová položka **Celkem** před Statistikami. Ukazuje počet a velikost souborů v aktuálních verzích ke stažení (stejné číslo, jaké vidí klient v hlavičce manuálu). Po najetí myší ukáže i vše uložené včetně náhledů a historie verzí
 - Souhrn souborů počítá jedna funkce `brand_file_totals()` pro administraci i klientský pohled

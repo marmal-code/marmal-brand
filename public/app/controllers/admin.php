@@ -33,7 +33,7 @@ function redirect_after_login(): never
 {
     $to = (string) ($_SESSION['after_login'] ?? '/admin');
     unset($_SESSION['after_login']);
-    $safe = preg_match('#^/(admin|b/)#', $to) && !str_contains($to, '\\') && !preg_match('/[\r\n]/', $to);
+    $safe = preg_match('#^/(admin|b/|oauth/authorize\?)#', $to) && !str_contains($to, '\\') && !preg_match('/[\r\n]/', $to);
     redirect($safe ? $to : '/admin');
 }
 

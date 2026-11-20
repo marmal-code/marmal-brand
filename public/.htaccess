@@ -5,6 +5,10 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Hlavička Authorization (token AI konektoru) – Apache s PHP-FPM ji jinak PHP nepředá
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
     # Přesměrování na HTTPS (odkomentujte, pokud to nedělá hosting sám)
     # RewriteCond %{HTTPS} off
     # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -16,6 +20,10 @@ DirectoryIndex index.php
     # Existující soubory (CSS, JS, fonty) servíruj přímo, vše ostatní do aplikace
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_setenvif.c>
+    SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
 </IfModule>
 
 <FilesMatch "^(\.user\.ini|php\.ini|data-path\.php|VERSION)$">
