@@ -123,8 +123,8 @@ function import_brand_package(string $zipFile): array
     $password = trim((string) ($b['password'] ?? '')) ?: suggest_password();
     $hero = normalize_hex((string) ($b['hero_bg'] ?? '')) ?? '#EAF2FA';
     $brandId = db_insert(
-        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, contact_phone, contact_email, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, brand_fonts, custom_domain, is_active, created_at, updated_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, NULL, ?, ?, NULL, 1, NOW(), NOW())',
+        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, contact_phone, contact_email, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, brand_fonts, custom_domain, is_active, sort, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, NULL, ?, ?, NULL, 1, ' . brand_sort_top() . ', NOW(), NOW())',
         [
             trim((string) $b['name']),
             unique_brand_slug(trim((string) ($b['slug'] ?? '')) ?: (string) $b['name']),

@@ -41,13 +41,17 @@ $actorLabels = ['admin' => 'Vy', 'client' => 'Klient', 'share' => 'Sdílený odk
     <p><?= $q !== '' ? 'Žádný klient neodpovídá hledání.' : 'Zatím tu není žádný klient.' ?></p>
     <?php if ($q === ''): ?><a class="btn btn-primary" href="/admin/brands/new"><?= icon('plus', 18) ?>Založit prvního klienta</a><?php endif; ?>
   </div>
-<?php else: ?>
+<?php else: $sortable = $q === '' && count($brands) > 1; ?>
+  <?php if ($sortable): ?><p class="hint" id="poradi-napoveda">Pořadí klientů si můžete změnit: chyťte řádek za úchyt vlevo a přetáhněte ho. Na úchytu fungují i šipky nahoru a dolů. Pořadí se uloží samo.</p><?php endif; ?>
   <div class="card table-wrap">
-    <table class="table" style="min-width: 820px">
-      <thead><tr><th scope="col">Klient</th><th scope="col">Vyplněno</th><th scope="col">Viděno</th><th scope="col">Poslední změna</th><th scope="col">Přístup</th><th scope="col">Akce</th></tr></thead>
-      <tbody>
+    <table class="table" style="min-width: 860px">
+      <thead><tr><?php if ($sortable): ?><th scope="col" class="col-grip"><span class="sr-only">Pořadí</span></th><?php endif; ?><th scope="col">Klient</th><th scope="col">Vyplněno</th><th scope="col">Viděno</th><th scope="col">Poslední změna</th><th scope="col">Přístup</th><th scope="col">Akce</th></tr></thead>
+      <tbody<?= $sortable ? ' data-sort-brands' : '' ?>>
       <?php foreach ($brands as $b): $c = $b['completeness']; ?>
-        <tr<?= $b['is_active'] ? '' : ' style="opacity:.6"' ?>>
+        <tr data-id="<?= (int) $b['id'] ?>"<?= $b['is_active'] ? '' : ' class="row-inactive"' ?>>
+          <?php if ($sortable): ?>
+          <td class="col-grip"><button type="button" class="drag-handle" data-drag-handle aria-describedby="poradi-napoveda" aria-label="Přesunout klienta <?= e($b['name']) ?>"><?= icon('grip', 20) ?></button></td>
+          <?php endif; ?>
           <td>
             <div class="row" style="gap: 12px; flex-wrap: nowrap">
               <span class="avatar" style="background: <?= e($b['hero_bg']) ?>; color: <?= is_dark($b['hero_bg']) ? '#fff' : 'var(--ink)' ?>">

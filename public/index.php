@@ -67,6 +67,7 @@ $routes = [
     ['GET',  '#^/admin$#', 'admin_dashboard'],
     ['GET',  '#^/admin/activity$#', 'admin_activity'],
     ['GET',  '#^/admin/brands/new$#', 'admin_brand_new'],
+    ['POST', '#^/admin/brands/order$#', 'admin_brands_order'],
     ['POST', '#^/admin/brands/new$#', 'admin_brand_create'],
     ['GET',  '#^/admin/brands/(\d+)$#', 'admin_brand_home'],
     ['GET',  '#^/admin/brands/(\d+)/s/([a-z]+)$#', 'admin_brand_section'],

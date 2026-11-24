@@ -1,5 +1,12 @@
 # Změny
 
+## 1.8.0 – 24. 11. 2026
+- **Vlastní pořadí klientů:** v přehledu klientů je u každého řádku vlevo úchyt. Chyťte za něj a přetáhněte klienta, kam potřebujete. Funguje myší i prstem na mobilu, na úchytu také šipky nahoru a dolů (Home a End přesunou na začátek a konec). Pořadí se uloží samo a potvrdím ho krátkou hláškou
+- Přehled je nově řazený podle tohoto pořadí místo „aktivní nahoře, naposledy změnění první“. Po aktualizaci zůstane pořadí stejné jako teď, pak už je jen na vás. Neaktivní klienti zůstanou tam, kam je dáte (jen jsou zašedlí)
+- Nového klienta (ručně i importem) zařadím na začátek seznamu
+- Při hledání klienta je přetahování vypnuté, řadí se jen celý seznam
+- Migrace `009_poradi_klientu.sql` (sloupec `brands.sort`, výchozí pořadí podle dosavadního řazení)
+
 ## 1.7.0 – 20. 11. 2026
 - **AI konektor (MCP):** Brand Hub jde připojit ke Claude, ChatGPT i Gemini jako vlastní konektor. Adresa `https://brand.marmal.cz/mcp`, nastavení a návod v **Nastavení → AI konektor**. AI si pak sama bere loga, barvy, písma a další grafiku klientů a umí je sem i přidávat – soubory už není potřeba pořád nahrávat do chatu
 - Přihlášení OAuth 2.1 (stejně jako konektor ve Správě): AI aplikace se zaregistruje sama, při připojení se přihlásíte heslem a kódem 2FA a povolíte **čtení**, nebo **čtení a zápis**. PKCE povinné, přístupový token platí hodinu, obnovovací 90 dní od posledního použití. V databázi jsou jen hashe tokenů

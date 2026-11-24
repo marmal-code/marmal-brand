@@ -358,6 +358,12 @@ function brand_completeness(int $brandId): array
 
 /* ---------- Vytváření a šablona ---------- */
 
+/** Hodnota `sort` pro nového klienta: v přehledu se zařadí nahoru. */
+function brand_sort_top(): int
+{
+    return (int) db_val('SELECT COALESCE(MIN(sort), 10) FROM brands') - 10;
+}
+
 function unique_brand_slug(string $wanted, int $exceptId = 0): string
 {
     $base = slugify($wanted);

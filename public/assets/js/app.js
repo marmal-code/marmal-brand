@@ -416,6 +416,108 @@
     if (open) { var d = el.querySelector('[data-drop]'); if (d) d.focus(); }
   });
 
+  /* ---------- Vlastní pořadí klientů: přetažení za úchyt (myš i dotyk) a šipky na úchytu ---------- */
+  var sortBody = document.querySelector('[data-sort-brands]');
+  if (sortBody) {
+    var rowsOf = function () { return Array.prototype.slice.call(sortBody.querySelectorAll('tr[data-id]')); };
+    var orderOf = function () { return rowsOf().map(function (r) { return r.getAttribute('data-id'); }); };
+    var saved = orderOf();
+    var saveTimer;
+    var saveOrder = function () {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(function () {
+        var now = orderOf();
+        if (now.join(',') === saved.join(',')) return;
+        postJson('/admin/brands/order', { ids: now.map(Number) }).then(function () {
+          saved = now;
+          toast('Pořadí klientů je uložené');
+        }).catch(function (err) {
+          // vrátím řádky tam, kde byly naposledy uložené
+          saved.forEach(function (id) {
+            var r = sortBody.querySelector('tr[data-id="' + id + '"]');
+            if (r) sortBody.appendChild(r);
+          });
+          toast(err.message);
+        });
+      }, 400);
+    };
+
+    // Tažený řádek se nikdy nevyjímá z DOM (jinak prohlížeč zruší zachycení ukazatele a ztratí se fokus),
+    // místo něj se přesouvají sousední řádky.
+    var stepUp = function (row) {
+      var prev = row.previousElementSibling;
+      if (!prev) return false;
+      sortBody.insertBefore(prev, row.nextElementSibling);
+      return true;
+    };
+    var stepDown = function (row) {
+      var next = row.nextElementSibling;
+      if (!next) return false;
+      sortBody.insertBefore(next, row);
+      return true;
+    };
+    var drag = null;
+    var scrollTimer = null;
+    var moveTo = function (y) {
+      var row = drag.row;
+      var prev = row.previousElementSibling, next = row.nextElementSibling, r;
+      while (prev && y < (r = prev.getBoundingClientRect()).top + r.height / 2) { stepUp(row); prev = row.previousElementSibling; }
+      while (next && y > (r = next.getBoundingClientRect()).top + r.height / 2) { stepDown(row); next = row.nextElementSibling; }
+    };
+    var autoScroll = function () {
+      clearInterval(scrollTimer);
+      scrollTimer = setInterval(function () {
+        if (!drag) return;
+        var edge = 70, step = 0;
+        if (drag.y < edge) step = -12;
+        else if (drag.y > window.innerHeight - edge) step = 12;
+        if (step) { window.scrollBy(0, step); moveTo(drag.y); }
+      }, 30);
+    };
+    var endDrag = function () {
+      if (!drag) return;
+      drag.row.classList.remove('is-dragging');
+      document.body.classList.remove('is-sorting');
+      clearInterval(scrollTimer);
+      drag = null;
+      saveOrder();
+    };
+
+    sortBody.addEventListener('pointerdown', function (ev) {
+      var h = ev.target.closest('[data-drag-handle]');
+      if (!h || (ev.pointerType === 'mouse' && ev.button !== 0)) return;
+      ev.preventDefault();
+      var row = h.closest('tr');
+      drag = { row: row, y: ev.clientY, handle: h };
+      try { h.setPointerCapture(ev.pointerId); } catch (e) { /* starší prohlížeče */ }
+      row.classList.add('is-dragging');
+      document.body.classList.add('is-sorting');
+      autoScroll();
+    });
+    sortBody.addEventListener('pointermove', function (ev) {
+      if (!drag) return;
+      drag.y = ev.clientY;
+      moveTo(ev.clientY);
+    });
+    sortBody.addEventListener('pointerup', endDrag);
+    sortBody.addEventListener('pointercancel', endDrag);
+    sortBody.addEventListener('lostpointercapture', endDrag);
+
+    sortBody.addEventListener('keydown', function (ev) {
+      var h = ev.target.closest('[data-drag-handle]');
+      if (!h) return;
+      var row = h.closest('tr');
+      var moved = false;
+      if (ev.key === 'ArrowUp') moved = stepUp(row);
+      else if (ev.key === 'ArrowDown') moved = stepDown(row);
+      else if (ev.key === 'Home') while (stepUp(row)) moved = true;
+      else if (ev.key === 'End') while (stepDown(row)) moved = true;
+      else return;
+      ev.preventDefault();
+      if (moved) saveOrder();
+    });
+  }
+
   /* ---------- Odkaz „Smazat“ z přehledu klientů: kurzor rovnou do pole pro opsání adresy ---------- */
   if (location.hash === '#smazat') {
     var zone = document.getElementById('smazat');

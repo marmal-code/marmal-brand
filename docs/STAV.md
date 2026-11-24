@@ -3,7 +3,7 @@
 > Živý dokument. **Aktualizuje se při každé nové verzi** (viz CLAUDE.md). Kdo pokračuje ve vývoji, začne tady
 > a nemusí procházet celý kód.
 
-**Aktuální verze: 1.7.0** (20. 11. 2026)
+**Aktuální verze: 1.8.0** (24. 11. 2026)
 Repozitář: https://github.com/marmal-code/marmal-brand (veřejný, větev `main`)
 Produkce: https://brand.marmal.cz
 Tento soubor online: https://raw.githubusercontent.com/marmal-code/marmal-brand/main/docs/STAV.md
@@ -34,9 +34,10 @@ klienta. Plánovaný byznys model: součást balíčku logo + web, roční popla
   fine-grained token (Contents: Read) a ukládá se zašifrovaně (sodium).
 - Aktualizace nepřepisuje `data-path.php`, `.user.ini`, `php.ini`. Zastaralé soubory maže jen v `app/`, `views/`, `migrations/`, `assets/`.
 
-## Co aplikace umí (1.7.0)
+## Co aplikace umí (1.8.0)
 
 ### Administrace (`/admin`)
+- **Vlastní pořadí klientů** (od 1.8.0): v přehledu se řádek přetáhne za úchyt vlevo (myš i dotyk, pointer events v `app.js`), na úchytu fungují i šipky nahoru/dolů, Home a End. Pořadí se uloží samo (`POST /admin/brands/order`, JSON `{ids}`, sloupec `brands.sort`). Při hledání je řazení vypnuté. Nový i importovaný klient se zařadí nahoru (`brand_sort_top()`). Neaktivní klienti zůstávají tam, kam je dáte (jen jsou zašedlí).
 - Přehled klientů: vyplněnost sekcí (pruh + počet sekcí), **Viděno** (očíčko + počet zobrazení celkem, den poslední návštěvy, odkaz na statistiky), poslední změna, typ přístupu, statistiky (zobrazení a stažení za 30 dní, neúplné brandy), aktivita. Akce jako ikony s popiskem: Upravit (ozubené kolo), Náhled (lupa), Kopírovat odkaz, Smazat (koš, vede na potvrzení v nastavení klienta).
 - Nový klient: název, adresa (slug), úvodní text, barva úvodní plochy, kontakt, heslo (návrh se generuje).
 - **Import klienta ze ZIPu** (Klienti → Importovat) a **export klienta** do stejného formátu (nastavení klienta).
@@ -156,13 +157,13 @@ public/app/controllers/       install.php, admin.php, client.php, settings.php, 
 public/views/                 layout_admin, layout_client, layout_plain, admin/*, client/* (home, section, print, _parts)
 public/assets/                css/app.css (tokeny MarMal DS), css/print.css, js/app.js (upload, kopírování, QR, potvrzení, WebP: SVG → PNG na plátně), fonts/MarMal-Bold.woff2,
                               vendor/qrcode.js (QR kód pro 2FA, MIT, generuje se v prohlížeči)
-public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu, 005_bezpecnost_2fa, 006_zobrazeni, 007_rozdeleni_digitalu, 008_mcp
+public/migrations/            001_init, 002_template, 003_texty_a_import, 004_pisma_brandu, 005_bezpecnost_2fa, 006_zobrazeni, 007_rozdeleni_digitalu, 008_mcp, 009_poradi_klientu
 .github/workflows/release.yml automatické vydání po změně public/VERSION
 scripts/build-package.sh      balíček pro FTP (dist/marmal-brand-X.Y.Z.zip)
 ```
 
 ### Databáze
-`users`, `settings` (github_repo, github_token šifrovaně, update_last_check, update_last_log), `brands` (… brand_fonts, contact_phone, contact_email, views_total, last_viewed_at),
+`users`, `settings` (github_repo, github_token šifrovaně, update_last_check, update_last_log), `brands` (… brand_fonts, contact_phone, contact_email, views_total, last_viewed_at, sort = vlastní pořadí v přehledu),
 `template_items`, `items` (brand, sekce, kind file|font, slug, popisy, meta JSON, current_version_id),
 `item_versions`, `item_files` (role download|preview, is_preview), `colors` (usage_note, tints), `section_texts`,
 `activity`, `login_attempts`, `migrations`, `recovery_codes` (záložní kódy 2FA, hash),
@@ -189,7 +190,7 @@ text sekce rozdělí `section_texts()` při prvním načtení podle nadpisů `##
 Import starších balíčků dělá totéž (`upgrade_legacy_manifest()`). Statistiky zobrazení ze staré sekce mají popisek „Digitál a sítě (do verze 1.4)“.
 
 ### Důležité routy
-Admin: `/admin`, `/admin/import`, `/admin/brands/{id}/doplnit` (+ `/{token}` přehled a potvrzení), `/admin/webp`, `/admin/items/{id}/webp` (POST), `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/stats`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
+Admin: `/admin`, `/admin/brands/order` (POST, pořadí klientů), `/admin/import`, `/admin/brands/{id}/doplnit` (+ `/{token}` přehled a potvrzení), `/admin/webp`, `/admin/items/{id}/webp` (POST), `/admin/brands/{id}/s/{sekce}`, `/admin/brands/{id}/stats`, `/admin/brands/{id}/settings`, `/admin/brands/{id}/export`,
 `/admin/items/{id}`, `/admin/settings` (profil, 2FA), `/admin/settings/2fa`, `/admin/settings/update`, `/admin/template`, `/admin/activity`.
 Přihlášení: `/login`, `/login/2fa`.
 AI konektor: `/mcp`, `/.well-known/oauth-protected-resource`, `/.well-known/oauth-authorization-server`, `/oauth/register`, `/oauth/token`, `/oauth/revoke`,
@@ -221,6 +222,7 @@ Vzorové manifesty: `docs/priklady/zehrovicke-byty.brand.json`, `docs/priklady/b
 
 ## Historie verzí
 Podrobně v `CHANGELOG.md`.
+- **1.8.0** (24. 11. 2026): vlastní pořadí klientů v přehledu – přetažení za úchyt, ukládá se samo.
 - **1.7.0** (20. 11. 2026): AI konektor (MCP) pro Claude, ChatGPT a Gemini – stahování a přidávání log, grafiky, barev a textů klientů, přihlášení OAuth s 2FA.
 - **1.6.1** (17. 11. 2026): položka Celkem (počet a velikost souborů) v detailu klienta.
 - **1.6.0** (17. 11. 2026): Doplnit z balíčku – více věcí najednou do existujícího klienta, s přehledem změn před potvrzením.

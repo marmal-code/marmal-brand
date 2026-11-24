@@ -309,6 +309,16 @@ form.inline { display: inline; }
 .icon-action:hover > span { color: var(--ink); }
 .icon-action.danger { color: var(--error); }
 .icon-action.danger:hover { background: var(--error-bg); color: var(--error); }
+
+/* Vlastní pořadí klientů v přehledu (přetažení za úchyt) */
+.row-inactive > td:not(.col-grip) { opacity: .6; }
+.table th.col-grip, .table td.col-grip { width: 44px; padding-left: 8px; padding-right: 0; }
+.drag-handle { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-sm); background: none; color: var(--ink-muted); cursor: grab; touch-action: none; }
+.drag-handle:hover { background: var(--bg-tint); color: var(--blue-700); }
+.drag-handle:active, .is-sorting .drag-handle { cursor: grabbing; }
+.is-sorting { user-select: none; -webkit-user-select: none; }
+.table tr.is-dragging > td { background: var(--bg-tint); }
+.table tr.is-dragging { box-shadow: inset 3px 0 0 var(--blue-700); }
 .views-cell { display: inline-flex; flex-direction: column; gap: 2px; text-decoration: none; color: var(--ink); }
 .views-cell:hover .views-count { color: var(--blue-700); }
 .views-count { display: inline-flex; align-items: center; gap: 6px; font-weight: var(--fw-medium); }

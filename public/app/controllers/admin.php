@@ -80,8 +80,8 @@ function admin_dashboard(): void
     cleanup_chunks();
     $q = trim((string) ($_GET['q'] ?? ''));
     $brands = $q === ''
-        ? db_all('SELECT * FROM brands ORDER BY is_active DESC, updated_at DESC')
-        : db_all('SELECT * FROM brands WHERE name LIKE ? OR slug LIKE ? ORDER BY is_active DESC, updated_at DESC', ['%' . $q . '%', '%' . $q . '%']);
+        ? db_all('SELECT * FROM brands ORDER BY sort, id')
+        : db_all('SELECT * FROM brands WHERE name LIKE ? OR slug LIKE ? ORDER BY sort, id', ['%' . $q . '%', '%' . $q . '%']);
     $incomplete = 0;
     $views30 = views_by_brand(30);
     foreach ($brands as &$b) {
@@ -112,6 +112,43 @@ function admin_dashboard(): void
         'webpMissing' => webp_supported() ? webp_missing() : [],
         'updateHint' => is_array($release) && isset($release['version']) && version_compare($release['version'], APP_VERSION, '>') ? $release['version'] : null,
     ]);
+}
+
+/** Uloží vlastní pořadí klientů z přehledu (přetažení). Tělo JSON {"ids": [3, 1, 2]}. */
+function admin_brands_order(): void
+{
+    require_admin();
+    $data = json_decode((string) file_get_contents('php://input'), true);
+    $sent = is_array($data) && is_array($data['ids'] ?? null) ? $data['ids'] : [];
+    $current = array_map('intval', array_column(db_all('SELECT id FROM brands ORDER BY sort, id'), 'id'));
+    $order = [];
+    foreach ($sent as $sid) {
+        $sid = (int) $sid;
+        if (in_array($sid, $current, true) && !in_array($sid, $order, true)) {
+            $order[] = $sid;
+        }
+    }
+    if (!$order) {
+        json_response(['ok' => false, 'error' => 'Pořadí se nepodařilo uložit, chybí seznam klientů.'], 400);
+    }
+    // Klienti, které stránka neznala (založení v jiném okně), zůstanou na konci ve svém pořadí.
+    foreach ($current as $cid) {
+        if (!in_array($cid, $order, true)) {
+            $order[] = $cid;
+        }
+    }
+    $pdo = db();
+    $pdo->beginTransaction();
+    try {
+        foreach ($order as $n => $bid) {
+            db_exec('UPDATE brands SET sort = ? WHERE id = ?', [($n + 1) * 10, $bid]);
+        }
+        $pdo->commit();
+    } catch (Throwable $e) {
+        $pdo->rollBack();
+        json_response(['ok' => false, 'error' => 'Pořadí se nepodařilo uložit.'], 500);
+    }
+    json_response(['ok' => true]);
 }
 
 function admin_activity(): void
@@ -238,8 +275,8 @@ function admin_brand_create(): void
     }
     $slug = unique_brand_slug($in['slug'] ?: $in['name']);
     $id = db_insert(
-        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, contact_phone, contact_email, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, brand_fonts, custom_domain, is_active, created_at, updated_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, NOW(), NOW())',
+        'INSERT INTO brands (name, slug, intro, contact_name, contact_note, contact_phone, contact_email, hero_bg, password_hash, share_enabled, share_token, share_expires_at, public_links, brand_fonts, custom_domain, is_active, sort, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ' . brand_sort_top() . ', NOW(), NOW())',
         [
             $in['name'], $slug, $in['intro'] ?: null, $in['contact_name'] ?: null, $in['contact_note'] ?: null, $in['contact_phone'] ?: null, $in['contact_email'] ?: null, $in['hero_bg'],
             password_hash($in['password'], PASSWORD_DEFAULT), $in['share_enabled'], new_share_token(),
