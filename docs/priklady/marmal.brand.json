@@ -1,0 +1,1932 @@
+{
+  "format": "brand-hub",
+  "version": 1,
+  "brand": {
+    "name": "MarMal.cz",
+    "slug": "marmal",
+    "intro": "MarMal.cz je moje značka: weby na WordPressu a Breakdance, loga a správa webů pro malé firmy, řemeslníky, školy a spolky. Webdesign jako řemeslo.\nVše je tu vždy v aktuální verzi.",
+    "hero_bg": "#EAF2FB",
+    "contact_name": "Martin Malý · MarMal.cz",
+    "contact_note": "Potřebujete nový podklad? Ozvu se do 2 pracovních dnů.",
+    "contact_phone": "+420 724 257 563",
+    "contact_email": "martin@marmal.cz",
+    "public_links": true,
+    "brand_fonts": true
+  },
+  "texts": {
+    "logo": "Logo tvoří **piktogram** a **slovní značka**. Piktogram je malé „m“ složené ze dvou oblouků. Slovní značka „marmal“ je psaná malými písmeny a vychází z písma MarMal. **Výchozí je vodorovné logo na bílé.**\n\n## Piktogram\nPlné tvary v barvě Slate {#3B4452}. Samostatně slouží jako ikona aplikace sprava.marmal.cz, favicon a avatar. Je i základem vzoru.\n\n## Slovní značka\n„marmal“ malými písmeny v pastelové modré {#7DB4E3}. Tenká linka s kulatými konci, stejná geometrie jako ikony. Nikdy se nesází znovu písmem, vždy se vkládá hotový soubor.\n\n## Konstrukce\n| Míra | Co znamená |\n|---|---|\n| 5x | Piktogram je široký pět stejných modulů x. Tři nohy i dvě mezery mají šířku x. |\n| 1,5x | Vnější poloměr obou oblouků. Vnitřní poloměr je 0,5x, tloušťka tahu tedy přesně x. |\n| 1 noha | Druhý oblouk se s prvním dělí o prostřední nohu. Vzniká tak malé „m“. |\n| 1,5x | Mezera mezi piktogramem a slovní značkou ve vodorovném logu. |\n| x | Měrná jednotka loga. Z ní se počítá ochranná zóna. |\n\n## Varianty\n| Varianta | Použití |\n|---|---|\n| Vodorovné · základní | Web, dokumenty, nabídky. Vždy na bílé nebo světle modré. |\n| Vodorovné · na tmavý podklad | Patička webu, tmavá strana vizitky. Piktogram bílý, slovní značka zůstává pastelová (5,9 : 1 na antracitu). |\n| Vertikální | Vysoké a čtvercové formáty, titulní strany. Mezera mezi částmi je x, slovní značka je široká 9x. |\n| Piktogram | Tam, kde je značka už představená nebo kde není místo. |\n| Jednobarevné (slate, černé, bílé) | Ražba, gravura, razítko, potisk textilu a malé velikosti, kde pastelová slovní značka nestačí kontrastem. |\n\n## Ochranná zóna\nKolem loga zůstává volné místo široké jako **jedna noha piktogramu (x)**. Do zóny nezasahuje text, okraj stránky ani jiný prvek.\n\n## Minimální velikost\n| Varianta | Web | Tisk |\n|---|---|---|\n| Vodorovné logo | výška min. 24 px, v hlavičce 40 px | šířka min. 30 mm |\n| Vertikální logo | šířka min. 96 px | šířka min. 20 mm |\n| Piktogram | min. 16 px, favicon 32 px | šířka min. 5 mm |\n\nPod 32 px výšky použijte jednobarevnou verzi slate. Pastelová slovní značka v malé velikosti mizí.\n\n## Logo na podkladech\n| Podklad | Logo |\n|---|---|\n| Bílá {#FFFFFF} | ✓ Výchozí podklad, nejlepší čitelnost. |\n| Světle modrá {#EAF2FB} | ✓ Lze, ale slovní značka má jen 2,0 : 1. Pod 48 px raději jednobarevné slate. |\n| Antracit {#2A323D} | ✓ Varianta na tmavý podklad. |\n| Slate {#3B4452} | ✓ Varianta na tmavý podklad (slovní značka 4,5 : 1). |\n| Pastelová modrá {#7DB4E3} | ✗ Slovní značka zmizí. Smí tu být jen samotný piktogram (ikona aplikace). |\n| Oranžová {#F08A3C} | ✗ Oranžová je vyhrazená pro hlavní výzvu k akci. |\n\n## Nesprávné použití\nLogo se nepřebarvuje, nedeformuje a neskládá znovu. Když žádná varianta nesedí, je lepší se ozvat než logo upravit.\n- nepřebarvovat, nedeformovat, neotáčet\n- bez stínů a efektů\n- neměnit pořadí ani poměr částí\n- nepřepisovat písmem\n- nedávat na pastelovou modrou",
+    "barvy": "Jedna paleta pro všechno: logo, ikony, web, aplikaci sprava.marmal.cz i tiskoviny. Barvy mají pevné role a **poměr ploch 60 / 30 / 10**: převažují světlé plochy (bílá a světle modrá), modré je nesou (tmavá a pastelová) a oranžová jen ukazuje, kam kliknout.\n\nCMYK je přepočtené přes profil **Coated FOGRA39**. Antracit má krytí 254 %, na nenatíraném papíře může tisknout tmavěji. Před prvním větším tiskem doporučuji nátisk.\n\n## Kombinace a kontrast\nTexty splňují WCAG 2.2 AA: běžný text min. 4,5 : 1, velký text a ikony min. 3 : 1.\n\n| Text | Podklad | Kontrast | Použití |\n|---|---|---|---|\n| Antracit {#2A323D} | Bílá | 12,9 : 1 | ✓ hlavní text |\n| Antracit {#2A323D} | Světle modrá {#EAF2FB} | 11,5 : 1 | ✓ text ve zvýrazněných sekcích |\n| Slate {#3B4452} | Bílá | 9,8 : 1 | ✓ text, ikony |\n| Šedá {#5B6675} | Bílá | 5,8 : 1 | ✓ popisky |\n| Tmavá modrá {#3672A8} | Bílá | 5,1 : 1 | ✓ odkazy, modré nadpisy |\n| Tmavá modrá {#3672A8} | Světle modrá | 4,5 : 1 | hranice, jen větší nebo tučný text |\n| Antracit | Oranžová {#F08A3C} | 5,2 : 1 | ✓ text hlavního tlačítka (hover 4,8 : 1) |\n| Bílá | Tmavá modrá | 5,1 : 1 | ✓ bílý text na modré ploše |\n| Bílá | Antracit | 12,9 : 1 | ✓ patička, tmavé tiskoviny |\n| Pastelová modrá {#7DB4E3} | Antracit | 5,9 : 1 | ✓ zvýraznění na tmavé ploše |\n| Slate | Oranžová | 3,9 : 1 | ✗ na tlačítku vždy antracit |\n| Pastelová modrá | Bílá | 2,2 : 1 | ✗ nikdy jako text |\n| Oranžová | Bílá | 2,5 : 1 | ✗ nikdy jako text |\n\n## Stavové barvy\nStav se vždy ukazuje ikonou a textem, nikdy jen barvou. Podklad hlášky je světlý (podklad chyby {#FDF0EC}, podklad potvrzení {#EEF7F1}, upozornění {#FDEBDD}) a text na něm tmavý stavový nebo antracit. Na plných pastelových plochách (korál {#F2A196}, šalvěj {#A9D6BD}) je text vždy antracit.",
+    "typografie": "Značka používá jen dvě vlastní písma. **MarMal** pro nadpisy, **MarMal Text** pro text a rozhraní. Obě jsou postavená z kruhu, stejně jako ikony. Mají plnou češtinu včetně uvozovek, pomlčky a výpustky.\n\n## MarMal\nŘezy 100, 300, 400, 500, 700. **Nadpisy vždy 700.** Nepoužívá se pro delší text, jen pro nadpisy a krátká hesla.\n\n## MarMal Text\nŘezy 100, 300, 400, 500, 700. Používají se tři: **Light 300** na čtení, **Medium 500** na tlačítka a menu, **Bold 700** na zvýraznění. Thin 100 nepoužívat, Regular 400 je rezerva.\n\n## Typografická škála\nPoměr 1,333. Hodnoty pro tisk jsou odvozené ze škály.\n\n| Styl | Písmo | Web desktop / mobil | Tisk |\n|---|---|---|---|\n| H1 · nadpis stránky | MarMal 700, řádek 1,1 | 56 / 36 px | 28 pt |\n| H2 · nadpis sekce | MarMal 700, řádek 1,15 | 40 / 28 px | 20 pt |\n| H3 · nadpis karty | MarMal 700, řádek 1,25 | 24 / 20 px | 14 pt |\n| Text velký | MarMal Text 300, řádek 1,5 | 18 / 16 px | 11 pt |\n| Text | MarMal Text 300, řádek 1,5 | 16 px | 10 pt |\n| Rozhraní (tlačítko, menu) | MarMal Text 500, řádek 1,25 | 16 px | 10 pt |\n| Popisek | MarMal Text 300, šedá | 14 px | 8 pt |\n\n## Zásady\n- Jen tato dvě písma. Lexend, Comfortaa ani jiná cizí písma se nepoužívají.\n- Na webu jsou písma hostovaná lokálně (WOFF2), bez Google Fonts.\n- Odstavec má 50 až 75 znaků na řádek.\n- **Výjimka: e-mail.** E-mailové programy vlastní písma většinou nenačtou. Platí zásobník MarMal Text, Avenir Next, Century Gothic, Segoe UI, Roboto. Arial ne.\n- Písma jsou © 2026 Martin Malý, jen pro značku MarMal.cz.",
+    "ikony": "Vlastní sada MarMal: **24 ikon a 9 číslic v kroužku**. Mřížka 24 × 24 px, jeden tah 1,75 px s kulatými konci, kruh jako základní tvar. Jiné sady (Lucide a další) se nemíchají. Když ikona chybí, nakreslí se nová podle stejných pravidel.\n\n## Skupiny\n| Skupina | Ikony |\n|---|---|\n| Služby | Tvorba webu, Správa webu, Logo a grafika, Návrh, Kontrola webu |\n| Pro koho | Řemeslník, Začínám, Firmy, Školy a spolky, Kapely |\n| Spolupráce | Poptávka, Schůzka, Nabídka, Struktura, Spuštění, Dlouhodobá péče |\n| Provozní (správa webu) | Aktualizace, Zálohy, Formuláře a e-mail, Drobné úpravy, Přehled a report |\n| Kontakt | Telefon, Adresa, Do 2 pracovních dnů |\n| Číslice v kroužku | 1–9 pro očíslované kroky a postupy |\n\n## Velikosti\n- 24 px v textu a seznamech\n- 36 px v kruhu\n- 64 px u karet služeb\n\n## Barvy\n- Hlavní linka slate {#3B4452}, na tmavém podkladu bílá.\n- Jeden akcent v pastelové modré {#7DB4E3}.\n- Oranžová {#F08A3C} jen u kontaktu a výzev (poptávka, telefon, spuštění).\n\nKaždá ikona je ve čtyřech variantách: základní, na tmavý podklad, jednobarevná slate a jednobarevná bílá. Celá sada je i jako SVG sprite, přehled v PDF a ZIP.",
+    "web": "Web a aplikace sprava.marmal.cz používají stejné tokeny a komponenty z design systému. **Na každé obrazovce je jedno oranžové tlačítko.**\n\n## Mřížka a rozestupy\n12 sloupců, max. šířka obsahu 1200 px, okraje 120 px na desktopu a 20 px na mobilu. Logo v hlavičce vysoké 40 px. Rozestupy v rytmu 8 px (8, 16, 24, 32, 48, 64, 96, 120).\n\n## Tlačítka\nVýška 52 px, zaoblení 8 px, MarMal Text 500. Primární oranžové s antracitovým textem, sekundární s tmavě modrým obrysem. Focus: obrys 2 px tmavá modrá, odsazení 3 px.\n\n## Formuláře a hlášky\n- Popisek vždy nad polem. Chyba ikonou a textem s návodem, ne jen barvou.\n- Hlášky: světlý podklad, tmavý stavový text, vždy ikona a slova.\n\n## Zaoblení a stíny\n8 px tlačítka a pole, 16 px karty, 24 px velké plochy. Jen jemné stíny, oddělení řeší hlavně plocha a linka. Odhalení 400 ms s posunem 24 px, hover 200 ms, vždy respektovat „omezit animace“.\n\n## Ikona webu a náhled odkazu\n- Favicon: piktogram bez podkladu, 32 px. Ikona aplikace: piktogram na pastelové modré, 512 px se zaoblením 22 %.\n- Náhled odkazu (OG) 1200 × 628 px: světle modrá plocha, nadpis MarMal 700, piktogram stojí na spodním okraji.\n\n## Grafické prvky\nGrafický jazyk vychází z loga a písma: **kruh, oblouk a modul x**. Používá se střídmě, jeden výrazný prvek na plochu.\n- **Kruh:** plný nebo jen obrys. Nejlépe funguje dvojice tmavé a pastelové modré.\n- **Oblouk:** noha piktogramu jako tvar: rám obrázku, barevný vzorník, plocha pod číslem. Spodek vždy rovný.\n- **Modul x:** šířka nohy piktogramu. Měřítko pro ochrannou zónu, odsazení loga a skladbu tiskovin.\n\nPovolené barvy kruhu a oblouku: plné v tmavé modré, pastelové modré, světle modré a slate, obrys v tmavé modré, pastelové modré a slate. Na tmavém podkladu bílá. Oranžová ne, ta patří jen výzvám.\n\n## Breakdance\nTokeny pro Global Settings, proměnné a CSS jsou v pozici Tokeny a nastavení pro Breakdance. Výšku řádku zadávejte s tečkou (1.5), ne s čárkou.",
+    "site": "## Profilový obrázek\nKruhový výřez: piktogram na pastelové modré, šířka piktogramu 58 % průměru. Slate na pastelové modré má 4,5 : 1. Varianta s bílým pozadím je pro místa, kde pastelová plocha nesedí.\n\n## Příspěvky\nTexty v první osobě, krátké a konkrétní. Sociální sítě jsou jen doplněk ke správě webu.",
+    "tisk": "Tiskoviny opakují motiv obálky manuálu: **piktogram stojí na spodním okraji světle modré plochy**. Platí pro vizitku, dopis, obálky i krycí list nabídky. Barvy CMYK FOGRA39, PDF se spadávkou 3 mm.\n\n## Vizitka 90 × 50 mm\n- Okraje 8 mm, spadávka 3 mm\n- Přední strana: logo šířky 56 mm, bílá\n- Zadní strana: antracit, bílý piktogram 9 mm\n- Jméno MarMal 700, 11 pt, bílá · role MarMal Text 300, 8 pt, pastelová modrá · kontakty MarMal Text 300, 7,5 pt, ikony 4 mm\n- Papír matný natíraný 350 g/m², před tiskem nátisk antracitu\n\n## Hlavičkový papír A4\n- Okraje 20 mm, logo šířky 55 mm vlevo nahoře\n- Kontakt vpravo nahoře, 8 pt, šedá\n- Patička: jemná linka, 7,5 pt\n- Předmět MarMal 700, 13 pt · text MarMal Text 300, 10 / 14,5 pt · vždy vykání a první osoba\n\n## Obálky DL a C4\n- Přední strana zůstává čistá pro adresu: vlevo nahoře logo (DL 50 mm, C4 70 mm) a zpáteční adresa šedě\n- Zadní strana: světle modrá plocha 42 % s piktogramem na spodním okraji\n\n## Krycí list nabídky\n- Logo, název MarMal 700, 34 pt, „Pro:“ 13 pt\n- Dolních 42 % strany světle modrá s piktogramem\n\n## Vzor z piktogramu\n- **Jemný:** bílé piktogramy na světle modré. Pozadí sekcí, obálky dokumentů.\n- **Výrazný:** slate a pastelová modrá na bílé. Balicí papír, tašky, textil, zadní strana vizitky.",
+    "kancelar": "## E-mailový podpis\nTabulka s inline styly, piktogram jako PNG z veřejné adresy. Písmo: zásobník MarMal Text, Avenir Next, Avenir, Century Gothic, Segoe UI, Roboto. Na Macu a iPhonu se ukáže Avenir Next, ve Windows s Officem Century Gothic, jinde Segoe UI nebo Roboto. Arial se nepoužívá.\n\n## Dokumenty ze sprava.marmal.cz\nNabídka, faktura a report mají stejnou hlavičku (šedý popisek, číslo nebo název v antracitu), stejné popisky a stejnou patičku.\n\n| Prvek | Pravidlo |\n|---|---|\n| Číslo a název dokumentu | popisek šedý MarMal Text 500, 8 pt, nad ním číslo v antracitu MarMal 700, 16 pt |\n| Částky, součty, splatnost | antracit, celkem MarMal 700 na světle modré ploše |\n| Hlavička tabulky, pruh webu | světle modrá plocha, antracitový text MarMal Text 500 |\n| Popisky polí | malými písmeny s velkým začátkem, MarMal Text 500, 8 pt, šedá |\n| Odběratel | světle modrá plocha ve všech dokumentech |\n| Grafy a pruhy | tmavá a pastelová modrá, oranžová v PDF není |\n| Patička | linka, vlevo „Martin Malý · marmal.cz · martin@marmal.cz“, vpravo „strana 1 / 4“, 7,5 pt šedá |\n| Zápis údajů | 19. 11. 2026, 272 01, marmal.cz |\n| Dlouhé texty | zalomí se ve svém sloupci, řádek tabulky se nedělí mezi strany |\n\n## Tón\nPíšu v první osobě jednotného čísla, ve veřejných textech a nabídkách vykám. Jediný slib dostupnosti: **Ozvu se do 2 pracovních dnů.**",
+    "pravidla": "Za MarMal.cz stojí jeden člověk: já, Martin Malý, poctivý řemeslník z Kladna. Stavím weby, navrhuji loga a starám se o weby, které už běží. Stavím na dlouhodobých partnerstvích, ne na rychlých zakázkách.\n\n> Webdesign jako řemeslo. Jednoduchý a funkční design má přednost před efektním.\n\n## Co dělám\n- Tvorba webů na WordPressu a Breakdance\n- Správa webů: aktualizace, zálohy, drobné úpravy\n- Logo a vizuální identita\n- Drobná grafika; sociální sítě jen jako doplněk ke správě\n\n## Pro koho\n- Malé firmy, rodinné podniky a kanceláře\n- Řemeslníci a OSVČ\n- Školy, spolky a neziskovky\n- Profesionální kapely\n\n## Charakter\n| | |\n|---|---|\n| **Přirozeně** | Mluvím jako člověk, ne jako agentura. Žádné fráze, žádný žargon na efekt. |\n| **Lidsky** | Jeden člověk, jeden kontakt. Jsem hrdý na svou práci, ale pokorný před tím, co se ještě musím naučit. |\n| **Spolehlivě** | Konkrétní sliby, které dodržím. Nechávám mluvit hotovou práci. |\n\n## Tón komunikace\n- **Vždy „já“, nikdy „my“.** Žádné „náš tým“, „studio“ ani „jsme“.\n- **Vykání ve veřejných textech.** Tykání jen přirozeně po delší spolupráci, nikdy veřejně.\n- **Vysvětluji, neohromuji.** Technický pojem vždy vysvětlím jednou větou.\n- **Krátké věty, konkrétní sliby.** Raději „Ozvu se do 2 pracovních dnů“ než „Rychlá komunikace“.\n- **Klidné sebevědomí.** Nechlubím se a nepřeháním.\n- **Férově i při chybě.** Když se něco nepovede, řeknu to na rovinu a navrhnu řešení.\n\n| Ano | Ne |\n|---|---|\n| Postarám se, aby web fungoval i za rok. | Inovativní digitální řešení na míru. |\n| Doménu a hosting vám pomohu vybrat a nastavit. | Kompletní end-to-end správa vaší online přítomnosti. |\n| Nejdřív si spolu projdeme, co od webu potřebujete. | Revoluční přístup k webdesignu. |\n| Ozvu se vám do 2 pracovních dnů. | Náš tým vás bude kontaktovat. |\n\n## Co ke značce nepatří\n- přechody a neonové efekty, 3D bloby a dekorativní šum\n- stockové fotky lidí u notebooku\n- emoji v nadpisech\n- cizí sady ikon\n- víc oranžových tlačítek na obrazovce\n- tmavý režim (zatím není)\n\nDeveloperské weby nabízím samostatně pod developerskeweby.cz. Tento manuál se týká jen značky MarMal.cz."
+  },
+  "colors": [
+    {
+      "name": "Slate",
+      "hex": "#3B4452",
+      "cmyk": "78 · 59 · 39 · 54",
+      "pantone": "",
+      "role": "Barva loga",
+      "usage": "Piktogram a linka ikon. Text jen na světlých plochách, nikdy na oranžové.",
+      "tints": true
+    },
+    {
+      "name": "Pastelová modrá",
+      "hex": "#7DB4E3",
+      "cmyk": "54 · 19 · 2 · 2",
+      "pantone": "",
+      "role": "Barva loga",
+      "usage": "Slovní značka, plochy, ilustrace, akcent ikon. Nikdy text na světlém podkladu.",
+      "tints": true
+    },
+    {
+      "name": "Antracit",
+      "hex": "#2A323D",
+      "cmyk": "83 · 60 · 36 · 75",
+      "pantone": "",
+      "role": "Text",
+      "usage": "Hlavní text a nadpisy, text na oranžovém tlačítku, tmavé plochy (patička).",
+      "tints": false
+    },
+    {
+      "name": "Oranžová",
+      "hex": "#F08A3C",
+      "cmyk": "0 · 55 · 85 · 4",
+      "pantone": "",
+      "role": "Výzva k akci",
+      "usage": "Jen hlavní výzva k akci, jedna na obrazovku. Text na ní vždy antracit. Hover #EF7F29.",
+      "tints": false
+    },
+    {
+      "name": "Tmavá modrá",
+      "hex": "#3672A8",
+      "cmyk": "78 · 41 · 2 · 20",
+      "pantone": "",
+      "role": "Odkazy",
+      "usage": "Odkazy, modré nadpisy, sekundární tlačítko, focus.",
+      "tints": true
+    },
+    {
+      "name": "Světle modrá",
+      "hex": "#EAF2FB",
+      "cmyk": "9 · 5 · 4 · 0",
+      "pantone": "",
+      "role": "Plochy",
+      "usage": "Zvýrazněné sekce, podklad ikon v kruhu.",
+      "tints": false
+    },
+    {
+      "name": "Šedá",
+      "hex": "#5B6675",
+      "cmyk": "65 · 48 · 36 · 30",
+      "pantone": "",
+      "role": "Doplňkový text",
+      "usage": "Popisky a doplňkový text, ne dlouhé odstavce.",
+      "tints": false
+    },
+    {
+      "name": "Bílá",
+      "hex": "#FFFFFF",
+      "cmyk": "0 · 0 · 0 · 0",
+      "pantone": "",
+      "role": "Pozadí",
+      "usage": "Pozadí stránky, karty, formuláře.",
+      "tints": false
+    },
+    {
+      "name": "Okraje",
+      "hex": "#D7DEE7",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Doplňková",
+      "usage": "Okraje karet, linky v PDF.",
+      "tints": false
+    },
+    {
+      "name": "Jemné linky",
+      "hex": "#EEF1F5",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Doplňková",
+      "usage": "Oddělovače.",
+      "tints": false
+    },
+    {
+      "name": "Okraje polí",
+      "hex": "#8A94A0",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Doplňková",
+      "usage": "Okraje formulářových polí (3,1 : 1).",
+      "tints": false
+    },
+    {
+      "name": "Upozornění",
+      "hex": "#A04E12",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Text štítků a hlášek upozornění na podkladu #FDEBDD.",
+      "tints": false
+    },
+    {
+      "name": "Upozornění světlé",
+      "hex": "#FDEBDD",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Podklad štítků „čeká aktualizace“.",
+      "tints": false
+    },
+    {
+      "name": "Korál",
+      "hex": "#F2A196",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Chyba: pruh, plocha. Text na něm antracit.",
+      "tints": false
+    },
+    {
+      "name": "Tmavý korál",
+      "hex": "#9B3A2E",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Chyba: ikona, okraj pole, text na světlém podkladu chyby.",
+      "tints": false
+    },
+    {
+      "name": "Podklad chyby",
+      "hex": "#FDF0EC",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Podklad chybové hlášky.",
+      "tints": false
+    },
+    {
+      "name": "Šalvěj",
+      "hex": "#A9D6BD",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Potvrzení: pruh, plocha. Text na ní antracit.",
+      "tints": false
+    },
+    {
+      "name": "Tmavá šalvěj",
+      "hex": "#2E6A4A",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Potvrzení: ikona, text na světlém podkladu potvrzení.",
+      "tints": false
+    },
+    {
+      "name": "Podklad potvrzení",
+      "hex": "#EEF7F1",
+      "cmyk": "",
+      "pantone": "",
+      "role": "Stav",
+      "usage": "Podklad potvrzující hlášky.",
+      "tints": false
+    }
+  ],
+  "items": [
+    {
+      "section": "logo",
+      "slug": "logo-primarni",
+      "title": "Vodorovné · základní logo",
+      "description": "Výchozí varianta: web, dokumenty, nabídky. Vždy na bílé nebo světle modré.",
+      "specs": "SVG na křivkách, PNG 2400 × 435 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "logo/marmal-logo.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-logo.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-negativ",
+      "title": "Vodorovné · na tmavý podklad",
+      "description": "Patička webu, tmavá strana vizitky. Piktogram bílý, slovní značka zůstává pastelová (5,9 : 1 na antracitu).",
+      "specs": "SVG na křivkách, PNG 2400 × 435 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": true,
+      "preview_bg": "#2A323D",
+      "files": [
+        {
+          "path": "logo/marmal-logo-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-logo-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni",
+      "title": "Vertikální",
+      "description": "Vysoké a čtvercové formáty, titulní strany. Mezera mezi částmi je x, slovní značka je široká 9x.",
+      "specs": "SVG na křivkách, PNG 2400 × 1693 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "logo/marmal-logo-vertikalni.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-logo-vertikalni.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-vertikalni-negativ",
+      "title": "Vertikální · na tmavý podklad",
+      "description": "Zadní strana vizitky, tmavé plochy ve čtvercovém formátu.",
+      "specs": "SVG na křivkách, PNG 2400 × 1693 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": false,
+      "preview_bg": "#2A323D",
+      "files": [
+        {
+          "path": "logo/marmal-logo-vertikalni-na-tmavy-podklad.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-logo-vertikalni-na-tmavy-podklad.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol",
+      "title": "Piktogram",
+      "description": "Samostatně tam, kde je značka už představená nebo kde není místo. Základ ikony aplikace, faviconu a vzoru.",
+      "specs": "SVG na křivkách, PNG 2400 × 1637 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": true,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "logo/marmal-piktogram.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-piktogram.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "symbol-negativ",
+      "title": "Piktogram · bílý",
+      "description": "Piktogram na tmavé plochy.",
+      "specs": "SVG na křivkách, PNG 2400 × 1637 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": false,
+      "preview_bg": "#2A323D",
+      "files": [
+        {
+          "path": "logo/marmal-piktogram-bily.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-piktogram-bily.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne",
+      "title": "Vodorovné · jednobarevné slate",
+      "description": "Ražba, razítko, malé velikosti. Pod 32 px výšky místo základního loga.",
+      "specs": "SVG na křivkách, PNG 2400 × 435 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "logo/marmal-logo-jednobarevne-slate.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-logo-jednobarevne-slate.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne-cerne",
+      "title": "Vodorovné · jednobarevné černé",
+      "description": "Gravura, razítko, černobílý tisk.",
+      "specs": "SVG na křivkách, PNG 2400 × 435 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "logo/marmal-logo-jednobarevne-cerne.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-logo-jednobarevne-cerne.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "logo-jednobarevne-bile",
+      "title": "Vodorovné · jednobarevné bílé",
+      "description": "Potisk textilu a tmavé plochy, kde nemůže být pastelová slovní značka.",
+      "specs": "SVG na křivkách, PNG 2400 × 435 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": false,
+      "preview_bg": "#2A323D",
+      "files": [
+        {
+          "path": "logo/marmal-logo-jednobarevne-bile.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-logo-jednobarevne-bile.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "logo",
+      "slug": "slovni-znacka",
+      "title": "Slovní značka",
+      "description": "Jen „marmal“. Interně pro skládání nových variant, samostatně se nepoužívá.",
+      "specs": "SVG na křivkách, PNG 2400 × 518 px s průhledností",
+      "tags": "SVG, PNG, WebP",
+      "required": false,
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "logo/marmal-slovni-znacka.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "logo/marmal-slovni-znacka.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-nadpisy",
+      "title": "Písmo pro nadpisy",
+      "description": "MarMal, vlastní písmo značky postavené z kruhu. Nadpisy vždy Bold 700.",
+      "specs": "TTF · Thin 100, Light 300, Regular 400, Medium 500, Bold 700",
+      "tags": "TTF, WOFF2",
+      "required": true,
+      "meta": {
+        "family": "MarMal",
+        "weights": "Thin 100, Light 300, Regular 400, Medium 500, Bold 700",
+        "sample": "Webdesign jako řemeslo",
+        "license": "© 2026 Martin Malý, jen pro značku MarMal.cz"
+      },
+      "files": [
+        {
+          "path": "pisma/MarMal-Thin.ttf",
+          "label": "TTF · Thin"
+        },
+        {
+          "path": "pisma/MarMal-Thin.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMal-Light.ttf",
+          "label": "TTF · Light"
+        },
+        {
+          "path": "pisma/MarMal-Light.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMal-Regular.ttf",
+          "label": "TTF · Regular"
+        },
+        {
+          "path": "pisma/MarMal-Regular.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMal-Medium.ttf",
+          "label": "TTF · Medium"
+        },
+        {
+          "path": "pisma/MarMal-Medium.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMal-Bold.ttf",
+          "label": "TTF · Bold"
+        },
+        {
+          "path": "pisma/MarMal-Bold.woff2",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "typografie",
+      "slug": "pismo-text",
+      "title": "Písmo pro text a rozhraní",
+      "description": "MarMal Text, vlastní písmo značky postavené z kruhu. Light 300 čtení, Medium 500 tlačítka a menu, Bold 700 zvýraznění.",
+      "specs": "TTF · Thin 100, Light 300, Regular 400, Medium 500, Bold 700",
+      "tags": "TTF, WOFF2",
+      "required": true,
+      "meta": {
+        "family": "MarMal Text",
+        "weights": "Thin 100, Light 300, Regular 400, Medium 500, Bold 700",
+        "sample": "Postarám se, aby web fungoval i za rok.",
+        "license": "© 2026 Martin Malý, jen pro značku MarMal.cz"
+      },
+      "files": [
+        {
+          "path": "pisma/MarMalText-Thin.ttf",
+          "label": "TTF · Thin"
+        },
+        {
+          "path": "pisma/MarMalText-Thin.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMalText-Light.ttf",
+          "label": "TTF · Light"
+        },
+        {
+          "path": "pisma/MarMalText-Light.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMalText-Regular.ttf",
+          "label": "TTF · Regular"
+        },
+        {
+          "path": "pisma/MarMalText-Regular.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMalText-Medium.ttf",
+          "label": "TTF · Medium"
+        },
+        {
+          "path": "pisma/MarMalText-Medium.woff2",
+          "role": "preview"
+        },
+        {
+          "path": "pisma/MarMalText-Bold.ttf",
+          "label": "TTF · Bold"
+        },
+        {
+          "path": "pisma/MarMalText-Bold.woff2",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-web",
+      "title": "Ikona · Tvorba webu",
+      "description": "Skupina: služby.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-web.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-web-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-web-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-web-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-sprava-webu",
+      "title": "Ikona · Správa webu",
+      "description": "Skupina: služby.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-sprava-webu.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-sprava-webu-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-sprava-webu-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-sprava-webu-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-logo",
+      "title": "Ikona · Logo a grafika",
+      "description": "Skupina: služby.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-logo.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-logo-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-logo-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-logo-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-navrh",
+      "title": "Ikona · Návrh, design",
+      "description": "Skupina: služby.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-navrh.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-navrh-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-navrh-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-navrh-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-remeslnik",
+      "title": "Ikona · Řemeslník",
+      "description": "Skupina: pro koho.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-remeslnik.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-remeslnik-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-remeslnik-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-remeslnik-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-zacinam",
+      "title": "Ikona · Začínám",
+      "description": "Skupina: pro koho.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-zacinam.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-zacinam-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-zacinam-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-zacinam-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-firmy",
+      "title": "Ikona · Firmy",
+      "description": "Skupina: pro koho.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-firmy.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-firmy-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-firmy-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-firmy-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-skoly-a-spolky",
+      "title": "Ikona · Školy a spolky",
+      "description": "Skupina: pro koho.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-skoly-a-spolky.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-skoly-a-spolky-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-skoly-a-spolky-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-skoly-a-spolky-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-kapely",
+      "title": "Ikona · Kapely",
+      "description": "Skupina: pro koho.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-kapely.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-kapely-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-kapely-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-kapely-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-kontrola-webu",
+      "title": "Ikona · Kontrola webu",
+      "description": "Skupina: služby.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-kontrola-webu.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-kontrola-webu-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-kontrola-webu-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-kontrola-webu-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-poptavka",
+      "title": "Ikona · Poptávka",
+      "description": "Skupina: spolupráce.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-poptavka.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-poptavka-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-poptavka-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-poptavka-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-schuzka",
+      "title": "Ikona · Schůzka",
+      "description": "Skupina: spolupráce.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-schuzka.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-schuzka-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-schuzka-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-schuzka-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-nabidka",
+      "title": "Ikona · Nabídka",
+      "description": "Skupina: spolupráce.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-nabidka.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-nabidka-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-nabidka-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-nabidka-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-struktura",
+      "title": "Ikona · Struktura (wireframe)",
+      "description": "Skupina: spolupráce.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-struktura.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-struktura-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-struktura-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-struktura-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-spusteni",
+      "title": "Ikona · Spuštění",
+      "description": "Skupina: spolupráce.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-spusteni.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-spusteni-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-spusteni-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-spusteni-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-dlouhodoba-pece",
+      "title": "Ikona · Dlouhodobá péče",
+      "description": "Skupina: spolupráce.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-dlouhodoba-pece.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-dlouhodoba-pece-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-dlouhodoba-pece-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-dlouhodoba-pece-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-aktualizace",
+      "title": "Ikona · Aktualizace",
+      "description": "Skupina: provozní.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-aktualizace.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-aktualizace-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-aktualizace-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-aktualizace-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-zalohy",
+      "title": "Ikona · Zálohy",
+      "description": "Skupina: provozní.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-zalohy.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-zalohy-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-zalohy-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-zalohy-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-formulare-email",
+      "title": "Ikona · Formuláře, e-mail",
+      "description": "Skupina: provozní.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-formulare-email.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-formulare-email-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-formulare-email-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-formulare-email-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-drobne-upravy",
+      "title": "Ikona · Drobné úpravy",
+      "description": "Skupina: provozní.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-drobne-upravy.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-drobne-upravy-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-drobne-upravy-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-drobne-upravy-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-prehled-report",
+      "title": "Ikona · Přehled, report",
+      "description": "Skupina: provozní.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-prehled-report.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-prehled-report-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-prehled-report-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-prehled-report-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-telefon",
+      "title": "Ikona · Telefon",
+      "description": "Skupina: kontakt.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-telefon.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-telefon-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-telefon-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-telefon-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-adresa",
+      "title": "Ikona · Adresa",
+      "description": "Skupina: kontakt.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-adresa.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-adresa-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-adresa-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-adresa-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-do-2-dnu",
+      "title": "Ikona · Do 2 pracovních dnů",
+      "description": "Skupina: kontakt.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-do-2-dnu.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-do-2-dnu-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-do-2-dnu-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-do-2-dnu-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-1",
+      "title": "Ikona · Číslice 1 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-1.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-1-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-1-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-1-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-2",
+      "title": "Ikona · Číslice 2 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-2.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-2-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-2-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-2-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-3",
+      "title": "Ikona · Číslice 3 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-3.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-3-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-3-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-3-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-4",
+      "title": "Ikona · Číslice 4 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-4.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-4-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-4-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-4-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-5",
+      "title": "Ikona · Číslice 5 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-5.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-5-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-5-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-5-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-6",
+      "title": "Ikona · Číslice 6 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-6.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-6-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-6-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-6-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-7",
+      "title": "Ikona · Číslice 7 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-7.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-7-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-7-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-7-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-8",
+      "title": "Ikona · Číslice 8 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-8.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-8-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-8-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-8-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikona-cislo-9",
+      "title": "Ikona · Číslice 9 v kroužku",
+      "description": "Skupina: číslice v kroužku.",
+      "specs": "SVG 24 × 24 px, tah 1,75 px · WebP 512 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikona-cislo-9.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-9-na-tmavy-podklad.svg",
+          "label": "SVG · na tmavý podklad"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-9-jednobarevne-slate.svg",
+          "label": "SVG · jednobarevná slate"
+        },
+        {
+          "path": "ikony/marmal-ikona-cislo-9-jednobarevne-bile.svg",
+          "label": "SVG · jednobarevná bílá"
+        }
+      ]
+    },
+    {
+      "section": "ikony",
+      "slug": "ikony-vsechny",
+      "title": "Celá sada ikon",
+      "description": "33 ikon v jednom: SVG sprite (barvy přes CSS proměnné), přehled v PDF a ZIP se všemi ikonami ve 4 barevných variantách jako SVG a PNG 64 a 256 px.",
+      "specs": "SVG sprite, PDF A4 na šířku, ZIP (SVG + PNG)",
+      "tags": "SVG, PDF, ZIP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "ikony/marmal-ikony-sprite.svg",
+          "label": "SVG sprite"
+        },
+        {
+          "path": "ikony/marmal-ikony-prehled.pdf",
+          "label": "PDF přehled"
+        },
+        {
+          "path": "ikony/marmal-ikony-vse.zip",
+          "label": "ZIP · všechny ikony"
+        },
+        {
+          "path": "ikony/marmal-ikony-prehled.png",
+          "label": "PNG přehled"
+        }
+      ]
+    },
+    {
+      "section": "web",
+      "slug": "og-obrazek",
+      "title": "Náhled při sdílení odkazu (OG)",
+      "description": "Světle modrá plocha, nadpis MarMal 700, piktogram stojí na spodním okraji.",
+      "specs": "PNG 1200 × 628 px",
+      "tags": "PNG, WebP",
+      "preview_bg": "#EAF2FB",
+      "files": [
+        {
+          "path": "web/marmal-og-1200x628.png",
+          "label": "PNG"
+        }
+      ]
+    },
+    {
+      "section": "web",
+      "slug": "favicon",
+      "title": "Ikona webu (favicon)",
+      "description": "Piktogram bez podkladu. Na web stačí SVG, ICO pro starší prohlížeče.",
+      "specs": "SVG, PNG 32 a 512 px, ICO 16/32/48 px",
+      "tags": "SVG, PNG, ICO, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "web/marmal-favicon.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "web/marmal-favicon-512.png",
+          "label": "PNG 512 px",
+          "preview": true
+        },
+        {
+          "path": "web/marmal-favicon-32.png",
+          "label": "PNG 32 px"
+        },
+        {
+          "path": "web/favicon.ico",
+          "label": "ICO"
+        }
+      ]
+    },
+    {
+      "section": "web",
+      "slug": "ikona-aplikace",
+      "title": "Ikona aplikace",
+      "description": "Piktogram na pastelové modré se zaoblením 22 %. Aplikace sprava.marmal.cz, PWA, záložka na ploše telefonu.",
+      "specs": "SVG, PNG 512 a 192 px",
+      "tags": "SVG, PNG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "web/marmal-ikona-aplikace.svg",
+          "label": "SVG"
+        },
+        {
+          "path": "web/marmal-ikona-aplikace-512.png",
+          "label": "PNG 512 px"
+        },
+        {
+          "path": "web/marmal-ikona-aplikace-192.png",
+          "label": "PNG 192 px"
+        }
+      ]
+    },
+    {
+      "section": "web",
+      "slug": "grafika-kruh",
+      "title": "Grafický prvek · Kruh",
+      "description": "Plný nebo jen obrys. Písmo MarMal je z něj postavené. Nejlépe funguje dvojice tmavé a pastelové modré. Bílá jen na tmavém podkladu, oranžová ne.",
+      "specs": "SVG, WebP 1000 px · povolené barvy značky",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "web/marmal-kruh-plny-tmave-modra.svg",
+          "label": "SVG · plný, tmavá modrá"
+        },
+        {
+          "path": "web/marmal-kruh-plny-pastelova-modra.svg",
+          "label": "SVG · plný, pastelová modrá"
+        },
+        {
+          "path": "web/marmal-kruh-plny-svetle-modra.svg",
+          "label": "SVG · plný, světle modrá"
+        },
+        {
+          "path": "web/marmal-kruh-plny-slate.svg",
+          "label": "SVG · plný, slate"
+        },
+        {
+          "path": "web/marmal-kruh-plny-bila.svg",
+          "label": "SVG · plný, bílá"
+        },
+        {
+          "path": "web/marmal-kruh-obrys-tmave-modra.svg",
+          "label": "SVG · obrys, tmavá modrá"
+        },
+        {
+          "path": "web/marmal-kruh-obrys-pastelova-modra.svg",
+          "label": "SVG · obrys, pastelová modrá"
+        },
+        {
+          "path": "web/marmal-kruh-obrys-slate.svg",
+          "label": "SVG · obrys, slate"
+        },
+        {
+          "path": "web/marmal-kruh-obrys-bila.svg",
+          "label": "SVG · obrys, bílá"
+        }
+      ]
+    },
+    {
+      "section": "web",
+      "slug": "grafika-oblouk",
+      "title": "Grafický prvek · Oblouk",
+      "description": "Noha piktogramu jako tvar: rám obrázku, barevný vzorník, plocha pod číslem. Spodek vždy rovný. Bílá jen na tmavém podkladu, oranžová ne.",
+      "specs": "SVG, WebP 1000 px · povolené barvy značky",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "web/marmal-oblouk-plny-tmave-modra.svg",
+          "label": "SVG · plný, tmavá modrá"
+        },
+        {
+          "path": "web/marmal-oblouk-plny-pastelova-modra.svg",
+          "label": "SVG · plný, pastelová modrá"
+        },
+        {
+          "path": "web/marmal-oblouk-plny-svetle-modra.svg",
+          "label": "SVG · plný, světle modrá"
+        },
+        {
+          "path": "web/marmal-oblouk-plny-slate.svg",
+          "label": "SVG · plný, slate"
+        },
+        {
+          "path": "web/marmal-oblouk-plny-bila.svg",
+          "label": "SVG · plný, bílá"
+        },
+        {
+          "path": "web/marmal-oblouk-obrys-tmave-modra.svg",
+          "label": "SVG · obrys, tmavá modrá"
+        },
+        {
+          "path": "web/marmal-oblouk-obrys-pastelova-modra.svg",
+          "label": "SVG · obrys, pastelová modrá"
+        },
+        {
+          "path": "web/marmal-oblouk-obrys-slate.svg",
+          "label": "SVG · obrys, slate"
+        },
+        {
+          "path": "web/marmal-oblouk-obrys-bila.svg",
+          "label": "SVG · obrys, bílá"
+        }
+      ]
+    },
+    {
+      "section": "web",
+      "slug": "grafika-kombinace",
+      "title": "Grafický prvek · Kombinace",
+      "description": "Dvojice kruhů (tmavá a pastelová modrá) a trojice oblouků podle kapitoly Grafické prvky.",
+      "specs": "SVG, WebP 1000 px",
+      "tags": "SVG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "web/marmal-kruh-dvojice.svg",
+          "label": "SVG · dvojice kruhů"
+        },
+        {
+          "path": "web/marmal-oblouk-trojice.svg",
+          "label": "SVG · trojice oblouků"
+        }
+      ]
+    },
+    {
+      "section": "web",
+      "slug": "tokeny-breakdance",
+      "title": "Tokeny a nastavení pro Breakdance",
+      "description": "Global Settings (barvy, písma, škála, tlačítka), 34 proměnných mm-*, CSS s písmy a tlačítky, návod. Navíc tokens.json a tokens.css z design systému.",
+      "specs": "ZIP · JSON, CSS, návod v Markdownu",
+      "tags": "ZIP",
+      "files": [
+        {
+          "path": "web/marmal-tokeny-breakdance.zip",
+          "label": "ZIP"
+        }
+      ]
+    },
+    {
+      "section": "site",
+      "slug": "profilovy-obrazek",
+      "title": "Profilový obrázek",
+      "description": "Piktogram na pastelové modré, šířka piktogramu 58 % průměru. Sítě obrázek ořežou do kruhu.",
+      "specs": "PNG 1080 × 1080 a 400 × 400 px",
+      "tags": "PNG, WebP",
+      "preview_bg": "#FFFFFF",
+      "files": [
+        {
+          "path": "site/marmal-profil-1080.png",
+          "label": "PNG · 1080 px"
+        },
+        {
+          "path": "site/marmal-profil-400.png",
+          "label": "PNG · 400 px"
+        },
+        {
+          "path": "site/marmal-profil-1080-bile-pozadi.png",
+          "label": "PNG · 1080 px, bílé pozadí"
+        },
+        {
+          "path": "site/marmal-profil-400-bile-pozadi.png",
+          "label": "PNG · 400 px, bílé pozadí"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "vizitka",
+      "title": "Vizitka",
+      "description": "Přední strana bílá s logem šířky 56 mm, zadní antracit s bílým piktogramem 9 mm, jménem, rolí a kontakty s ikonami.",
+      "specs": "90 × 50 mm, oboustranná · PDF 2 strany, spadávka 3 mm · matný natíraný papír 350 g/m²",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "tisk/marmal-vizitka-90x50-spadavka-3mm.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/marmal-vizitka-90x50-spadavka-3mm-predni.png",
+          "label": "PNG přední strana",
+          "preview": true
+        },
+        {
+          "path": "tisk/marmal-vizitka-90x50-spadavka-3mm-zadni.png",
+          "label": "PNG zadní strana"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "hlavickovy-papir",
+      "title": "Hlavičkový papír A4",
+      "description": "Logo šířky 55 mm vlevo nahoře, kontakt vpravo 8 pt, patička s jemnou linkou 7,5 pt. Pro psaní je ve Wordu v Kanceláři.",
+      "specs": "A4 na výšku · okraje 20 mm · bez spadávky (tisk i z kancelářské tiskárny)",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "tisk/marmal-hlavickovy-papir-a4.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/marmal-hlavickovy-papir-a4.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "obalka-dl",
+      "title": "Obálka DL",
+      "description": "Přední strana: logo 50 mm a zpáteční adresa vlevo nahoře, adresní pole bez grafiky. Zadní strana: světle modrá plocha s piktogramem.",
+      "specs": "220 × 110 mm · PDF 2 strany, spadávka 3 mm",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "tisk/marmal-obalka-dl-220x110-spadavka-3mm.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/marmal-obalka-dl-220x110-spadavka-3mm-predni.png",
+          "label": "PNG přední strana",
+          "preview": true
+        },
+        {
+          "path": "tisk/marmal-obalka-dl-220x110-spadavka-3mm-zadni.png",
+          "label": "PNG zadní strana"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "obalka-c4",
+      "title": "Obálka C4",
+      "description": "Stejný motiv jako DL: logo 70 mm a zpáteční adresa vpředu, světle modrá plocha s piktogramem vzadu.",
+      "specs": "324 × 229 mm · PDF 2 strany, spadávka 3 mm",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "tisk/marmal-obalka-c4-324x229-spadavka-3mm.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/marmal-obalka-c4-324x229-spadavka-3mm-predni.png",
+          "label": "PNG přední strana",
+          "preview": true
+        },
+        {
+          "path": "tisk/marmal-obalka-c4-324x229-spadavka-3mm-zadni.png",
+          "label": "PNG zadní strana"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "kryci-list-nabidky",
+      "title": "Krycí list nabídky",
+      "description": "Úvodní strana nabídky: logo, název MarMal 700 34 pt, „Pro:“ 13 pt, dolních 42 % strany světle modrá s piktogramem. Podklad bez textu pro vlastní název.",
+      "specs": "A4 na výšku · PDF se spadávkou 3 mm",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "tisk/marmal-kryci-list-nabidky-a4-spadavka-3mm.pdf",
+          "label": "PDF pro tisk"
+        },
+        {
+          "path": "tisk/marmal-kryci-list-nabidky-a4-spadavka-3mm.png",
+          "label": "PNG náhled",
+          "preview": true
+        },
+        {
+          "path": "tisk/marmal-kryci-list-nabidky-podklad-bez-textu.pdf",
+          "label": "PDF podklad bez textu"
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "vzor-jemny",
+      "title": "Vzor z piktogramu · jemný",
+      "description": "Bílé piktogramy na světle modré. Pozadí sekcí, obálky dokumentů.",
+      "specs": "SVG dlaždice, opakuje se bez švu · s plochou i průhledná",
+      "tags": "SVG, PNG",
+      "files": [
+        {
+          "path": "tisk/marmal-vzor-jemny.svg",
+          "label": "SVG s plochou"
+        },
+        {
+          "path": "tisk/marmal-vzor-jemny-pruhledny.svg",
+          "label": "SVG průhledný"
+        },
+        {
+          "path": "tisk/marmal-vzor-jemny-nahled.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "tisk",
+      "slug": "vzor-vyrazny",
+      "title": "Vzor z piktogramu · výrazný",
+      "description": "Slate a pastelová modrá na bílé. Balicí papír, tašky, textil, zadní strana vizitky.",
+      "specs": "SVG dlaždice, opakuje se bez švu · s plochou i průhledná",
+      "tags": "SVG, PNG",
+      "files": [
+        {
+          "path": "tisk/marmal-vzor-vyrazny.svg",
+          "label": "SVG s plochou"
+        },
+        {
+          "path": "tisk/marmal-vzor-vyrazny-pruhledny.svg",
+          "label": "SVG průhledný"
+        },
+        {
+          "path": "tisk/marmal-vzor-vyrazny-nahled.png",
+          "label": "PNG náhled",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "emailovy-podpis",
+      "title": "E-mailový podpis",
+      "description": "Tabulka s inline styly, piktogram jako PNG z veřejné adresy (nahrát na web a případně upravit adresu v HTML). Word verze pro Outlook ve Windows.",
+      "specs": "HTML · Word (Century Gothic) · piktogram 56 × 39 px (PNG 112 px)",
+      "tags": "HTML, DOCX, PNG",
+      "files": [
+        {
+          "path": "kancelar/marmal-email-podpis.html",
+          "label": "HTML podpis"
+        },
+        {
+          "path": "kancelar/marmal-email-podpis.docx",
+          "label": "Word"
+        },
+        {
+          "path": "kancelar/marmal-piktogram-podpis.png",
+          "label": "PNG piktogram"
+        },
+        {
+          "path": "kancelar/marmal-email-podpis-nahled.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "sablona-dopisu",
+      "title": "Hlavičkový papír pro Word",
+      "description": "Hlavička s logem a kontaktem, patička s linkou. Předmět MarMal 13 pt, text MarMal Text Light 10 / 14,5 pt.",
+      "specs": "DOCX · A4 na výšku · okraje 20 mm · písma MarMal a MarMal Text musí být nainstalovaná",
+      "tags": "DOCX",
+      "files": [
+        {
+          "path": "kancelar/marmal-hlavickovy-papir-a4.docx",
+          "label": "Word"
+        },
+        {
+          "path": "kancelar/marmal-hlavickovy-papir-word-nahled.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "sablona-nabidky",
+      "title": "Nabídka (ukázka)",
+      "description": "Nabídka ze sprava.marmal.cz podle kapitoly Sjednocení dokumentů. Smyšlený klient.",
+      "specs": "PDF A4 · 2 strany",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "kancelar/marmal-ukazka-nabidky.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "kancelar/marmal-ukazka-nabidky-nahled.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "ukazka-faktury",
+      "title": "Faktura (ukázka)",
+      "description": "Faktura ze sprava.marmal.cz s QR Platbou. Smyšlený klient.",
+      "specs": "PDF A4 · 1 strana",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "kancelar/marmal-ukazka-faktury.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "kancelar/marmal-ukazka-faktury-nahled.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "kancelar",
+      "slug": "ukazka-reportu",
+      "title": "Report správy webu (ukázka)",
+      "description": "Měsíční report ze sprava.marmal.cz: návštěvnost, vyhledávání, rychlost, aktualizace, zabezpečení. Smyšlený klient.",
+      "specs": "PDF A4 · 4 strany",
+      "tags": "PDF",
+      "files": [
+        {
+          "path": "kancelar/marmal-ukazka-reportu.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "kancelar/marmal-ukazka-reportu-nahled.png",
+          "role": "preview"
+        }
+      ]
+    },
+    {
+      "section": "pravidla",
+      "slug": "pravidla-pouziti",
+      "title": "Brand manuál (PDF)",
+      "description": "Celý manuál značky MarMal.cz: značka, tón, logo, barvy, písmo, prvky, ikony, web, tiskoviny, digitál, sjednocení dokumentů.",
+      "specs": "A4 na šířku · 36 stran · verze 1.0, listopad 2026",
+      "tags": "PDF, HTML",
+      "files": [
+        {
+          "path": "pravidla/marmal-brand-manual-1.0.pdf",
+          "label": "PDF"
+        },
+        {
+          "path": "pravidla/marmal-brand-manual-1.0.html",
+          "label": "HTML"
+        },
+        {
+          "path": "pravidla/marmal-brand-manual-nahled.png",
+          "role": "preview"
+        }
+      ]
+    }
+  ],
+  "prune_empty": true
+}
